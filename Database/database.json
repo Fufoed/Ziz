@@ -1,0 +1,344 @@
+{
+    "database": {
+        "Easter_Egg": [
+            "Puntoliiiiiiiiiiino",
+            "Sanata",
+            "Saned",
+            "Mangia la foglia finchè si estende",
+            "Fgata",
+            "D",
+            "CDCDCDCDCDCDC",
+            "Sapere",
+            "Perso",
+            "Pacco",
+            "EH va bon dai",
+            "GhezzzBoro",
+            "Ehi Cesare",
+            "Eh Ciò",
+            "EAEAEAEEEEAEAE",
+            "VIAAAAAAAA",
+            "Fallito",
+            "Java non ha le stesse funziona di Java",
+            "Wuo wuo Bella",
+            "GNOOOOOOOO",
+            "Ma quello lo fa la macchina",
+            "Bello linux",
+            "E i driver?",
+            "Pettini",
+            "Vittoria",
+            "Io mi merito il 9 in comporteamento",
+            "Prendete 3 e amen",
+            "Cesare 4",
+            "Applina",
+            "Mi sono trovato in minoranza",
+            "Ciao Nathan :)",
+            "L'italia è una pozzanghera",
+            "Scusate, di solito copio-incollo",
+            "Jason",
+            "Dinosauri",
+            "Questo è un discorso generale",
+            "7",
+            "Potete anche dormire",
+            "Shhhhhhh sssssss",
+            "Non vorrei andare troppo veloce",
+            "Criminali",
+            "Boys and Girls",
+            "Aderenze",
+            "Comunista di merda",
+            "Shiiiiiiiii",
+            "Remove",
+            "Dov è il nostro orologio?",
+            "OLEEEE",
+            "STOH",
+            "TRISA",
+            "Ci ha innculato",
+            "Prof mi sento preso per il culo",
+            "Nebbia fitta in val Padana",
+            "Che  ingenuità",
+            "Sei polemico",
+            "L'assemblea",
+            "Uante Breboooo",
+            "Massimooooooooooooooooooooooooo",
+            "Chi fa il rappresentante questo mese?",
+            "Tossici di merda",
+            "CWOOOOOOOOOOOOOOOOOOOOOOOO"
+        ],
+        "team_generale": {
+            "numero_membri": "7",
+            "lista_membri": [
+                "Lucchi",
+                "Zancanaro",
+                "Orfei",
+                "Fantinato",
+                "Greggio",
+                "Quinto",
+                "Chiarin"
+            ]
+        },
+        "progetti_generale": {
+            "numero_progetti_attivi": "9",
+            "numero_progetti_totali": "10",
+            "lista_progetti": [
+                "Fast Ink!",
+                "Eden TV 86",
+                "Project Bot",
+                "Project Volley",
+                "Project Website",
+                "Project Chiron",
+                "Project Multi Platform UWP",
+                "Project Multi Platform Electron",
+                "Project Ziz"
+            ]
+        },
+        "progetti": {
+            "fast_ink": {
+                "tipo_progetto": "App",
+                "descrizione_progetto": "Applicazione per il disegno e l'editing delle imamgini. Attualmente nello Store",
+                "capo_progetto": "Zancanaro",
+                "tipo_gestione": "Interno",
+                "link_repo": "https://gitlab.com/manuelelucchi/fastInk.git",
+                "inizio_sviluppo": "2016",
+                "fine_sviluppo": "2016",
+                "versione": "1.2",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Lucchi, Zancanaro, Chiarin",
+                "note": ""
+            },
+            "eden": {
+                "tipo_progetto": "App",
+                "descrizione_progetto": "Applicazione Companion sviluppata per Eden TV 86",
+                "capo_progetto": "Zancanaro",
+                "tipo_gestione": "Interno",
+                "link_repo": "https://gitlab.com/manuelelucchi/eden_86.git",
+                "inizio_sviluppo": "2016",
+                "fine_sviluppo": "Gennaio 2017",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Lucchi",
+                "note": ""
+            },
+            "project_bot": {
+                "tipo_progetto": "AI",
+                "descrizione_progetto": "Progetto di multipli Bot che eseguono diversi incarichi",
+                "capo_progetto": "Orfei",
+                "tipo_gestione": "Collaborazione",
+                "link_repo": "https://gitlab.com/manuelelucchi/Bot-Framework.git",
+                "inizio_sviluppo": "2016",
+                "fine_sviluppo": "In Corso",
+                "versione": "Beta",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Lucchi, Chiarin, Quinto, Greggio, Fantinato",
+                "note": "Al momento non sono Hostati"
+            },
+            "project_volley": {
+                "tipo_progetto": "App",
+                "descrizione_progetto": "Applicazione di pallavolo per la gestione di partite",
+                "capo_progetto": "Zanca",
+                "tipo_gestione": "Interno",
+                "link_repo": "https://gitlab.com/manuelelucchi/Project_Volley.git",
+                "inizio_sviluppo": "2016",
+                "fine_sviluppo": "In corso",
+                "versione": "Da vedere",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Lucchi, Zanca",
+                "note": ""
+            },
+            "project_website": {
+                "tipo_progetto": "Sito",
+                "descrizione_progetto": "Sito web del Team Perso",
+                "capo_progetto": "Lucchi",
+                "tipo_gestione": "Interna",
+                "link_repo": "https://gitlab.com/manuelelucchi/TeamPersoWebsites.git",
+                "inizio_sviluppo": "Gennaio 2017",
+                "fine_sviluppo": "8/02/2017",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Finito",
+                "membri": "Lucchi",
+                "note": ""
+            },
+            "project_chiron": {
+                "tipo_progetto": "Mixed Reality",
+                "descrizione_progetto": "Progetto protetto da NDA in collaborazione con l'Ospedale Civile di Udine utilizzando i Microsoft Hololens",
+                "capo_progetto": "Lucchi",
+                "tipo_gestione": "Collaborazione",
+                "link_repo": "https://gitlab.com/manuelelucchi/project_chiron.git",
+                "inizio_sviluppo": "Gennaio 2017",
+                "fine_sviluppo": "In Corso",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Lucchi",
+                "note": ""
+            },
+            "project_multi_platform_uwp": {
+                "tipo_progetto": "App",
+                "descrizione_progetto": "Editor/Generatore di file Json e in futuro XML che fornisce una visione ad albero del file, con la possibilità di editarlo e aggiungerne componenti. Sviluppato in UWP",
+                "capo_progetto": "Zanca",
+                "tipo_gestione": "Collaborazione",
+                "link_repo": "https://gitlab.com/manuelelucchi/Project-Multiplatform.git",
+                "inizio_sviluppo": "Febbraio 2017",
+                "fine_sviluppo": "In corso",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Lucchi, Zancanaro, Chiarin",
+                "note": ""
+            },
+            "project_multi_platform_electron": {
+                "tipo_progetto": "Programma",
+                "descrizione_progetto": "Editor/Generatore di file Json e in futuro XML che fornisce una visione ad albero del file, con la possibilità di editarlo e aggiungerne componenti. Sviluppato in Electron",
+                "capo_progetto": "Orfei",
+                "tipo_gestione": "Collaborazione",
+                "link_repo": "https://gitlab.com/manuelelucchi/Project-Multiplatform-Electron.git",
+                "inizio_sviluppo": "Febbraio 2017",
+                "fine_sviluppo": "In corso",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Orfei, Greggio, Fantinato, Quinto",
+                "note": ""
+            },
+            "project_ziz": {
+                "tipo_progetto": "Bot",
+                "descrizione_progetto": "Bot ad utilizzo interno, che spiega dettagli riguardanti team, progetti e altro",
+                "capo_progetto": "Orfei",
+                "tipo_gestione": "Interna",
+                "link_repo": "https://gitlab.com/manuelelucchi/Project_Ziz.git",
+                "inizio_sviluppo": "Marzo 2017",
+                "fine_sviluppo": "Da vedere",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Orfei, Lucchi, Zancanaro, Fantinato",
+                "note": ""
+            }
+        },
+        "membri": {
+            "lucchi": {
+                "mail": "manuelelucchi@live.com",
+                "username_gitlab": "manuelelucchi",
+                "nickname": "L",
+                "specialita": [
+                    ".NET",
+                    "UWP",
+                    "ASP.NET Core",
+                    "Mixed Reality"
+                ],
+                "argomenti_da_imparare": [
+                    "Mixed Reality",
+                    "IoT",
+                    "Websites"
+                ],
+                "progetti_assegnati": [
+                    "Coming soon"
+                ],
+                "ruolo": "CEO"
+            },
+            "zancanaro": {
+                "mail": "marco.zancanaro123@outlook.com",
+                "username_gitlab": "marcoZ",
+                "nickname": "Wemmark",
+                "specialita": [
+                    "UWP",
+                    ".NET"
+                ],
+                "argomenti_da_imparare": [
+                    "Electron",
+                    "Ionic",
+                    "UWP"
+                ],
+                "progetti_assegnati": [
+                    "Coming soon"
+                ],
+                "ruolo": "Chief Applications & Programs Officer"
+            },
+            "orfei": {
+                "mail": "samuele.orfei@outlook.it",
+                "username_gitlab": "fufoed",
+                "nickname": "Fei",
+                "specialita": [
+                    "Bot",
+                    "Cortana Skills",
+                    "AI"
+                ],
+                "argomenti_da_imparare": [
+                    "AI",
+                    "Cloud",
+                    "Deep Learning"
+                ],
+                "progetti_assegnati": [
+                    "Coming soon"
+                ],
+                "ruolo": "Chief AI & Cloud Officer"
+            },
+            "fantinato": {
+                "mail": "fantinato.filippo99@gmail.com",
+                "username_gitlab": "filippofantinato",
+                "nickname": "pippo",
+                "specialita": [
+                    "Electron",
+                    "Websites"
+                ],
+                "argomenti_da_imparare": [
+                    "N/A"
+                ],
+                "progetti_assegnato": [
+                    "Coming Soon"
+                ],
+                "ruolo": "Software Developer Collaborators"
+            },
+            "greggio": {
+                "mail": "nico.greggio@gmail.com",
+                "username_gitlab": "faesant",
+                "nickname": "greg",
+                "specialita": [
+                    "Electron",
+                    "Websites"
+                ],
+                "argomenti_da_imparare": [
+                    "N/A"
+                ],
+                "progetti_assegnati": [
+                    "Coming soon"
+                ],
+                "ruolo": "Software Developer Collaborators"
+            },
+            "quinto": {
+                "mail": "tommaso.quinto@live.it",
+                "username_gitlab": "tommasoquinto",
+                "nickname": "Tommy",
+                "specialita": [
+                    "N/A"
+                ],
+                "argomenti_da_imparare": [
+                    "N/A"
+                ],
+                "progetti_assegnati": [
+                    "Coming soon"
+                ],
+                "ruolo": "Software Developer Collaborators"
+            },
+            "chiarin": {
+                "mail": "marco.chiarin1999@gmail.com",
+                "username_gitlab": "justpanda",
+                "nickname": "panda",
+                "specialita": [
+                    "UWP",
+                    ".NET"
+                ],
+                "argomenti_da_imparare": [
+                    "N/A"
+                ],
+                "progetti_assegnati": [
+                    "Coming soon"
+                ],
+                "ruolo": "Software Developer Collaborators"
+            }
+        }
+    }
+}
