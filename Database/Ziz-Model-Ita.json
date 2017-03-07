@@ -20,6 +20,9 @@
       "name": "easter_egg"
     },
     {
+      "name": "email"
+    },
+    {
       "name": "find"
     },
     {
@@ -109,7 +112,13 @@
     {
       "text": "what's your email?",
       "intent": "GetInformation",
-      "entities": []
+      "entities": [
+        {
+          "entity": "email",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
     },
     {
       "text": "multiplatform uwp",
@@ -118,11 +127,6 @@
         {
           "entity": "project::uwp",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -152,7 +156,13 @@
     {
       "text": "progetti in corso",
       "intent": "GetInformation",
-      "entities": []
+      "entities": [
+        {
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
     },
     {
       "text": "zancanaro",
@@ -172,11 +182,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 5,
           "endPos": 5
         }
       ]
@@ -184,7 +189,13 @@
     {
       "text": "ho bisogno di informazioni sul team perso",
       "intent": "GetInformation",
-      "entities": []
+      "entities": [
+        {
+          "entity": "Team_Perso",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
     },
     {
       "text": "in cosa consiste il progetto bot?",
@@ -233,12 +244,24 @@
     {
       "text": "i want to know more about team perso",
       "intent": "GetInformation",
-      "entities": []
+      "entities": [
+        {
+          "entity": "Team_Perso",
+          "startPos": 6,
+          "endPos": 7
+        }
+      ]
     },
     {
       "text": "i need information about bot project",
       "intent": "GetInformation",
-      "entities": []
+      "entities": [
+        {
+          "entity": "project::bot",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
     },
     {
       "text": "progetto multiplatform uwp",
@@ -247,11 +270,6 @@
         {
           "entity": "project::uwp",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -259,7 +277,13 @@
     {
       "text": "i need information about team perso",
       "intent": "GetInformation",
-      "entities": []
+      "entities": [
+        {
+          "entity": "Team_Perso",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
     },
     {
       "text": "chiarin",
@@ -279,11 +303,6 @@
         {
           "entity": "people::Lucchi",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -295,11 +314,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -322,11 +336,6 @@
         {
           "entity": "people::Lucchi",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -371,11 +380,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -398,16 +402,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -419,11 +413,6 @@
         {
           "entity": "project::electron",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "project::electron",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -446,11 +435,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -484,11 +468,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -643,11 +622,6 @@
         {
           "entity": "project::electron",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::electron",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -681,16 +655,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -779,11 +743,6 @@
         {
           "entity": "project::electron",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::electron",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -839,11 +798,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -866,11 +820,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -882,11 +831,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -945,8 +889,8 @@
       "entities": [
         {
           "entity": "people::Zancanaro",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 4,
+          "endPos": 4
         },
         {
           "entity": "project::volley",
@@ -1008,7 +952,7 @@
         },
         {
           "entity": "project::electron",
-          "startPos": 2,
+          "startPos": 1,
           "endPos": 2
         }
       ]
@@ -1020,11 +964,6 @@
         {
           "entity": "people::Fantinato",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1036,11 +975,6 @@
         {
           "entity": "people::Chiarin",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1068,11 +1002,6 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1100,11 +1029,6 @@
         {
           "entity": "people::Quinto",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1187,11 +1111,6 @@
         {
           "entity": "project::uwp",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1203,11 +1122,6 @@
         {
           "entity": "project::uwp",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -1230,11 +1144,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -1246,11 +1155,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -1284,11 +1188,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1322,11 +1221,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1360,11 +1254,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1376,11 +1265,6 @@
         {
           "entity": "people::Chiarin",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1392,11 +1276,6 @@
         {
           "entity": "people::Greggio",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1408,11 +1287,6 @@
         {
           "entity": "people::Fantinato",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1424,11 +1298,6 @@
         {
           "entity": "people::Greggio",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1440,11 +1309,6 @@
         {
           "entity": "people::Quinto",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -1548,11 +1412,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -1569,11 +1428,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 6,
-          "endPos": 6
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 7,
           "endPos": 7
         },
         {
@@ -1590,11 +1444,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -1638,11 +1487,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -1654,11 +1498,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -1675,16 +1514,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1701,16 +1530,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1744,11 +1563,6 @@
         {
           "entity": "project::eden tv 86",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::eden tv 86",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -1771,11 +1585,6 @@
         {
           "entity": "people::Chiarin",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1820,11 +1629,6 @@
         {
           "entity": "people::Quinto",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1836,11 +1640,6 @@
         {
           "entity": "people::Greggio",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1852,11 +1651,6 @@
         {
           "entity": "people::Fantinato",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1890,11 +1684,6 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1906,11 +1695,6 @@
         {
           "entity": "people::Lucchi",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1922,11 +1706,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -1965,28 +1744,12 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 6,
-          "endPos": 6
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 7,
           "endPos": 7
         },
         {
           "entity": "project::volley",
           "startPos": 3,
           "endPos": 3
-        }
-      ]
-    },
-    {
-      "text": "informazioni sul progetto da chi è fatto il progetto volley?",
-      "intent": "GetInformation",
-      "entities": [
-        {
-          "entity": "project::volley",
-          "startPos": 9,
-          "endPos": 9
         }
       ]
     },
@@ -2019,11 +1782,6 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -2040,11 +1798,6 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -2093,11 +1846,6 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 4,
           "endPos": 4
         },
         {
@@ -2114,11 +1862,6 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 4,
           "endPos": 4
         },
         {
@@ -2136,6 +1879,11 @@
           "entity": "people::Zancanaro",
           "startPos": 3,
           "endPos": 3
+        },
+        {
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2147,6 +1895,11 @@
           "entity": "people::Zancanaro",
           "startPos": 3,
           "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2158,6 +1911,11 @@
           "entity": "people::Zancanaro",
           "startPos": 3,
           "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2168,12 +1926,12 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Zancanaro",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2184,12 +1942,12 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Zancanaro",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2200,12 +1958,12 @@
         {
           "entity": "people::Orfei",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Orfei",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2233,6 +1991,11 @@
           "entity": "people::Orfei",
           "startPos": 3,
           "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2243,12 +2006,12 @@
         {
           "entity": "people::Orfei",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Orfei",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2259,12 +2022,12 @@
         {
           "entity": "people::Orfei",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Orfei",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2276,6 +2039,11 @@
           "entity": "people::Orfei",
           "startPos": 3,
           "endPos": 3
+        },
+        {
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2287,6 +2055,11 @@
           "entity": "people::Orfei",
           "startPos": 2,
           "endPos": 2
+        },
+        {
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2297,12 +2070,12 @@
         {
           "entity": "people::Orfei",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Orfei",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2313,12 +2086,12 @@
         {
           "entity": "people::Lucchi",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Lucchi",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2330,6 +2103,11 @@
           "entity": "people::Lucchi",
           "startPos": 3,
           "endPos": 3
+        },
+        {
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2341,6 +2119,11 @@
           "entity": "people::Lucchi",
           "startPos": 3,
           "endPos": 3
+        },
+        {
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2351,12 +2134,12 @@
         {
           "entity": "people::Lucchi",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Lucchi",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "current_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2368,6 +2151,11 @@
           "entity": "people::Lucchi",
           "startPos": 3,
           "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2379,6 +2167,11 @@
           "entity": "people::Lucchi",
           "startPos": 3,
           "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2389,12 +2182,12 @@
         {
           "entity": "people::Lucchi",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Lucchi",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2405,12 +2198,12 @@
         {
           "entity": "people::Lucchi",
           "startPos": 3,
-          "endPos": 3
+          "endPos": 4
         },
         {
-          "entity": "people::Lucchi",
-          "startPos": 4,
-          "endPos": 4
+          "entity": "total_project",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     },
@@ -2425,7 +2218,7 @@
         },
         {
           "entity": "project::electron",
-          "startPos": 2,
+          "startPos": 1,
           "endPos": 2
         }
       ]
@@ -2437,11 +2230,6 @@
         {
           "entity": "project::electron",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::electron",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -2453,11 +2241,6 @@
         {
           "entity": "project::electron",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::electron",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -2469,11 +2252,6 @@
         {
           "entity": "project::uwp",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -2485,11 +2263,6 @@
         {
           "entity": "project::uwp",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -2555,11 +2328,6 @@
         {
           "entity": "people::Lucchi",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -2576,41 +2344,21 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 13,
-          "endPos": 13
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 14,
           "endPos": 14
         },
         {
           "entity": "people::Lucchi",
           "startPos": 7,
-          "endPos": 7
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 8,
           "endPos": 8
         },
         {
           "entity": "people::Chiarin",
           "startPos": 10,
-          "endPos": 10
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 11,
           "endPos": 11
         },
         {
           "entity": "project::uwp",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -2622,11 +2370,6 @@
         {
           "entity": "project::uwp",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -2676,11 +2419,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -2692,21 +2430,11 @@
         {
           "entity": "people::Lucchi",
           "startPos": 6,
-          "endPos": 6
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 7,
           "endPos": 7
         },
         {
           "entity": "project::fast ink",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -2718,11 +2446,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -2745,11 +2468,6 @@
         {
           "entity": "project::uwp",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -2860,11 +2578,6 @@
         {
           "entity": "project::electron",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "project::electron",
-          "startPos": 5,
           "endPos": 5
         }
       ]
@@ -2887,11 +2600,6 @@
         {
           "entity": "project::uwp",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "project::uwp",
-          "startPos": 5,
           "endPos": 5
         }
       ]
@@ -2903,11 +2611,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -3051,11 +2754,6 @@
         {
           "entity": "project::fast ink",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "project::fast ink",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -3089,11 +2787,6 @@
         {
           "entity": "people::Fantinato",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3105,11 +2798,6 @@
         {
           "entity": "people::Fantinato",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3143,11 +2831,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3159,11 +2842,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3262,11 +2940,6 @@
         {
           "entity": "people::Lucchi",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3322,11 +2995,6 @@
         {
           "entity": "people::Quinto",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3338,11 +3006,6 @@
         {
           "entity": "people::Quinto",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3398,11 +3061,6 @@
         {
           "entity": "people::Greggio",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3414,11 +3072,6 @@
         {
           "entity": "people::Greggio",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3463,11 +3116,6 @@
         {
           "entity": "people::Chiarin",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3479,11 +3127,6 @@
         {
           "entity": "people::Chiarin",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -3594,41 +3237,21 @@
         {
           "entity": "people::Fantinato",
           "startPos": 11,
-          "endPos": 11
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 12,
           "endPos": 12
         },
         {
           "entity": "people::Quinto",
           "startPos": 14,
-          "endPos": 14
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 15,
           "endPos": 15
         },
         {
           "entity": "people::Greggio",
           "startPos": 8,
-          "endPos": 8
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 9,
           "endPos": 9
         },
         {
           "entity": "people::Orfei",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 6,
           "endPos": 6
         },
         {
@@ -3687,11 +3310,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -3703,11 +3321,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -3719,21 +3332,11 @@
         {
           "entity": "people::Lucchi",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 6,
           "endPos": 6
         },
         {
           "entity": "people::Orfei",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -3745,21 +3348,11 @@
         {
           "entity": "people::Lucchi",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 6,
           "endPos": 6
         },
         {
           "entity": "people::Orfei",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -3771,21 +3364,11 @@
         {
           "entity": "people::Lucchi",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 6,
           "endPos": 6
         },
         {
           "entity": "people::Orfei",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -3797,21 +3380,11 @@
         {
           "entity": "people::Lucchi",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 6,
           "endPos": 6
         },
         {
           "entity": "people::Orfei",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -3824,11 +3397,6 @@
           "entity": "people::Fantinato",
           "startPos": 6,
           "endPos": 6
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 10,
-          "endPos": 10
         },
         {
           "entity": "people::Zancanaro",
@@ -3854,6 +3422,11 @@
           "entity": "people::Orfei",
           "startPos": 2,
           "endPos": 2
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 10,
+          "endPos": 10
         }
       ]
     },
@@ -3898,7 +3471,7 @@
           "endPos": 8
         },
         {
-          "entity": "people::Fantinato",
+          "entity": "people::Quinto",
           "startPos": 10,
           "endPos": 10
         },
@@ -3926,41 +3499,21 @@
         {
           "entity": "people::Fantinato",
           "startPos": 7,
-          "endPos": 7
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 8,
           "endPos": 8
         },
         {
           "entity": "people::Quinto",
           "startPos": 13,
-          "endPos": 13
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 14,
           "endPos": 14
         },
         {
           "entity": "people::Greggio",
           "startPos": 10,
-          "endPos": 10
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 11,
           "endPos": 11
         },
         {
           "entity": "people::Orfei",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -4008,41 +3561,21 @@
         {
           "entity": "people::Fantinato",
           "startPos": 10,
-          "endPos": 10
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 11,
           "endPos": 11
         },
         {
           "entity": "people::Quinto",
           "startPos": 13,
-          "endPos": 13
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 14,
           "endPos": 14
         },
         {
           "entity": "people::Greggio",
           "startPos": 7,
-          "endPos": 7
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 8,
           "endPos": 8
         },
         {
           "entity": "people::Orfei",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -4059,11 +3592,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -4075,11 +3603,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4113,11 +3636,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 1,
           "endPos": 1
         }
       ]
@@ -4129,11 +3647,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4145,11 +3658,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4183,11 +3691,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4210,11 +3713,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4237,11 +3735,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4253,33 +3746,7 @@
         {
           "entity": "Team_Perso",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 6,
           "endPos": 6
-        }
-      ]
-    },
-    {
-      "text": "orfei è stupido?",
-      "intent": "GetInformation",
-      "entities": [
-        {
-          "entity": "people::Quinto",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 1,
-          "endPos": 1
         }
       ]
     },
@@ -4312,11 +3779,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4328,11 +3790,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4366,11 +3823,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4382,11 +3834,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 6,
           "endPos": 6
         }
       ]
@@ -4420,11 +3867,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 6,
           "endPos": 6
         }
       ]
@@ -4436,11 +3878,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 6,
           "endPos": 6
         }
       ]
@@ -4474,11 +3911,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 5,
           "endPos": 5
         }
       ]
@@ -4512,11 +3944,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 6,
           "endPos": 6
         }
       ]
@@ -4550,11 +3977,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4566,11 +3988,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4604,11 +4021,6 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4620,11 +4032,6 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4647,11 +4054,6 @@
         {
           "entity": "people::Chiarin",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4663,11 +4065,6 @@
         {
           "entity": "people::Chiarin",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4701,11 +4098,6 @@
         {
           "entity": "people::Lucchi",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4717,11 +4109,6 @@
         {
           "entity": "people::Lucchi",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4755,11 +4142,6 @@
         {
           "entity": "people::Quinto",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4771,11 +4153,6 @@
         {
           "entity": "people::Quinto",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4809,11 +4186,6 @@
         {
           "entity": "people::Fantinato",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -8797,11 +8169,6 @@
         {
           "entity": "people::Quinto",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -8818,11 +8185,6 @@
         {
           "entity": "people::Quinto",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -8839,11 +8201,6 @@
         {
           "entity": "people::Greggio",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -8892,11 +8249,6 @@
         {
           "entity": "people::Greggio",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -8913,11 +8265,6 @@
         {
           "entity": "people::Fantinato",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -8966,11 +8313,6 @@
         {
           "entity": "people::Fantinato",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -8987,16 +8329,6 @@
         {
           "entity": "people::Nunzio",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Nunzio",
-          "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "people::Nunzio",
-          "startPos": 6,
           "endPos": 6
         },
         {
@@ -9061,11 +8393,6 @@
         {
           "entity": "people::Nunzio",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Nunzio",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -9082,11 +8409,6 @@
         {
           "entity": "people::Nunzio",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Nunzio",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -9103,17 +8425,4665 @@
         {
           "entity": "people::Nunzio",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Nunzio",
-          "startPos": 5,
           "endPos": 5
         },
         {
           "entity": "total_project",
           "startPos": 1,
           "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "project eden tv 86 gestito da manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "project::eden tv 86",
+          "startPos": 1,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "project eden tv 86 gestito da lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "project::eden tv 86",
+          "startPos": 1,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "project eden tv 86 gestito da manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "project::eden tv 86",
+          "startPos": 1,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "quanti progetti ha seguito greg?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "total_project",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "quanti progetti ha seguito fei?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "total_project",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "quanti progetti ha seguito l?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "total_project",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "quanti progetti ha seguito wemmark?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "total_project",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "quanti progetti ha seguito mark?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "total_project",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "quanti progetti ha seguito justpanda?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "total_project",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "informazioni su project eden 86 seguito da manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "project::eden tv 86",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "dimmi qualcosa su project eden seguito da manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "project::eden tv 86",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "informazioni sul progetto chiron seguito da lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "project::chiron",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "quanti progetti sono attivi?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "current_project",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "manuele lucchi, orfei samuele, marco zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 0,
+          "endPos": 1
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "nunzio, samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "salvatore, samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "savà, orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "sava, orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "nunzio salvatore, orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "nunzio salatore, samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "salvatore nunzio, orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "nunzio salvatore , orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "sava nunzio salvatore , orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "sava salvatore nunzio, orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "salvatore nunzio, samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "nunzio sava salvatore , orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "salvatore nunzio sava, orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio salvatore sava, samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio salvatore sava, orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio salvatore sava, orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio sava salvatore, orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio sava salvatore , samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio sava salvatore, samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio salvatore savà, samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio salvatore savà, orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio salvatore savà , samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio salvatore savà, orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio savà salvatore , orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio savà salvatore , samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio savà salvatore, samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "salvatore savà nunzio , samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nunzio savà salvatore , orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "salvatore savà nunzio , samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Nunzio",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samule e filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei e filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele orfei e fantinato filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele orfei e filippo fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele orfei e filippo fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato e orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato e samule",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele e fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo e samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo e orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei e fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato filippo e orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo fantinato e samule orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo fantinato e orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco z",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di tommaso",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di quinto",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di quinto tommaso",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di tommaso quinto",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazione sui progetti di orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di savà nunzio salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di sava nunzio salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di salvatore nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazione sui progetti di nunzio salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di sava",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di savà",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di nunzio sava salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di nunzio salvatore savà",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di nunzio salvatore sava",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 4,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e fantinato filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e filippo fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e filippo fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e fantinato filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e fantinato filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e fantinato filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazione sui progetti di manuele lucchi e filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e filippo fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazione sui progetti di filippo e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato filippo e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato filippo e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato filippo e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di fantinato filippo e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo fantinato e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo fantinato e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo fantinato e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di filippo fantinato e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e zancanaro marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e marco zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e zancanaro marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e marco zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e zancanaro marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e zancanaro marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e marco zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro marco e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro marco e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro marco e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di zancanaro marco e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco zancanaro e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco zancanaro e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco zancanaro e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco zancanaro e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele orfei e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele orfei e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele orfei e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di samuele e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei samuele e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei samuele e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei samuele e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di orfei samuele e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Orfei",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di greggio nicolo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di nicolo greggio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di nicolo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di greggio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e chiarin marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e marco chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e marco chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi manuele e chiarin marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e chiarin marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti si manuele lucchi e chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele lucchi e marco chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e marco chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di manuele e chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin marco e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin marco e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco chiarin e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin marco e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco chiarin e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di marco chiarin e lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin e manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin e lucchi manule",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin e lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di chiarin marco e manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 7,
+          "endPos": 8
+        },
+        {
+          "entity": "people::Chiarin",
+          "startPos": 4,
+          "endPos": 5
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e tomaso",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "informazioni sui progetti di lucchi e quinto",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "people::Lucchi",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "current_project",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
         }
       ]
     }
