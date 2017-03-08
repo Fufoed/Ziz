@@ -12,7 +12,7 @@ var fs = require('fs');
 
 var request = require('/BOT/NODE/node_modules/request');
 
-var database = require('./database');
+var database = require('./database.json');
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -38,13 +38,13 @@ var dialogs = ['Nothing', 'Root', 'Team', 'AllPeople', 'TotalProject', 'CurrentP
 
 var bing_apiKey = 'b0c56d5c2b1044ddb217b3700b3c4587';
 
-var luis_apiKey = 'd40bdee4551f470286b7a9c1fc5ff10e';
+var luis_apiKey = 'a0df3941073f41ea9b5caae95c9c138b';
 
-var model = '';
+var model = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/ccc72be9-e3f9-4935-8b69-8c67ac9dc956?subscription-key=a0df3941073f41ea9b5caae95c9c138b&verbose=true';
 
 var clientId = 'test-app';
 
-var recognize = botbuilder.LuisRecognizer(model);
+var recognize = new botbuilder.LuisRecognizer(model);
 
 //----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -117,11 +117,11 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
             var email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
             if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !chiron && !eden_tv_86 && !bot_project && !current_project && !total_project && !total_people && !email) {
-                session.beginDialog('Nothing');
+                session.beginDialog('NothingTemp');
             }
         }
     ])
-    .matches('none', [
+    .matches('None', [
         function(session, args, results) {
             session.send("Wrong action");
             //textToSpeech("Wrong action", "error.wav", accessToken, session, callback);
@@ -131,17 +131,40 @@ bot.dialog('Root', new botbuilder.IntentDialog({
 
 server.post('/api/messages', connector.listen());
 
-bot.dialog('Nothing', new botbuilder.IntentDialog({
+bot.dialog('NothingTemp', [
+    function(session) {
+        session.send("Scegli una delle opzioni");
+        var nothingCards = CreateNothingCards();
+        var reply = new botbuilder.Message(session)
+            .attachmentLayout(botbuilder.AttachmentLayout.carousel)
+            .attachments(nothingCards);
+
+        botbuilder.Prompts.text(session, reply);
+    },
+    function(session, results) {
+        if (results.response == dialogs[2]) {
+            session.beginDialog('TeamTemp');
+        } else {
+            if (results.response == dialogs[3]) {
+                session.beginDialog('AllPeopleTemp');
+            } else {
+                if (results.response == dialogs[4]) {
+                    session.beginDialog('TotalProjectTemp');
+                } else {
+                    if (results.response == dialogs[5]) {
+                        session.beginDialog('CurrentProjectTemp');
+                    }
+                }
+            }
+        }
+    }
+])
+
+/*bot.dialog('Nothing', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
-        function(session, args, results) {
-            session.send("Scegli una delle opzioni");
-            var nothingCards = CreateNothingCards();
-            var reply = new builder.Message(session)
-                .attachmentLayout(builder.AttachmentLayout.carousel)
-                .attachments(nothingCards);
-
-            botbuilder.Prompts.text(session, reply);
+        function(session, args, results)
+        {
             var current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
@@ -165,44 +188,53 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
                     }
                 }
             }
-        },
-        function(session, results) {
-            if (results.response == dialogs[2]) {
-                session.beginDialog('Team');
-            } else {
-                if (results.response == dialogs[3]) {
-                    session.beginDialog('AllPeople');
-                } else {
-                    if (results.response == dialogs[4]) {
-                        session.beginDialog('TotalProject');
-                    } else {
-                        if (results.response == dialogs[5]) {
-                            session.beginDialog('CurrentProject');
-                        }
-                    }
-                }
-            }
         }
+        
     ])
-    .matches('none', [
+    .matches('None', [
         function(session, results, args) {
             session.send("Wrong action");
             session.beginDialog('Root');
         }
     ])
-)
+)*/
 
-bot.dialog('Team', new botbuilder.IntentDialog({
+bot.dialog('TeamTemp', [
+    function(session) {
+        session.send("Cosa vuoi sapere del team?");
+        var teamCards = CreateTeamCards();
+        var reply = new botbuilder.Message(session)
+            .attachmentLayout(botbuilder.AttachmentLayout.carousel)
+            .attachments(teamCards);
+
+        botbuilder.Prompts.text(session, reply);
+    },
+    function(session, results) {
+        switch (results.response) {
+            case dialogs[3]:
+                session.beginDialog('AllPeopleTemp');
+                break;
+            case dialogs[4]:
+                session.beginDialog('TotalProjectTemp');
+                break;
+            case dialogs[5]:
+                session.beginDialog('CurrentProjectTemp');
+                break;
+            case dialogs[6]:
+                session.beginDialog('AllRoleTemp');
+                break;
+            case dialogs[7]:
+                session.beginDialog('AllResponsabilityTemp');
+                break;
+        }
+    }
+])
+
+/*bot.dialog('Team', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
-            session.send("Cosa vuoi sapere del team?");
-            var teamCards = CreateTeamCards();
-            var reply = new botbuilder.Message(session)
-                .AttachmentLayout(botbuilder.attachmentLayout.carousel)
-                .attachments(teamCards);
-
-            botbuilder.Prompts.text(session, reply);
+            
             var role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
             var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'Responsibility');
             var current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
@@ -227,49 +259,69 @@ bot.dialog('Team', new botbuilder.IntentDialog({
                     }
                 }
             }
-        },
-        function(session, results) {
-            if (results.response == dialogs[3]) {
-                session.beginDialog('AllPeople');
-            } else {
-                if (results.reponse == dialogs[4]) {
-                    session.beginDialog('TotalProject');
-                } else {
-                    if (results.response == dialogs[5]) {
-                        session.beginDialog('CurrentProject')
-                    } else {
-                        if (results.response == dialogs[6]) {
-                            session.beginDialog('AllRole');
-                        } else {
-                            if (results.response == dialogs[7]) {
-                                session.beginDialog('AllResponsability');
-                            }
-                        }
-                    }
-                }
-            }
         }
     ])
-    .matches('none', [
+    .matches('None', [
         function(session, args, results) {
             session.send("Wrong action");
             session.beginDialog('Root');
         }
     ])
-)
+)*/
 
-bot.dialog('AllRole', new botbuilder.IntentDialog({
+bot.dialog('AllRoleTemp', [
+    function(session) {
+        session.send("Di chi vuoi sapere il ruolo?");
+        var roleCards = CreateRoleCards();
+        var reply = new botbuilder.Message(session)
+            .attachmentLayout(botbuilder.AttachmentLayout.carousel)
+            .attachments(roleCards)
+
+        botbuilder.Prompts.text(session, reply);
+    },
+    function(session, results) {
+        switch (results.response) {
+            case 'Orfei':
+                var OrfeiRole = getOrfeiRole(session, database);
+                session.send(OrfeiRole);
+                break;
+            case 'Lucchi':
+                var LucchiRole = getLucchiRole(session, database);
+                session.send(LucchiRole);
+                break;
+            case 'Zancanaro':
+                var ZancanaroRole = getZancanaroRole(session, database);
+                session.send(ZancanaroRole);
+                break;
+            case 'Fantinato':
+                var FantinatoRole = getFantinatoRole(session, database);
+                session.send(FantinatoRole);
+                break;
+            case 'Chiarin':
+                var ChiarinRole = getChiarinRole(session, database);
+                session.send(ChiarinRole);
+                break;
+            case 'Quinto':
+                var QuintoRole = getQuintoRole(session, database);
+                session.send(QuintoRole);
+                break;
+            case 'Greggio':
+                var GreggioRole = getGreggioRole(session, database);
+                session.send(GreggioRole);
+                break;
+            case 'Nunzio':
+                var NunzioRole = getNunzioRole(session, database);
+                session.send(NunzioRole);
+                break;
+        }
+    }
+])
+
+/*bot.dialog('AllRole', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
-            var parsed = JSON.parse(database);
-            session.send("Di chi vuoi sapere il ruolo?");
-            var roleCards = CreateRoleCards();
-            var reply = new botbuilder.Message(session)
-                .AttachmentLayout(botbuilder.AttachmentLayout.carousel)
-                .attachments(roleCards)
-
-            botbuilder.Prompts.text(session, reply);
+            
             var orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
             var lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
             var zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
@@ -283,31 +335,31 @@ bot.dialog('AllRole', new botbuilder.IntentDialog({
                 session.send(NunzioRole);
             } else {
                 if (!orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && fantinato && !nunzio) {
-                    var FantinatoRole = getFantinatoRole(session, parsed);
+                    var FantinatoRole = getFantinatoRole(session, database);
                     session.send(FantinatoRole);
                 } else {
                     if (!orfei && !lucchi && !zancanaro && !chiarin && !greggio && quinto && !fantinato && !nunzio) {
-                        var QuintoRole = getQuintoRole(session, parsed);
+                        var QuintoRole = getQuintoRole(session, database);
                         session.send(QuintoRole);
                     } else {
                         if (!orfei && !lucchi && !zancanaro && !chiarin && greggio && !quinto && !fantinato && !nunzio) {
-                            var GreggioRole = getGreggioRole(session, parsed);
+                            var GreggioRole = getGreggioRole(session, database);
                             session.send(GreggioRole);
                         } else {
                             if (!orfei && !lucchi && !zancanaro && chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                var ChiarinRole = getChiarinRole(session, parsed);
+                                var ChiarinRole = getChiarinRole(session, database);
                                 session.send(ChiarinRole);
                             } else {
                                 if (!orfei && !lucchi && zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                    var ZancanaroRole = getZancanaroRole(session, parsed);
+                                    var ZancanaroRole = getZancanaroRole(session, database);
                                     session.send(ZancanaroRole);
                                 } else {
                                     if (!orfei && lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                        var LucchiRole = getLucchiRole(session, parsed);
+                                        var LucchiRole = getLucchiRole(session, database);
                                         session.send(LucchiRole);
                                     } else {
                                         if (orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                            var OrfeiRole = getOrfeiRole(session, parsed);
+                                            var OrfeiRole = getOrfeiRole(session, database);
                                             session.send(OrfeiRole);
                                         }
                                     }
@@ -317,205 +369,129 @@ bot.dialog('AllRole', new botbuilder.IntentDialog({
                     }
                 }
             }
-        },
-        function(session, results) {
-            if (results.response == 'Orfei') {
-                var OrfeiRole = getOrfeiRole(session, parsed);
-                session.send(OrfeiRole);
-            } else {
-                if (results.response == 'Lucchi') {
-                    var LucchiRole = getLucchiRole(session, parsed);
-                    session.send(LucchiRole);
-                } else {
-                    if (results.response == 'Fantinato') {
-                        var FantinatoRole = getFantinatoRole(session, parsed);
-                        session.send(FantinatoRole);
-                    } else {
-                        if (results.response == 'Zancanaro') {
-                            var ZancanaroRole = getZancanaroRole(session, parsed);
-                            session.send(ZancanaroRole);
-                        } else {
-                            if (results.response == 'Greggio') {
-                                var GreggioRole = getGreggioRole(session, parsed);
-                                session.send(GreggioRole);
-                            } else {
-                                if (results.response == 'Quinto') {
-                                    var QuintoRole = getQuintoRole(session, parsed);
-                                    session.send(QuintoRole);
-                                } else {
-                                    if (results.response == 'Chiarin') {
-                                        var ChiarinRole = getChiarinRole(session, parsed);
-                                        session.send(ChiarinRole);
-                                    } else {
-                                        if (results.response == 'Nunzio') {
-                                            var NunzioRole = getNunzioRole(session, parsed);
-                                            session.send(NunzioRole);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     ])
-    .matches('none', [
+    .matches('None', [
         function(session, args, results) {
             session.send("Wrong action");
             session.beginDialog('Root');
         }
     ])
-)
+)*/
 
-bot.dialog('AllPeople', new botbuilder.IntentDialog({
-        recognizers: [recognize]
-    }).matches('GetInformation', [
-        function(session, args, results) {
-            var parsed = JSON.parse(database);
-            session.send("Queste sono le persone appartenenti al team perso. Vuoi sapere altro?")
-            var PeopleCards = CreatePeopleCards();
-            var reply = botbuilder.Message(session)
-                .AttachmentLayout(botbuilder.AttachmentLayout.carousel)
-                .attachments(PeopleCards)
+bot.dialog('AllPeopleTemp', [
+    function(session) {
+        session.send("Queste sono le persone appartenenti al team perso. Vuoi sapere altro?")
+        var PeopleCards = CreatePeopleCards();
+        var reply = new botbuilder.Message(session)
+            .attachmentLayout(botbuilder.AttachmentLayout.carousel)
+            .attachments(PeopleCards)
 
-            botbuilder.Prompts.text(session, reply);
-
-            var role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
-            var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'Responsibility');
-            var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
-            var orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
-            var lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
-            var zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
-            var chiarin = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::chiarin');
-            var greggio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::greggio');
-            var quinto = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::quinto');
-            var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
-            var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
-            if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                session.send("Inserire una delle opzioni sopra riportate");
-                session.beginDialog('AllPeople');
+        botbuilder.Prompts.text(session, reply);
+    },
+    function(session, results) {
+        if (results.response == "OrfeiRuolo") {
+            var OrfeiRuolo = getOrfeiRole(session, database);
+            session.send(OrfeiRuolo);
+            session.beginDialog('AllPeopleTemp');
+        } else {
+            if (results.response == "OrfeiInfo") {
+                var OrfeiInformazioni = getOrfeiInformation(session, database);
+                session.send(OrfeiInformazioni);
+                session.beginDialog('AllPeopleTemp');
             } else {
-                if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && nunzio) {
-                    var NunzioTemp = getNunzioInformation(session, parsed);
-                    session.send(NunzioTemp);
+                if (results.response == "OrfeiResponsabilità") {
+                    var OrfeiRes = getOrfeiResponsability(session, database);
+                    session.send(OrfeiRes);
+                    session.beginDialog('AllPeopleTemp');
                 } else {
-                    if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && fantinato && !nunzio) {
-                        var FantinatoTemp = getFantinatoInformation(session, parsed);
-                        session.send(FantinatoTemp);
+                    if (results.response == "OrfeiProgetti") {
+                        var OrfeiProject = getOrfeiProjects(session, database);
+                        session.send(OrfeiProject);
+                        session.beginDialog('AllPeopleTemp');
                     } else {
-                        if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && quinto && !fantinato && !nunzio) {
-                            var QuintoTemp = getQuintoInformation(session, parsed);
-                            session.send(QuintoTemp);
+                        if (results.response == "LucchiRuolo") {
+                            var LucchiRuolo = getLucchiRole(session, database);
+                            session.send(LucchiRuolo);
+                            session.beginDialog('AllPeopleTemp');
                         } else {
-                            if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && greggio && !quinto && !fantinato && !nunzio) {
-                                var GreggioTemp = getGreggioInformation(session, parsed);
-                                session.send(GreggioTemp);
+                            if (results.response == "LucchiInfo") {
+                                var LucchiInformazioni = getLucchiInformation(session, database);
+                                session.send(LucchiInformazioni);
+                                session.beginDialog('AllPeopleTemp');
                             } else {
-                                if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                    var ChiarinTemp = getChiarinInformation(session, parsed);
-                                    session.send(ChiarinTemp);
+                                if (results.response == "LucchiResponsabilità") {
+                                    var LucchiRes = getLucchiResponsability(session, database);
+                                    session.send(LucchiRes);
+                                    session.beginDialog('AllPeopleTemp');
                                 } else {
-                                    if (!role && !responsability && !total_project && !orfei && !lucchi && zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                        var ZancanaroTemp = getZancanaroInformation(session, parsed);
-                                        session.send(ZancanaroTemp);
+                                    if (results.response == "LucchiProgetti") {
+                                        var LucchiProjects = getLucchiProjects(session, database);
+                                        session.send(LucchiProjects);
+                                        session.beginDialog('AllPeopleTemp');
                                     } else {
-                                        if (!role && !responsability && !total_project && !orfei && lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                            var LucchiTemp = getLucchiInformation(session, parsed);
-                                            session.send(LucchiTemp);
+                                        if (results.response == "ZancanaroRuolo") {
+                                            var ZancanaroRuolo = getZancanaroRole(session, database);
+                                            session.send(ZancanaroRuolo);
+                                            session.beginDialog('AllPeopleTemp');
                                         } else {
-                                            if (!role && !responsability && !total_project && orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                                var OrfeiTemp = getOrfeiInformation(session, parsed);
-                                                session.send(OrfeiTemp);
+                                            if (results.response == "ZancanaroInfo") {
+                                                var ZancanaroInformazioni = getZancanaroInformation(session, database);
+                                                session.send(ZancanaroInformazioni);
+                                                session.beginDialog('AllPeopleTemp');
                                             } else {
-                                                if (!role && !responsability && total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                                    var TotalProjectTemp = getTotalProjectInformation(session, parsed);
-                                                    session.send(TotalProjectTemp);
+                                                if (results.response == "ZancanaroResponsabilità") {
+                                                    var ZancanaroRes = getZancanaroResponsabiity(session, database);
+                                                    session.send(ZancanaroRes);
+                                                    session.beginDialog('AllPeopleTemp');
                                                 } else {
-                                                    if (!role && responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                                        var ResponsabilityTemp = getAllResponsabilityInformation(session, parsed);
-                                                        session.send(ResponsabilityTemp);
+                                                    if (results.response == "ZancanaroProgetti") {
+                                                        var ZancanaroProjects = getZancanaroProjects(session, database);
+                                                        session.send(ZancanaroProjects);
+                                                        session.beginDialog('AllPeopleTemp');
                                                     } else {
-                                                        if (role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                                            var RoleTemp = getAllRoleInformation(session, parsed);
-                                                            session.send(RoleTemp);
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        function(session, results) {
-            if (results.response == "OrfeiRuolo") {
-                var OrfeiRuolo = getOrfeiRole(session, parsed);
-                session.send(OrfeiRuolo);
-            } else {
-                if (results.response == "OrfeiInfo") {
-                    var OrfeiInformazioni = getOrfeiInformation(session, parsed);
-                    session.send(OrfeiInformazioni);
-                } else {
-                    if (results.response == "OrfeiResponsabilità") {
-                        var OrfeiRes = getOrfeiResponsability(session, parsed);
-                        session.send(OrfeiRes);
-                    } else {
-                        if (results.response == "OrfeiProgetti") {
-                            var OrfeiProject = getOrfeiProjects(session, parsed);
-                            session.send(OrfeiProject);
-                        } else {
-                            if (results.response == "LucchiRuolo") {
-                                var LucchiRuolo = getLucchiRole(session, parsed);
-                                session.send(LucchiRuolo);
-                            } else {
-                                if (results.response == "LucchiInfo") {
-                                    var LucchiInformazioni = getLucchiInformation(session, parsed);
-                                    session.send(LucchiInformazioni);
-                                } else {
-                                    if (results.response == "LucchiResponsabilità") {
-                                        var LucchiRes = getLucchiResponsabiity(session, parsed);
-                                        session.send(LucchiRes);
-                                    } else {
-                                        if (results.response == "LucchiProgetti") {
-                                            var LucchiProjects = getLucchiProjects(session, parsed);
-                                            session.send(LucchiProjects);
-                                        } else {
-                                            if (results.response == "ZancanaroRuolo") {
-                                                var ZancanaroRuolo = getZancanaroRole(session, parsed);
-                                                session.send(ZancanaroRuolo);
-                                            } else {
-                                                if (results.response == "ZancanaroInfo") {
-                                                    var ZancanaroInformazioni = getZancanaroInformation(session, parsed);
-                                                    session.send(ZancanaroInformazioni);
-                                                } else {
-                                                    if (results.response == "ZancanaroResponsabilità") {
-                                                        var ZancanaroRes = getZancanaroResponsabiity(session, parsed);
-                                                        session.send(ZancanaroRes);
-                                                    } else {
-                                                        if (results.response == "ZancanaroProgetti") {
-                                                            var ZancanaroProjects = getZancanaroProjects(session, parsed);
-                                                            session.send(ZancanaroProjects);
+                                                        if (results.response == "FantinatoRuolo") {
+                                                            var FantinatoRuolo = getFantinatoRole(session, database);
+                                                            session.send(FantinatoRuolo);
+                                                            session.beginDialog('AllPeopleTemp');
                                                         } else {
-                                                            if (results.response == "FantinatoRuolo") {
-                                                                var FantinatoRuolo = getFantinatoRole(session, parsed);
-                                                                session.send(FantinatoRuolo);
+                                                            if (results.response == "FantinatoInfo") {
+                                                                var FantinatoInformazioni = getFantinatoInformation(session, database);
+                                                                session.send(FantinatoInformazioni);
+                                                                session.beginDialog('AllPeopleTemp');
                                                             } else {
-                                                                if (results.response == "FantinatoInfo") {
-                                                                    var FantinatoInformazioni = getFantinatoInformation(session, parsed);
-                                                                    session.send(FantinatoInformazioni);
+                                                                if (results.response == "FantinatoResponsabilità") {
+                                                                    var FantinatoRes = getFantinatoResponsabiity(session, database);
+                                                                    session.send(FantinatoRes);
+                                                                    session.beginDialog('AllPeopleTemp');
                                                                 } else {
-                                                                    if (results.response == "FantinatoResponsabilità") {
-                                                                        var FantinatoRes = getFantinatoResponsabiity(session, parsed);
-                                                                        session.send(FantinatoRes);
+                                                                    if (results.response == "FantinatoProgetti") {
+                                                                        var FantinatoProjects = getFantinatoProjects(session, database);
+                                                                        session.send(FantinatoProjects);
+                                                                        session.beginDialog('AllPeopleTemp');
                                                                     } else {
-                                                                        if (results.response == "FantinatoProgetti") {
-                                                                            var FantinatoProjects = getFantinatoProjects(session, parsed);
-                                                                            session.send(FantinatoProjects);
+                                                                        if (results.response == "ChiarinRuolo") {
+                                                                            var ChiarinRuolo = getChiarinRole(session, database);
+                                                                            session.send(ChiarinRuolo);
+                                                                            session.beginDialog('AllPeopleTemp');
+                                                                        } else {
+                                                                            if (results.response == "ChiarinInfo") {
+                                                                                var ChiarinInformazioni = getChiarinInformation(session, database);
+                                                                                session.send(ChiarinInformazioni);
+                                                                                session.beginDialog('AllPeopleTemp');
+                                                                            } else {
+                                                                                if (results.response == "ChiarinResponsabilità") {
+                                                                                    var ChiarinRes = getChiarinResponsabiity(session, database);
+                                                                                    session.send(ChiarinRes);
+                                                                                    session.beginDialog('AllPeopleTemp');
+                                                                                } else {
+                                                                                    if (results.response == "ChiarinProgetti") {
+                                                                                        var ChiarinProjects = getChiarinProjects(session, database);
+                                                                                        session.send(ChiarinProjects);
+                                                                                        session.beginDialog('AllPeopleTemp');
+                                                                                    }
+                                                                                }
+                                                                            }
                                                                         }
                                                                     }
                                                                 }
@@ -533,13 +509,92 @@ bot.dialog('AllPeople', new botbuilder.IntentDialog({
                 }
             }
         }
+    }
+])
+
+/*bot.dialog('AllPeople', new botbuilder.IntentDialog({
+        recognizers: [recognize]
+    }).matches('GetInformation', [
+        function(session, args, results) {
+            var role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
+            var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'Responsibility');
+            var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
+            var orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
+            var lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
+            var zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
+            var chiarin = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::chiarin');
+            var greggio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::greggio');
+            var quinto = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::quinto');
+            var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
+            var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
+            if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                session.send("Inserire una delle opzioni sopra riportate");
+                session.beginDialog('AllPeople');
+            } else {
+                if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && nunzio) {
+                    var NunzioTemp = getNunzioInformation(session, database);
+                    session.send(NunzioTemp);
+                } else {
+                    if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && fantinato && !nunzio) {
+                        var FantinatoTemp = getFantinatoInformation(session, database);
+                        session.send(FantinatoTemp);
+                    } else {
+                        if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && quinto && !fantinato && !nunzio) {
+                            var QuintoTemp = getQuintoInformation(session, database);
+                            session.send(QuintoTemp);
+                        } else {
+                            if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && greggio && !quinto && !fantinato && !nunzio) {
+                                var GreggioTemp = getGreggioInformation(session, database);
+                                session.send(GreggioTemp);
+                            } else {
+                                if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                    var ChiarinTemp = getChiarinInformation(session, database);
+                                    session.send(ChiarinTemp);
+                                } else {
+                                    if (!role && !responsability && !total_project && !orfei && !lucchi && zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                        var ZancanaroTemp = getZancanaroInformation(session, database);
+                                        session.send(ZancanaroTemp);
+                                    } else {
+                                        if (!role && !responsability && !total_project && !orfei && lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                            var LucchiTemp = getLucchiInformation(session, database);
+                                            session.send(LucchiTemp);
+                                        } else {
+                                            if (!role && !responsability && !total_project && orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                                var OrfeiTemp = getOrfeiInformation(session, database);
+                                                session.send(OrfeiTemp);
+                                            } else {
+                                                if (!role && !responsability && total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                                    var TotalProjectTemp = getTotalProjectInformation(session, database);
+                                                    session.send(TotalProjectTemp);
+                                                } else {
+                                                    if (!role && responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                                        var ResponsabilityTemp = getAllResponsabilityInformation(session, database);
+                                                        session.send(ResponsabilityTemp);
+                                                    } else {
+                                                        if (role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                                            var RoleTemp = getAllRoleInformation(session, database);
+                                                            session.send(RoleTemp);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     ])
-    .matches('none', [
+    .matches('None', [
         function(session, args, results) {
             session.send("wrong action");
             session.beginDialog('Root');
         }
     ]))
+    */
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -883,35 +938,139 @@ function CreatePeopleCards(session) {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function getOrfeiInformation(session, parsed) {
-    return ("Questa persona è Samuele Orfei, il suo username github è " + parsed.database.membri.orfei.username_gitlab + ", il suo soprannome è " + parsed.database.membri.orfei.nickname + ", le sue specialità sono: " + parsed.database.membri.orfei.specialità[0] + ', ' + parsed.database.membri.orfei.specialità[1] + ', ' + parsed.database.membri.orfei.specialità[2] + ", gli argomenti che deve imparare sono: " + parsed.database.membri.orfei.argomenti_da_imparare[0] + ', ' + parsed.database.membri.orfei.argomenti_da_imparare[1] + ', ' + parsed.database.membri.orfei.argomenti_da_imparare[2] + ", i progetti a lui assegnati sono " + parsed.database.membri.orfei.progetti_assegnati[0]);
+    var i = 0;
+    var spec = '';
+    var imparare = '';
+    var assegnati = '';
+    for (i = 0; i < parsed.database.membri.orfei.specialita.length; i++) {
+        spec += parsed.database.membri.orfei.specialita[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.orfei.argomenti_da_imparare.length; i++) {
+        imparare += parsed.database.membri.orfei.argomenti_da_imparare[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.orfei.progetti_assegnati.length; i++) {
+        assegnati += parsed.database.membri.orfei.progetti_assegnati[i];
+    }
+    return ("Questa persona è Samuele Orfei, il suo username github è " + parsed.database.membri.orfei.username_gitlab + ", il suo soprannome è " + parsed.database.membri.orfei.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getLucchiInformation(session, parsed) {
-    return ("Questa persona è Manuele Lucchi, il suo username github è " + parsed.database.membri.lucchi.username_gitlab + ", il suo soprannome è " + parsed.database.membri.lucchi.nickname + ", le sue specialità sono: " + parsed.database.membri.lucchi.specialità[0] + ', ' + parsed.database.membri.lucchi.specialità[1] + ', ' + parsed.database.membri.lucchi.specialità[2] + ", gli argomenti che deve imparare sono: " + parsed.database.membri.lucchi.argomenti_da_imparare[0] + ', ' + parsed.database.membri.lucchi.argomenti_da_imparare[1] + ', ' + parsed.database.membri.lucchi.argomenti_da_imparare[2] + ", i progetti a lui assegnati sono " + parsed.database.membri.lucchi.progetti_assegnati[0]);
+    var i = 0;
+    var spec = '';
+    var imparare = '';
+    var assegnati = '';
+    for (i = 0; i < parsed.database.membri.lucchi.specialita.length; i++) {
+        spec += parsed.database.membri.lucchi.specialita[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.lucchi.argomenti_da_imparare.length; i++) {
+        imparare += parsed.database.membri.lucchi.argomenti_da_imparare[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.lucchi.progetti_assegnati.length; i++) {
+        assegnati += parsed.database.membri.lucchi.progetti_assegnati[i];
+    }
+    return ("Questa persona è Manuele Lucchi, il suo username github è " + parsed.database.membri.lucchi.username_gitlab + ", il suo soprannome è " + parsed.database.membri.lucchi.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getZancanaroInformation(session, parsed) {
-    return ("Questa persona è Marco Zancanaro, il suo username github è " + parsed.database.membri.zancanaro.username_gitlab + ", il suo soprannome è " + parsed.database.membri.zancanaro.nickname + ", le sue specialità sono: " + parsed.database.membri.zancanaro.specialità[0] + ', ' + parsed.database.membri.zancanaro.specialità[1] + ', ' + parsed.database.membri.zancanaro.specialità[2] + ", gli argomenti che deve imparare sono: " + parsed.database.membri.zancanaro.argomenti_da_imparare[0] + ', ' + parsed.database.membri.zancanaro.argomenti_da_imparare[1] + ', ' + parsed.database.membri.zancanaro.argomenti_da_imparare[2] + ", i progetti a lui assegnati sono " + parsed.database.membri.zancanaro.progetti_assegnati[0]);
+    var i = 0;
+    var spec = '';
+    var imparare = '';
+    var assegnati = '';
+    for (i = 0; i < parsed.database.membri.zancanaro.specialita.length; i++) {
+        spec += parsed.database.membri.zancanaro.specialita[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.zancanaro.argomenti_da_imparare.length; i++) {
+        imparare += parsed.database.membri.zancanaro.argomenti_da_imparare[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.zancanaro.progetti_assegnati.length; i++) {
+        assegnati += parsed.database.membri.zancanaro.progetti_assegnati[i];
+    }
+    return ("Questa persona è Marco Zancanaro, il suo username github è " + parsed.database.membri.zancanaro.username_gitlab + ", il suo soprannome è " + parsed.database.membri.zancanaro.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getFantinatoInformation(session, parsed) {
-    return ("Questa persona è Filippo Fantinato, il suo username github è " + parsed.database.membri.fantinato.username_gitlab + ", il suo soprannome è " + parsed.database.membri.fantinato.nickname + ", le sue specialità sono: " + parsed.database.membri.fantinato.specialità[0] + ', ' + parsed.database.membri.fantinato.specialità[1] + ', ' + parsed.database.membri.fantinato.specialità[2] + ", gli argomenti che deve imparare sono: " + parsed.database.membri.fantinato.argomenti_da_imparare[0] + ', ' + parsed.database.membri.fantinato.argomenti_da_imparare[1] + ', ' + parsed.database.membri.fantinato.argomenti_da_imparare[2] + ", i progetti a lui assegnati sono " + parsed.database.membri.fantinato.progetti_assegnati[0]);
+    var i = 0;
+    var spec = '';
+    var imparare = '';
+    var assegnati = '';
+    for (i = 0; i < parsed.database.membri.fantinato.specialita.length; i++) {
+        spec += parsed.database.membri.fantinato.specialita[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.fantinato.argomenti_da_imparare.length; i++) {
+        imparare += parsed.database.membri.fantinato.argomenti_da_imparare[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.fantinato.progetti_assegnati.length; i++) {
+        assegnati += parsed.database.membri.fantinato.progetti_assegnati[i];
+    }
+    return ("Questa persona è Filippo Fantinato, il suo username github è " + parsed.database.membri.fantinato.username_gitlab + ", il suo soprannome è " + parsed.database.membri.fantinato.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getChiarinInformation(session, parsed) {
-    return ("Questa persona è Marco Chiarin, il suo username github è " + parsed.database.membri.chiarin.username_gitlab + ", il suo soprannome è " + parsed.database.membri.chiarin.nickname + ", le sue specialità sono: " + parsed.database.membri.chiarin.specialità[0] + ', ' + parsed.database.membri.chiarin.specialità[1] + ', ' + parsed.database.membri.chiarin.specialità[2] + ", gli argomenti che deve imparare sono: " + parsed.database.membri.chiarin.argomenti_da_imparare[0] + ', ' + parsed.database.membri.chiarin.argomenti_da_imparare[1] + ', ' + parsed.database.membri.chiarin.argomenti_da_imparare[2] + ", i progetti a lui assegnati sono " + parsed.database.membri.chiarin.progetti_assegnati[0]);
+    var i = 0;
+    var spec = '';
+    var imparare = '';
+    var assegnati = '';
+    for (i = 0; i < parsed.database.membri.chiarin.specialita.length; i++) {
+        spec += parsed.database.membri.chiarin.specialita[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.chiarin.argomenti_da_imparare.length; i++) {
+        imparare += parsed.database.membri.chiarin.argomenti_da_imparare[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.chiarin.progetti_assegnati.length; i++) {
+        assegnati += parsed.database.membri.chiarin.progetti_assegnati[i];
+    }
+    return ("Questa persona è Marco Chiarin, il suo username github è " + parsed.database.membri.chiarin.username_gitlab + ", il suo soprannome è " + parsed.database.membri.chiarin.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getGreggioInformation(session, parsed) {
-    return ("Questa persona è Nicolò Greggio, il suo username github è " + parsed.database.membri.greggio.username_gitlab + ", il suo soprannome è " + parsed.database.membri.greggio.nickname + ", le sue specialità sono: " + parsed.database.membri.greggio.specialità[0] + ', ' + parsed.database.membri.greggio.specialità[1] + ', ' + parsed.database.membri.greggio.specialità[2] + ", gli argomenti che deve imparare sono: " + parsed.database.membri.greggio.argomenti_da_imparare[0] + ', ' + parsed.database.membri.greggio.argomenti_da_imparare[1] + ', ' + parsed.database.membri.greggio.argomenti_da_imparare[2] + ", i progetti a lui assegnati sono " + parsed.database.membri.greggio.progetti_assegnati[0]);
+    var i = 0;
+    var spec = '';
+    var imparare = '';
+    var assegnati = '';
+    for (i = 0; i < parsed.database.membri.greggio.specialita.length; i++) {
+        spec += parsed.database.membri.greggio.specialita[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.greggio.argomenti_da_imparare.length; i++) {
+        imparare += parsed.database.membri.greggio.argomenti_da_imparare[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.greggio.progetti_assegnati.length; i++) {
+        assegnati += parsed.database.membri.greggio.progetti_assegnati[i];
+    }
+    return ("Questa persona è Nicolò Greggio, il suo username github è " + parsed.database.membri.greggio.username_gitlab + ", il suo soprannome è " + parsed.database.membri.greggio.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getQuintoInformation(session, parsed) {
-    return ("Questa persona è Tommaso Quinto, il suo username github è " + parsed.database.membri.quinto.username_gitlab + ", il suo soprannome è " + parsed.database.membri.quinto.nickname + ", le sue specialità sono: " + parsed.database.membri.quinto.specialità[0] + ', ' + parsed.database.membri.quinto.specialità[1] + ', ' + parsed.database.membri.quinto.specialità[2] + ", gli argomenti che deve imparare sono: " + parsed.database.membri.quinto.argomenti_da_imparare[0] + ', ' + parsed.database.membri.quinto.argomenti_da_imparare[1] + ', ' + parsed.database.membri.quinto.argomenti_da_imparare[2] + ", i progetti a lui assegnati sono " + parsed.database.membri.quinto.progetti_assegnati[0]);
+    var i = 0;
+    var spec = '';
+    var imparare = '';
+    var assegnati = '';
+    for (i = 0; i < parsed.database.membri.quinto.specialita.length; i++) {
+        spec += parsed.database.membri.quinto.specialita[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.quinto.argomenti_da_imparare.length; i++) {
+        imparare += parsed.database.membri.quinto.argomenti_da_imparare[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.quinto.progetti_assegnati.length; i++) {
+        assegnati += parsed.database.membri.quinto.progetti_assegnati[i];
+    }
+    return ("Questa persona è Tommaso Quinto, il suo username github è " + parsed.database.membri.quinto.username_gitlab + ", il suo soprannome è " + parsed.database.membri.quinto.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getNunzioInformation(session, parsed) {
-    return ("Questa persona è Salvatore Nunzio Savà, il suo username github è " + parsed.database.membri.nunzio.username_gitlab + ", il suo soprannome è " + parsed.database.membri.nunzio.nickname + ", le sue specialità sono: " + parsed.database.membri.nunzio.specialità[0] + ', ' + parsed.database.membri.nunzio.specialità[1] + ', ' + parsed.database.membri.nunzio.specialità[2] + ", gli argomenti che deve imparare sono: " + parsed.database.membri.nunzio.argomenti_da_imparare[0] + ', ' + parsed.database.membri.nunzio.argomenti_da_imparare[1] + ', ' + parsed.database.membri.nunzio.argomenti_da_imparare[2] + ", i progetti a lui assegnati sono " + parsed.database.membri.nunzio.progetti_assegnati[0]);
+    var i = 0;
+    var spec = '';
+    var imparare = '';
+    var assegnati = '';
+    for (i = 0; i < parsed.database.membri.nunzio.specialita.length; i++) {
+        spec += parsed.database.membri.nunzio.specialita[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.nunzio.argomenti_da_imparare.length; i++) {
+        imparare += parsed.database.membri.nunzio.argomenti_da_imparare[i] + ', ';
+    }
+    for (i = 0; i < parsed.database.membri.nunzio.progetti_assegnati.length; i++) {
+        assegnati += parsed.database.membri.nunzio.progetti_assegnati[i];
+    }
+    return ("Questa persona è Salvatore Nunzio Savà, il suo username github è " + parsed.database.membri.nunzio.username_gitlab + ", il suo soprannome è " + parsed.database.membri.nunzio.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -984,6 +1143,6 @@ function getNunzioResponsability(session, parsed) {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getOrfeiProjects(session, parsed) {
+/*function getOrfeiProjects(session, parsed) {
 
-}
+}*/
