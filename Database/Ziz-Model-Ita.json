@@ -13034,58 +13034,6 @@
           "endPos": 2
         }
       ]
-    },
-    {
-      "text": "informazioni sui progetti di lucchi e tomaso",
-      "intent": "GetInformation",
-      "entities": [
-        {
-          "entity": "people::Quinto",
-          "startPos": 6,
-          "endPos": 6
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "current_project",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
-    },
-    {
-      "text": "informazioni sui progetti di lucchi e quinto",
-      "intent": "GetInformation",
-      "entities": [
-        {
-          "entity": "people::Quinto",
-          "startPos": 6,
-          "endPos": 6
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "current_project",
-          "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
-        }
-      ]
     }
   ]
 }
