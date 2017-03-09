@@ -64,7 +64,7 @@
             "CWOOOOOOOOOOOOOOOOOOOOOOOO"
         ],
         "team_generale": {
-            "numero_membri": "7",
+            "numero_membri": "8",
             "lista_membri": [
                 "Lucchi",
                 "Zancanaro",
@@ -72,7 +72,8 @@
                 "Fantinato",
                 "Greggio",
                 "Quinto",
-                "Chiarin"
+                "Chiarin",
+                "Nunzio"
             ]
         },
         "progetti_generale": {
@@ -94,7 +95,7 @@
             "fast_ink": {
                 "tipo_progetto": "App",
                 "descrizione_progetto": "Applicazione per il disegno e l'editing delle imamgini. Attualmente nello Store",
-                "capo_progetto": "Zancanaro",
+                "capo_progetto": "Lucchi",
                 "tipo_gestione": "Interno",
                 "link_repo": "https://gitlab.com/manuelelucchi/fastInk.git",
                 "inizio_sviluppo": "2016",
@@ -102,7 +103,7 @@
                 "versione": "1.2",
                 "supporto": "Si",
                 "come_procede": "Fermo",
-                "membri": "Lucchi, Zancanaro, Chiarin",
+                "membri": "Lucchi, Chiarin",
                 "note": ""
             },
             "eden": {
@@ -129,8 +130,8 @@
                 "fine_sviluppo": "In Corso",
                 "versione": "Beta",
                 "supporto": "Si",
-                "come_procede": "Bene",
-                "membri": "Lucchi, Chiarin, Quinto, Greggio, Fantinato",
+                "come_procede": "Fermo",
+                "membri": "Orfei, Nunzio",
                 "note": "Al momento non sono Hostati"
             },
             "project_volley": {
@@ -143,7 +144,7 @@
                 "fine_sviluppo": "In corso",
                 "versione": "Da vedere",
                 "supporto": "Si",
-                "come_procede": "Bene",
+                "come_procede": "Fermo",
                 "membri": "Lucchi, Zanca",
                 "note": ""
             },
@@ -178,7 +179,7 @@
             "project_multi_platform_uwp": {
                 "tipo_progetto": "App",
                 "descrizione_progetto": "Editor/Generatore di file Json e in futuro XML che fornisce una visione ad albero del file, con la possibilità di editarlo e aggiungerne componenti. Sviluppato in UWP",
-                "capo_progetto": "Zanca",
+                "capo_progetto": "Lucchi",
                 "tipo_gestione": "Collaborazione",
                 "link_repo": "https://gitlab.com/manuelelucchi/Project-Multiplatform.git",
                 "inizio_sviluppo": "Febbraio 2017",
@@ -186,21 +187,21 @@
                 "versione": "1.0",
                 "supporto": "Si",
                 "come_procede": "Fermo",
-                "membri": "Lucchi, Zancanaro, Chiarin",
+                "membri": "Lucchi, Chiarin",
                 "note": ""
             },
             "project_multi_platform_electron": {
                 "tipo_progetto": "Programma",
                 "descrizione_progetto": "Editor/Generatore di file Json e in futuro XML che fornisce una visione ad albero del file, con la possibilità di editarlo e aggiungerne componenti. Sviluppato in Electron",
-                "capo_progetto": "Orfei",
+                "capo_progetto": "Fantinato",
                 "tipo_gestione": "Collaborazione",
                 "link_repo": "https://gitlab.com/manuelelucchi/Project-Multiplatform-Electron.git",
                 "inizio_sviluppo": "Febbraio 2017",
                 "fine_sviluppo": "In corso",
                 "versione": "1.0",
                 "supporto": "Si",
-                "come_procede": "Fermo",
-                "membri": "Orfei, Greggio, Fantinato, Quinto",
+                "come_procede": "Bene",
+                "membri": "Greggio, Fantinato, Quinto",
                 "note": ""
             },
             "project_ziz": {
@@ -213,15 +214,15 @@
                 "fine_sviluppo": "Da vedere",
                 "versione": "1.0",
                 "supporto": "Si",
-                "come_procede": "Fermo",
-                "membri": "Orfei, Lucchi, Zancanaro, Fantinato",
+                "come_procede": "Bene",
+                "membri": "Orfei, Nunzio",
                 "note": ""
             }
         },
         "membri": {
             "lucchi": {
                 "mail": "manuelelucchi@live.com",
-                "username_gitlab": "manuelelucchi",
+                "username_github": "manuelelucchi",
                 "nickname": "L",
                 "specialita": [
                     ".NET",
@@ -231,35 +232,35 @@
                 ],
                 "argomenti_da_imparare": [
                     "Mixed Reality",
-                    "IoT",
-                    "Websites"
+                    "UWP",
+                    ".NET"
                 ],
                 "progetti_assegnati": [
-                    "Coming soon"
+                    "Multiplatform UWP"
                 ],
-                "ruolo": "CEO"
+                "ruolo": "Chief .NET, UWP & Mixed Reality"
             },
             "zancanaro": {
                 "mail": "marco.zancanaro123@outlook.com",
-                "username_gitlab": "marcoZ",
+                "username_github": "marcoZ",
                 "nickname": "Wemmark",
                 "specialita": [
                     "UWP",
                     ".NET"
                 ],
                 "argomenti_da_imparare": [
-                    "Electron",
-                    "Ionic",
+                    "C++",
+                    ".NET",
                     "UWP"
                 ],
                 "progetti_assegnati": [
-                    "Coming soon"
+                    "C++"
                 ],
-                "ruolo": "Chief Applications & Programs Officer"
+                "ruolo": "UWP developer"
             },
             "orfei": {
                 "mail": "samuele.orfei@outlook.it",
-                "username_gitlab": "fufoed",
+                "username_github": "fufoed",
                 "nickname": "Fei",
                 "specialita": [
                     "Bot",
@@ -272,72 +273,105 @@
                     "Deep Learning"
                 ],
                 "progetti_assegnati": [
-                    "Coming soon"
+                    "project Ziz"
                 ],
-                "ruolo": "Chief AI & Cloud Officer"
+                "ruolo": "Chief AI, Cloud & Deep Learning Officer"
             },
             "fantinato": {
                 "mail": "fantinato.filippo99@gmail.com",
-                "username_gitlab": "filippofantinato",
+                "username_github": "filippofantinato",
                 "nickname": "pippo",
                 "specialita": [
                     "Electron",
-                    "Websites"
+                    "Websites",
+                    "Ionic"
                 ],
                 "argomenti_da_imparare": [
-                    "N/A"
+                    "Electron",
+                    "Ionic",
+                    "Websites"
                 ],
                 "progetti_assegnati": [
-                    "Coming Soon"
+                    "Multiplatform Electron"
                 ],
-                "ruolo": "Software Developer Collaborators"
+                "ruolo": "Chief Multiplatform Applications, Programs & Web"
             },
             "greggio": {
                 "mail": "nico.greggio@gmail.com",
-                "username_gitlab": "faesant",
+                "username_github": "faesant",
                 "nickname": "greg",
                 "specialita": [
                     "Electron",
-                    "Websites"
+                    "Websites",
+                    "Ionic",
+                    "Translator"
                 ],
                 "argomenti_da_imparare": [
-                    "N/A"
+                    "Electron",
+                    "Websites",
+                    "Ionic"
                 ],
                 "progetti_assegnati": [
-                    "Coming soon"
+                    "Multiplatform Electron"
                 ],
-                "ruolo": "Software Developer Collaborators"
+                "ruolo": "Electron, Ionic Developer, Translator"
             },
             "quinto": {
                 "mail": "tommaso.quinto@live.it",
-                "username_gitlab": "tommasoquinto",
+                "username_github": "tommasoquinto",
                 "nickname": "Tommy",
                 "specialita": [
-                    "N/A"
+                    "Electron",
+                    "Ionic",
+                    "Websites"
                 ],
                 "argomenti_da_imparare": [
-                    "N/A"
+                    "Electron",
+                    "Ionic",
+                    "Websites"
                 ],
                 "progetti_assegnati": [
-                    "Coming soon"
+                    "Multiplatform Electron"
                 ],
-                "ruolo": "Software Developer Collaborators"
+                "ruolo": "Electron and Ionic Developer"
             },
             "chiarin": {
                 "mail": "marco.chiarin1999@gmail.com",
-                "username_gitlab": "justpanda",
+                "username_github": "justpanda",
                 "nickname": "panda",
                 "specialita": [
                     "UWP",
-                    ".NET"
+                    ".NET",
+                    "Translator"
                 ],
                 "argomenti_da_imparare": [
-                    "N/A"
+                    "UWP",
+                    ".NET"
                 ],
                 "progetti_assegnati": [
-                    "Coming soon"
+                    "Multiplatform UWP"
                 ],
-                "ruolo": "Software Developer Collaborators"
+                "ruolo": "UWP Developer, Translator"
+            },
+            "nunzio": {
+                "mail": "nunzio22598@gmail.com",
+                "username_github": "Nunzio22",
+                "nickname": "nuccio",
+                "specialita":[
+                    "AI",
+                    "Deep Learning",
+                    "Cloud",
+                    "Social Media"
+                ],
+                "argomenti_da_imparare":[
+                    "AI",
+                    "Deep Learning",
+                    "Cloud"
+                ],
+                "progetti_assegnati":[
+                    "project Ziz"
+                ],
+                "ruolo": "AI Developer, Social Media Management"
             }
         }
     }

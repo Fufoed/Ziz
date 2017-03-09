@@ -390,7 +390,34 @@ bot.dialog('AllPeopleTemp', [
         botbuilder.Prompts.text(session, reply);
     },
     function(session, results) {
-        if (results.response == "OrfeiRuolo") {
+        switch(results.response)
+        {
+            case "OrfeiRuolo": var OrfeiRuolo = getOrfeiRole(session, database);
+            session.send(OrfeiRuolo);
+            session.beginDialog('AllPeopleTemp'); break;
+            case "OrfeiInfo": var OrfeiInformazioni = getOrfeiInformation(session, database);
+                session.send(OrfeiInformazioni);
+                session.beginDialog('AllPeopleTemp'); break;
+                case "OrfeiResponsabilità": var OrfeiRes = getOrfeiResponsability(session, database);
+                    session.send(OrfeiRes);
+                    session.beginDialog('AllPeopleTemp'); break;
+                    case "OrfeiProgetti": var OrfeiProject = getOrfeiProjects(session, database);
+                        session.send(OrfeiProject);
+                        session.beginDialog('AllPeopleTemp'); break;
+                        case "LucchiRuolo": var LucchiRuolo = getLucchiRole(session, database);
+                            session.send(LucchiRuolo);
+                            session.beginDialog('AllPeopleTemp'); break;
+                            case "LucchiInfo": var LucchiInformazioni = getLucchiInformation(session, database);
+                                session.send(LucchiInformazioni);
+                                session.beginDialog('AllPeopleTemp'); break;
+                                case "LucchiResponsabilità": var LucchiRes = getLucchiResponsability(session, database);
+                                    session.send(LucchiRes);
+                                    session.beginDialog('AllPeopleTemp'); break;
+                                    case "LucchiProgetti": var LucchiProjects = getLucchiProjects(session, database);
+                                        session.send(LucchiProjects);
+                                        session.beginDialog('AllPeopleTemp'); break;
+        }
+        /*if (results.response == "OrfeiRuolo") {
             var OrfeiRuolo = getOrfeiRole(session, database);
             session.send(OrfeiRuolo);
             session.beginDialog('AllPeopleTemp');
@@ -508,7 +535,7 @@ bot.dialog('AllPeopleTemp', [
                     }
                 }
             }
-        }
+        }*/
     }
 ])
 
@@ -951,7 +978,7 @@ function getOrfeiInformation(session, parsed) {
     for (i = 0; i < parsed.database.membri.orfei.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.orfei.progetti_assegnati[i];
     }
-    return ("Questa persona è Samuele Orfei, il suo username github è " + parsed.database.membri.orfei.username_gitlab + ", il suo soprannome è " + parsed.database.membri.orfei.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Samuele Orfei, il suo username github è " + parsed.database.membri.orfei.username_github + ", il suo soprannome è " + parsed.database.membri.orfei.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getLucchiInformation(session, parsed) {
@@ -968,7 +995,7 @@ function getLucchiInformation(session, parsed) {
     for (i = 0; i < parsed.database.membri.lucchi.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.lucchi.progetti_assegnati[i];
     }
-    return ("Questa persona è Manuele Lucchi, il suo username github è " + parsed.database.membri.lucchi.username_gitlab + ", il suo soprannome è " + parsed.database.membri.lucchi.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Manuele Lucchi, il suo username github è " + parsed.database.membri.lucchi.username_github + ", il suo soprannome è " + parsed.database.membri.lucchi.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getZancanaroInformation(session, parsed) {
@@ -985,7 +1012,7 @@ function getZancanaroInformation(session, parsed) {
     for (i = 0; i < parsed.database.membri.zancanaro.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.zancanaro.progetti_assegnati[i];
     }
-    return ("Questa persona è Marco Zancanaro, il suo username github è " + parsed.database.membri.zancanaro.username_gitlab + ", il suo soprannome è " + parsed.database.membri.zancanaro.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Marco Zancanaro, il suo username github è " + parsed.database.membri.zancanaro.username_github + ", il suo soprannome è " + parsed.database.membri.zancanaro.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getFantinatoInformation(session, parsed) {
@@ -1002,7 +1029,7 @@ function getFantinatoInformation(session, parsed) {
     for (i = 0; i < parsed.database.membri.fantinato.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.fantinato.progetti_assegnati[i];
     }
-    return ("Questa persona è Filippo Fantinato, il suo username github è " + parsed.database.membri.fantinato.username_gitlab + ", il suo soprannome è " + parsed.database.membri.fantinato.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Filippo Fantinato, il suo username github è " + parsed.database.membri.fantinato.username_github + ", il suo soprannome è " + parsed.database.membri.fantinato.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getChiarinInformation(session, parsed) {
@@ -1019,7 +1046,7 @@ function getChiarinInformation(session, parsed) {
     for (i = 0; i < parsed.database.membri.chiarin.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.chiarin.progetti_assegnati[i];
     }
-    return ("Questa persona è Marco Chiarin, il suo username github è " + parsed.database.membri.chiarin.username_gitlab + ", il suo soprannome è " + parsed.database.membri.chiarin.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Marco Chiarin, il suo username github è " + parsed.database.membri.chiarin.username_github + ", il suo soprannome è " + parsed.database.membri.chiarin.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getGreggioInformation(session, parsed) {
@@ -1036,7 +1063,7 @@ function getGreggioInformation(session, parsed) {
     for (i = 0; i < parsed.database.membri.greggio.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.greggio.progetti_assegnati[i];
     }
-    return ("Questa persona è Nicolò Greggio, il suo username github è " + parsed.database.membri.greggio.username_gitlab + ", il suo soprannome è " + parsed.database.membri.greggio.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Nicolò Greggio, il suo username github è " + parsed.database.membri.greggio.username_github + ", il suo soprannome è " + parsed.database.membri.greggio.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getQuintoInformation(session, parsed) {
@@ -1053,7 +1080,7 @@ function getQuintoInformation(session, parsed) {
     for (i = 0; i < parsed.database.membri.quinto.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.quinto.progetti_assegnati[i];
     }
-    return ("Questa persona è Tommaso Quinto, il suo username github è " + parsed.database.membri.quinto.username_gitlab + ", il suo soprannome è " + parsed.database.membri.quinto.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Tommaso Quinto, il suo username github è " + parsed.database.membri.quinto.username_github + ", il suo soprannome è " + parsed.database.membri.quinto.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getNunzioInformation(session, parsed) {
@@ -1070,7 +1097,7 @@ function getNunzioInformation(session, parsed) {
     for (i = 0; i < parsed.database.membri.nunzio.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.nunzio.progetti_assegnati[i];
     }
-    return ("Questa persona è Salvatore Nunzio Savà, il suo username github è " + parsed.database.membri.nunzio.username_gitlab + ", il suo soprannome è " + parsed.database.membri.nunzio.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Salvatore Nunzio Savà, il suo username github è " + parsed.database.membri.nunzio.username_github + ", il suo soprannome è " + parsed.database.membri.nunzio.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
