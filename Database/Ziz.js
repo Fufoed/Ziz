@@ -1,16 +1,16 @@
-var builder = require('/BOT/NODE/node_modules/core');
+var builder = require('core');
 
-var botbuilder = require('/BOT/NODE/node_modules/botbuilder');
+var botbuilder = require('botbuilder');
 
 var https = require('https');
 
 var http = require('http');
 
-var restify = require('/BOT/NODE/node_modules/restify');
+var restify = require('restify');
 
 var fs = require('fs');
 
-var request = require('/BOT/NODE/node_modules/request');
+var request = require('request');
 
 var data = require('./database.json');
 
@@ -36,8 +36,8 @@ var dialogs = ['Nothing', 'Root', 'Team', 'AllPeople', 'TotalProject', 'CurrentP
 
 var bullshit = [];
 
-for (var i = 0; i < data.database.easter_egg.length; i++) {
-    bullshit[i] = data.database.easter_egg[i];
+for (var i = 0; i < data.database.Easter_Egg.length; i++) {
+    bullshit[i] = data.database.Easter_Egg[i];
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------
@@ -122,8 +122,8 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
             var email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
-            switch (args.entities) {
-                case !args.entities:
+            /*switch (results.response) {
+                case null:
                     session.beginDialog('NothingTemp');
                     break;
                 case email:
@@ -217,11 +217,132 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 case team_perso:
                     session.beginDialog('TeamTemp');
                     break;
-            }
-
-            /*if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !chiron && !eden_tv_86 && !bot_project && !current_project && !total_project && !total_people && !email) {
-                session.beginDialog('NothingTemp');
             }*/
+
+            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !chiron && !eden_tv_86 && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio) {
+                session.beginDialog('NothingTemp');
+            } else {
+                if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !chiron && !eden_tv_86 && !bot_project && !current_project && !total_project && !total_people && email && !nunzio) {
+                    session.beginDialog('AllMailTemp');
+                } else {
+                    if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !chiron && !eden_tv_86 && !bot_project && !current_project && !total_project && total_people && !email && !nunzio) {
+                        session.beginDialog('AllPeopleTemp');
+                    } else {
+                        if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !chiron && !eden_tv_86 && !bot_project && !current_project && total_project && !total_people && !email && !nunzio) {
+                            session.beginDialog('TotalProjectTemp');
+                        } else {
+                            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !chiron && !eden_tv_86 && !bot_project && current_project && !total_project && !total_people && !email && !nunzio) {
+                                session.beginDialog('CurrentProjectTemp');
+                            } else {
+                                if (bot_project) {
+                                    var BotTemp = getBotInformation(session, data);
+                                    session.send(BotTemp);
+                                } else {
+                                    if (eden_tv_86) {
+                                        var EdenTemp = getEdenInformation(session, data);
+                                        session.send(EdenTemp);
+                                    } else {
+                                        if (chiron) {
+                                            var ChironTemp = getChironInformation(session, data);
+                                            session.send(ChironTemp);
+                                        } else {
+                                            if (website) {
+                                                var WebTemp = getWebsiteInformation(session, data);
+                                                session.send(WebTemp);
+                                            } else {
+                                                if (fast_ink) {
+                                                    var FastTemp = getFastInkInformation(session, data);
+                                                    session.send(FastTemp);
+                                                } else {
+                                                    if (volley) {
+                                                        var VolleyTemp = getVolleyInformation(session, data);
+                                                        session.send(VolleyTemp);
+                                                    } else {
+                                                        if (electron) {
+                                                            var ElectronTemp = getElectronInformation(session, data);
+                                                            session.send(ElectronTemp);
+                                                        } else {
+                                                            if (uwp) {
+                                                                var UwpTemp = getUwpInformation(session, data);
+                                                                session.send(UwpTemp);
+                                                            } else {
+                                                                if (ziz) {
+                                                                    var ZizTemp = getZizInformation(session, data);
+                                                                    session.send(ZizTemp);
+                                                                } else {
+                                                                    if (fantinato) {
+                                                                        var FantinatoTemp = getFantinatoInformation(session, data);
+                                                                        session.send(FantinatoTemp);
+                                                                    } else {
+                                                                        if (quinto) {
+                                                                            var QuintoTemp = getQuintoInformation(session, data);
+                                                                            session.send(QuintoTemp);
+                                                                        } else {
+                                                                            if (greggio) {
+                                                                                var GreggioTemp = getGreggioInformation(session, data);
+                                                                                session.send(GreggioTemp);
+                                                                            } else {
+                                                                                if (orfei) {
+                                                                                    var OrfeiTemp = getOrfeiInformation(session, data);
+                                                                                    session.send(OrfeiTemp);
+                                                                                } else {
+                                                                                    if (lucchi) {
+                                                                                        var LucchiTemp = getLucchiInformation(session, data);
+                                                                                        session.send(LucchiTemp);
+                                                                                    } else {
+                                                                                        if (nunzio) {
+                                                                                            var NunzioTemp = getNunzioInformation(session, data);
+                                                                                            session.send(NunzioTemp);
+                                                                                        } else {
+                                                                                            if (chiarin) {
+                                                                                                var ChiarinTemp = getChiarinInformation(session, data);
+                                                                                                session.send(ChiarinTemp);
+                                                                                            } else {
+                                                                                                if (zancanaro) {
+                                                                                                    var ZancanaroTemp = getZancanaroInformation(session, data);
+                                                                                                    session.send(ZancanaroTemp);
+                                                                                                } else {
+                                                                                                    if (team_perso) {
+                                                                                                        session.beginDialog('TeamTemp');
+                                                                                                    } else {
+                                                                                                        if (responsability) {
+                                                                                                            session.beginDialog('AllResponsabilityTemp');
+                                                                                                        } else {
+                                                                                                            if (role) {
+                                                                                                                session.beginDialog('AllRoleTemp');
+                                                                                                            } else {
+                                                                                                                if (find) {
+                                                                                                                    session.beginDialog('FindAllTemp');
+                                                                                                                } else {
+                                                                                                                    if (easter_egg) {
+                                                                                                                        session.beginDialog('Bullshit');
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     ])
     .matches('None', [
