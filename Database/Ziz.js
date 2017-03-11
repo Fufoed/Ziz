@@ -496,6 +496,46 @@ bot.dialog('TotalProjectTemp', [
                 var ZizGestioneTemp = getZizGestione(session, data);
                 session.send(getZizGestione);
                 break;
+            case "VolleyInfo":
+                var VolleyTemp = getVolleyInformation(session, data);
+                session.send(VolleyTemp);
+                break;
+            case "VolleyGestione":
+                var VolleyGestioneTemp = getVolleyGestione(session, data);
+                session.send(VolleyGestioneTemp);
+                break;
+            case "FastInkInfo":
+                var FastInkTemp = getFastInkInformation(session, data);
+                session.send(FastInkTemp);
+                break;
+            case "FastInkGestione":
+                var FastInkGestioneTemp = getFastInkGestione(session, data);
+                session.send(FastInkGestioneTemp);
+                break;
+            case "WebInfo":
+                var WebTemp = getWebsiteInformation(session, data);
+                session.send(WebTemp);
+                break;
+            case "WebGestione":
+                var WebGestioneTemp = getWebsiteGestione(session, data);
+                session.send(WebGestioneTemp);
+                break;
+            case "EdenInfo":
+                var EdenTemp = getEdenInformation(session, data);
+                session.send(EdenTemp);
+                break;
+            case "EdenGestione":
+                var EdenGestioneTemp = getEdenGestione(session, data);
+                session.send(EdenGestioneTemp);
+                break;
+            case "ChironInfo":
+                var ChironTemp = getChironInformation(session, data);
+                session.send(ChironTemp);
+                break;
+            case "ChironGestione":
+                var ChironGestioneTemp = getChironGestione(session, data);
+                session.send(ChironGestioneTemp);
+                break;
         }
     }
 ])
@@ -1535,37 +1575,71 @@ function getNunzioResponsability(session, parsed) {
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function getZizInformation(session, parsed) {
-    return ("Project Ziz è un progetto di tipo " + parsed.database.progetti.project_ziz.tipo_progetto + ". E' un " + paesed.database.progetti.project_ziz.descrizione_progetto + ". La gestione è di " + paesed.database.progetti.project_ziz.capo_progetto + ". La gestione è " + paesed.database.progetti.project_ziz.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + paesed.database.progetti.project_ziz.link_repo + ". E' stato cominciato a " + paesed.database.progetti.project_ziz.inizio_sviluppo + "e la data di fine è " + paesed.database.progetti.project_ziz.fine_sviluppo + ". E' supportato e la versione corrente è la " + paesed.database.progetti.project_ziz.versione + ". I membri che ci lavorano sono: " + paesed.database.progetti.project_ziz.membri);
+    return ("Project Ziz è un progetto di tipo " + parsed.database.progetti.project_ziz.tipo_progetto + ". E' un " + parsed.database.progetti.project_ziz.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_ziz.capo_progetto + ". La gestione è " + parsed.database.progetti.project_ziz.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_ziz.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_ziz.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_ziz.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_ziz.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_ziz.membri);
 }
 
 function getUwpInformation(session, parsed) {
-    return ("Project Multiplatform UWP è un progetto di tipo " + parsed.database.progetti.project_multi_platform_uwp.tipo_progetto + ". E' un " + paesed.database.progetti.project_multi_platform_uwp.descrizione_progetto + ". La gestione è di " + paesed.database.progetti.project_multi_platform_uwp.capo_progetto + ". La gestione è " + paesed.database.progetti.project_multi_platform_uwp.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + paesed.database.progetti.project_multi_platform_uwp.link_repo + ". E' stato cominciato a " + paesed.database.progetti.project_multi_platform_uwp.inizio_sviluppo + "e la data di fine è " + paesed.database.progetti.project_multi_platform_uwp.fine_sviluppo + ". E' supportato e la versione corrente è la " + paesed.database.progetti.project_multi_platform_uwp.versione + ". I membri che ci lavorano sono: " + paesed.database.progetti.project_multi_platform_uwp.membri);
+    return ("Project Multiplatform UWP è un progetto di tipo " + parsed.database.progetti.project_multi_platform_uwp.tipo_progetto + ". E' un " + parsed.database.progetti.project_multi_platform_uwp.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_multi_platform_uwp.capo_progetto + ". La gestione è " + parsed.database.progetti.project_multi_platform_uwp.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_multi_platform_uwp.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_multi_platform_uwp.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_multi_platform_uwp.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_multi_platform_uwp.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_multi_platform_uwp.membri);
 }
 
 function getElectronInformation(session, parsed) {
-    return ("Project Multiplatform Electron è un progetto di tipo " + parsed.database.progetti.project_multi_platform_electron.tipo_progetto + ". E' un " + paesed.database.progetti.project_multi_platform_electron.descrizione_progetto + ". La gestione è di " + paesed.database.progetti.project_ziz.capo_progetto + ". La gestione è " + paesed.database.progetti.project_multi_platform_electron.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + paesed.database.progetti.project_multi_platform_electron.link_repo + ". E' stato cominciato a " + paesed.database.progetti.project_ziz.inizio_sviluppo + "e la data di fine è " + paesed.database.progetti.project_multi_platform_electron.fine_sviluppo + ". E' supportato e la versione corrente è la " + paesed.database.progetti.project_multi_platform_electron.versione + ". I membri che ci lavorano sono: " + paesed.database.progetti.project_ziz.membri);
+    return ("Project Multiplatform Electron è un progetto di tipo " + parsed.database.progetti.project_multi_platform_electron.tipo_progetto + ". E' un " + parsed.database.progetti.project_multi_platform_electron.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_ziz.capo_progetto + ". La gestione è " + parsed.database.progetti.project_multi_platform_electron.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_multi_platform_electron.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_ziz.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_multi_platform_electron.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_multi_platform_electron.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_ziz.membri);
 }
 
 function getVolleyInformation(session, parsed) {
-    return ("Project Volley è un progetto di tipo " + parsed.database.progetti.project_volley.tipo_progetto + ". E' un " + paesed.database.progetti.project_volley.descrizione_progetto + ". La gestione è di " + paesed.database.progetti.project_volley.capo_progetto + ". La gestione è " + paesed.database.progetti.project_volley.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + paesed.database.progetti.project_volley.link_repo + ". E' stato cominciato a " + paesed.database.progetti.project_volley.inizio_sviluppo + "e la data di fine è " + paesed.database.progetti.project_volley.fine_sviluppo + ". E' supportato e la versione corrente è la " + paesed.database.progetti.project_volley.versione + ". I membri che ci lavorano sono: " + paesed.database.progetti.project_volley.membri);
+    return ("Project Volley è un progetto di tipo " + parsed.database.progetti.project_volley.tipo_progetto + ". E' un " + parsed.database.progetti.project_volley.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_volley.capo_progetto + ". La gestione è " + parsed.database.progetti.project_volley.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_volley.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_volley.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_volley.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_volley.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_volley.membri);
 }
 
 function getFastInkInformation(session, parsed) {
-    return ("Fast Ink è un progetto di tipo " + parsed.database.progetti.fast_ink.tipo_progetto + ". E' un " + paesed.database.progetti.fast_ink.descrizione_progetto + ". La gestione è di " + paesed.database.progetti.fast_ink.capo_progetto + ". La gestione è " + paesed.database.progetti.fast_ink.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + paesed.database.progetti.fast_ink.link_repo + ". E' stato cominciato a " + paesed.database.progetti.fast_ink.inizio_sviluppo + "e la data di fine è " + paesed.database.progetti.fast_ink.fine_sviluppo + ". E' supportato e la versione corrente è la " + paesed.database.progetti.fast_ink.versione + ". I membri che ci lavorano sono: " + paesed.database.progetti.fast_ink.membri);
+    return ("Fast Ink è un progetto di tipo " + parsed.database.progetti.fast_ink.tipo_progetto + ". E' un " + parsed.database.progetti.fast_ink.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.fast_ink.capo_progetto + ". La gestione è " + parsed.database.progetti.fast_ink.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.fast_ink.link_repo + ". E' stato cominciato a " + parsed.database.progetti.fast_ink.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.fast_ink.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.fast_ink.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.fast_ink.membri);
 }
 
 function getWebsiteInformation(session, parsed) {
-    return ("Project Website è un progetto di tipo " + parsed.database.progetti.project_website.tipo_progetto + ". E' un " + paesed.database.progetti.project_website.descrizione_progetto + ". La gestione è di " + paesed.database.progetti.project_website.capo_progetto + ". La gestione è " + paesed.database.progetti.project_website.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + paesed.database.progetti.project_website.link_repo + ". E' stato cominciato a " + paesed.database.progetti.project_website.inizio_sviluppo + "e la data di fine è " + paesed.database.progetti.project_website.fine_sviluppo + ". E' supportato e la versione corrente è la " + paesed.database.progetti.project_website.versione + ". I membri che ci lavorano sono: " + paesed.database.progetti.project_website.membri);
+    return ("Project Website è un progetto di tipo " + parsed.database.progetti.project_website.tipo_progetto + ". E' un " + parsed.database.progetti.project_website.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_website.capo_progetto + ". La gestione è " + parsed.database.progetti.project_website.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_website.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_website.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_website.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_website.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_website.membri);
 }
 
 function getChironInformation(session, parsed) {
-    return ("Project Chiron è un progetto di tipo " + parsed.database.progetti.project_chiron.tipo_progetto + ". E' un " + paesed.database.progetti.project_chiron.descrizione_progetto + ". La gestione è di " + paesed.database.progetti.project_chiron.capo_progetto + ". La gestione è " + paesed.database.progetti.project_chiron.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + paesed.database.progetti.project_chiron.link_repo + ". E' stato cominciato a " + paesed.database.progetti.project_chiron.inizio_sviluppo + "e la data di fine è " + paesed.database.progetti.project_chiron.fine_sviluppo + ". E' supportato e la versione corrente è la " + paesed.database.progetti.project_chiron.versione + ". I membri che ci lavorano sono: " + paesed.database.progetti.project_chiron.membri);
+    return ("Project Chiron è un progetto di tipo " + parsed.database.progetti.project_chiron.tipo_progetto + ". E' un " + parsed.database.progetti.project_chiron.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_chiron.capo_progetto + ". La gestione è " + parsed.database.progetti.project_chiron.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_chiron.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_chiron.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_chiron.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_chiron.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_chiron.membri);
 }
 
 function getEdenInformation(session, parsed) {
-    return ("Eden Tv 86 è un progetto di tipo " + parsed.database.progetti.eden.tipo_progetto + ". E' un " + paesed.database.progetti.eden.descrizione_progetto + ". La gestione è di " + paesed.database.progetti.eden.capo_progetto + ". La gestione è " + paesed.database.progetti.eden.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + paesed.database.progetti.eden.link_repo + ". E' stato cominciato a " + paesed.database.progetti.eden.inizio_sviluppo + "e la data di fine è " + paesed.database.progetti.eden.fine_sviluppo + ". E' supportato e la versione corrente è la " + paesed.database.progetti.eden.versione + ". I membri che ci lavorano sono: " + paesed.database.progetti.eden.membri);
+    return ("Eden Tv 86 è un progetto di tipo " + parsed.database.progetti.eden.tipo_progetto + ". E' un " + parsed.database.progetti.eden.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.eden.capo_progetto + ". La gestione è " + parsed.database.progetti.eden.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.eden.link_repo + ". E' stato cominciato a " + parsed.database.progetti.eden.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.eden.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.eden.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.eden.membri);
 }
 
 function getBotInformation(session, parsed) {
-    return ("Project Ziz è un progetto di tipo " + parsed.database.progetti.project_bot.tipo_progetto + ". E' un " + paesed.database.progetti.project_bot.descrizione_progetto + ". La gestione è di " + paesed.database.progetti.project_bot.capo_progetto + ". La gestione è " + paesed.database.progetti.project_bot.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + paesed.database.progetti.project_bot.link_repo + ". E' stato cominciato a " + paesed.database.progetti.project_bot.inizio_sviluppo + "e la data di fine è " + paesed.database.progetti.project_bot.fine_sviluppo + ". E' supportato e la versione corrente è la " + paesed.database.progetti.project_bot.versione + ". I membri che ci lavorano sono: " + paesed.database.progetti.project_bot.membri);
+    return ("Project Ziz è un progetto di tipo " + parsed.database.progetti.project_bot.tipo_progetto + ". E' un " + parsed.database.progetti.project_bot.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_bot.capo_progetto + ". La gestione è " + parsed.database.progetti.project_bot.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_bot.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_bot.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_bot.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_bot.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_bot.membri);
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function getOrfeiProjects(session, parsed) {
+
+}
+
+function getLucchiProjects(session, parsed) {
+
+}
+
+function getFantinatoProjects(session, parsed) {
+
+}
+
+function getZancanaroProjects(session, parsed) {
+
+}
+
+function getChiarinProjects(session, parsed) {
+
+}
+
+function getGreggioProjects(session, parsed) {
+
+}
+
+function getQuintoProjects(session, parsed) {
+
+}
+
+function getNunzioProjects(session, parsed) {
+
 }

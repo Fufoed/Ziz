@@ -64,6 +64,7 @@
             "CWOOOOOOOOOOOOOOOOOOOOOOOO"
         ],
         "team_generale": {
+            "link_sito": "www.teamperso.com",
             "numero_membri": "8",
             "lista_membri": [
                 "Lucchi",
@@ -78,7 +79,7 @@
         },
         "progetti_generale": {
             "numero_progetti_attivi": "9",
-            "numero_progetti_totali": "10",
+            "numero_progetti_totali": "9",
             "lista_progetti": [
                 "Fast Ink!",
                 "Eden TV 86",
