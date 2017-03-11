@@ -78,15 +78,13 @@
             ]
         },
         "progetti_generale": {
-            "numero_progetti_attivi": "9",
-            "numero_progetti_totali": "9",
+            "numero_progetti_attivi": "6",
+            "numero_progetti_totali": "7",
             "lista_progetti": [
                 "Fast Ink!",
-                "Eden TV 86",
                 "Project Bot",
                 "Project Volley",
                 "Project Website",
-                "Project Chiron",
                 "Project Multi Platform UWP",
                 "Project Multi Platform Electron",
                 "Project Ziz"
@@ -105,20 +103,6 @@
                 "supporto": "Si",
                 "come_procede": "Fermo",
                 "membri": "Lucchi, Chiarin",
-                "note": ""
-            },
-            "eden": {
-                "tipo_progetto": "App",
-                "descrizione_progetto": "Applicazione Companion sviluppata per Eden TV 86",
-                "capo_progetto": "Zancanaro",
-                "tipo_gestione": "Interno",
-                "link_repo": "https://gitlab.com/manuelelucchi/eden_86.git",
-                "inizio_sviluppo": "2016",
-                "fine_sviluppo": "Gennaio 2017",
-                "versione": "1.0",
-                "supporto": "Si",
-                "come_procede": "Fermo",
-                "membri": "Lucchi",
                 "note": ""
             },
             "project_bot": {
@@ -160,20 +144,6 @@
                 "versione": "1.0",
                 "supporto": "Si",
                 "come_procede": "Finito",
-                "membri": "Lucchi",
-                "note": ""
-            },
-            "project_chiron": {
-                "tipo_progetto": "Mixed Reality",
-                "descrizione_progetto": "Progetto protetto da NDA in collaborazione con l'Ospedale Civile di Udine utilizzando i Microsoft Hololens",
-                "capo_progetto": "Lucchi",
-                "tipo_gestione": "Collaborazione",
-                "link_repo": "https://gitlab.com/manuelelucchi/project_chiron.git",
-                "inizio_sviluppo": "Gennaio 2017",
-                "fine_sviluppo": "In Corso",
-                "versione": "1.0",
-                "supporto": "Si",
-                "come_procede": "Fermo",
                 "membri": "Lucchi",
                 "note": ""
             },
@@ -358,18 +328,18 @@
                 "mail": "nunzio22598@gmail.com",
                 "username_github": "Nunzio22",
                 "nickname": "nuccio",
-                "specialita":[
+                "specialita": [
                     "AI",
                     "Deep Learning",
                     "Cloud",
                     "Social Media"
                 ],
-                "argomenti_da_imparare":[
+                "argomenti_da_imparare": [
                     "AI",
                     "Deep Learning",
                     "Cloud"
                 ],
-                "progetti_assegnati":[
+                "progetti_assegnati": [
                     "project Ziz"
                 ],
                 "ruolo": "AI Developer, Social Media Management"
