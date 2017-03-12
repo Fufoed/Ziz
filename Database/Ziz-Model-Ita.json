@@ -4197,11 +4197,6 @@
         {
           "entity": "people::Fantinato",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4235,11 +4230,6 @@
         {
           "entity": "people::Greggio",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4251,11 +4241,6 @@
         {
           "entity": "people::Greggio",
           "startPos": 1,
-          "endPos": 1
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 2,
           "endPos": 2
         }
       ]
@@ -4267,11 +4252,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4305,11 +4285,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4321,21 +4296,11 @@
         {
           "entity": "people::Orfei",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4352,11 +4317,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4373,11 +4333,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4389,21 +4344,11 @@
         {
           "entity": "people::Orfei",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4420,11 +4365,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4441,11 +4381,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4457,21 +4392,11 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4483,21 +4408,11 @@
         {
           "entity": "people::Zancanaro",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Zancanaro",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4514,11 +4429,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4535,11 +4445,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4551,21 +4456,11 @@
         {
           "entity": "people::Lucchi",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4577,21 +4472,11 @@
         {
           "entity": "people::Lucchi",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Lucchi",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4603,21 +4488,11 @@
         {
           "entity": "people::Greggio",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4634,11 +4509,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4655,11 +4525,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4671,21 +4536,11 @@
         {
           "entity": "people::Greggio",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Greggio",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4702,11 +4557,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4718,21 +4568,11 @@
         {
           "entity": "people::Chiarin",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4744,21 +4584,11 @@
         {
           "entity": "people::Chiarin",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Chiarin",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4775,11 +4605,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4796,11 +4621,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4812,21 +4632,11 @@
         {
           "entity": "people::Quinto",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4838,21 +4648,11 @@
         {
           "entity": "people::Quinto",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Quinto",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4864,21 +4664,11 @@
         {
           "entity": "people::Fantinato",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4890,21 +4680,11 @@
         {
           "entity": "people::Fantinato",
           "startPos": 0,
-          "endPos": 0
-        },
-        {
-          "entity": "people::Fantinato",
-          "startPos": 1,
           "endPos": 1
         },
         {
           "entity": "Team_Perso",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -4921,11 +4701,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4942,11 +4717,6 @@
         {
           "entity": "Team_Perso",
           "startPos": 2,
-          "endPos": 2
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 3,
           "endPos": 3
         }
       ]
@@ -4974,11 +4744,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 6,
-          "endPos": 6
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 7,
           "endPos": 7
         },
         {
@@ -4995,11 +4760,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 6,
-          "endPos": 6
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 7,
           "endPos": 7
         },
         {
@@ -5048,11 +4808,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 8,
-          "endPos": 8
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 9,
           "endPos": 9
         },
         {
@@ -5069,11 +4824,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 8,
-          "endPos": 8
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 9,
           "endPos": 9
         },
         {
@@ -5106,11 +4856,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 7,
-          "endPos": 7
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 8,
           "endPos": 8
         },
         {
@@ -5143,11 +4888,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 7,
-          "endPos": 7
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 8,
           "endPos": 8
         },
         {
@@ -5180,11 +4920,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 5,
-          "endPos": 5
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 6,
           "endPos": 6
         },
         {
@@ -5201,11 +4936,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 6,
-          "endPos": 6
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 7,
           "endPos": 7
         },
         {
@@ -5286,11 +5016,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 7,
-          "endPos": 7
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 8,
           "endPos": 8
         },
         {
@@ -5307,11 +5032,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 7,
-          "endPos": 7
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 8,
           "endPos": 8
         },
         {
@@ -5328,11 +5048,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -5349,11 +5064,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 4,
-          "endPos": 4
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 5,
           "endPos": 5
         },
         {
@@ -5418,11 +5128,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 4,
           "endPos": 4
         },
         {
@@ -5439,11 +5144,6 @@
         {
           "entity": "people::Orfei",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "people::Orfei",
-          "startPos": 4,
           "endPos": 4
         },
         {
@@ -5556,11 +5256,6 @@
         {
           "entity": "role",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "role",
-          "startPos": 4,
           "endPos": 4
         }
       ]
@@ -5572,21 +5267,11 @@
         {
           "entity": "role",
           "startPos": 3,
-          "endPos": 3
-        },
-        {
-          "entity": "role",
-          "startPos": 4,
           "endPos": 4
         },
         {
           "entity": "Team_Perso",
           "startPos": 6,
-          "endPos": 6
-        },
-        {
-          "entity": "Team_Perso",
-          "startPos": 7,
           "endPos": 7
         }
       ]
@@ -13032,6 +12717,22 @@
           "entity": "total_project",
           "startPos": 2,
           "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "ruolo di zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
         }
       ]
     }

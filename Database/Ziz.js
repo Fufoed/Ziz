@@ -217,7 +217,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                     break;
             }*/
 
-            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !chiron && !eden_tv_86 && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio) {
+            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio) {
                 session.beginDialog('NothingTemp');
             } else {
                 if (email) {
@@ -1039,6 +1039,7 @@ function textToSpeech(text, filename, accessToken, session, callback) {
 
 bot.dialog('CurrentProjectTemp', [
     function(session) {
+        session.send("Questi sono i progetti correnti");
         var CurrentProjectCards = getCurrentProjectCards(session);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
@@ -1047,7 +1048,48 @@ bot.dialog('CurrentProjectTemp', [
         botbuilder.Prompts.text(session, reply);
     },
     function(session, results) {
-
+        switch (results.response) {
+            case "UWPInfo":
+                var UwpTemp = getUwpInformation(session, data);
+                session.send(UwpTemp);
+                session.beginDialog('Root');
+                break;
+            case "UWPGestione":
+                var UwpGestioneTemp = getUwpGestione(session, data);
+                session.send(getUwpGestione);
+                session.beginDialog('Root');
+                break;
+            case "ElectronInfo":
+                var ElectronTemp = getElectronInformation(session, data);
+                session.send(ElectronTemp);
+                session.beginDialog('Root');
+                break;
+            case "ElectronGestione":
+                var ElectronGestioneTemp = getElectronGestione(session, data);
+                session.send(getElectronGestione);
+                session.beginDialog('Root');
+                break;
+            case "ZizInfo":
+                var ZizTemp = getZizInformation(session, data);
+                session.send(ZizTemp);
+                session.beginDialog('Root');
+                break;
+            case "ZizGestione":
+                var ZizGestioneTemp = getZizGestione(session, data);
+                session.send(getZizGestione);
+                session.beginDialog('Root');
+                break;
+            case "WebInfo":
+                var WebTemp = getWebsiteInformation(session, data);
+                session.send(WebTemp);
+                session.beginDialog('Root');
+                break;
+            case "WebGestione":
+                var WebGestioneTemp = getWebsiteGestione(session, data);
+                session.send(WebGestioneTemp);
+                session.beginDialog('Root');
+                break;
+        }
     }
 ])
 
@@ -1372,6 +1414,44 @@ function CreateTotalProjectsCards(session) {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------
 
+function getCurrentProjectCards(session) {
+    return [
+        new botbuilder.HeroCard(session)
+        .title('Multiplatform UWP')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'UWPInfo', 'Info'),
+            botbuilder.CardAction.imBack(session, 'UWPGestione', 'Gestione')
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Multiplatform Electron')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'ElectronInfo', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ElectronGestione', 'Gestione')
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Project Ziz')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'ZizInfo', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ZizGestione', 'Gestione')
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Website')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'WebInfo', 'Info'),
+            botbuilder.CardAction.imBack(session, 'WebGestione', 'Gestione')
+        ])
+    ]
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 function getOrfeiInformation(session, parsed) {
     var i = 0;
     var spec = '';
@@ -1587,7 +1667,7 @@ function getUwpInformation(session, parsed) {
 }
 
 function getElectronInformation(session, parsed) {
-    return ("Project Multiplatform Electron è un progetto di tipo " + parsed.database.progetti.project_multi_platform_electron.tipo_progetto + ". E' un " + parsed.database.progetti.project_multi_platform_electron.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_ziz.capo_progetto + ". La gestione è " + parsed.database.progetti.project_multi_platform_electron.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_multi_platform_electron.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_ziz.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_multi_platform_electron.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_multi_platform_electron.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_ziz.membri);
+    return ("Project Multiplatform Electron è un progetto di tipo " + parsed.database.progetti.project_multi_platform_electron.tipo_progetto + ". E' un " + parsed.database.progetti.project_multi_platform_electron.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_multi_platform_electron.capo_progetto + ". La gestione è " + parsed.database.progetti.project_multi_platform_electron.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_multi_platform_electron.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_multi_platform_electron.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_multi_platform_electron.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_multi_platform_electron.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_multi_platform_electron.membri);
 }
 
 function getVolleyInformation(session, parsed) {
@@ -1640,7 +1720,7 @@ function getNunzioProjects(session, parsed) {
     return ("I progetti fatti da lucchi sono: project Ziz");
 }
 
-//---------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function getTeamInformation(session, parsed) {
     var membri = '';
