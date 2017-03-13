@@ -12,6 +12,10 @@ var fs = require('fs');
 
 var request = require('request');
 
+var async = require('async');
+
+var promise = require('promise');
+
 var data = require('./database.json');
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
@@ -32,7 +36,7 @@ server.listen(process.env.port || process.env.PORT || 3978,
         console.log(server.name + " Listening to " + server.url);
     });
 
-var dialogs = ['Nothing', 'Root', 'Team', 'AllPeople', 'TotalProject', 'CurrentProject', 'AllRole', 'AllResponsability'];
+//var dialogs = ['Nothing', 'Root', 'Team', 'AllPeople', 'TotalProject', 'CurrentProject', 'AllRole', 'AllResponsability'];
 
 var bullshit = [];
 
@@ -218,7 +222,16 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             }*/
 
             if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio) {
-                session.beginDialog('NothingTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('NothingTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Nothing');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
             } else {
                 if (email) {
                     session.beginDialog('AllMailTemp');
@@ -355,27 +368,26 @@ bot.dialog('NothingTemp', [
     },
     function(session, results) {
         switch (results.response) {
-            case dialogs[2]:
+            case "team":
                 session.beginDialog('TeamTemp');
                 break;
-            case dialogs[3]:
+            case "persone":
                 session.beginDialog('AllPeopleTemp');
                 break;
-            case dialogs[4]:
+            case "progetti totali":
                 session.beginDialog('TotalProjectTemp');
                 break;
-            case dialogs[5]:
+            case "progetti correnti":
                 session.beginDialog('CurrentProjectTemp');
                 break;
         }
     }
 ])
 
-/*bot.dialog('Nothing', new botbuilder.IntentDialog({
+bot.dialog('Nothing', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
-        function(session, args, results)
-        {
+        function(session, args, results) {
             var current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
@@ -400,7 +412,7 @@ bot.dialog('NothingTemp', [
                 }
             }
         }
-        
+
     ])
     .matches('None', [
         function(session, results, args) {
@@ -408,7 +420,7 @@ bot.dialog('NothingTemp', [
             session.beginDialog('Root');
         }
     ])
-)*/
+)
 
 bot.dialog('TeamTemp', [
     function(session) {
@@ -422,22 +434,22 @@ bot.dialog('TeamTemp', [
     },
     function(session, results) {
         switch (results.response) {
-            case dialogs[3]:
+            case "persone":
                 session.beginDialog('AllPeopleTemp');
                 break;
-            case dialogs[4]:
+            case "progetti totali":
                 session.beginDialog('TotalProjectTemp');
                 break;
-            case dialogs[5]:
+            case "progetti correnti":
                 session.beginDialog('CurrentProjectTemp');
                 break;
-            case dialogs[6]:
+            case "ruoli":
                 session.beginDialog('AllRoleTemp');
                 break;
-            case dialogs[7]:
+            case "responsabilità":
                 session.beginDialog('AllResponsabilityTemp');
                 break;
-            case "TeamInfo":
+            case "informazioni":
                 var TeamTemp = getTeamInformation(session, data);
                 session.send(TeamTemp);
                 break;
@@ -1184,7 +1196,7 @@ function CreateNothingCards(session) {
             builder.CardImage.create(session, 'http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png')
         ])
         .buttons([
-            botbuilder.CardAction.imBack(session, dialogs[3], 'Persone')
+            botbuilder.CardAction.imBack(session, 'persone', 'Persone')
         ]),
 
         new builder.HeroCard(session)
@@ -1194,7 +1206,7 @@ function CreateNothingCards(session) {
             builder.CardImage.create(session, 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png')
         ])
         .buttons([
-            botbuilder.CardAction.imBack(session, dialogs[4], 'Progetti totali')
+            botbuilder.CardAction.imBack(session, 'progetti totali', 'Progetti totali')
         ]),
 
         new builder.HeroCard(session)
@@ -1204,7 +1216,7 @@ function CreateNothingCards(session) {
             builder.CardImage.create(session, 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png')
         ])
         .buttons([
-            botbuilder.CardAction.imBack(session, dialogs[5], 'Progetti correnti')
+            botbuilder.CardAction.imBack(session, 'progetti correnti', 'Progetti correnti')
         ]),
 
         new builder.HeroCard(session)
@@ -1214,7 +1226,7 @@ function CreateNothingCards(session) {
             builder.CardImage.create(session, 'http://www.elia-group.com/images/team1.jpg')
         ])
         .buttons([
-            botbuilder.CardAction.imBack(session, dialogs[2], 'Team')
+            botbuilder.CardAction.imBack(session, 'team', 'Team')
         ])
     ];
 }
@@ -1230,7 +1242,7 @@ function CreateTeamCards(session) {
             botbuilder.CardImage.create(session, 'http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png')
         ])
         .buttons([
-            botbuilder.CardAction.imBack(session, dialogs[3], 'Membri')
+            botbuilder.CardAction.imBack(session, 'persone', 'Membri')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1240,7 +1252,7 @@ function CreateTeamCards(session) {
             botbuilder.CardImage.create(session, 'https://thumbs.dreamstime.com/z/insieme-dell-icona-ruoli-sociali-38476263.jpg')
         ])
         .buttons([
-            botbuilder.CardAction.imBack(session, dialogs[6], 'Ruoli')
+            botbuilder.CardAction.imBack(session, 'ruoli', 'Ruoli')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1250,7 +1262,7 @@ function CreateTeamCards(session) {
             botbuilder.CardImage.create(session, 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png')
         ])
         .buttons([
-            botbuilder.CardAction.imBack(session, dialogs[4], 'Progetti Totali')
+            botbuilder.CardAction.imBack(session, 'progetti totali', 'Progetti Totali')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1260,7 +1272,7 @@ function CreateTeamCards(session) {
             botbuilder.CardImage.create(session, 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png')
         ])
         .buttons([
-            botbuilder.CardAction.imBack(session, dialogs[5], 'Progetti Correnti')
+            botbuilder.CardAction.imBack(session, 'progetti correnti', 'Progetti Correnti')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1270,14 +1282,14 @@ function CreateTeamCards(session) {
             botbuilder.CardImage.create(session, 'http://previews.123rf.com/images/sentavio/sentavio1511/sentavio151100481/48577270-stile-piatto-web-moderno-uomo-d-affari-icona-infografica-collage-Illustrazione-vettoriale-di-uomo-d--Archivio-Fotografico.jpg')
         ])
         .buttons([
-            botbuilder.CardAction.imBack(session, dialogs[7], 'Responsabilità')
+            botbuilder.CardAction.imBack(session, 'responsabilità', 'Responsabilità')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Info')
         .text('Info sul Team Perso')
         .buttons([
-            botbuilder.CardAction.imBack(session, "TeamInfo", 'Info')
+            botbuilder.CardAction.imBack(session, "informazioni", 'Info')
         ])
     ];
 }
