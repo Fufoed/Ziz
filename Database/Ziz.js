@@ -234,10 +234,25 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 })
             } else {
                 if (email) {
-                    session.beginDialog('AllMailTemp');
+                    async.parallel([
+                        function(callback)
+                        {
+                            session.beginDialog('AllMailTemp');
+                        },
+                        function(callback)
+                        {
+                            session.beginDialog('AllMail');
+                        }
+                    ],function(error, results)
+                    {
+                        session.send("Error");
+                    })
                 } else {
                     if (total_people) {
-                        session.beginDialog('AllPeopleTemp');
+                        async.parallel([
+                            
+                        ])
+                        //session.beginDialog('AllPeopleTemp');
                     } else {
                         if (total_project) {
                             session.beginDialog('TotalProjectTemp');
