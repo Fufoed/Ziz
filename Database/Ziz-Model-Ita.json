@@ -12735,6 +12735,205 @@
           "endPos": 0
         }
       ]
+    },
+    {
+      "text": "quali sono i progetti?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "total_project",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "puntolinoooo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "puntolinoo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "puntolino",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "puntolinooo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto chiron",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "project::chiron",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto fast ink",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "project::fast ink",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto eden tv 86",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "project::eden tv 86",
+          "startPos": 3,
+          "endPos": 5
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto uwp",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "project::uwp",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto volley",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "project::volley",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto electron",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "project::electron",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto bot",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "project::bot",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto website",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "project::website",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto ziz",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "project::ziz",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "total_project",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
     }
   ]
 }

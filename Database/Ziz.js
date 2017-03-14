@@ -36,8 +36,6 @@ server.listen(process.env.port || process.env.PORT || 3978,
         console.log(server.name + " Listening to " + server.url);
     });
 
-//var dialogs = ['Nothing', 'Root', 'Team', 'AllPeople', 'TotalProject', 'CurrentProject', 'AllRole', 'AllResponsability'];
-
 var bullshit = [];
 
 for (var i = 0; i < data.database.Easter_Egg.length; i++) {
@@ -124,102 +122,6 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
             var email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
-            /*switch (results.response) {
-                case null:
-                    session.beginDialog('NothingTemp');
-                    break;
-                case email:
-                    session.beginDialog('AllMailTemp');
-                    break;
-                case total_people:
-                    session.beginDialog('AllPeopleTemp');
-                    break;
-                case total_project:
-                    session.beginDialog('TotalProjectTemp');
-                    break;
-                case current_project:
-                    session.beginDialog('CurrentProjectTemp');
-                    break;
-                case bot_project:
-                    var BotTemp = getBotInformation(session, data);
-                    session.send(BotTemp);
-                    break;
-                case eden_tv_86:
-                    var EdenTemp = getEdenInformation(session, data);
-                    session.send(EdenTemp);
-                    break;
-                case chiron:
-                    var ChironTemp = getChironInformation(session, data);
-                    session.send(ChironTemp);
-                    break;
-                case website:
-                    var WebTemp = getWebsiteInformation(session, data);
-                    session.send(WebTemp);
-                    break;
-                case fast_ink:
-                    var FastTemp = getFastInkInformation(session, data);
-                    session.send(FastTemp);
-                    break;
-                case volley:
-                    var VolleyTemp = getVolleyInformation(session, data);
-                    session.send(VolleyTemp);
-                    break;
-                case electron:
-                    var ElectronTemp = getElectronInformation(session, data);
-                    session.send(ElectronTemp);
-                    break;
-                case uwp:
-                    var UwpTemp = getUwpInformation(session, data);
-                    session.send(UwpTemp);
-                    break;
-                case ziz:
-                    var ZizTemp = getZizInformation(session, data);
-                    session.send(ZizTemp);
-                    break;
-                case fantinato:
-                    var FantinatoTemp = getFantinatoInformation(session, data);
-                    session.send(FantinatoTemp);
-                    break;
-                case quinto:
-                    var QuintoTemp = getQuintoInformation(session, data);
-                    session.send(QuintoTemp);
-                    break;
-                case greggio:
-                    var GreggioTemp = getGreggioInformation(session, data);
-                    session.send(GreggioTemp);
-                    break;
-                case chiarin:
-                    var ChiarinTemp = getChiarinInformation(session, data);
-                    session.send(ChiarinTemp);
-                    break;
-                case zancanaro:
-                    var ZancanaroTemp = getZancanaroInformation(session, data);
-                    session.send(ZancanaroTemp);
-                    break;
-                case lucchi:
-                    var LucchiTemp = getLucchiInformation(session, data);
-                    session.send(LucchiTemp);
-                    break;
-                case orfei:
-                    var OrfeiTemp = getOrfeiInformation(session, data);
-                    session.send(OrfeiTemp);
-                    break;
-                case easter_egg:
-                    session.beginDialog('Bullshit');
-                    break;
-                case find:
-                    session.beginDialog('FindAllTemp');
-                    break;
-                case role:
-                    session.beginDialog('AllRoleTemp');
-                    break;
-                case responsability:
-                    session.beginDialog('AllResponsabilityTemp');
-                    break;
-                case team_perso:
-                    session.beginDialog('TeamTemp');
-                    break;
-            }*/
 
             if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio) {
                 async.parallel([
@@ -235,30 +137,51 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             } else {
                 if (email) {
                     async.parallel([
-                        function(callback)
-                        {
+                        function(callback) {
                             session.beginDialog('AllMailTemp');
                         },
-                        function(callback)
-                        {
+                        function(callback) {
                             session.beginDialog('AllMail');
                         }
-                    ],function(error, results)
-                    {
+                    ], function(error, results) {
                         session.send("Error");
                     })
                 } else {
                     if (total_people) {
                         async.parallel([
-                            
-                        ])
-                        //session.beginDialog('AllPeopleTemp');
+                            function(callback) {
+                                session.beginDialog('AllPeopleTemp');
+                            },
+                            function(callback) {
+                                session.beginDialog('AllPeople');
+                            }
+                        ], function(error, results) {
+                            session.send("Error");
+                        })
                     } else {
                         if (total_project) {
-                            session.beginDialog('TotalProjectTemp');
+                            async.parallel([
+                                function(callback) {
+                                    session.beginDialog('TotalProjectTemp');
+                                },
+                                function(callback) {
+                                    session.beginDialog('TotalProject');
+                                }
+                            ], function(error, results) {
+                                session.send("Error");
+                            })
                         } else {
                             if (current_project) {
-                                session.beginDialog('CurrentProjectTemp');
+                                async.parallel([
+                                    function(callback) {
+                                        session.beginDialog('CurrentProjectTemp');
+                                    },
+                                    function(callback) {
+                                        session.beginDialog('CurrentProject');
+                                    }
+                                ], function(error, results) {
+                                    session.send("Error");
+                                })
                             } else {
                                 if (bot_project) {
                                     var BotTemp = getBotInformation(session, data);
@@ -321,16 +244,52 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                                                                                             session.send(ZancanaroTemp);
                                                                                         } else {
                                                                                             if (team_perso) {
-                                                                                                session.beginDialog('TeamTemp');
+                                                                                                async.parallel([
+                                                                                                    function(callback) {
+                                                                                                        session.beginDialog('TeamTemp');
+                                                                                                    },
+                                                                                                    function(callback) {
+                                                                                                        session.beginDialog('Team')
+                                                                                                    }
+                                                                                                ], function(error, results) {
+                                                                                                    session.send("Error");
+                                                                                                })
                                                                                             } else {
                                                                                                 if (responsability) {
-                                                                                                    session.beginDialog('AllResponsabilityTemp');
+                                                                                                    async.parallel([
+                                                                                                        function(callback) {
+                                                                                                            session.beginDialog('AllResponsabilityTemp');
+                                                                                                        },
+                                                                                                        function(callback) {
+                                                                                                            session.beginDialog('AllResponsability');
+                                                                                                        }
+                                                                                                    ], function(error, results) {
+                                                                                                        session.send("Error");
+                                                                                                    })
                                                                                                 } else {
                                                                                                     if (role) {
-                                                                                                        session.beginDialog('AllRoleTemp');
+                                                                                                        async.parallel([
+                                                                                                            function(callback) {
+                                                                                                                session.beginDialog('AllRoleTemp');
+                                                                                                            },
+                                                                                                            function(callback) {
+                                                                                                                session.beginDialog('AllRole');
+                                                                                                            }
+                                                                                                        ], function(error, results) {
+                                                                                                            session.send("Error");
+                                                                                                        })
                                                                                                     } else {
                                                                                                         if (find) {
-                                                                                                            session.beginDialog('FindAllTemp');
+                                                                                                            async.parallel([
+                                                                                                                function(callback) {
+                                                                                                                    session.beginDialog('FindAllTemp');
+                                                                                                                },
+                                                                                                                function(callback) {
+                                                                                                                    session.beginDialog('FindAll');
+                                                                                                                }
+                                                                                                            ], function(error, results) {
+                                                                                                                session.send("Error");
+                                                                                                            })
                                                                                                         } else {
                                                                                                             if (easter_egg) {
                                                                                                                 var BullshitTemp = getBullshit(session);
@@ -384,16 +343,52 @@ bot.dialog('NothingTemp', [
     function(session, results) {
         switch (results.response) {
             case "team":
-                session.beginDialog('TeamTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TeamTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Team');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
                 break;
             case "persone":
-                session.beginDialog('AllPeopleTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllPeopleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllPeople');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
                 break;
             case "progetti totali":
-                session.beginDialog('TotalProjectTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TotalProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('TotalProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
                 break;
             case "progetti correnti":
-                session.beginDialog('CurrentProjectTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('CurrentProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('CurrentProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
                 break;
         }
     }
@@ -407,27 +402,58 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
             var team_perso = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
-            if (!current_project && !total_project && !total_people && !team_perso) {
-                session.beginDialog('Nothing');
+            if (!current_project && !total_project && !total_people && team_perso) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TeamTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Team');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
             } else {
-                if (!current_project && !total_project && !total_people && team_perso) {
-                    session.beginDialog('Team');
+                if (!current_project && !total_project && total_people && !team_perso) {
+                    async.parallel([
+                        function(callback) {
+                            session.beginDialog('AllPeopleTemp');
+                        },
+                        function(callback) {
+                            session.beginDialog('AllPeople');
+                        }
+                    ], function(error, results) {
+                        session.send("Error");
+                    })
                 } else {
-                    if (!current_project && !total_project && total_people && !team_perso) {
-                        session.beginDialog('AllPeople');
-                    } else {
-                        if (!current_project && total_project && !total_people && !team_perso) {
-                            session.beginDialog('TotalProject');
-                        } else {
-                            if (current_project && !total_project && !total_people && !team_perso) {
-                                session.beginDialog('CurrentProject');
+                    if (!current_project && total_project && !total_people && !team_perso) {
+                        async.parallel([
+                            function(callback) {
+                                session.beginDialog('TotalProjectTemp');
+                            },
+                            function(callback) {
+                                session.beginDialog('TotalProject');
                             }
+                        ], function(error, results) {
+                            session.send("Error");
+                        })
+                    } else {
+                        if (current_project && !total_project && !total_people && !team_perso) {
+                            async.parallel([
+                                function(callback) {
+                                    session.beginDialog('CurrentProjectTemp');
+                                },
+                                function(callback) {
+                                    session.beginDialog('CurrentProject');
+                                }
+                            ], function(error, results) {
+                                session.send("Error");
+                            })
                         }
                     }
                 }
             }
         }
-
     ])
     .matches('None', [
         function(session, results, args) {
@@ -450,19 +476,64 @@ bot.dialog('TeamTemp', [
     function(session, results) {
         switch (results.response) {
             case "persone":
-                session.beginDialog('AllPeopleTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllPeopleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllPeople');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
                 break;
             case "progetti totali":
-                session.beginDialog('TotalProjectTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TotalProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('TotalProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
                 break;
             case "progetti correnti":
-                session.beginDialog('CurrentProjectTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('CurrentProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('CurrentProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
                 break;
             case "ruoli":
-                session.beginDialog('AllRoleTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllRoleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllRole');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
                 break;
             case "responsabilità":
-                session.beginDialog('AllResponsabilityTemp');
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllResponsabilityTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllResponsability');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
                 break;
             case "informazioni":
                 var TeamTemp = getTeamInformation(session, data);
@@ -558,30 +629,81 @@ bot.dialog('TotalProjectTemp', [
     }
 ])
 
-/*bot.dialog('Team', new botbuilder.IntentDialog({
+bot.dialog('Team', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
-            
+            var team = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
             var role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
             var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'Responsibility');
             var current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
-            if (!current_project && !total_project && !total_people && !responsability && role) {
-                session.beginDialog('AllRole');
+            if (role) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllRoleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllRole');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
             } else {
-                if (!current_project && !total_project && !total_people && responsability && !role) {
-                    session.beginDialog('AllResponsability');
+                if (responsability) {
+                    async.parallel([
+                        function(callback) {
+                            session.beginDialog('AllResponsabilityTemp');
+                        },
+                        function(callback) {
+                            session.beginDialog('AllResponsability');
+                        }
+                    ], function(error, results) {
+                        session.send("Error");
+                    })
                 } else {
-                    if (!current_project && !total_project && total_people && !responsability && !role) {
-                        session.beginDialog('AllPeople');
+                    if (total_people) {
+                        async.parallel([
+                            function(callback) {
+                                session.beginDialog('AllPeopleTemp');
+                            },
+                            function(callback) {
+                                session.beginDialog('AllPeople');
+                            }
+                        ], function(error, results) {
+                            session.send("Error");
+                        })
                     } else {
-                        if (!current_project && total_project && !total_people && !responsability && !role) {
-                            session.beginDialog('TotalProject');
+                        if (total_project) {
+                            async.parallel([
+                                function(callback) {
+                                    session.beginDialog('TotalProjectTemp');
+                                },
+                                function(callback) {
+                                    session.beginDialog('TotalProject');
+                                }
+                            ], function(error, results) {
+                                session.send("Error");
+                            })
                         } else {
-                            if (current_project && !total_project && !total_people && !responsability && !role) {
-                                session.beginDialog('CurrentProject');
+                            if (current_project) {
+                                async.parallel([
+                                    function(callback) {
+                                        session.beginDialog('CurrentProjectTemp');
+                                    },
+                                    function(callback) {
+                                        session.beginDialog('CurrentProject');
+                                    }
+                                ], function(error, results) {
+                                    session.send("Error");
+                                })
+                            } else {
+                                if (team) {
+                                    var TeamTemp = getTeamInformation(session, data);
+                                    session.send(TeamTemp);
+                                    session.beginDialog('Root');
+                                }
                             }
                         }
                     }
@@ -595,7 +717,7 @@ bot.dialog('TotalProjectTemp', [
             session.beginDialog('Root');
         }
     ])
-)*/
+)
 
 bot.dialog('AllRoleTemp', [
     function(session) {
@@ -653,11 +775,11 @@ bot.dialog('AllRoleTemp', [
     }
 ])
 
-/*bot.dialog('AllRole', new botbuilder.IntentDialog({
+bot.dialog('AllRole', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
-            
+
             var orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
             var lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
             var zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
@@ -666,37 +788,45 @@ bot.dialog('AllRoleTemp', [
             var quinto = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::quinto');
             var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
             var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
-            if (!orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && nunzio) {
+            if (nunzio) {
                 var NunzioRole = getNunzioRole(session, parsed);
                 session.send(NunzioRole);
+                session.beginDialog('Root');
             } else {
-                if (!orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && fantinato && !nunzio) {
+                if (fantinato) {
                     var FantinatoRole = getFantinatoRole(session, database);
                     session.send(FantinatoRole);
+                    session.beginDialog('Root');
                 } else {
-                    if (!orfei && !lucchi && !zancanaro && !chiarin && !greggio && quinto && !fantinato && !nunzio) {
+                    if (quinto) {
                         var QuintoRole = getQuintoRole(session, database);
                         session.send(QuintoRole);
+                        session.beginDialog('Root');
                     } else {
-                        if (!orfei && !lucchi && !zancanaro && !chiarin && greggio && !quinto && !fantinato && !nunzio) {
+                        if (greggio) {
                             var GreggioRole = getGreggioRole(session, database);
                             session.send(GreggioRole);
+                            session.beginDialog('Root');
                         } else {
-                            if (!orfei && !lucchi && !zancanaro && chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                            if (chiarin) {
                                 var ChiarinRole = getChiarinRole(session, database);
                                 session.send(ChiarinRole);
+                                session.beginDialog('Root');
                             } else {
-                                if (!orfei && !lucchi && zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                if (zancanaro) {
                                     var ZancanaroRole = getZancanaroRole(session, database);
                                     session.send(ZancanaroRole);
+                                    session.beginDialog('Root');
                                 } else {
-                                    if (!orfei && lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                    if (lucchi) {
                                         var LucchiRole = getLucchiRole(session, database);
                                         session.send(LucchiRole);
+                                        session.beginDialog('Root');
                                     } else {
-                                        if (orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                        if (orfei) {
                                             var OrfeiRole = getOrfeiRole(session, database);
                                             session.send(OrfeiRole);
+                                            session.beginDialog('Root');
                                         }
                                     }
                                 }
@@ -713,7 +843,7 @@ bot.dialog('AllRoleTemp', [
             session.beginDialog('Root');
         }
     ])
-)*/
+)
 
 bot.dialog('AllPeopleTemp', [
     function(session) {
@@ -727,195 +857,195 @@ bot.dialog('AllPeopleTemp', [
     },
     function(session, results) {
         switch (results.response) {
-            case "OrfeiRuolo":
+            case "ruolo di orfei":
                 var OrfeiRuolo = getOrfeiRole(session, data);
                 session.send(OrfeiRuolo);
                 session.beginDialog('Root');
                 break;
-            case "OrfeiInfo":
+            case "informazioni su orfei":
                 var OrfeiInformazioni = getOrfeiInformation(session, data);
                 session.send(OrfeiInformazioni);
                 session.beginDialog('Root');
                 break;
-            case "OrfeiResponsabilità":
+            case "responsabilità di orfei":
                 var OrfeiRes = getOrfeiResponsability(session, data);
                 session.send(OrfeiRes);
                 session.beginDialog('Root');
                 break;
-            case "OrfeiProgetti":
+            case "progetti di orfei":
                 var OrfeiProject = getOrfeiProjects(session, data);
                 session.send(OrfeiProject);
                 session.beginDialog('Root');
                 break;
-            case "OrfeiMail":
+            case "mail di orfei":
                 var OrfeiMail = getOrfeiMail(session, data);
                 session.send(OrfeiMail);
                 break;
-            case "LucchiRuolo":
+            case "ruolo di lucchi":
                 var LucchiRuolo = getLucchiRole(session, data);
                 session.send(LucchiRuolo);
                 session.beginDialog('Root');
                 break;
-            case "LucchiInfo":
+            case "informazioni su lucchi":
                 var LucchiInformazioni = getLucchiInformation(session, data);
                 session.send(LucchiInformazioni);
                 session.beginDialog('Root');
                 break;
-            case "LucchiResponsabilità":
+            case "responsabilità di lucchi":
                 var LucchiRes = getLucchiResponsability(session, data);
                 session.send(LucchiRes);
                 session.beginDialog('Root');
                 break;
-            case "LucchiProgetti":
+            case "progetti di lucchi":
                 var LucchiProjects = getLucchiProjects(session, data);
                 session.send(LucchiProjects);
                 session.beginDialog('Root');
                 break;
-            case "LucchiMail":
+            case "mail di lucchi":
                 var LucchiMail = getLucchiMail(session, data);
                 session.send(LucchiMail);
                 break;
-            case "ZancanaroRuolo":
+            case "ruolo di zancanaro":
                 var ZancanaroRuolo = getZancanaroRole(session, data);
                 session.send(ZancanaroRuolo);
                 session.beginDialog('Root');
                 break;
-            case "ZancanaroInfo":
+            case "informazioni su zancanaro":
                 var ZancanaroInformazioni = getZancanaroInformation(session, data);
                 session.send(ZancanaroInformazioni);
                 session.beginDialog('Root');
                 break;
-            case "ZancanaroResponsabilità":
+            case "responsabilità di zancanaro":
                 var ZancanaroRes = getZancanaroResponsability(session, data);
                 session.send(ZancanaroRes);
                 session.beginDialog('Root');
                 break;
-            case "ZancanaroProgetti":
+            case "progetti di zancanaro":
                 var ZancanaroProjects = getZancanaroProjects(session, data);
                 session.send(ZancanaroProjects);
                 session.beginDialog('Root');
                 break;
-            case "ZancanaroMail":
+            case "mail di zancanaro":
                 var ZancanaroMail = getZancanaroMail(session, data);
                 session.send(ZancanaroMail);
                 break;
-            case "FantinatoRuolo":
+            case "ruolo di fantinato":
                 var FantinatoRuolo = getFantinatoRole(session, data);
                 session.send(FantinatoRuolo);
                 session.beginDialog('Root');
                 break;
-            case "FantinatoInfo":
+            case "informazioni su fantinato":
                 var FantinatoInformazioni = getFantinatoInformation(session, data);
                 session.send(FantinatoInformazioni);
                 session.beginDialog('Root');
                 break;
-            case "FantinatoResponsabilità":
+            case "responsabilità di fantinato":
                 var FantinatoRes = getFantinatoResponsability(session, data);
                 session.send(FantinatoRes);
                 session.beginDialog('Root');
                 break;
-            case "FantinatoProgetti":
+            case "progetti di fantinato":
                 var FantinatoProjects = getFantinatoProjects(session, data);
                 session.send(FantinatoProjects);
                 session.beginDialog('Root');
                 break;
-            case "FantinatoMail":
+            case "mail di fantinato":
                 var FantinatoMail = getFantinatoMail(session, data);
                 session.send(FantinatoMail);
                 break;
-            case "ChiarinRuolo":
+            case "ruolo di chiarin":
                 var ChiarinRuolo = getChiarinRole(session, data);
                 session.send(ChiarinRuolo);
                 session.beginDialog('Root');
                 break;
-            case "ChiarinInfo":
+            case "informazioni su chiarin":
                 var ChiarinInformazioni = getChiarinInformation(session, data);
                 session.send(ChiarinInformazioni);
                 session.beginDialog('Root');
                 break;
-            case "ChiarinResponsabilità":
+            case "responsabilità di chiarin":
                 var ChiarinRes = getChiarinResponsability(session, data);
                 session.send(ChiarinRes);
                 session.beginDialog('Root');
                 break;
-            case "ChiarinProgetti":
+            case "progetti di chiarin":
                 var ChiarinProjects = getChiarinProjects(session, data);
                 session.send(ChiarinProjects);
                 session.beginDialog('Root');
                 break;
-            case "ChiarinMail":
+            case "mail di chiarin":
                 var ChiarinMail = getChiarinMail(session, data);
                 session.send(ChiarinMail);
                 break;
-            case "GreggioRuolo":
+            case "ruolo di greggio":
                 var GreggioRuolo = getGreggioRole(session, data);
                 session.send(GreggioRuolo);
                 session.beginDialog('Root');
                 break;
-            case "GreggioInfo":
+            case "informazioni su greggio":
                 var GreggioInformazioni = getGreggioInformation(session, data);
                 session.send(GreggioInformazioni);
                 session.beginDialog('Root');
                 break;
-            case "GreggioResponsabilità":
+            case "responsabilità di greggio":
                 var GreggioRes = getGreggioResponsability(session, data);
                 session.send(GreggioRes);
                 session.beginDialog('Root');
                 break;
-            case "GreggioProgetti":
+            case "progetti di greggio":
                 var GreggioProjects = getGreggioProjects(session, data);
                 session.send(GreggioProjects);
                 session.beginDialog('Root');
                 break;
-            case "GreggioMail":
+            case "mail di greggio":
                 var GreggioMail = getGreggioMail(session, data);
                 session.send(GreggioMail);
                 break;
-            case "QuintoRuolo":
+            case "ruolo di quinto":
                 var QuintoRuolo = getQuintoRole(session, data);
                 session.send(QuintoRuolo);
                 session.beginDialog('Root');
                 break;
-            case "QuintoInfo":
+            case "informazioni su quinto":
                 var QuintoInformazioni = getQuintoInformation(session, data);
                 session.send(QuintoInformazioni);
                 session.beginDialog('Root');
                 break;
-            case "QuintoResponsabilità":
+            case "responsabilità di quinto":
                 var QuintoRes = getQuintoResponsability(session, data);
                 session.send(QuintoRes);
                 session.beginDialog('Root');
                 break;
-            case "QuintoProgetti":
+            case "progetti di quinto":
                 var QuintoProjects = getQuintoProjects(session, data);
                 session.send(QuintoProjects);
                 session.beginDialog('Root');
                 break;
-            case "QuintoMail":
+            case "mail di quinto":
                 var QuintoMail = getQuintoMail(session, data);
                 session.send(QuintoMail);
                 break;
-            case "NunzioRuolo":
+            case "ruolo di nunzio":
                 var NunzioRuolo = getNunzioRole(session, data);
                 session.send(NunzioRuolo);
                 session.beginDialog('Root');
                 break;
-            case "NunzioInfo":
+            case "informazioni su nunzio":
                 var NunzioInformazioni = getNunzioInformation(session, data);
                 session.send(NunzioInformazioni);
                 session.beginDialog('Root');
                 break;
-            case "NunzioResponsabilità":
+            case "responsabilità di nunzio":
                 var QuintoRes = getNunzioResponsability(session, data);
                 session.send(NunzioRes);
                 session.beginDialog('Root');
                 break;
-            case "NunzioProgetti":
+            case "progetti di nunzio":
                 var NunzioProjects = getNunzioProjects(session, data);
                 session.send(NunzioProjects);
                 session.beginDialog('Root');
                 break;
-            case "NunzioMail":
+            case "mail di nunzio":
                 var NunzioMail = getNunzioMail(session, data);
                 session.send(NunzioMail);
                 break;
@@ -927,6 +1057,7 @@ bot.dialog('AllPeopleTemp', [
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
+            var mail = botbuilder.EntityRecognizer.findEntity(args.entities, 'email);
             var role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
             var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'Responsibility');
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
@@ -938,57 +1069,38 @@ bot.dialog('AllPeopleTemp', [
             var quinto = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::quinto');
             var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
             var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
-            if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                session.send("Inserire una delle opzioni sopra riportate");
-                session.beginDialog('AllPeople');
-            } else {
-                if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && nunzio) {
+                if (nunzio) {
                     var NunzioTemp = getNunzioInformation(session, database);
                     session.send(NunzioTemp);
                 } else {
-                    if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && fantinato && !nunzio) {
+                    if (fantinato) {
                         var FantinatoTemp = getFantinatoInformation(session, database);
                         session.send(FantinatoTemp);
                     } else {
-                        if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && quinto && !fantinato && !nunzio) {
+                        if (quinto) {
                             var QuintoTemp = getQuintoInformation(session, database);
                             session.send(QuintoTemp);
                         } else {
-                            if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && greggio && !quinto && !fantinato && !nunzio) {
+                            if (greggio) {
                                 var GreggioTemp = getGreggioInformation(session, database);
                                 session.send(GreggioTemp);
                             } else {
-                                if (!role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                if (chiarin) {
                                     var ChiarinTemp = getChiarinInformation(session, database);
                                     session.send(ChiarinTemp);
                                 } else {
-                                    if (!role && !responsability && !total_project && !orfei && !lucchi && zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                    if (zancanaro) {
                                         var ZancanaroTemp = getZancanaroInformation(session, database);
                                         session.send(ZancanaroTemp);
                                     } else {
-                                        if (!role && !responsability && !total_project && !orfei && lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                        if (lucchi) {
                                             var LucchiTemp = getLucchiInformation(session, database);
                                             session.send(LucchiTemp);
                                         } else {
-                                            if (!role && !responsability && !total_project && orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
+                                            if (orfei) {
                                                 var OrfeiTemp = getOrfeiInformation(session, database);
                                                 session.send(OrfeiTemp);
-                                            } else {
-                                                if (!role && !responsability && total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                                    var TotalProjectTemp = getTotalProjectInformation(session, database);
-                                                    session.send(TotalProjectTemp);
-                                                } else {
-                                                    if (!role && responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                                        var ResponsabilityTemp = getAllResponsabilityInformation(session, database);
-                                                        session.send(ResponsabilityTemp);
-                                                    } else {
-                                                        if (role && !responsability && !total_project && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !nunzio) {
-                                                            var RoleTemp = getAllRoleInformation(session, database);
-                                                            session.send(RoleTemp);
-                                                        }
-                                                    }
-                                                }
-                                            }
+                                            } 
                                         }
                                     }
                                 }
@@ -1152,6 +1264,72 @@ bot.dialog('CurrentProjectTemp', [
     }
 ])
 
+
+bot.dialog('CurrentProject', new botbuilder.IntentDialog({
+    recognizers: [recognize]
+}).matches('GetInformation', [
+    function(session, args, results) {
+        var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
+        var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
+        var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
+        var electron = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::electron');
+        var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
+
+        if (ziz) {
+            var ZizTemp = getZizInformation(session, data);
+            session.send(ZizTemp);
+            session.beginDialog('Root');
+        } else {
+            if (uwp) {
+                var UwpTemp = getUwpInformation(session, data);
+                session.send(UwpTemp);
+                session.beginDialog('Root');
+            } else {
+                if (electron) {
+                    var ElectronTemp = getElectronInformation(session, data);
+                    session.send(ElectronTemp);
+                    session.beginDialog('Root');
+                } else {
+                    if (website) {
+                        var WebTemp = getWebsiteInformation(session, data);
+                        session.send(WebTemp);
+                        session.beginDialog('Root');
+                    } else {
+                        if (ziz && responsability) {
+                            var ZizGestioneTemp = getZizGestione(session, data);
+                            session.send(getZizGestione);
+                            session.beginDialog('Root');
+                        } else {
+                            if (uwp && responsability) {
+                                var UwpGestioneTemp = getUwpGestione(session, data);
+                                session.send(getUwpGestione);
+                                session.beginDialog('Root');
+                            } else {
+                                if (electron && responsability) {
+                                    var ElectronGestioneTemp = getElectronGestione(session, data);
+                                    session.send(getElectronGestione);
+                                    session.beginDialog('Root');
+                                } else {
+                                    if (website && responsability) {
+                                        var WebGestioneTemp = getWebsiteGestione(session, data);
+                                        session.send(WebGestioneTemp);
+                                        session.beginDialog('Root');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+]).matches('None', [
+    function(session, args, results) {
+        session.send("Wrong action");
+        session.beginDialog('Root');
+    }
+]))
+
 bot.dialog('AllMailTemp', [
     function(session) {
         session.send("Di chi vuoi sapere la mail?");
@@ -1167,38 +1345,114 @@ bot.dialog('AllMailTemp', [
             case "Orfei":
                 var OrfeiMail = getOrfeiMail(session, data);
                 session.send(OrfeiMail);
+                session.beginDialog('Root');
                 break;
             case "Lucchi":
                 var LucchiMail = getLucchiMail(session, data);
                 session.send(LucchiMail);
+                session.beginDialog('Root');
                 break;
             case "Fantinato":
                 var FantinatoMail = getFantinatoMail(session, data);
                 session.send(FantinatoMail);
+                session.beginDialog('Root');
                 break;
             case "Zancanaro":
                 var ZancanaroMail = getZancanaroMail(session, data);
                 session.send(ZancanaroMail);
+                session.beginDialog('Root');
                 break;
             case "Greggio":
                 var GreggioMail = getGreggioMail(session, data);
                 session.send(GreggioMail);
+                session.beginDialog('Root');
                 break;
             case "Chiarin":
                 var ChiarinMail = getChiarinMail(session, data);
                 session.send(ChiarinMail);
+                session.beginDialog('Root');
                 break;
             case "Quinto":
                 var QuintoMail = getQuintoMail(session, data);
                 session.send(QuintoMail);
+                session.beginDialog('Root');
                 break;
             case "Nunzio":
                 var NunzioMail = getNunzioMail(session, data);
                 session.send(NunzioMail);
+                session.beginDialog('Root');
                 break;
         }
     }
 ])
+
+bot.dialog('AllMail', new botbuilder.IntentDialog({
+    recognizers: [recognize]
+}).matches('GetInformation', [
+    function(session, args, results) {
+        var orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
+        var lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
+        var zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
+        var chiarin = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::chiarin');
+        var greggio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::greggio');
+        var quinto = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::quinto');
+        var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
+        var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
+
+        if (orfei) {
+            var OrfeiMail = getOrfeiMail(session, data);
+            session.send(OrfeiMail);
+            session.beginDialog('Root');
+        } else {
+            if (lucchi) {
+                var LucchiMail = getLucchiMail(session, data);
+                session.send(LucchiMail);
+                session.beginDialog('Root');
+            } else {
+                if (zancanaro) {
+                    var ZancanaroMail = getZancanaroMail(session, data);
+                    session.send(ZancanaroMail);
+                    session.beginDialog('Root');
+                } else {
+                    if (chiarin) {
+                        var ChiarinMail = getChiarinMail(session, data);
+                        session.send(ChiarinMail);
+                        session.beginDialog('Root');
+                    } else {
+                        if (greggio) {
+                            var GreggioMail = getGreggioMail(session, data);
+                            session.send(GreggioMail);
+                            session.beginDialog('Root');
+                        } else {
+                            if (quinto) {
+                                var QuintoMail = getQuintoMail(session, data);
+                                session.send(QuintoMail);
+                                session.beginDialog('Root');
+                            } else {
+                                if (fantinato) {
+                                    var FantinatoMail = getFantinatoMail(session, data);
+                                    session.send(FantinatoMail);
+                                    session.beginDialog('Root');
+                                } else {
+                                    if (nunzio) {
+                                        var NunzioMail = getNunzioMail(session, data);
+                                        session.send(NunzioMail);
+                                        session.beginDialog('Root');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+]).matches('None', [
+    function(session, args, results) {
+        session.send("Wrong Action");
+        session.beginDialog('Root');
+    }
+]))
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1379,88 +1633,88 @@ function CreatePeopleCards(session) {
         .title('Orfei')
         .text('Informazioni su Orfei')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'OrfeiInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'OrfeiRuolo', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'OrfeiResponsabilità', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'OrfeiProgetti', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'OrfeiMail', 'Mail')
+            botbuilder.CardAction.imBack(session, 'informazioni su orfei', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ruolo di orfei', 'Ruolo'),
+            botbuilder.CardAction.imBack(session, 'responsabilità di orfei', 'Responsabilità'),
+            botbuilder.CardAction.imBack(session, 'progetti di orfei', 'Progetti'),
+            botbuilder.CardAction.imBack(session, 'mail di orfei', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Lucchi')
         .text('Informazioni su Lucchi')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'LucchiInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'LucchiRuolo', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'LucchiResponsabilità', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'LucchiProgetti', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'LucchiMail', 'Mail')
+            botbuilder.CardAction.imBack(session, 'informazioni su lucchi', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ruolo di lucchi', 'Ruolo'),
+            botbuilder.CardAction.imBack(session, 'responsabilità di lucchi', 'Responsabilità'),
+            botbuilder.CardAction.imBack(session, 'progetti di lucchi', 'Progetti'),
+            botbuilder.CardAction.imBack(session, 'mail di lucchi', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Fantinato')
         .text('Informazioni su Fantinato')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'FantinatoInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'FantinatoRuolo', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'FantinatoResponsabilità', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'FantinatoProgetti', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'FantinatoMail', 'Mail')
+            botbuilder.CardAction.imBack(session, 'informazioni su fantinato', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ruolo di fantinato', 'Ruolo'),
+            botbuilder.CardAction.imBack(session, 'responsabilità di fantinato', 'Responsabilità'),
+            botbuilder.CardAction.imBack(session, 'progetti di fantinato', 'Progetti'),
+            botbuilder.CardAction.imBack(session, 'mail di fantinato', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Zancanaro')
         .text('Informazioni su Zancanaro')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'ZancanaroInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ZancanaroRuolo', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'ZancanaroResponsabilità', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'ZancanaroProgetti', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'ZancanaroMail', 'Mail')
+            botbuilder.CardAction.imBack(session, 'informazioni su zancanaro', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ruolo di zancanaro', 'Ruolo'),
+            botbuilder.CardAction.imBack(session, 'responsabilità di zancanaro', 'Responsabilità'),
+            botbuilder.CardAction.imBack(session, 'progetti di zancanaro', 'Progetti'),
+            botbuilder.CardAction.imBack(session, 'mail di zancanaro', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Greggio')
         .text('Informazioni su Greggio')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'GreggioInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'GreggioRuolo', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'GreggioResponsabilità', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'GreggioProgetti', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'GreggioMail', 'Mail')
+            botbuilder.CardAction.imBack(session, 'informazioni su greggio', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ruolo di greggio', 'Ruolo'),
+            botbuilder.CardAction.imBack(session, 'responsabilità di greggio', 'Responsabilità'),
+            botbuilder.CardAction.imBack(session, 'progetti di greggio', 'Progetti'),
+            botbuilder.CardAction.imBack(session, 'mail di greggio', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Quinto')
         .text('Informazioni su Quinto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'QuintoInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'QuintoRuolo', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'QuintoResponsabilità', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'QuintoProgetti', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'QuintoMail', 'Mail')
+            botbuilder.CardAction.imBack(session, 'informazioni su quinto', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ruolo di quinto', 'Ruolo'),
+            botbuilder.CardAction.imBack(session, 'responsabilità di quinto', 'Responsabilità'),
+            botbuilder.CardAction.imBack(session, 'progetti di quinto', 'Progetti'),
+            botbuilder.CardAction.imBack(session, 'mail di quinto', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Chiarin')
         .text('Informazioni su Chiarin')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'ChiarinInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ChiarinRuolo', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'ChiarinResponsabilità', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'ChiarinProgetti', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'ChiarinMail', 'Mail')
+            botbuilder.CardAction.imBack(session, 'informazioni su chiarin', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ruolo di chiarin', 'Ruolo'),
+            botbuilder.CardAction.imBack(session, 'responsabilità di chiarin', 'Responsabilità'),
+            botbuilder.CardAction.imBack(session, 'progetti di chiarin', 'Progetti'),
+            botbuilder.CardAction.imBack(session, 'mail di chiarin', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Nunzio')
         .text('Informazioni su Nunzio')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'NunzioInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'NunzioRuolo', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'NunzioResponsabilità', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'NunzioProgetti', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'NunzioMail', 'Mail')
+            botbuilder.CardAction.imBack(session, 'informazioni su nunzio', 'Info'),
+            botbuilder.CardAction.imBack(session, 'ruolo di nunzio', 'Ruolo'),
+            botbuilder.CardAction.imBack(session, 'responsabilità di nunzio', 'Responsabilità'),
+            botbuilder.CardAction.imBack(session, 'progetti di nunzio', 'Progetti'),
+            botbuilder.CardAction.imBack(session, 'mail di nunzio', 'Mail')
         ])
     ]
 }
