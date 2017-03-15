@@ -12,7 +12,7 @@ var fs = require('fs');
 
 var request = require('request');
 
-var async = require('async');
+var async = require('G:/BOT/PROGETTI/Project-Ziz/Database/node_modules/async');
 
 var promise = require('promise');
 
@@ -133,7 +133,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                     }
                 ], function(error, results) {
                     session.send("Error");
-                })
+                });
             } else {
                 if (email) {
                     async.parallel([
@@ -1069,38 +1069,37 @@ bot.dialog('AllPeople', new botbuilder.IntentDialog({
             var quinto = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::quinto');
             var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
             var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
-                if (nunzio) {
-                    var NunzioTemp = getNunzioInformation(session, database);
-                    session.send(NunzioTemp);
+            if (nunzio) {
+                var NunzioTemp = getNunzioInformation(session, database);
+                session.send(NunzioTemp);
+            } else {
+                if (fantinato) {
+                    var FantinatoTemp = getFantinatoInformation(session, database);
+                    session.send(FantinatoTemp);
                 } else {
-                    if (fantinato) {
-                        var FantinatoTemp = getFantinatoInformation(session, database);
-                        session.send(FantinatoTemp);
+                    if (quinto) {
+                        var QuintoTemp = getQuintoInformation(session, database);
+                        session.send(QuintoTemp);
                     } else {
-                        if (quinto) {
-                            var QuintoTemp = getQuintoInformation(session, database);
-                            session.send(QuintoTemp);
+                        if (greggio) {
+                            var GreggioTemp = getGreggioInformation(session, database);
+                            session.send(GreggioTemp);
                         } else {
-                            if (greggio) {
-                                var GreggioTemp = getGreggioInformation(session, database);
-                                session.send(GreggioTemp);
+                            if (chiarin) {
+                                var ChiarinTemp = getChiarinInformation(session, database);
+                                session.send(ChiarinTemp);
                             } else {
-                                if (chiarin) {
-                                    var ChiarinTemp = getChiarinInformation(session, database);
-                                    session.send(ChiarinTemp);
+                                if (zancanaro) {
+                                    var ZancanaroTemp = getZancanaroInformation(session, database);
+                                    session.send(ZancanaroTemp);
                                 } else {
-                                    if (zancanaro) {
-                                        var ZancanaroTemp = getZancanaroInformation(session, database);
-                                        session.send(ZancanaroTemp);
+                                    if (lucchi) {
+                                        var LucchiTemp = getLucchiInformation(session, database);
+                                        session.send(LucchiTemp);
                                     } else {
-                                        if (lucchi) {
-                                            var LucchiTemp = getLucchiInformation(session, database);
-                                            session.send(LucchiTemp);
-                                        } else {
-                                            if (orfei) {
-                                                var OrfeiTemp = getOrfeiInformation(session, database);
-                                                session.send(OrfeiTemp);
-                                            } 
+                                        if (orfei) {
+                                            var OrfeiTemp = getOrfeiInformation(session, database);
+                                            session.send(OrfeiTemp);
                                         }
                                     }
                                 }
@@ -1109,6 +1108,7 @@ bot.dialog('AllPeople', new botbuilder.IntentDialog({
                     }
                 }
             }
+        }
     ])
     .matches('None', [
         function(session, args, results) {
@@ -2203,3 +2203,5 @@ function getQuintoMail(session, parsed) {
 function getNunzioMail(session, parsed) {
     return ("L'email di nunzio è " + parsed.database.membri.nunzio.mail);
 }
+
+//-----------------------------------------------------------------------------------------------------------
