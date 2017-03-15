@@ -555,72 +555,72 @@ bot.dialog('TotalProjectTemp', [
     },
     function(session, results) {
         switch (results.response) {
-            case "UWPInfo":
+            case "informazioni sul progetto uwp":
                 var UwpTemp = getUwpInformation(session, data);
                 session.send(UwpTemp);
                 session.beginDialog('Root');
                 break;
-            case "UWPGestione":
+            case "gestione del progetto uwp":
                 var UwpGestioneTemp = getUwpGestione(session, data);
                 session.send(getUwpGestione);
                 session.beginDialog('Root');
                 break;
-            case "ElectronInfo":
+            case "informazioni sul progetto electron":
                 var ElectronTemp = getElectronInformation(session, data);
                 session.send(ElectronTemp);
                 session.beginDialog('Root');
                 break;
-            case "ElectronGestione":
+            case "gestione del progetto electron":
                 var ElectronGestioneTemp = getElectronGestione(session, data);
                 session.send(getElectronGestione);
                 session.beginDialog('Root');
                 break;
-            case "BotInfo":
+            case "informazioni sul progetto bot":
                 var BotTemp = getBotInformation(session, data);
                 session.send(BotTemp);
                 session.beginDialog('Root');
                 break;
-            case "BotGestione":
+            case "gestione del progetto bot":
                 var BotGestioneTemp = getBotGestione(session, data);
                 session.send(getBotGestione);
                 session.beginDialog('Root');
                 break;
-            case "ZizInfo":
+            case "informazioni sul progetto ziz":
                 var ZizTemp = getZizInformation(session, data);
                 session.send(ZizTemp);
                 session.beginDialog('Root');
                 break;
-            case "ZizGestione":
+            case "gestione del progetto ziz":
                 var ZizGestioneTemp = getZizGestione(session, data);
                 session.send(getZizGestione);
                 session.beginDialog('Root');
                 break;
-            case "VolleyInfo":
+            case "informazioni sul progetto volley":
                 var VolleyTemp = getVolleyInformation(session, data);
                 session.send(VolleyTemp);
                 session.beginDialog('Root');
                 break;
-            case "VolleyGestione":
+            case "gestione del progetto volley":
                 var VolleyGestioneTemp = getVolleyGestione(session, data);
                 session.send(VolleyGestioneTemp);
                 session.beginDialog('Root');
                 break;
-            case "FastInkInfo":
+            case "informazioni su fast ink":
                 var FastInkTemp = getFastInkInformation(session, data);
                 session.send(FastInkTemp);
                 session.beginDialog('Root');
                 break;
-            case "FastInkGestione":
+            case "gestione di fast ink":
                 var FastInkGestioneTemp = getFastInkGestione(session, data);
                 session.send(FastInkGestioneTemp);
                 session.beginDialog('Root');
                 break;
-            case "WebInfo":
+            case "informazioni sul progetto website":
                 var WebTemp = getWebsiteInformation(session, data);
                 session.send(WebTemp);
                 session.beginDialog('Root');
                 break;
-            case "WebGestione":
+            case "gestione del progetto website":
                 var WebGestioneTemp = getWebsiteGestione(session, data);
                 session.send(WebGestioneTemp);
                 session.beginDialog('Root');
@@ -1053,11 +1053,11 @@ bot.dialog('AllPeopleTemp', [
     }
 ])
 
-/*bot.dialog('AllPeople', new botbuilder.IntentDialog({
+bot.dialog('AllPeople', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
-            var mail = botbuilder.EntityRecognizer.findEntity(args.entities, 'email);
+            var mail = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
             var role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
             var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'Responsibility');
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
@@ -1109,7 +1109,6 @@ bot.dialog('AllPeopleTemp', [
                     }
                 }
             }
-        }
     ])
     .matches('None', [
         function(session, args, results) {
@@ -1117,7 +1116,6 @@ bot.dialog('AllPeopleTemp', [
             session.beginDialog('Root');
         }
     ]))
-    */
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1220,42 +1218,42 @@ bot.dialog('CurrentProjectTemp', [
     },
     function(session, results) {
         switch (results.response) {
-            case "UWPInfo":
+            case "informazioni sul progetto uwp":
                 var UwpTemp = getUwpInformation(session, data);
                 session.send(UwpTemp);
                 session.beginDialog('Root');
                 break;
-            case "UWPGestione":
+            case "gestione del progetto uwp":
                 var UwpGestioneTemp = getUwpGestione(session, data);
                 session.send(getUwpGestione);
                 session.beginDialog('Root');
                 break;
-            case "ElectronInfo":
+            case "informazioni sul progetto electron":
                 var ElectronTemp = getElectronInformation(session, data);
                 session.send(ElectronTemp);
                 session.beginDialog('Root');
                 break;
-            case "ElectronGestione":
+            case "gestione del progetto electron":
                 var ElectronGestioneTemp = getElectronGestione(session, data);
                 session.send(getElectronGestione);
                 session.beginDialog('Root');
                 break;
-            case "ZizInfo":
+            case "informazioni sul progetto ziz":
                 var ZizTemp = getZizInformation(session, data);
                 session.send(ZizTemp);
                 session.beginDialog('Root');
                 break;
-            case "ZizGestione":
+            case "gestione del progetto ziz":
                 var ZizGestioneTemp = getZizGestione(session, data);
                 session.send(getZizGestione);
                 session.beginDialog('Root');
                 break;
-            case "WebInfo":
+            case "informazioni sul progetto website":
                 var WebTemp = getWebsiteInformation(session, data);
                 session.send(WebTemp);
                 session.beginDialog('Root');
                 break;
-            case "WebGestione":
+            case "gestione del progetto website":
                 var WebGestioneTemp = getWebsiteGestione(session, data);
                 session.send(WebGestioneTemp);
                 session.beginDialog('Root');
@@ -1727,56 +1725,56 @@ function CreateTotalProjectsCards(session) {
         .title('Multiplatform UWP')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'UWPInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'UWPGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto uwp', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto uwp', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Multiplatform Electron')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'ElectronInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ElectronGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto electron', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto electron', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Project Ziz')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'ZizInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ZizGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto ziz', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto ziz', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Bot')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'BotInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'BotGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto bot', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto bot', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Fast Ink')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'FastInkInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'FastInkGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni su fast ink', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione di fast ink', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Volley')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'VolleyInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'VolleyGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto volley', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto volley', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Website')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'WebInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'WebGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto website', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto website', 'Gestione')
         ])
     ]
 }
@@ -1789,32 +1787,32 @@ function CreateCurrentProjectCards(session) {
         .title('Multiplatform UWP')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'UWPInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'UWPGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto uwp', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto uwp', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Multiplatform Electron')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'ElectronInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ElectronGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto electron', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto electron', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Project Ziz')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'ZizInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ZizGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto ziz', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto ziz', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Website')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'WebInfo', 'Info'),
-            botbuilder.CardAction.imBack(session, 'WebGestione', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto website', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto website', 'Gestione')
         ])
     ]
 }
