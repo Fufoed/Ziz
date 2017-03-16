@@ -731,42 +731,42 @@ bot.dialog('AllRoleTemp', [
     },
     function(session, results) {
         switch (results.response) {
-            case 'Orfei':
+            case 'ruolo di orfei':
                 var OrfeiRole = getOrfeiRole(session, data);
                 session.send(OrfeiRole);
                 session.beginDialog('Root');
                 break;
-            case 'Lucchi':
+            case 'ruolo di lucchi':
                 var LucchiRole = getLucchiRole(session, data);
                 session.send(LucchiRole);
                 session.beginDialog('Root');
                 break;
-            case 'Zancanaro':
+            case 'ruolo di zancanaro':
                 var ZancanaroRole = getZancanaroRole(session, data);
                 session.send(ZancanaroRole);
                 session.beginDialog('Root');
                 break;
-            case 'Fantinato':
+            case 'ruolo di fantinato':
                 var FantinatoRole = getFantinatoRole(session, data);
                 session.send(FantinatoRole);
                 session.beginDialog('Root');
                 break;
-            case 'Chiarin':
+            case 'ruolo di chiarin':
                 var ChiarinRole = getChiarinRole(session, data);
                 session.send(ChiarinRole);
                 session.beginDialog('Root');
                 break;
-            case 'Quinto':
+            case 'ruolo di quinto':
                 var QuintoRole = getQuintoRole(session, data);
                 session.send(QuintoRole);
                 session.beginDialog('Root');
                 break;
-            case 'Greggio':
+            case 'ruolo di greggio':
                 var GreggioRole = getGreggioRole(session, data);
                 session.send(GreggioRole);
                 session.beginDialog('Root');
                 break;
-            case 'Nunzio':
+            case 'ruolo di nunzio':
                 var NunzioRole = getNunzioRole(session, data);
                 session.send(NunzioRole);
                 session.beginDialog('Root');
@@ -877,7 +877,7 @@ bot.dialog('AllPeopleTemp', [
                 session.send(OrfeiProject);
                 session.beginDialog('Root');
                 break;
-            case "mail di orfei":
+            case "email di orfei":
                 var OrfeiMail = getOrfeiMail(session, data);
                 session.send(OrfeiMail);
                 break;
@@ -925,7 +925,7 @@ bot.dialog('AllPeopleTemp', [
                 session.send(ZancanaroProjects);
                 session.beginDialog('Root');
                 break;
-            case "mail di zancanaro":
+            case "email di zancanaro":
                 var ZancanaroMail = getZancanaroMail(session, data);
                 session.send(ZancanaroMail);
                 break;
@@ -949,7 +949,7 @@ bot.dialog('AllPeopleTemp', [
                 session.send(FantinatoProjects);
                 session.beginDialog('Root');
                 break;
-            case "mail di fantinato":
+            case "email di fantinato":
                 var FantinatoMail = getFantinatoMail(session, data);
                 session.send(FantinatoMail);
                 break;
@@ -973,7 +973,7 @@ bot.dialog('AllPeopleTemp', [
                 session.send(ChiarinProjects);
                 session.beginDialog('Root');
                 break;
-            case "mail di chiarin":
+            case "email di chiarin":
                 var ChiarinMail = getChiarinMail(session, data);
                 session.send(ChiarinMail);
                 break;
@@ -997,7 +997,7 @@ bot.dialog('AllPeopleTemp', [
                 session.send(GreggioProjects);
                 session.beginDialog('Root');
                 break;
-            case "mail di greggio":
+            case "email di greggio":
                 var GreggioMail = getGreggioMail(session, data);
                 session.send(GreggioMail);
                 break;
@@ -1021,7 +1021,7 @@ bot.dialog('AllPeopleTemp', [
                 session.send(QuintoProjects);
                 session.beginDialog('Root');
                 break;
-            case "mail di quinto":
+            case "email di quinto":
                 var QuintoMail = getQuintoMail(session, data);
                 session.send(QuintoMail);
                 break;
@@ -1045,7 +1045,7 @@ bot.dialog('AllPeopleTemp', [
                 session.send(NunzioProjects);
                 session.beginDialog('Root');
                 break;
-            case "mail di nunzio":
+            case "email di nunzio":
                 var NunzioMail = getNunzioMail(session, data);
                 session.send(NunzioMail);
                 break;
@@ -1505,42 +1505,42 @@ bot.dialog('AllMailTemp', [
     },
     function(session, results) {
         switch (results.response) {
-            case "Orfei":
+            case "email di orfei":
                 var OrfeiMail = getOrfeiMail(session, data);
                 session.send(OrfeiMail);
                 session.beginDialog('Root');
                 break;
-            case "Lucchi":
+            case "email di lucchi":
                 var LucchiMail = getLucchiMail(session, data);
                 session.send(LucchiMail);
                 session.beginDialog('Root');
                 break;
-            case "Fantinato":
+            case "email di fantinato":
                 var FantinatoMail = getFantinatoMail(session, data);
                 session.send(FantinatoMail);
                 session.beginDialog('Root');
                 break;
-            case "Zancanaro":
+            case "email di zancanaro":
                 var ZancanaroMail = getZancanaroMail(session, data);
                 session.send(ZancanaroMail);
                 session.beginDialog('Root');
                 break;
-            case "Greggio":
+            case "email di greggio":
                 var GreggioMail = getGreggioMail(session, data);
                 session.send(GreggioMail);
                 session.beginDialog('Root');
                 break;
-            case "Chiarin":
+            case "email di chiarin":
                 var ChiarinMail = getChiarinMail(session, data);
                 session.send(ChiarinMail);
                 session.beginDialog('Root');
                 break;
-            case "Quinto":
+            case "email di quinto":
                 var QuintoMail = getQuintoMail(session, data);
                 session.send(QuintoMail);
                 session.beginDialog('Root');
                 break;
-            case "Nunzio":
+            case "email di nunzio":
                 var NunzioMail = getNunzioMail(session, data);
                 session.send(NunzioMail);
                 session.beginDialog('Root');
@@ -1734,56 +1734,56 @@ function CreateRoleCards(session) {
         .title('Orfei')
         .text('Informazioni su Orfei')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Orfei', 'ruolo')
+            botbuilder.CardAction.imBack(session, 'ruolo di orfei', 'ruolo')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Lucchi')
         .text('Informazioni su Lucchi')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Lucchi', 'ruolo')
+            botbuilder.CardAction.imBack(session, 'ruolo di lucchi', 'ruolo')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Fantinato')
         .text('Informazioni su Fantinato')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Fantinato', 'ruolo')
+            botbuilder.CardAction.imBack(session, 'ruolo di fantinato', 'ruolo')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Zancanaro')
         .text('Informazioni su Zancanaro')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Zancanaro', 'ruolo')
+            botbuilder.CardAction.imBack(session, 'ruolo di zancanaro', 'ruolo')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Greggio')
         .text('Informazioni su Greggio')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Greggio', 'ruolo')
+            botbuilder.CardAction.imBack(session, 'ruolo di greggio', 'ruolo')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Quinto')
         .text('Informazioni su Quinto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Quinto', 'ruolo')
+            botbuilder.CardAction.imBack(session, 'ruolo di quinto', 'ruolo')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Chiarin')
         .text('Informazioni su Chiarin')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Chiarin', 'ruolo')
+            botbuilder.CardAction.imBack(session, 'ruolo di chiarin', 'ruolo')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Nunzio')
         .text('Informazioni su Nunzio')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Nunzio', 'ruolo')
+            botbuilder.CardAction.imBack(session, 'ruolo di nunzio', 'ruolo')
         ]),
     ]
 }
@@ -1800,7 +1800,7 @@ function CreatePeopleCards(session) {
             botbuilder.CardAction.imBack(session, 'ruolo di orfei', 'Ruolo'),
             botbuilder.CardAction.imBack(session, 'responsabilità di orfei', 'Responsabilità'),
             botbuilder.CardAction.imBack(session, 'progetti di orfei', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'mail di orfei', 'Mail')
+            botbuilder.CardAction.imBack(session, 'email di orfei', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1811,7 +1811,7 @@ function CreatePeopleCards(session) {
             botbuilder.CardAction.imBack(session, 'ruolo di lucchi', 'Ruolo'),
             botbuilder.CardAction.imBack(session, 'responsabilità di lucchi', 'Responsabilità'),
             botbuilder.CardAction.imBack(session, 'progetti di lucchi', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'mail di lucchi', 'Mail')
+            botbuilder.CardAction.imBack(session, 'email di lucchi', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1822,7 +1822,7 @@ function CreatePeopleCards(session) {
             botbuilder.CardAction.imBack(session, 'ruolo di fantinato', 'Ruolo'),
             botbuilder.CardAction.imBack(session, 'responsabilità di fantinato', 'Responsabilità'),
             botbuilder.CardAction.imBack(session, 'progetti di fantinato', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'mail di fantinato', 'Mail')
+            botbuilder.CardAction.imBack(session, 'email di fantinato', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1833,7 +1833,7 @@ function CreatePeopleCards(session) {
             botbuilder.CardAction.imBack(session, 'ruolo di zancanaro', 'Ruolo'),
             botbuilder.CardAction.imBack(session, 'responsabilità di zancanaro', 'Responsabilità'),
             botbuilder.CardAction.imBack(session, 'progetti di zancanaro', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'mail di zancanaro', 'Mail')
+            botbuilder.CardAction.imBack(session, 'email di zancanaro', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1844,7 +1844,7 @@ function CreatePeopleCards(session) {
             botbuilder.CardAction.imBack(session, 'ruolo di greggio', 'Ruolo'),
             botbuilder.CardAction.imBack(session, 'responsabilità di greggio', 'Responsabilità'),
             botbuilder.CardAction.imBack(session, 'progetti di greggio', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'mail di greggio', 'Mail')
+            botbuilder.CardAction.imBack(session, 'email di greggio', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1855,7 +1855,7 @@ function CreatePeopleCards(session) {
             botbuilder.CardAction.imBack(session, 'ruolo di quinto', 'Ruolo'),
             botbuilder.CardAction.imBack(session, 'responsabilità di quinto', 'Responsabilità'),
             botbuilder.CardAction.imBack(session, 'progetti di quinto', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'mail di quinto', 'Mail')
+            botbuilder.CardAction.imBack(session, 'email di quinto', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1866,7 +1866,7 @@ function CreatePeopleCards(session) {
             botbuilder.CardAction.imBack(session, 'ruolo di chiarin', 'Ruolo'),
             botbuilder.CardAction.imBack(session, 'responsabilità di chiarin', 'Responsabilità'),
             botbuilder.CardAction.imBack(session, 'progetti di chiarin', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'mail di chiarin', 'Mail')
+            botbuilder.CardAction.imBack(session, 'email di chiarin', 'Mail')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -1877,7 +1877,7 @@ function CreatePeopleCards(session) {
             botbuilder.CardAction.imBack(session, 'ruolo di nunzio', 'Ruolo'),
             botbuilder.CardAction.imBack(session, 'responsabilità di nunzio', 'Responsabilità'),
             botbuilder.CardAction.imBack(session, 'progetti di nunzio', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'mail di nunzio', 'Mail')
+            botbuilder.CardAction.imBack(session, 'email di nunzio', 'Mail')
         ])
     ]
 }
@@ -1990,56 +1990,56 @@ function CreateMailCards(session) {
         .title('Orfei')
         .text('Informazioni su Orfei')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Orfei', 'Email')
+            botbuilder.CardAction.imBack(session, 'email di orfei', 'Email')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Lucchi')
         .text('Informazioni su Lucchi')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Lucchi', 'Email')
+            botbuilder.CardAction.imBack(session, 'email di lucchi', 'Email')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Fantinato')
         .text('Informazioni su Fantinato')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Fantinato', 'Email')
+            botbuilder.CardAction.imBack(session, 'email di fantinato', 'Email')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Zancanaro')
         .text('Informazioni su Zancanaro')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Zancanaro', 'Email')
+            botbuilder.CardAction.imBack(session, 'email di zancanaro', 'Email')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Greggio')
         .text('Informazioni su Greggio')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Greggio', 'Email')
+            botbuilder.CardAction.imBack(session, 'email di greggio', 'Email')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Quinto')
         .text('Informazioni su Quinto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Quinto', 'Email')
+            botbuilder.CardAction.imBack(session, 'email di quinto', 'Email')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Chiarin')
         .text('Informazioni su Chiarin')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Chiarin', 'Email')
+            botbuilder.CardAction.imBack(session, 'email di chiarin', 'Email')
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Nunzio')
         .text('Informazioni su Nunzio')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'Nunzio', 'Email')
+            botbuilder.CardAction.imBack(session, 'email di nunzio', 'Email')
         ])
     ]
 }
