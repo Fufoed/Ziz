@@ -12934,6 +12934,1026 @@
           "endPos": 2
         }
       ]
+    },
+    {
+      "text": "parlami di zancanaro marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di marco zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di quinto tommaso",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di tommaso quinto",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di quinto",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di tommaso",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di greggio nicolo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di nicolo greggio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di fantinato filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di nicolo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di filippo fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di greggio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di marco chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di chiarin marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di salvatore savà nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di salvatore nunzio sava",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di salvatore sava nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di savà nunzio salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di salvatore nunzio savà",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di sava salvatore nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di sava nunzio salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di nunzio savà salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di nunzio sava salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di nunzio salvatore savà",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di nunzio salvatore sava",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di savà salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di sava salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di salvatore savà",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di savà nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di savà salvatore nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "parlami di nunzio savà",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di salvatore sava",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di sava nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di nunzio sava",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di salvatore nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di nunzio salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "parlami di savà",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di sava",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "parlami di nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "ruolo di zancanaro marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di marco zanacanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di fantinato filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di filippo fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di greggio nicolo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di nicolo greggio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di nicolo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di greggio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di quinto tommaso",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di tommaso quinto",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di tommaso",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di quinto",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di marco chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di chiarin marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di samulele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di savà",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "ruolo di sava",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "role",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
     }
   ]
 }

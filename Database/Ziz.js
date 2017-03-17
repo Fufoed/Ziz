@@ -1617,6 +1617,136 @@ bot.dialog('AllMail', new botbuilder.IntentDialog({
     }
 ]))
 
+bot.dialog('FindAllTemp', [
+    function(session)
+    {
+        session.send("Scegli il progetto che vuoi trovare");
+        var FindCArds = createFindCards(session);
+        var reply = new botbuilder.Message(session)
+            .attachmentLayout(botbuilder.AttachmentLayout.carousel)
+            .attachments(FindCArds)
+
+        botbuilder.Prompts.text(session, reply);
+    },
+    function(session, results)
+    {
+        switch(results.response)
+        {
+            case "link progetto ziz": 
+                var ZizTemp = getZizFind(session, data); 
+                session.send(ZizTemp); 
+                session.beginDialog('Root');
+                break;
+            case "link progetto volley": 
+                var VolleyTemp = getVolleyFind(session, data); 
+                session.send(VolleyTemp); 
+                session.beginDialog('Root');
+                break;
+            case "link progetto uwp": 
+                var UWPTemp = getUWPFind(session, data); 
+                session.send(UWPTemp); 
+                session.beginDialog('Root');
+                break;
+            case "link progetto electron": 
+                var ElectronTemp = getElectronFind(session, data); 
+                session.send(ElectronTemp); 
+                session.beginDialog('Root');
+                break;
+            case "link progetto website": 
+                var WebTemp = getWebsiteFind(session, data); 
+                session.send(WebTemp); 
+                session.beginDialog('Root');
+                break;
+            case "link fast ink": 
+                var FastTemp = getFastInkFind(session, data); 
+                session.send(FastTemp); 
+                session.beginDialog('Root');
+                break;
+            case "link progetto bot": 
+                var BotTemp = getBotFind(session, data); 
+                session.send(BotTemp); 
+                session.beginDialog('Root');
+                break;
+        }
+    }
+])
+
+bot.dialog('FindAll', new botbuilder.IntentDialog({
+    recognizers: [recognize]
+}).matches('GetInformation', [
+    function(session, args, results)
+    {
+        var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
+        var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
+        var electron = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::electron');
+        var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
+        var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
+        var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
+        var bot_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::bot');
+
+        if(ziz)
+        {
+            var ZizTemp = getZizFind(session, data); 
+            session.send(ZizTemp); 
+            session.beginDialog('Root');
+        }
+        else
+        {
+            if(uwp)
+            {
+                var UWPTemp = getUWPFind(session, data); 
+                session.send(UWPTemp); 
+                session.beginDialog('Root');
+            }
+            else
+            {
+                if(fast_ink)
+                {
+                    var FastTemp = getFastInkFind(session, data); 
+                    session.send(FastTemp); 
+                    session.beginDialog('Root');
+                }
+                else
+                {
+                    if(volley)
+                    {
+                        var VolleyTemp = getVolleyFind(session, data); 
+                        session.send(VolleyTemp); 
+                        session.beginDialog('Root');
+                    }
+                    else
+                    {
+                        if(electron)
+                        {
+                            var ElectronTemp = getElectronFind(session, data); 
+                            session.send(ElectronTemp); 
+                            session.beginDialog('Root');
+                        }
+                        else
+                        {
+                            if(website)
+                            {
+                                var WebTemp = getWebsiteFind(session, data); 
+                                session.send(WebTemp); 
+                                session.beginDialog('Root');
+                            }
+                            else
+                            {
+                                if(bot_project)
+                                {
+                                    var BotTemp = getBotFind(session, data); 
+                                    session.send(BotTemp); 
+                                    session.beginDialog('Root');
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+]))
+
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function CreateNothingCards(session) {
@@ -2044,6 +2174,61 @@ function CreateMailCards(session) {
     ]
 }
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function createFindCards(session)
+{
+    return[
+        new botbuilder.HeroCard(session)
+        .title('Multiplatform UWP')
+        .text('Link progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'link progetto uwp', 'Info'),
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Multiplatform Electron')
+        .text('Link progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'link progetto electron', 'Info'),
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Project Ziz')
+        .text('Link progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'link progetto ziz', 'Info'),
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Bot')
+        .text('Link progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'link progetto bot', 'Info'),
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Fast Ink')
+        .text('Link progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'link fast ink', 'Info'),
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Volley')
+        .text('Link progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'link progetto volley', 'Info'),
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Website')
+        .text('Link progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'link progetto website', 'Info'),
+        ])
+    ]
+}
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2370,3 +2555,38 @@ function getNunzioMail(session, parsed) {
 }
 
 //-----------------------------------------------------------------------------------------------------------
+
+function getZizFind(session, parsed)
+{
+    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_ziz.link_repo);
+}
+
+function getVolleyFind(session, parsed)
+{
+    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_volley.link_repo);
+}
+
+function getBotFind(session, parsed)
+{
+    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_bot.link_repo);
+}
+
+function getElectronFind(session, parsed)
+{
+    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_multi_platform_electron.link_repo);
+}
+
+function getUWPFind(session, parsed)
+{
+    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_multi_platform_uwp.link_repo);
+}
+
+function getFastInkFind(session, parsed)
+{
+    return("Questo progetto si trova a questo link " + parsed.database.progetti.fast_ink.link_repo);
+}
+
+function getWebsiteFind(session, parsed)
+{
+    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_website.link_repo);
+}
