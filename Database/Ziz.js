@@ -294,6 +294,166 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                                                                                                             if (easter_egg) {
                                                                                                                 var BullshitTemp = getBullshit(session);
                                                                                                                 session.send(BullshitTemp);
+                                                                                                            } else {
+                                                                                                                if (nunzio && role) {
+                                                                                                                    var NunzioRole = getNunzioRole(session, database);
+                                                                                                                    session.send(NunzioRole);
+                                                                                                                } else {
+                                                                                                                    if (fantinato && role) {
+                                                                                                                        var FantinatoRole = getFantinatoRole(session, database);
+                                                                                                                        session.send(FantinatoRole);
+                                                                                                                    } else {
+                                                                                                                        if (quinto && role) {
+                                                                                                                            var QuintoRole = getQuintoRole(session, database);
+                                                                                                                            session.send(QuintoRole);
+                                                                                                                        } else {
+                                                                                                                            if (greggio && role) {
+                                                                                                                                var GreggioRole = getGreggioRole(session, database);
+                                                                                                                                session.send(GreggioRole);
+                                                                                                                            } else {
+                                                                                                                                if (chiarin && role) {
+                                                                                                                                    var ChiarinRole = getChiarinRole(session, database);
+                                                                                                                                    session.send(ChiarinRole);
+                                                                                                                                } else {
+                                                                                                                                    if (zancanaro && role) {
+                                                                                                                                        var ZancanaroRole = getZancanaroRole(session, database);
+                                                                                                                                        session.send(ZancanaroRole);
+                                                                                                                                    } else {
+                                                                                                                                        if (lucchi && role) {
+                                                                                                                                            var LucchiRole = getLucchiRole(session, database);
+                                                                                                                                            session.send(LucchiRole);
+                                                                                                                                        } else {
+                                                                                                                                            if (orfei && role) {
+                                                                                                                                                var OrfeiRole = getOrfeiRole(session, database);
+                                                                                                                                                session.send(OrfeiRole);
+                                                                                                                                            } else {
+                                                                                                                                                if (nunzio && responsability) {
+                                                                                                                                                    var NunzioRes = getNunzioResponsability(session, database);
+                                                                                                                                                    session.send(NunzioRes);
+                                                                                                                                                } else {
+                                                                                                                                                    if (fantinato && responsability) {
+                                                                                                                                                        var FantinatoRes = getFantinatoResponsability(session, database);
+                                                                                                                                                        session.send(FantinatoRes);
+                                                                                                                                                    } else {
+                                                                                                                                                        if (quinto && responsability) {
+                                                                                                                                                            var QuintoRes = getQuintoResponsability(session, database);
+                                                                                                                                                            session.send(QuintoRes);
+                                                                                                                                                        } else {
+                                                                                                                                                            if (greggio && responsability) {
+                                                                                                                                                                var GreggioRes = getGreggioResponsability(session, database);
+                                                                                                                                                                session.send(GreggioRes);
+                                                                                                                                                            } else {
+                                                                                                                                                                if (chiarin && responsability) {
+                                                                                                                                                                    var ChiarinRes = getChiarinResponsability(session, database);
+                                                                                                                                                                    session.send(ChiarinRes);
+                                                                                                                                                                } else {
+                                                                                                                                                                    if (zancanaro && responsability) {
+                                                                                                                                                                        var ZancanaroRes = getZancanaroResponsability(session, database);
+                                                                                                                                                                        session.send(ZancanaroRes);
+                                                                                                                                                                    } else {
+                                                                                                                                                                        if (lucchi && responsability) {
+                                                                                                                                                                            var LucchiRes = getLucchiResponsability(session, database);
+                                                                                                                                                                            session.send(LucchiRes);
+                                                                                                                                                                        } else {
+                                                                                                                                                                            if (orfei && responsability) {
+                                                                                                                                                                                var OrfeiRes = getOrfeiResponsability(session, database);
+                                                                                                                                                                                session.send(OrfeiRes);
+                                                                                                                                                                            } else {
+                                                                                                                                                                                if (nunzio && mail) {
+                                                                                                                                                                                    var NunzioMail = getNunzioMail(session, database);
+                                                                                                                                                                                    session.send(NunzioMail);
+                                                                                                                                                                                } else {
+                                                                                                                                                                                    if (fantinato && mail) {
+                                                                                                                                                                                        var FantinatoMail = getFantinatoMail(session, database);
+                                                                                                                                                                                        session.send(FantinatoMail);
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        if (quinto && mail) {
+                                                                                                                                                                                            var QuintoMail = getQuintoMail(session, database);
+                                                                                                                                                                                            session.send(QuintoMail);
+                                                                                                                                                                                        } else {
+                                                                                                                                                                                            if (greggio && mail) {
+                                                                                                                                                                                                var GreggioMail = getGreggioMail(session, database);
+                                                                                                                                                                                                session.send(GreggioMail);
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                if (chiarin && mail) {
+                                                                                                                                                                                                    var ChiarinMail = getChiarinMail(session, database);
+                                                                                                                                                                                                    session.send(ChiarinMail);
+                                                                                                                                                                                                } else {
+                                                                                                                                                                                                    if (zancanaro && mail) {
+                                                                                                                                                                                                        var ZancanaroMail = getZancanaroMail(session, database);
+                                                                                                                                                                                                        session.send(ZancanaroMail);
+                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                        if (lucchi && mail) {
+                                                                                                                                                                                                            var LucchiMail = getLucchiMail(session, database);
+                                                                                                                                                                                                            session.send(LucchiMail);
+                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                            if (orfei && mail) {
+                                                                                                                                                                                                                var OrfeiMail = getOrfeiMail(session, database);
+                                                                                                                                                                                                                session.send(OrfeiMail);
+                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                if (nunzio && total_project) {
+                                                                                                                                                                                                                    var NunzioProjects = getNunzioProjects(session, database);
+                                                                                                                                                                                                                    session.send(NunzioProjects);
+                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                    if (fantinato && total_project) {
+                                                                                                                                                                                                                        var FantinatoProjects = getFantinatoProjects(session, database);
+                                                                                                                                                                                                                        session.send(FantinatoProjects);
+                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                        if (quinto && total_project) {
+                                                                                                                                                                                                                            var QuintoProjects = getQuintoProjects(session, database);
+                                                                                                                                                                                                                            session.send(QuintoProjects);
+                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                            if (greggio && total_project) {
+                                                                                                                                                                                                                                var GreggioProjects = getGreggioProjects(session, database);
+                                                                                                                                                                                                                                session.send(GreggioProjects);
+                                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                                if (chiarin && total_project) {
+                                                                                                                                                                                                                                    var ChiarinProjects = getChiarinProjects(session, database);
+                                                                                                                                                                                                                                    session.send(ChiarinProjects);
+                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                    if (zancanaro && total_project) {
+                                                                                                                                                                                                                                        var ZancanaroProjects = getZancanaroProjects(session, database);
+                                                                                                                                                                                                                                        session.send(ZancanaroProjects);
+                                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                                        if (lucchi && total_project) {
+                                                                                                                                                                                                                                            var LucchiProjects = getLucchiProjects(session, database);
+                                                                                                                                                                                                                                            session.send(LucchiProjects);
+                                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                                            if (orfei && total_project) {
+                                                                                                                                                                                                                                                var OrfeiProject = getOrfeiProjects(session, database);
+                                                                                                                                                                                                                                                session.send(OrfeiProject);
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
                                                                                                             }
                                                                                                         }
                                                                                                     }
@@ -319,6 +479,12 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                     }
                 }
             }
+        }
+    ])
+    .matches('Skills', [
+        function(session, args, results) {
+            session.send("Io sono un bot che fornisce informazioni riguardo al team perso. Puoi chiedermi informazioni sui membri, sui progetti correnti e suoi progetti totali. Posso dirti chi gestisce i vari progetti e chi sono i capi delle vaie divisioni. Se vuoi vedere o provare i nostri progetti posso fornirti anche il link, l'unica cosa che devi fare è chiedere");
+            session.beginDialog('Root');
         }
     ])
     .matches('None', [
@@ -402,7 +568,7 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
             var team_perso = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
-            if (!current_project && !total_project && !total_people && team_perso) {
+            if (team_perso) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('TeamTemp');
@@ -414,7 +580,7 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
                     session.send("Error");
                 })
             } else {
-                if (!current_project && !total_project && total_people && !team_perso) {
+                if (total_people) {
                     async.parallel([
                         function(callback) {
                             session.beginDialog('AllPeopleTemp');
@@ -426,7 +592,7 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
                         session.send("Error");
                     })
                 } else {
-                    if (!current_project && total_project && !total_people && !team_perso) {
+                    if (total_project) {
                         async.parallel([
                             function(callback) {
                                 session.beginDialog('TotalProjectTemp');
@@ -438,7 +604,7 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
                             session.send("Error");
                         })
                     } else {
-                        if (current_project && !total_project && !total_people && !team_perso) {
+                        if (current_project) {
                             async.parallel([
                                 function(callback) {
                                     session.beginDialog('CurrentProjectTemp');
@@ -628,6 +794,110 @@ bot.dialog('TotalProjectTemp', [
         }
     }
 ])
+
+bot.dialog('TotalProject', new botbuilder.IntentDialog({
+        recognizers: [recognize]
+    }).matches('GetInformation', [
+        function(session, args, results) {
+            var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
+            var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
+            var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
+            var electron = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::electron');
+            var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
+            var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
+            var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
+            var bot_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::bot');
+
+            if (ziz) {
+                var ZizTemp = getZizInformation(session, data);
+                session.send(ZizTemp);
+                session.beginDialog('Root');
+            } else {
+                if (uwp) {
+                    var UwpTemp = getUwpInformation(session, data);
+                    session.send(UwpTemp);
+                    session.beginDialog('Root');
+                } else {
+                    if (electron) {
+                        var ElectronTemp = getElectronInformation(session, data);
+                        session.send(ElectronTemp);
+                        session.beginDialog('Root');
+                    } else {
+                        if (website) {
+                            var WebTemp = getWebsiteInformation(session, data);
+                            session.send(WebTemp);
+                            session.beginDialog('Root');
+                        } else {
+                            if (ziz && responsability) {
+                                var ZizGestioneTemp = getZizGestione(session, data);
+                                session.send(getZizGestione);
+                                session.beginDialog('Root');
+                            } else {
+                                if (uwp && responsability) {
+                                    var UwpGestioneTemp = getUwpGestione(session, data);
+                                    session.send(getUwpGestione);
+                                    session.beginDialog('Root');
+                                } else {
+                                    if (electron && responsability) {
+                                        var ElectronGestioneTemp = getElectronGestione(session, data);
+                                        session.send(getElectronGestione);
+                                        session.beginDialog('Root');
+                                    } else {
+                                        if (website && responsability) {
+                                            var WebGestioneTemp = getWebsiteGestione(session, data);
+                                            session.send(WebGestioneTemp);
+                                            session.beginDialog('Root');
+                                        } else {
+                                            if (volley) {
+                                                var VolleyTemp = getVolleyInformation(session, data);
+                                                session.send(VolleyTemp);
+                                                session.beginDialog('Root');
+                                            } else {
+                                                if (fast_ink) {
+                                                    var FastInkTemp = getFastInkInformation(session, data);
+                                                    session.send(FastInkTemp);
+                                                    session.beginDialog('Root');
+                                                } else {
+                                                    if (bot_project) {
+                                                        var BotTemp = getBotInformation(session, data);
+                                                        session.send(BotTemp);
+                                                        session.beginDialog('Root');
+                                                    } else {
+                                                        if (volley && responsability) {
+                                                            var VolleyGestioneTemp = getVolleyGestione(session, data);
+                                                            session.send(VolleyGestioneTemp);
+                                                            session.beginDialog('Root');
+                                                        } else {
+                                                            if (fast_ink && responsability) {
+                                                                var FastInkGestioneTemp = getFastInkGestione(session, data);
+                                                                session.send(FastInkGestioneTemp);
+                                                                session.beginDialog('Root');
+                                                            } else {
+                                                                if (bot_project && responsability) {
+                                                                    var BotGestioneTemp = getBotGestione(session, data);
+                                                                    session.send(getBotGestione);
+                                                                    session.beginDialog('Root');
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ])
+    .matches('None', [
+        function(session, args, results) {
+            session.send("Wrong Action");
+        }
+    ]))
 
 bot.dialog('Team', new botbuilder.IntentDialog({
         recognizers: [recognize]
@@ -1106,136 +1376,132 @@ bot.dialog('AllPeople', new botbuilder.IntentDialog({
                                                 session.send(OrfeiTemp);
                                             } else {
                                                 if (nunzio && role) {
-                                                        var NunzioRole = getNunzioRole(session, database);
-                                                        session.send(NunzioRole);
+                                                    var NunzioRole = getNunzioRole(session, database);
+                                                    session.send(NunzioRole);
+                                                } else {
+                                                    if (fantinato && role) {
+                                                        var FantinatoRole = getFantinatoRole(session, database);
+                                                        session.send(FantinatoRole);
                                                     } else {
-                                                        if (fantinato && role) {
-                                                            var FantinatoRole = getFantinatoRole(session, database);
-                                                            session.send(FantinatoRole);
+                                                        if (quinto && role) {
+                                                            var QuintoRole = getQuintoRole(session, database);
+                                                            session.send(QuintoRole);
                                                         } else {
-                                                            if (quinto && role) {
-                                                                var QuintoRole = getQuintoRole(session, database);
-                                                                session.send(QuintoRole);
+                                                            if (greggio && role) {
+                                                                var GreggioRole = getGreggioRole(session, database);
+                                                                session.send(GreggioRole);
                                                             } else {
-                                                                if (greggio && role) {
-                                                                    var GreggioRole = getGreggioRole(session, database);
-                                                                    session.send(GreggioRole);
+                                                                if (chiarin && role) {
+                                                                    var ChiarinRole = getChiarinRole(session, database);
+                                                                    session.send(ChiarinRole);
                                                                 } else {
-                                                                    if (chiarin && role) {
-                                                                        var ChiarinRole = getChiarinRole(session, database);
-                                                                        session.send(ChiarinRole);
+                                                                    if (zancanaro && role) {
+                                                                        var ZancanaroRole = getZancanaroRole(session, database);
+                                                                        session.send(ZancanaroRole);
                                                                     } else {
-                                                                        if (zancanaro && role) {
-                                                                            var ZancanaroRole = getZancanaroRole(session, database);
-                                                                            session.send(ZancanaroRole);
+                                                                        if (lucchi && role) {
+                                                                            var LucchiRole = getLucchiRole(session, database);
+                                                                            session.send(LucchiRole);
                                                                         } else {
-                                                                            if (lucchi && role) {
-                                                                                var LucchiRole = getLucchiRole(session, database);
-                                                                                session.send(LucchiRole);
+                                                                            if (orfei && role) {
+                                                                                var OrfeiRole = getOrfeiRole(session, database);
+                                                                                session.send(OrfeiRole);
                                                                             } else {
-                                                                                if (orfei && role) {
-                                                                                    var OrfeiRole = getOrfeiRole(session, database);
-                                                                                    session.send(OrfeiRole);
-                                                                                } else{
-                                                                                    if (nunzio && responsability) {
-                                                                                            var NunzioRes = getNunzioResponsability(session, database);
-                                                                                            session.send(NunzioRes);
+                                                                                if (nunzio && responsability) {
+                                                                                    var NunzioRes = getNunzioResponsability(session, database);
+                                                                                    session.send(NunzioRes);
+                                                                                } else {
+                                                                                    if (fantinato && responsability) {
+                                                                                        var FantinatoRes = getFantinatoResponsability(session, database);
+                                                                                        session.send(FantinatoRes);
+                                                                                    } else {
+                                                                                        if (quinto && responsability) {
+                                                                                            var QuintoRes = getQuintoResponsability(session, database);
+                                                                                            session.send(QuintoRes);
                                                                                         } else {
-                                                                                            if (fantinato && responsability) {
-                                                                                                var FantinatoRes = getFantinatoResponsability(session, database);
-                                                                                                session.send(FantinatoRes);
+                                                                                            if (greggio && responsability) {
+                                                                                                var GreggioRes = getGreggioResponsability(session, database);
+                                                                                                session.send(GreggioRes);
                                                                                             } else {
-                                                                                                if (quinto && responsability) {
-                                                                                                    var QuintoRes = getQuintoResponsability(session, database);
-                                                                                                    session.send(QuintoRes);
+                                                                                                if (chiarin && responsability) {
+                                                                                                    var ChiarinRes = getChiarinResponsability(session, database);
+                                                                                                    session.send(ChiarinRes);
                                                                                                 } else {
-                                                                                                    if (greggio && responsability) {
-                                                                                                        var GreggioRes = getGreggioResponsability(session, database);
-                                                                                                        session.send(GreggioRes);
+                                                                                                    if (zancanaro && responsability) {
+                                                                                                        var ZancanaroRes = getZancanaroResponsability(session, database);
+                                                                                                        session.send(ZancanaroRes);
                                                                                                     } else {
-                                                                                                        if (chiarin && responsability) {
-                                                                                                            var ChiarinRes = getChiarinResponsability(session, database);
-                                                                                                            session.send(ChiarinRes);
+                                                                                                        if (lucchi && responsability) {
+                                                                                                            var LucchiRes = getLucchiResponsability(session, database);
+                                                                                                            session.send(LucchiRes);
                                                                                                         } else {
-                                                                                                            if (zancanaro && responsability) {
-                                                                                                                var ZancanaroRes = getZancanaroResponsability(session, database);
-                                                                                                                session.send(ZancanaroRes);
+                                                                                                            if (orfei && responsability) {
+                                                                                                                var OrfeiRes = getOrfeiResponsability(session, database);
+                                                                                                                session.send(OrfeiRes);
                                                                                                             } else {
-                                                                                                                if (lucchi && responsability) {
-                                                                                                                    var LucchiRes = getLucchiResponsability(session, database);
-                                                                                                                    session.send(LucchiRes);
+                                                                                                                if (nunzio && mail) {
+                                                                                                                    var NunzioMail = getNunzioMail(session, database);
+                                                                                                                    session.send(NunzioMail);
                                                                                                                 } else {
-                                                                                                                    if (orfei && responsability) {
-                                                                                                                        var OrfeiRes = getOrfeiResponsability(session, database);
-                                                                                                                        session.send(OrfeiRes);
-                                                                                                                    }else{
-                                                                                                                        if (nunzio && mail) {
-                                                                                                                                var NunzioMail = getNunzioMail(session, database);
-                                                                                                                                session.send(NunzioMail);
+                                                                                                                    if (fantinato && mail) {
+                                                                                                                        var FantinatoMail = getFantinatoMail(session, database);
+                                                                                                                        session.send(FantinatoMail);
+                                                                                                                    } else {
+                                                                                                                        if (quinto && mail) {
+                                                                                                                            var QuintoMail = getQuintoMail(session, database);
+                                                                                                                            session.send(QuintoMail);
+                                                                                                                        } else {
+                                                                                                                            if (greggio && mail) {
+                                                                                                                                var GreggioMail = getGreggioMail(session, database);
+                                                                                                                                session.send(GreggioMail);
                                                                                                                             } else {
-                                                                                                                                if (fantinato && mail) {
-                                                                                                                                    var FantinatoMail = getFantinatoMail(session, database);
-                                                                                                                                    session.send(FantinatoMail);
+                                                                                                                                if (chiarin && mail) {
+                                                                                                                                    var ChiarinMail = getChiarinMail(session, database);
+                                                                                                                                    session.send(ChiarinMail);
                                                                                                                                 } else {
-                                                                                                                                    if (quinto && mail) {
-                                                                                                                                        var QuintoMail = getQuintoMail(session, database);
-                                                                                                                                        session.send(QuintoMail);
+                                                                                                                                    if (zancanaro && mail) {
+                                                                                                                                        var ZancanaroMail = getZancanaroMail(session, database);
+                                                                                                                                        session.send(ZancanaroMail);
                                                                                                                                     } else {
-                                                                                                                                        if (greggio && mail) {
-                                                                                                                                            var GreggioMail = getGreggioMail(session, database);
-                                                                                                                                            session.send(GreggioMail);
+                                                                                                                                        if (lucchi && mail) {
+                                                                                                                                            var LucchiMail = getLucchiMail(session, database);
+                                                                                                                                            session.send(LucchiMail);
                                                                                                                                         } else {
-                                                                                                                                            if (chiarin && mail) {
-                                                                                                                                                var ChiarinMail = getChiarinMail(session, database);
-                                                                                                                                                session.send(ChiarinMail);
+                                                                                                                                            if (orfei && mail) {
+                                                                                                                                                var OrfeiMail = getOrfeiMail(session, database);
+                                                                                                                                                session.send(OrfeiMail);
                                                                                                                                             } else {
-                                                                                                                                                if (zancanaro && mail) {
-                                                                                                                                                    var ZancanaroMail = getZancanaroMail(session, database);
-                                                                                                                                                    session.send(ZancanaroMail);
+                                                                                                                                                if (nunzio && total_project) {
+                                                                                                                                                    var NunzioProjects = getNunzioProjects(session, database);
+                                                                                                                                                    session.send(NunzioProjects);
                                                                                                                                                 } else {
-                                                                                                                                                    if (lucchi && mail) {
-                                                                                                                                                        var LucchiMail = getLucchiMail(session, database);
-                                                                                                                                                        session.send(LucchiMail);
+                                                                                                                                                    if (fantinato && total_project) {
+                                                                                                                                                        var FantinatoProjects = getFantinatoProjects(session, database);
+                                                                                                                                                        session.send(FantinatoProjects);
                                                                                                                                                     } else {
-                                                                                                                                                        if (orfei && mail) {
-                                                                                                                                                            var OrfeiMail = getOrfeiMail(session, database);
-                                                                                                                                                            session.send(OrfeiMail);
-                                                                                                                                                        } else{
-                                                                                                                                                            if (nunzio && total_project) {
-                                                                                                                                                                    var NunzioProjects = getNunzioProjects(session, database);
-                                                                                                                                                                    session.send(NunzioProjects);
+                                                                                                                                                        if (quinto && total_project) {
+                                                                                                                                                            var QuintoProjects = getQuintoProjects(session, database);
+                                                                                                                                                            session.send(QuintoProjects);
+                                                                                                                                                        } else {
+                                                                                                                                                            if (greggio && total_project) {
+                                                                                                                                                                var GreggioProjects = getGreggioProjects(session, database);
+                                                                                                                                                                session.send(GreggioProjects);
+                                                                                                                                                            } else {
+                                                                                                                                                                if (chiarin && total_project) {
+                                                                                                                                                                    var ChiarinProjects = getChiarinProjects(session, database);
+                                                                                                                                                                    session.send(ChiarinProjects);
                                                                                                                                                                 } else {
-                                                                                                                                                                    if (fantinato && total_project) {
-                                                                                                                                                                        var FantinatoProjects = getFantinatoProjects(session, database);
-                                                                                                                                                                        session.send(FantinatoProjects);
+                                                                                                                                                                    if (zancanaro && total_project) {
+                                                                                                                                                                        var ZancanaroProjects = getZancanaroProjects(session, database);
+                                                                                                                                                                        session.send(ZancanaroProjects);
                                                                                                                                                                     } else {
-                                                                                                                                                                        if (quinto && total_project) {
-                                                                                                                                                                            var QuintoProjects = getQuintoProjects(session, database);
-                                                                                                                                                                            session.send(QuintoProjects);
+                                                                                                                                                                        if (lucchi && total_project) {
+                                                                                                                                                                            var LucchiProjects = getLucchiProjects(session, database);
+                                                                                                                                                                            session.send(LucchiProjects);
                                                                                                                                                                         } else {
-                                                                                                                                                                            if (greggio && total_project) {
-                                                                                                                                                                                var GreggioProjects = getGreggioProjects(session, database);
-                                                                                                                                                                                session.send(GreggioProjects);
-                                                                                                                                                                            } else {
-                                                                                                                                                                                if (chiarin && total_project) {
-                                                                                                                                                                                    var ChiarinProjects = getChiarinProjects(session, database);
-                                                                                                                                                                                    session.send(ChiarinProjects);
-                                                                                                                                                                                } else {
-                                                                                                                                                                                    if (zancanaro && total_project) {
-                                                                                                                                                                                        var ZancanaroProjects = getZancanaroProjects(session, database);
-                                                                                                                                                                                        session.send(ZancanaroProjects);
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        if (lucchi && total_project) {
-                                                                                                                                                                                            var LucchiProjects = getLucchiProjects(session, database);
-                                                                                                                                                                                            session.send(LucchiProjects);
-                                                                                                                                                                                        } else {
-                                                                                                                                                                                            if (orfei && total_project) {
-                                                                                                                                                                                                var OrfeiProject = getOrfeiProjects(session, database);
-                                                                                                                                                                                                session.send(OrfeiProject);
-                                                                                                                                                                                            } 
-                                                                                                                                                                                        }
-                                                                                                                                                                                    }
-                                                                                                                                                                                }
+                                                                                                                                                                            if (orfei && total_project) {
+                                                                                                                                                                                var OrfeiProject = getOrfeiProjects(session, database);
+                                                                                                                                                                                session.send(OrfeiProject);
                                                                                                                                                                             }
                                                                                                                                                                         }
                                                                                                                                                                     }
@@ -1250,7 +1516,7 @@ bot.dialog('AllPeople', new botbuilder.IntentDialog({
                                                                                                                                 }
                                                                                                                             }
                                                                                                                         }
-                                                                                                                    } 
+                                                                                                                    }
                                                                                                                 }
                                                                                                             }
                                                                                                         }
@@ -1274,6 +1540,10 @@ bot.dialog('AllPeople', new botbuilder.IntentDialog({
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
     ])
     .matches('None', [
         function(session, args, results) {
@@ -1618,8 +1888,7 @@ bot.dialog('AllMail', new botbuilder.IntentDialog({
 ]))
 
 bot.dialog('FindAllTemp', [
-    function(session)
-    {
+    function(session) {
         session.send("Scegli il progetto che vuoi trovare");
         var FindCArds = createFindCards(session);
         var reply = new botbuilder.Message(session)
@@ -1628,43 +1897,41 @@ bot.dialog('FindAllTemp', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function(session, results)
-    {
-        switch(results.response)
-        {
-            case "link progetto ziz": 
-                var ZizTemp = getZizFind(session, data); 
-                session.send(ZizTemp); 
+    function(session, results) {
+        switch (results.response) {
+            case "link progetto ziz":
+                var ZizTemp = getZizFind(session, data);
+                session.send(ZizTemp);
                 session.beginDialog('Root');
                 break;
-            case "link progetto volley": 
-                var VolleyTemp = getVolleyFind(session, data); 
-                session.send(VolleyTemp); 
+            case "link progetto volley":
+                var VolleyTemp = getVolleyFind(session, data);
+                session.send(VolleyTemp);
                 session.beginDialog('Root');
                 break;
-            case "link progetto uwp": 
-                var UWPTemp = getUWPFind(session, data); 
-                session.send(UWPTemp); 
+            case "link progetto uwp":
+                var UWPTemp = getUWPFind(session, data);
+                session.send(UWPTemp);
                 session.beginDialog('Root');
                 break;
-            case "link progetto electron": 
-                var ElectronTemp = getElectronFind(session, data); 
-                session.send(ElectronTemp); 
+            case "link progetto electron":
+                var ElectronTemp = getElectronFind(session, data);
+                session.send(ElectronTemp);
                 session.beginDialog('Root');
                 break;
-            case "link progetto website": 
-                var WebTemp = getWebsiteFind(session, data); 
-                session.send(WebTemp); 
+            case "link progetto website":
+                var WebTemp = getWebsiteFind(session, data);
+                session.send(WebTemp);
                 session.beginDialog('Root');
                 break;
-            case "link fast ink": 
-                var FastTemp = getFastInkFind(session, data); 
-                session.send(FastTemp); 
+            case "link fast ink":
+                var FastTemp = getFastInkFind(session, data);
+                session.send(FastTemp);
                 session.beginDialog('Root');
                 break;
-            case "link progetto bot": 
-                var BotTemp = getBotFind(session, data); 
-                session.send(BotTemp); 
+            case "link progetto bot":
+                var BotTemp = getBotFind(session, data);
+                session.send(BotTemp);
                 session.beginDialog('Root');
                 break;
         }
@@ -1674,8 +1941,7 @@ bot.dialog('FindAllTemp', [
 bot.dialog('FindAll', new botbuilder.IntentDialog({
     recognizers: [recognize]
 }).matches('GetInformation', [
-    function(session, args, results)
-    {
+    function(session, args, results) {
         var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
         var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
         var electron = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::electron');
@@ -1684,58 +1950,39 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
         var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
         var bot_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::bot');
 
-        if(ziz)
-        {
-            var ZizTemp = getZizFind(session, data); 
-            session.send(ZizTemp); 
+        if (ziz) {
+            var ZizTemp = getZizFind(session, data);
+            session.send(ZizTemp);
             session.beginDialog('Root');
-        }
-        else
-        {
-            if(uwp)
-            {
-                var UWPTemp = getUWPFind(session, data); 
-                session.send(UWPTemp); 
+        } else {
+            if (uwp) {
+                var UWPTemp = getUWPFind(session, data);
+                session.send(UWPTemp);
                 session.beginDialog('Root');
-            }
-            else
-            {
-                if(fast_ink)
-                {
-                    var FastTemp = getFastInkFind(session, data); 
-                    session.send(FastTemp); 
+            } else {
+                if (fast_ink) {
+                    var FastTemp = getFastInkFind(session, data);
+                    session.send(FastTemp);
                     session.beginDialog('Root');
-                }
-                else
-                {
-                    if(volley)
-                    {
-                        var VolleyTemp = getVolleyFind(session, data); 
-                        session.send(VolleyTemp); 
+                } else {
+                    if (volley) {
+                        var VolleyTemp = getVolleyFind(session, data);
+                        session.send(VolleyTemp);
                         session.beginDialog('Root');
-                    }
-                    else
-                    {
-                        if(electron)
-                        {
-                            var ElectronTemp = getElectronFind(session, data); 
-                            session.send(ElectronTemp); 
+                    } else {
+                        if (electron) {
+                            var ElectronTemp = getElectronFind(session, data);
+                            session.send(ElectronTemp);
                             session.beginDialog('Root');
-                        }
-                        else
-                        {
-                            if(website)
-                            {
-                                var WebTemp = getWebsiteFind(session, data); 
-                                session.send(WebTemp); 
+                        } else {
+                            if (website) {
+                                var WebTemp = getWebsiteFind(session, data);
+                                session.send(WebTemp);
                                 session.beginDialog('Root');
-                            }
-                            else
-                            {
-                                if(bot_project)
-                                {
-                                    var BotTemp = getBotFind(session, data); 
-                                    session.send(BotTemp); 
+                            } else {
+                                if (bot_project) {
+                                    var BotTemp = getBotFind(session, data);
+                                    session.send(BotTemp);
                                     session.beginDialog('Root');
                                 }
                             }
@@ -2176,56 +2423,55 @@ function CreateMailCards(session) {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function createFindCards(session)
-{
-    return[
+function createFindCards(session) {
+    return [
         new botbuilder.HeroCard(session)
         .title('Multiplatform UWP')
         .text('Link progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto uwp', 'Info'),
+            botbuilder.CardAction.imBack(session, 'link progetto uwp', 'Link'),
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Multiplatform Electron')
         .text('Link progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto electron', 'Info'),
+            botbuilder.CardAction.imBack(session, 'link progetto electron', 'Link'),
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Project Ziz')
         .text('Link progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto ziz', 'Info'),
+            botbuilder.CardAction.imBack(session, 'link progetto ziz', 'Link'),
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Bot')
         .text('Link progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto bot', 'Info'),
+            botbuilder.CardAction.imBack(session, 'link progetto bot', 'Link'),
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Fast Ink')
         .text('Link progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'link fast ink', 'Info'),
+            botbuilder.CardAction.imBack(session, 'link fast ink', 'Link'),
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Volley')
         .text('Link progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto volley', 'Info'),
+            botbuilder.CardAction.imBack(session, 'link progetto volley', 'Link'),
         ]),
 
         new botbuilder.HeroCard(session)
         .title('Website')
         .text('Link progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto website', 'Info'),
+            botbuilder.CardAction.imBack(session, 'link progetto website', 'Link'),
         ])
     ]
 }
@@ -2517,7 +2763,7 @@ function getTeamInformation(session, parsed) {
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function getBullshit(session) {
-    return bullshit[(parseInt(Math.random()*bullshit.length)|0)];
+    return bullshit[(parseInt(Math.random() * bullshit.length) | 0)];
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2556,37 +2802,32 @@ function getNunzioMail(session, parsed) {
 
 //-----------------------------------------------------------------------------------------------------------
 
-function getZizFind(session, parsed)
-{
-    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_ziz.link_repo);
+function getZizFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_ziz.link_repo);
 }
 
-function getVolleyFind(session, parsed)
-{
-    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_volley.link_repo);
+function getVolleyFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_volley.link_repo);
 }
 
-function getBotFind(session, parsed)
-{
-    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_bot.link_repo);
+function getBotFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_bot.link_repo);
 }
 
-function getElectronFind(session, parsed)
-{
-    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_multi_platform_electron.link_repo);
+function getElectronFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_multi_platform_electron.link_repo);
 }
 
-function getUWPFind(session, parsed)
-{
-    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_multi_platform_uwp.link_repo);
+function getUWPFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_multi_platform_uwp.link_repo);
 }
 
-function getFastInkFind(session, parsed)
-{
-    return("Questo progetto si trova a questo link " + parsed.database.progetti.fast_ink.link_repo);
+function getFastInkFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.fast_ink.link_repo);
 }
 
-function getWebsiteFind(session, parsed)
-{
-    return("Questo progetto si trova a questo link " + parsed.database.progetti.project_website.link_repo);
+function getWebsiteFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_website.link_repo);
 }
+
+//-------------------------------------------------------------------------------------------------------------------------------------

@@ -10,6 +10,9 @@
     },
     {
       "name": "None"
+    },
+    {
+      "name": "Skills"
     }
   ],
   "entities": [
@@ -12799,11 +12802,6 @@
           "entity": "project::chiron",
           "startPos": 3,
           "endPos": 3
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
         }
       ]
     },
@@ -12815,11 +12813,6 @@
           "entity": "project::fast ink",
           "startPos": 3,
           "endPos": 4
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
         }
       ]
     },
@@ -12831,11 +12824,6 @@
           "entity": "project::eden tv 86",
           "startPos": 3,
           "endPos": 5
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
         }
       ]
     },
@@ -12847,11 +12835,6 @@
           "entity": "project::uwp",
           "startPos": 3,
           "endPos": 3
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
         }
       ]
     },
@@ -12863,11 +12846,6 @@
           "entity": "project::volley",
           "startPos": 3,
           "endPos": 3
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
         }
       ]
     },
@@ -12879,11 +12857,6 @@
           "entity": "project::electron",
           "startPos": 3,
           "endPos": 3
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
         }
       ]
     },
@@ -12895,11 +12868,6 @@
           "entity": "project::bot",
           "startPos": 3,
           "endPos": 3
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
         }
       ]
     },
@@ -12911,11 +12879,6 @@
           "entity": "project::website",
           "startPos": 3,
           "endPos": 3
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
         }
       ]
     },
@@ -12927,11 +12890,6 @@
           "entity": "project::ziz",
           "startPos": 3,
           "endPos": 3
-        },
-        {
-          "entity": "total_project",
-          "startPos": 2,
-          "endPos": 2
         }
       ]
     },
@@ -13954,6 +13912,1276 @@
           "endPos": 0
         }
       ]
+    },
+    {
+      "text": "totolino",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "totolinoo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "tolinoooo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "tolinooooo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "tolinoo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "puntolinooooo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "tolinooo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "tolino",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "easter_egg",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "parlami del progetto ziz fatto da orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "project::ziz",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "dove posso trovare il progetto volley?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "project::volley",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "dove posso trovare il progetto multiplatform uwp?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "project::uwp",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "dove posso trovare il progetto multiplatform electron?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "project::electron",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "dove posso trovare il progetto bot?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "project::bot",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "dove posso trovare il progetto website?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "project::website",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "dove posso trovare fast ink?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "project::fast ink",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "dove trovo fast ink?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::fast ink",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "dove trovo ziz?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::ziz",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "dove trovo website?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::website",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "dove trovo bot?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::bot",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "dove trovo multiplatform uwp?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::uwp",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "dove trovo multiplatform electron?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::electron",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "dove trovo volley?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::volley",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "quante persone ci sono nel team?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "Team_Perso",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "quante persone ci sono nel team perso?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "Team_Perso",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "voglio trovare il progetto ziz",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::ziz",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "persone",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "informazioni sulle persone",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "tutte le persone",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "email di orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di greggio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di quinto",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di fantinato",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di samuele orfei",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di manuele lucchi",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di nicolo greggio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di marco zancanaro",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di fantinato filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di tommaso quinto",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di nunzio salvatore savà",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di marco chiarin",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di filippo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Fantinato",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di nicolo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di nunzio salvatore",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di salvatore nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di tommaso",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di zancanaro marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di chiarin marco",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di orfei samuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di lucchi manuele",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di greggio nicolo",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Greggio",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di savà salvatore nunzio",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Nunzio",
+          "startPos": 2,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "email di quinto tommaso",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "che email ha marco chiarin?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Chiarin",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "che email ha chiarin marco?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Zancanaro",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "che email ha manuele lucchi?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "che email ha lucchi manuele?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Lucchi",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "che email ha orfei samuele?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "che email ha samuele orfei?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Orfei",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "che email ha quinto tommaso?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "che email ha tommaso quinto?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "people::Quinto",
+          "startPos": 3,
+          "endPos": 4
+        },
+        {
+          "entity": "email",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "link progetto ziz",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "project::ziz",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "link progetto volley",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "project::volley",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "link progetto multiplatform electron",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "project::electron",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "link progetto website",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "project::website",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "link progetto multiplatform uwp",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "project::uwp",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "link progetto bot",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "project::bot",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "link fast ink",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "project::fast ink",
+          "startPos": 1,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "email",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "email",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "dove trovo il progetto ziz?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::ziz",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "dove trovo il progetto volley?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::volley",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "dove trovo il progetto multiplatform electron?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::electron",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "dove trovo il progetto multiplatform uwp?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::uwp",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "dove trovo il progetto bot?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::bot",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "dove trovo il progetto website?",
+      "intent": "GetInformation",
+      "entities": [
+        {
+          "entity": "find",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "project::website",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "cosa sai fare?",
+      "intent": "Skills",
+      "entities": []
+    },
+    {
+      "text": "cosa puoi fare?",
+      "intent": "Skills",
+      "entities": []
+    },
+    {
+      "text": "qual è il tuo compito?",
+      "intent": "Skills",
+      "entities": []
+    },
+    {
+      "text": "fai",
+      "intent": "Skills",
+      "entities": []
+    },
+    {
+      "text": "sapere",
+      "intent": "Skills",
+      "entities": []
+    },
+    {
+      "text": "cosa fare?",
+      "intent": "Skills",
+      "entities": []
+    },
+    {
+      "text": "fare",
+      "intent": "Skills",
+      "entities": []
+    },
+    {
+      "text": "cosa sei capace di fare?",
+      "intent": "Skills",
+      "entities": []
+    },
+    {
+      "text": "cosa sei in grado di fare?",
+      "intent": "Skills",
+      "entities": []
+    },
+    {
+      "text": "cosa sai?",
+      "intent": "Skills",
+      "entities": []
     }
   ]
 }
