@@ -113,17 +113,19 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
             var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
             var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
-            var electron = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::electron');
             var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
             var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
             var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
             var bot_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::bot');
+            var deaf = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::deaf');
+            var utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
+            var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
             var current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
             var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
             var email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
 
-            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !electron && !volley && !fast_ink && !website && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio) {
+            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !parse && !volley && !fast_ink && !website && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio && !utilities && !deaf) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('NothingTemp');
@@ -134,350 +136,302 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 ], function(error, results) {
                     session.send("Error");
                 });
-            } else {
-                if (email) {
-                    async.parallel([
-                        function(callback) {
-                            session.beginDialog('AllMailTemp');
-                        },
-                        function(callback) {
-                            session.beginDialog('AllMail');
-                        }
-                    ], function(error, results) {
-                        session.send("Error");
-                    })
-                } else {
-                    if (total_people) {
-                        async.parallel([
-                            function(callback) {
-                                session.beginDialog('AllPeopleTemp');
-                            },
-                            function(callback) {
-                                session.beginDialog('AllPeople');
-                            }
-                        ], function(error, results) {
-                            session.send("Error");
-                        })
-                    } else {
-                        if (total_project) {
-                            async.parallel([
-                                function(callback) {
-                                    session.beginDialog('TotalProjectTemp');
-                                },
-                                function(callback) {
-                                    session.beginDialog('TotalProject');
-                                }
-                            ], function(error, results) {
-                                session.send("Error");
-                            })
-                        } else {
-                            if (current_project) {
-                                async.parallel([
-                                    function(callback) {
-                                        session.beginDialog('CurrentProjectTemp');
-                                    },
-                                    function(callback) {
-                                        session.beginDialog('CurrentProject');
-                                    }
-                                ], function(error, results) {
-                                    session.send("Error");
-                                })
-                            } else {
-                                if (bot_project) {
-                                    var BotTemp = getBotInformation(session, data);
-                                    session.send(BotTemp);
-                                } else {
-                                    if (website) {
-                                        var WebTemp = getWebsiteInformation(session, data);
-                                        session.send(WebTemp);
-                                    } else {
-                                        if (fast_ink) {
-                                            var FastTemp = getFastInkInformation(session, data);
-                                            session.send(FastTemp);
-                                        } else {
-                                            if (volley) {
-                                                var VolleyTemp = getVolleyInformation(session, data);
-                                                session.send(VolleyTemp);
-                                            } else {
-                                                if (electron) {
-                                                    var ElectronTemp = getElectronInformation(session, data);
-                                                    session.send(ElectronTemp);
-                                                } else {
-                                                    if (uwp) {
-                                                        var UwpTemp = getUwpInformation(session, data);
-                                                        session.send(UwpTemp);
-                                                    } else {
-                                                        if (ziz) {
-                                                            var ZizTemp = getZizInformation(session, data);
-                                                            session.send(ZizTemp);
-                                                        } else {
-                                                            if (fantinato) {
-                                                                var FantinatoTemp = getFantinatoInformation(session, data);
-                                                                session.send(FantinatoTemp);
-                                                            } else {
-                                                                if (quinto) {
-                                                                    var QuintoTemp = getQuintoInformation(session, data);
-                                                                    session.send(QuintoTemp);
-                                                                } else {
-                                                                    if (greggio) {
-                                                                        var GreggioTemp = getGreggioInformation(session, data);
-                                                                        session.send(GreggioTemp);
-                                                                    } else {
-                                                                        if (orfei) {
-                                                                            var OrfeiTemp = getOrfeiInformation(session, data);
-                                                                            session.send(OrfeiTemp);
-                                                                        } else {
-                                                                            if (lucchi) {
-                                                                                var LucchiTemp = getLucchiInformation(session, data);
-                                                                                session.send(LucchiTemp);
-                                                                            } else {
-                                                                                if (nunzio) {
-                                                                                    var NunzioTemp = getNunzioInformation(session, data);
-                                                                                    session.send(NunzioTemp);
-                                                                                } else {
-                                                                                    if (chiarin) {
-                                                                                        var ChiarinTemp = getChiarinInformation(session, data);
-                                                                                        session.send(ChiarinTemp);
-                                                                                    } else {
-                                                                                        if (zancanaro) {
-                                                                                            var ZancanaroTemp = getZancanaroInformation(session, data);
-                                                                                            session.send(ZancanaroTemp);
-                                                                                        } else {
-                                                                                            if (team_perso) {
-                                                                                                async.parallel([
-                                                                                                    function(callback) {
-                                                                                                        session.beginDialog('TeamTemp');
-                                                                                                    },
-                                                                                                    function(callback) {
-                                                                                                        session.beginDialog('Team')
-                                                                                                    }
-                                                                                                ], function(error, results) {
-                                                                                                    session.send("Error");
-                                                                                                })
-                                                                                            } else {
-                                                                                                if (responsability) {
-                                                                                                    async.parallel([
-                                                                                                        function(callback) {
-                                                                                                            session.beginDialog('AllResponsabilityTemp');
-                                                                                                        },
-                                                                                                        function(callback) {
-                                                                                                            session.beginDialog('AllResponsability');
-                                                                                                        }
-                                                                                                    ], function(error, results) {
-                                                                                                        session.send("Error");
-                                                                                                    })
-                                                                                                } else {
-                                                                                                    if (role) {
-                                                                                                        async.parallel([
-                                                                                                            function(callback) {
-                                                                                                                session.beginDialog('AllRoleTemp');
-                                                                                                            },
-                                                                                                            function(callback) {
-                                                                                                                session.beginDialog('AllRole');
-                                                                                                            }
-                                                                                                        ], function(error, results) {
-                                                                                                            session.send("Error");
-                                                                                                        })
-                                                                                                    } else {
-                                                                                                        if (find) {
-                                                                                                            async.parallel([
-                                                                                                                function(callback) {
-                                                                                                                    session.beginDialog('FindAllTemp');
-                                                                                                                },
-                                                                                                                function(callback) {
-                                                                                                                    session.beginDialog('FindAll');
-                                                                                                                }
-                                                                                                            ], function(error, results) {
-                                                                                                                session.send("Error");
-                                                                                                            })
-                                                                                                        } else {
-                                                                                                            if (easter_egg) {
-                                                                                                                var BullshitTemp = getBullshit(session);
-                                                                                                                session.send(BullshitTemp);
-                                                                                                            } else {
-                                                                                                                if (nunzio && role) {
-                                                                                                                    var NunzioRole = getNunzioRole(session, database);
-                                                                                                                    session.send(NunzioRole);
-                                                                                                                } else {
-                                                                                                                    if (fantinato && role) {
-                                                                                                                        var FantinatoRole = getFantinatoRole(session, database);
-                                                                                                                        session.send(FantinatoRole);
-                                                                                                                    } else {
-                                                                                                                        if (quinto && role) {
-                                                                                                                            var QuintoRole = getQuintoRole(session, database);
-                                                                                                                            session.send(QuintoRole);
-                                                                                                                        } else {
-                                                                                                                            if (greggio && role) {
-                                                                                                                                var GreggioRole = getGreggioRole(session, database);
-                                                                                                                                session.send(GreggioRole);
-                                                                                                                            } else {
-                                                                                                                                if (chiarin && role) {
-                                                                                                                                    var ChiarinRole = getChiarinRole(session, database);
-                                                                                                                                    session.send(ChiarinRole);
-                                                                                                                                } else {
-                                                                                                                                    if (zancanaro && role) {
-                                                                                                                                        var ZancanaroRole = getZancanaroRole(session, database);
-                                                                                                                                        session.send(ZancanaroRole);
-                                                                                                                                    } else {
-                                                                                                                                        if (lucchi && role) {
-                                                                                                                                            var LucchiRole = getLucchiRole(session, database);
-                                                                                                                                            session.send(LucchiRole);
-                                                                                                                                        } else {
-                                                                                                                                            if (orfei && role) {
-                                                                                                                                                var OrfeiRole = getOrfeiRole(session, database);
-                                                                                                                                                session.send(OrfeiRole);
-                                                                                                                                            } else {
-                                                                                                                                                if (nunzio && responsability) {
-                                                                                                                                                    var NunzioRes = getNunzioResponsability(session, database);
-                                                                                                                                                    session.send(NunzioRes);
-                                                                                                                                                } else {
-                                                                                                                                                    if (fantinato && responsability) {
-                                                                                                                                                        var FantinatoRes = getFantinatoResponsability(session, database);
-                                                                                                                                                        session.send(FantinatoRes);
-                                                                                                                                                    } else {
-                                                                                                                                                        if (quinto && responsability) {
-                                                                                                                                                            var QuintoRes = getQuintoResponsability(session, database);
-                                                                                                                                                            session.send(QuintoRes);
-                                                                                                                                                        } else {
-                                                                                                                                                            if (greggio && responsability) {
-                                                                                                                                                                var GreggioRes = getGreggioResponsability(session, database);
-                                                                                                                                                                session.send(GreggioRes);
-                                                                                                                                                            } else {
-                                                                                                                                                                if (chiarin && responsability) {
-                                                                                                                                                                    var ChiarinRes = getChiarinResponsability(session, database);
-                                                                                                                                                                    session.send(ChiarinRes);
-                                                                                                                                                                } else {
-                                                                                                                                                                    if (zancanaro && responsability) {
-                                                                                                                                                                        var ZancanaroRes = getZancanaroResponsability(session, database);
-                                                                                                                                                                        session.send(ZancanaroRes);
-                                                                                                                                                                    } else {
-                                                                                                                                                                        if (lucchi && responsability) {
-                                                                                                                                                                            var LucchiRes = getLucchiResponsability(session, database);
-                                                                                                                                                                            session.send(LucchiRes);
-                                                                                                                                                                        } else {
-                                                                                                                                                                            if (orfei && responsability) {
-                                                                                                                                                                                var OrfeiRes = getOrfeiResponsability(session, database);
-                                                                                                                                                                                session.send(OrfeiRes);
-                                                                                                                                                                            } else {
-                                                                                                                                                                                if (nunzio && mail) {
-                                                                                                                                                                                    var NunzioMail = getNunzioMail(session, database);
-                                                                                                                                                                                    session.send(NunzioMail);
-                                                                                                                                                                                } else {
-                                                                                                                                                                                    if (fantinato && mail) {
-                                                                                                                                                                                        var FantinatoMail = getFantinatoMail(session, database);
-                                                                                                                                                                                        session.send(FantinatoMail);
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        if (quinto && mail) {
-                                                                                                                                                                                            var QuintoMail = getQuintoMail(session, database);
-                                                                                                                                                                                            session.send(QuintoMail);
-                                                                                                                                                                                        } else {
-                                                                                                                                                                                            if (greggio && mail) {
-                                                                                                                                                                                                var GreggioMail = getGreggioMail(session, database);
-                                                                                                                                                                                                session.send(GreggioMail);
-                                                                                                                                                                                            } else {
-                                                                                                                                                                                                if (chiarin && mail) {
-                                                                                                                                                                                                    var ChiarinMail = getChiarinMail(session, database);
-                                                                                                                                                                                                    session.send(ChiarinMail);
-                                                                                                                                                                                                } else {
-                                                                                                                                                                                                    if (zancanaro && mail) {
-                                                                                                                                                                                                        var ZancanaroMail = getZancanaroMail(session, database);
-                                                                                                                                                                                                        session.send(ZancanaroMail);
-                                                                                                                                                                                                    } else {
-                                                                                                                                                                                                        if (lucchi && mail) {
-                                                                                                                                                                                                            var LucchiMail = getLucchiMail(session, database);
-                                                                                                                                                                                                            session.send(LucchiMail);
-                                                                                                                                                                                                        } else {
-                                                                                                                                                                                                            if (orfei && mail) {
-                                                                                                                                                                                                                var OrfeiMail = getOrfeiMail(session, database);
-                                                                                                                                                                                                                session.send(OrfeiMail);
-                                                                                                                                                                                                            } else {
-                                                                                                                                                                                                                if (nunzio && total_project) {
-                                                                                                                                                                                                                    var NunzioProjects = getNunzioProjects(session, database);
-                                                                                                                                                                                                                    session.send(NunzioProjects);
-                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                    if (fantinato && total_project) {
-                                                                                                                                                                                                                        var FantinatoProjects = getFantinatoProjects(session, database);
-                                                                                                                                                                                                                        session.send(FantinatoProjects);
-                                                                                                                                                                                                                    } else {
-                                                                                                                                                                                                                        if (quinto && total_project) {
-                                                                                                                                                                                                                            var QuintoProjects = getQuintoProjects(session, database);
-                                                                                                                                                                                                                            session.send(QuintoProjects);
-                                                                                                                                                                                                                        } else {
-                                                                                                                                                                                                                            if (greggio && total_project) {
-                                                                                                                                                                                                                                var GreggioProjects = getGreggioProjects(session, database);
-                                                                                                                                                                                                                                session.send(GreggioProjects);
-                                                                                                                                                                                                                            } else {
-                                                                                                                                                                                                                                if (chiarin && total_project) {
-                                                                                                                                                                                                                                    var ChiarinProjects = getChiarinProjects(session, database);
-                                                                                                                                                                                                                                    session.send(ChiarinProjects);
-                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                    if (zancanaro && total_project) {
-                                                                                                                                                                                                                                        var ZancanaroProjects = getZancanaroProjects(session, database);
-                                                                                                                                                                                                                                        session.send(ZancanaroProjects);
-                                                                                                                                                                                                                                    } else {
-                                                                                                                                                                                                                                        if (lucchi && total_project) {
-                                                                                                                                                                                                                                            var LucchiProjects = getLucchiProjects(session, database);
-                                                                                                                                                                                                                                            session.send(LucchiProjects);
-                                                                                                                                                                                                                                        } else {
-                                                                                                                                                                                                                                            if (orfei && total_project) {
-                                                                                                                                                                                                                                                var OrfeiProject = getOrfeiProjects(session, database);
-                                                                                                                                                                                                                                                session.send(OrfeiProject);
-                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                }
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                        }
-                                                                                                                                                                                                    }
-                                                                                                                                                                                                }
-                                                                                                                                                                                            }
-                                                                                                                                                                                        }
-                                                                                                                                                                                    }
-                                                                                                                                                                                }
-                                                                                                                                                                            }
-                                                                                                                                                                        }
-                                                                                                                                                                    }
-                                                                                                                                                                }
-                                                                                                                                                            }
-                                                                                                                                                        }
-                                                                                                                                                    }
-                                                                                                                                                }
-                                                                                                                                            }
-                                                                                                                                        }
-                                                                                                                                    }
-                                                                                                                                }
-                                                                                                                            }
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                }
-                                                                                                            }
-                                                                                                        }
-                                                                                                    }
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+            }
+            if (email) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllMailTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllMail');
                     }
-                }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (total_people) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllPeopleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllPeople');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (total_project) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TotalProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('TotalProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (current_project) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('CurrentProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('CurrentProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (bot_project) {
+                var BotTemp = getBotInformation(session, data);
+                session.send(BotTemp);
+            }
+            if (website) {
+                var WebTemp = getWebsiteInformation(session, data);
+                session.send(WebTemp);
+            }
+            if (fast_ink) {
+                var FastTemp = getFastInkInformation(session, data);
+                session.send(FastTemp);
+            }
+            if (volley) {
+                var VolleyTemp = getVolleyInformation(session, data);
+                session.send(VolleyTemp);
+            }
+            if (parse) {
+                var ParseTemp = getParseInformation(session, data);
+                session.send(ParseTemp);
+            }
+            if (deaf) {
+                var DeafTemp = getDeafInformation(session, data);
+                session.send(DeafTemp);
+            }
+            if (utilities) {
+                var UtilitiesTemp = getUtilitiesInformation(session, data);
+                session.send(UtilitiesTemp);
+            }
+            if (uwp) {
+                var UwpTemp = getUwpInformation(session, data);
+                session.send(UwpTemp);
+            }
+            if (ziz) {
+                var ZizTemp = getZizInformation(session, data);
+                session.send(ZizTemp);
+            }
+            if (fantinato) {
+                var FantinatoTemp = getFantinatoInformation(session, data);
+                session.send(FantinatoTemp);
+            }
+            if (quinto) {
+                var QuintoTemp = getQuintoInformation(session, data);
+                session.send(QuintoTemp);
+            }
+            if (greggio) {
+                var GreggioTemp = getGreggioInformation(session, data);
+                session.send(GreggioTemp);
+            }
+            if (orfei) {
+                var OrfeiTemp = getOrfeiInformation(session, data);
+                session.send(OrfeiTemp);
+            }
+            if (lucchi) {
+                var LucchiTemp = getLucchiInformation(session, data);
+                session.send(LucchiTemp);
+            }
+            if (nunzio) {
+                var NunzioTemp = getNunzioInformation(session, data);
+                session.send(NunzioTemp);
+            }
+            if (chiarin) {
+                var ChiarinTemp = getChiarinInformation(session, data);
+                session.send(ChiarinTemp);
+            }
+            if (zancanaro) {
+                var ZancanaroTemp = getZancanaroInformation(session, data);
+                session.send(ZancanaroTemp);
+            }
+            if (team_perso) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TeamTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Team')
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (responsability) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllResponsabilityTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllResponsability');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (role) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllRoleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllRole');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (find) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('FindAllTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('FindAll');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (easter_egg) {
+                var BullshitTemp = getBullshit(session);
+                session.send(BullshitTemp);
+            }
+            if (nunzio && role) {
+                var NunzioRole = getNunzioRole(session, database);
+                session.send(NunzioRole);
+            }
+            if (fantinato && role) {
+                var FantinatoRole = getFantinatoRole(session, database);
+                session.send(FantinatoRole);
+            }
+            if (quinto && role) {
+                var QuintoRole = getQuintoRole(session, database);
+                session.send(QuintoRole);
+            }
+            if (greggio && role) {
+                var GreggioRole = getGreggioRole(session, database);
+                session.send(GreggioRole);
+            }
+            if (chiarin && role) {
+                var ChiarinRole = getChiarinRole(session, database);
+                session.send(ChiarinRole);
+            }
+            if (zancanaro && role) {
+                var ZancanaroRole = getZancanaroRole(session, database);
+                session.send(ZancanaroRole);
+            }
+            if (lucchi && role) {
+                var LucchiRole = getLucchiRole(session, database);
+                session.send(LucchiRole);
+            }
+            if (orfei && role) {
+                var OrfeiRole = getOrfeiRole(session, database);
+                session.send(OrfeiRole);
+            }
+            if (nunzio && responsability) {
+                var NunzioRes = getNunzioResponsability(session, database);
+                session.send(NunzioRes);
+            }
+            if (fantinato && responsability) {
+                var FantinatoRes = getFantinatoResponsability(session, database);
+                session.send(FantinatoRes);
+            }
+            if (quinto && responsability) {
+                var QuintoRes = getQuintoResponsability(session, database);
+                session.send(QuintoRes);
+            }
+            if (greggio && responsability) {
+                var GreggioRes = getGreggioResponsability(session, database);
+                session.send(GreggioRes);
+            }
+            if (chiarin && responsability) {
+                var ChiarinRes = getChiarinResponsability(session, database);
+                session.send(ChiarinRes);
+            }
+            if (zancanaro && responsability) {
+                var ZancanaroRes = getZancanaroResponsability(session, database);
+                session.send(ZancanaroRes);
+            }
+            if (lucchi && responsability) {
+                var LucchiRes = getLucchiResponsability(session, database);
+                session.send(LucchiRes);
+            }
+            if (orfei && responsability) {
+                var OrfeiRes = getOrfeiResponsability(session, database);
+                session.send(OrfeiRes);
+            }
+            if (nunzio && mail) {
+                var NunzioMail = getNunzioMail(session, database);
+                session.send(NunzioMail);
+            }
+            if (fantinato && mail) {
+                var FantinatoMail = getFantinatoMail(session, database);
+                session.send(FantinatoMail);
+            }
+            if (quinto && mail) {
+                var QuintoMail = getQuintoMail(session, database);
+                session.send(QuintoMail);
+            }
+            if (greggio && mail) {
+                var GreggioMail = getGreggioMail(session, database);
+                session.send(GreggioMail);
+            }
+            if (chiarin && mail) {
+                var ChiarinMail = getChiarinMail(session, database);
+                session.send(ChiarinMail);
+            }
+            if (zancanaro && mail) {
+                var ZancanaroMail = getZancanaroMail(session, database);
+                session.send(ZancanaroMail);
+            }
+            if (lucchi && mail) {
+                var LucchiMail = getLucchiMail(session, database);
+                session.send(LucchiMail);
+            }
+            if (orfei && mail) {
+                var OrfeiMail = getOrfeiMail(session, database);
+                session.send(OrfeiMail);
+            }
+            if (nunzio && total_project) {
+                var NunzioProjects = getNunzioProjects(session, database);
+                session.send(NunzioProjects);
+            }
+            if (fantinato && total_project) {
+                var FantinatoProjects = getFantinatoProjects(session, database);
+                session.send(FantinatoProjects);
+            }
+            if (quinto && total_project) {
+                var QuintoProjects = getQuintoProjects(session, database);
+                session.send(QuintoProjects);
+            }
+            if (greggio && total_project) {
+                var GreggioProjects = getGreggioProjects(session, database);
+                session.send(GreggioProjects);
+            }
+            if (chiarin && total_project) {
+                var ChiarinProjects = getChiarinProjects(session, database);
+                session.send(ChiarinProjects);
+            }
+            if (zancanaro && total_project) {
+                var ZancanaroProjects = getZancanaroProjects(session, database);
+                session.send(ZancanaroProjects);
+            }
+            if (lucchi && total_project) {
+                var LucchiProjects = getLucchiProjects(session, database);
+                session.send(LucchiProjects);
+            }
+            if (orfei && total_project) {
+                var OrfeiProject = getOrfeiProjects(session, database);
+                session.send(OrfeiProject);
             }
         }
     ])
@@ -579,45 +533,42 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
                 ], function(error, results) {
                     session.send("Error");
                 })
-            } else {
-                if (total_people) {
-                    async.parallel([
-                        function(callback) {
-                            session.beginDialog('AllPeopleTemp');
-                        },
-                        function(callback) {
-                            session.beginDialog('AllPeople');
-                        }
-                    ], function(error, results) {
-                        session.send("Error");
-                    })
-                } else {
-                    if (total_project) {
-                        async.parallel([
-                            function(callback) {
-                                session.beginDialog('TotalProjectTemp');
-                            },
-                            function(callback) {
-                                session.beginDialog('TotalProject');
-                            }
-                        ], function(error, results) {
-                            session.send("Error");
-                        })
-                    } else {
-                        if (current_project) {
-                            async.parallel([
-                                function(callback) {
-                                    session.beginDialog('CurrentProjectTemp');
-                                },
-                                function(callback) {
-                                    session.beginDialog('CurrentProject');
-                                }
-                            ], function(error, results) {
-                                session.send("Error");
-                            })
-                        }
+            }
+            if (total_people) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllPeopleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllPeople');
                     }
-                }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (total_project) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TotalProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('TotalProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (current_project) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('CurrentProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('CurrentProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
             }
         }
     ])
@@ -728,17 +679,37 @@ bot.dialog('TotalProjectTemp', [
                 break;
             case "gestione del progetto uwp":
                 var UwpGestioneTemp = getUwpGestione(session, data);
-                session.send(getUwpGestione);
+                session.send(UwpGestioneTemp);
                 session.beginDialog('Root');
                 break;
-            case "informazioni sul progetto electron":
-                var ElectronTemp = getElectronInformation(session, data);
-                session.send(ElectronTemp);
+            case "informazioni sul progetto parse":
+                var ParseTemp = getParseInformation(session, data);
+                session.send(ParseTemp);
                 session.beginDialog('Root');
                 break;
-            case "gestione del progetto electron":
-                var ElectronGestioneTemp = getElectronGestione(session, data);
-                session.send(getElectronGestione);
+            case "gestione del progetto parse":
+                var ParseGestioneTemp = getParseGestione(session, data);
+                session.send(ParseGestioneTemp);
+                session.beginDialog('Root');
+                break;
+            case "informazioni sul progetto deaf":
+                var DeafTemp = getDeafInformation(session, data);
+                session.send(DeafTemp);
+                session.beginDialog('Root');
+                break;
+            case "gestione del progetto deaf":
+                var DeafGestioneTemp = getDeafGestione(session, data);
+                session.send(DeafGestioneTemp);
+                session.beginDialog('Root');
+                break;
+            case "informazioni su utilities":
+                var UtilitiesTemp = getUtilitiesInformation(session, data);
+                session.send(UtilitiesTemp);
+                session.beginDialog('Root');
+                break;
+            case "gestione di utilities":
+                var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+                session.send(UtilitiesGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto bot":
@@ -748,7 +719,7 @@ bot.dialog('TotalProjectTemp', [
                 break;
             case "gestione del progetto bot":
                 var BotGestioneTemp = getBotGestione(session, data);
-                session.send(getBotGestione);
+                session.send(BotGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto ziz":
@@ -758,7 +729,7 @@ bot.dialog('TotalProjectTemp', [
                 break;
             case "gestione del progetto ziz":
                 var ZizGestioneTemp = getZizGestione(session, data);
-                session.send(getZizGestione);
+                session.send(ZizGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto volley":
@@ -803,6 +774,7 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
             var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
             var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
             var electron = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::electron');
+            var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
             var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
             var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
             var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
@@ -812,84 +784,71 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
                 var ZizTemp = getZizInformation(session, data);
                 session.send(ZizTemp);
                 session.beginDialog('Root');
-            } else {
-                if (uwp) {
-                    var UwpTemp = getUwpInformation(session, data);
-                    session.send(UwpTemp);
-                    session.beginDialog('Root');
-                } else {
-                    if (electron) {
-                        var ElectronTemp = getElectronInformation(session, data);
-                        session.send(ElectronTemp);
-                        session.beginDialog('Root');
-                    } else {
-                        if (website) {
-                            var WebTemp = getWebsiteInformation(session, data);
-                            session.send(WebTemp);
-                            session.beginDialog('Root');
-                        } else {
-                            if (ziz && responsability) {
-                                var ZizGestioneTemp = getZizGestione(session, data);
-                                session.send(getZizGestione);
-                                session.beginDialog('Root');
-                            } else {
-                                if (uwp && responsability) {
-                                    var UwpGestioneTemp = getUwpGestione(session, data);
-                                    session.send(getUwpGestione);
-                                    session.beginDialog('Root');
-                                } else {
-                                    if (electron && responsability) {
-                                        var ElectronGestioneTemp = getElectronGestione(session, data);
-                                        session.send(getElectronGestione);
-                                        session.beginDialog('Root');
-                                    } else {
-                                        if (website && responsability) {
-                                            var WebGestioneTemp = getWebsiteGestione(session, data);
-                                            session.send(WebGestioneTemp);
-                                            session.beginDialog('Root');
-                                        } else {
-                                            if (volley) {
-                                                var VolleyTemp = getVolleyInformation(session, data);
-                                                session.send(VolleyTemp);
-                                                session.beginDialog('Root');
-                                            } else {
-                                                if (fast_ink) {
-                                                    var FastInkTemp = getFastInkInformation(session, data);
-                                                    session.send(FastInkTemp);
-                                                    session.beginDialog('Root');
-                                                } else {
-                                                    if (bot_project) {
-                                                        var BotTemp = getBotInformation(session, data);
-                                                        session.send(BotTemp);
-                                                        session.beginDialog('Root');
-                                                    } else {
-                                                        if (volley && responsability) {
-                                                            var VolleyGestioneTemp = getVolleyGestione(session, data);
-                                                            session.send(VolleyGestioneTemp);
-                                                            session.beginDialog('Root');
-                                                        } else {
-                                                            if (fast_ink && responsability) {
-                                                                var FastInkGestioneTemp = getFastInkGestione(session, data);
-                                                                session.send(FastInkGestioneTemp);
-                                                                session.beginDialog('Root');
-                                                            } else {
-                                                                if (bot_project && responsability) {
-                                                                    var BotGestioneTemp = getBotGestione(session, data);
-                                                                    session.send(getBotGestione);
-                                                                    session.beginDialog('Root');
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+            }
+            if (uwp) {
+                var UwpTemp = getUwpInformation(session, data);
+                session.send(UwpTemp);
+                session.beginDialog('Root');
+            }
+            if (parse) {
+                var ParseTemp = getParseInformation(session, data);
+                session.send(ParseTemp);
+                session.beginDialog('Root');
+            }
+            if (website) {
+                var WebTemp = getWebsiteInformation(session, data);
+                session.send(WebTemp);
+                session.beginDialog('Root');
+            }
+            if (ziz && responsability) {
+                var ZizGestioneTemp = getZizGestione(session, data);
+                session.send(ZizGestioneTemp);
+                session.beginDialog('Root');
+            }
+            if (uwp && responsability) {
+                var UwpGestioneTemp = getUwpGestione(session, data);
+                session.send(UwpGestioneTemp);
+                session.beginDialog('Root');
+            }
+            if (parse && responsability) {
+                var ParseGestioneTemp = getElectronGestione(session, data);
+                session.send(ParseGestioneTemp);
+                session.beginDialog('Root');
+            }
+            if (website && responsability) {
+                var WebGestioneTemp = getWebsiteGestione(session, data);
+                session.send(WebGestioneTemp);
+                session.beginDialog('Root');
+            }
+            if (volley) {
+                var VolleyTemp = getVolleyInformation(session, data);
+                session.send(VolleyTemp);
+                session.beginDialog('Root');
+            }
+            if (fast_ink) {
+                var FastInkTemp = getFastInkInformation(session, data);
+                session.send(FastInkTemp);
+                session.beginDialog('Root');
+            }
+            if (bot_project) {
+                var BotTemp = getBotInformation(session, data);
+                session.send(BotTemp);
+                session.beginDialog('Root');
+            }
+            if (volley && responsability) {
+                var VolleyGestioneTemp = getVolleyGestione(session, data);
+                session.send(VolleyGestioneTemp);
+                session.beginDialog('Root');
+            }
+            if (fast_ink && responsability) {
+                var FastInkGestioneTemp = getFastInkGestione(session, data);
+                session.send(FastInkGestioneTemp);
+                session.beginDialog('Root');
+            }
+            if (bot_project && responsability) {
+                var BotGestioneTemp = getBotGestione(session, data);
+                session.send(getBotGestione);
+                session.beginDialog('Root');
             }
         }
     ])
@@ -920,64 +879,59 @@ bot.dialog('Team', new botbuilder.IntentDialog({
                 ], function(error, results) {
                     session.send("Error");
                 })
-            } else {
-                if (responsability) {
-                    async.parallel([
-                        function(callback) {
-                            session.beginDialog('AllResponsabilityTemp');
-                        },
-                        function(callback) {
-                            session.beginDialog('AllResponsability');
-                        }
-                    ], function(error, results) {
-                        session.send("Error");
-                    })
-                } else {
-                    if (total_people) {
-                        async.parallel([
-                            function(callback) {
-                                session.beginDialog('AllPeopleTemp');
-                            },
-                            function(callback) {
-                                session.beginDialog('AllPeople');
-                            }
-                        ], function(error, results) {
-                            session.send("Error");
-                        })
-                    } else {
-                        if (total_project) {
-                            async.parallel([
-                                function(callback) {
-                                    session.beginDialog('TotalProjectTemp');
-                                },
-                                function(callback) {
-                                    session.beginDialog('TotalProject');
-                                }
-                            ], function(error, results) {
-                                session.send("Error");
-                            })
-                        } else {
-                            if (current_project) {
-                                async.parallel([
-                                    function(callback) {
-                                        session.beginDialog('CurrentProjectTemp');
-                                    },
-                                    function(callback) {
-                                        session.beginDialog('CurrentProject');
-                                    }
-                                ], function(error, results) {
-                                    session.send("Error");
-                                })
-                            } else {
-                                if (team) {
-                                    var TeamTemp = getTeamInformation(session, data);
-                                    session.send(TeamTemp);
-                                    session.beginDialog('Root');
-                                }
-                            }
-                        }
+            }
+            if (responsability) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllResponsabilityTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllResponsability');
                     }
-                }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (total_people) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllPeopleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllPeople');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (total_project) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TotalProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('TotalProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (current_project) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('CurrentProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('CurrentProject');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (team) {
+                var TeamTemp = getTeamInformation(session, data);
+                session.send(TeamTemp);
+                session.beginDialog('Root');
             }
         }
     ])
@@ -1062,48 +1016,41 @@ bot.dialog('AllRole', new botbuilder.IntentDialog({
                 var NunzioRole = getNunzioRole(session, parsed);
                 session.send(NunzioRole);
                 session.beginDialog('Root');
-            } else {
-                if (fantinato) {
-                    var FantinatoRole = getFantinatoRole(session, database);
-                    session.send(FantinatoRole);
-                    session.beginDialog('Root');
-                } else {
-                    if (quinto) {
-                        var QuintoRole = getQuintoRole(session, database);
-                        session.send(QuintoRole);
-                        session.beginDialog('Root');
-                    } else {
-                        if (greggio) {
-                            var GreggioRole = getGreggioRole(session, database);
-                            session.send(GreggioRole);
-                            session.beginDialog('Root');
-                        } else {
-                            if (chiarin) {
-                                var ChiarinRole = getChiarinRole(session, database);
-                                session.send(ChiarinRole);
-                                session.beginDialog('Root');
-                            } else {
-                                if (zancanaro) {
-                                    var ZancanaroRole = getZancanaroRole(session, database);
-                                    session.send(ZancanaroRole);
-                                    session.beginDialog('Root');
-                                } else {
-                                    if (lucchi) {
-                                        var LucchiRole = getLucchiRole(session, database);
-                                        session.send(LucchiRole);
-                                        session.beginDialog('Root');
-                                    } else {
-                                        if (orfei) {
-                                            var OrfeiRole = getOrfeiRole(session, database);
-                                            session.send(OrfeiRole);
-                                            session.beginDialog('Root');
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+            }
+            if (fantinato) {
+                var FantinatoRole = getFantinatoRole(session, database);
+                session.send(FantinatoRole);
+                session.beginDialog('Root');
+            }
+            if (quinto) {
+                var QuintoRole = getQuintoRole(session, database);
+                session.send(QuintoRole);
+                session.beginDialog('Root');
+            }
+            if (greggio) {
+                var GreggioRole = getGreggioRole(session, database);
+                session.send(GreggioRole);
+                session.beginDialog('Root');
+            }
+            if (chiarin) {
+                var ChiarinRole = getChiarinRole(session, database);
+                session.send(ChiarinRole);
+                session.beginDialog('Root');
+            }
+            if (zancanaro) {
+                var ZancanaroRole = getZancanaroRole(session, database);
+                session.send(ZancanaroRole);
+                session.beginDialog('Root');
+            }
+            if (lucchi) {
+                var LucchiRole = getLucchiRole(session, database);
+                session.send(LucchiRole);
+                session.beginDialog('Root');
+            }
+            if (orfei) {
+                var OrfeiRole = getOrfeiRole(session, database);
+                session.send(OrfeiRole);
+                session.beginDialog('Root');
             }
         }
     ])
@@ -1342,206 +1289,166 @@ bot.dialog('AllPeople', new botbuilder.IntentDialog({
             if (nunzio) {
                 var NunzioTemp = getNunzioInformation(session, database);
                 session.send(NunzioTemp);
-            } else {
-                if (fantinato) {
-                    var FantinatoTemp = getFantinatoInformation(session, database);
-                    session.send(FantinatoTemp);
-                } else {
-                    if (quinto) {
-                        var QuintoTemp = getQuintoInformation(session, database);
-                        session.send(QuintoTemp);
-                    } else {
-                        if (greggio) {
-                            var GreggioTemp = getGreggioInformation(session, database);
-                            session.send(GreggioTemp);
-                        } else {
-                            if (chiarin) {
-                                var ChiarinTemp = getChiarinInformation(session, database);
-                                session.send(ChiarinTemp);
-                            } else {
-                                if (zancanaro) {
-                                    var ZancanaroTemp = getZancanaroInformation(session, database);
-                                    session.send(ZancanaroTemp);
-                                } else {
-                                    if (lucchi) {
-                                        var LucchiTemp = getLucchiInformation(session, database);
-                                        session.send(LucchiTemp);
-                                    } else {
-                                        if (lucchi) {
-                                            var LucchiTemp = getLucchiInformation(session, database);
-                                            session.send(LucchiTemp);
-                                        } else {
-                                            if (orfei) {
-                                                var OrfeiTemp = getOrfeiInformation(session, database);
-                                                session.send(OrfeiTemp);
-                                            } else {
-                                                if (nunzio && role) {
-                                                    var NunzioRole = getNunzioRole(session, database);
-                                                    session.send(NunzioRole);
-                                                } else {
-                                                    if (fantinato && role) {
-                                                        var FantinatoRole = getFantinatoRole(session, database);
-                                                        session.send(FantinatoRole);
-                                                    } else {
-                                                        if (quinto && role) {
-                                                            var QuintoRole = getQuintoRole(session, database);
-                                                            session.send(QuintoRole);
-                                                        } else {
-                                                            if (greggio && role) {
-                                                                var GreggioRole = getGreggioRole(session, database);
-                                                                session.send(GreggioRole);
-                                                            } else {
-                                                                if (chiarin && role) {
-                                                                    var ChiarinRole = getChiarinRole(session, database);
-                                                                    session.send(ChiarinRole);
-                                                                } else {
-                                                                    if (zancanaro && role) {
-                                                                        var ZancanaroRole = getZancanaroRole(session, database);
-                                                                        session.send(ZancanaroRole);
-                                                                    } else {
-                                                                        if (lucchi && role) {
-                                                                            var LucchiRole = getLucchiRole(session, database);
-                                                                            session.send(LucchiRole);
-                                                                        } else {
-                                                                            if (orfei && role) {
-                                                                                var OrfeiRole = getOrfeiRole(session, database);
-                                                                                session.send(OrfeiRole);
-                                                                            } else {
-                                                                                if (nunzio && responsability) {
-                                                                                    var NunzioRes = getNunzioResponsability(session, database);
-                                                                                    session.send(NunzioRes);
-                                                                                } else {
-                                                                                    if (fantinato && responsability) {
-                                                                                        var FantinatoRes = getFantinatoResponsability(session, database);
-                                                                                        session.send(FantinatoRes);
-                                                                                    } else {
-                                                                                        if (quinto && responsability) {
-                                                                                            var QuintoRes = getQuintoResponsability(session, database);
-                                                                                            session.send(QuintoRes);
-                                                                                        } else {
-                                                                                            if (greggio && responsability) {
-                                                                                                var GreggioRes = getGreggioResponsability(session, database);
-                                                                                                session.send(GreggioRes);
-                                                                                            } else {
-                                                                                                if (chiarin && responsability) {
-                                                                                                    var ChiarinRes = getChiarinResponsability(session, database);
-                                                                                                    session.send(ChiarinRes);
-                                                                                                } else {
-                                                                                                    if (zancanaro && responsability) {
-                                                                                                        var ZancanaroRes = getZancanaroResponsability(session, database);
-                                                                                                        session.send(ZancanaroRes);
-                                                                                                    } else {
-                                                                                                        if (lucchi && responsability) {
-                                                                                                            var LucchiRes = getLucchiResponsability(session, database);
-                                                                                                            session.send(LucchiRes);
-                                                                                                        } else {
-                                                                                                            if (orfei && responsability) {
-                                                                                                                var OrfeiRes = getOrfeiResponsability(session, database);
-                                                                                                                session.send(OrfeiRes);
-                                                                                                            } else {
-                                                                                                                if (nunzio && mail) {
-                                                                                                                    var NunzioMail = getNunzioMail(session, database);
-                                                                                                                    session.send(NunzioMail);
-                                                                                                                } else {
-                                                                                                                    if (fantinato && mail) {
-                                                                                                                        var FantinatoMail = getFantinatoMail(session, database);
-                                                                                                                        session.send(FantinatoMail);
-                                                                                                                    } else {
-                                                                                                                        if (quinto && mail) {
-                                                                                                                            var QuintoMail = getQuintoMail(session, database);
-                                                                                                                            session.send(QuintoMail);
-                                                                                                                        } else {
-                                                                                                                            if (greggio && mail) {
-                                                                                                                                var GreggioMail = getGreggioMail(session, database);
-                                                                                                                                session.send(GreggioMail);
-                                                                                                                            } else {
-                                                                                                                                if (chiarin && mail) {
-                                                                                                                                    var ChiarinMail = getChiarinMail(session, database);
-                                                                                                                                    session.send(ChiarinMail);
-                                                                                                                                } else {
-                                                                                                                                    if (zancanaro && mail) {
-                                                                                                                                        var ZancanaroMail = getZancanaroMail(session, database);
-                                                                                                                                        session.send(ZancanaroMail);
-                                                                                                                                    } else {
-                                                                                                                                        if (lucchi && mail) {
-                                                                                                                                            var LucchiMail = getLucchiMail(session, database);
-                                                                                                                                            session.send(LucchiMail);
-                                                                                                                                        } else {
-                                                                                                                                            if (orfei && mail) {
-                                                                                                                                                var OrfeiMail = getOrfeiMail(session, database);
-                                                                                                                                                session.send(OrfeiMail);
-                                                                                                                                            } else {
-                                                                                                                                                if (nunzio && total_project) {
-                                                                                                                                                    var NunzioProjects = getNunzioProjects(session, database);
-                                                                                                                                                    session.send(NunzioProjects);
-                                                                                                                                                } else {
-                                                                                                                                                    if (fantinato && total_project) {
-                                                                                                                                                        var FantinatoProjects = getFantinatoProjects(session, database);
-                                                                                                                                                        session.send(FantinatoProjects);
-                                                                                                                                                    } else {
-                                                                                                                                                        if (quinto && total_project) {
-                                                                                                                                                            var QuintoProjects = getQuintoProjects(session, database);
-                                                                                                                                                            session.send(QuintoProjects);
-                                                                                                                                                        } else {
-                                                                                                                                                            if (greggio && total_project) {
-                                                                                                                                                                var GreggioProjects = getGreggioProjects(session, database);
-                                                                                                                                                                session.send(GreggioProjects);
-                                                                                                                                                            } else {
-                                                                                                                                                                if (chiarin && total_project) {
-                                                                                                                                                                    var ChiarinProjects = getChiarinProjects(session, database);
-                                                                                                                                                                    session.send(ChiarinProjects);
-                                                                                                                                                                } else {
-                                                                                                                                                                    if (zancanaro && total_project) {
-                                                                                                                                                                        var ZancanaroProjects = getZancanaroProjects(session, database);
-                                                                                                                                                                        session.send(ZancanaroProjects);
-                                                                                                                                                                    } else {
-                                                                                                                                                                        if (lucchi && total_project) {
-                                                                                                                                                                            var LucchiProjects = getLucchiProjects(session, database);
-                                                                                                                                                                            session.send(LucchiProjects);
-                                                                                                                                                                        } else {
-                                                                                                                                                                            if (orfei && total_project) {
-                                                                                                                                                                                var OrfeiProject = getOrfeiProjects(session, database);
-                                                                                                                                                                                session.send(OrfeiProject);
-                                                                                                                                                                            }
-                                                                                                                                                                        }
-                                                                                                                                                                    }
-                                                                                                                                                                }
-                                                                                                                                                            }
-                                                                                                                                                        }
-                                                                                                                                                    }
-                                                                                                                                                }
-                                                                                                                                            }
-                                                                                                                                        }
-                                                                                                                                    }
-                                                                                                                                }
-                                                                                                                            }
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                }
-                                                                                                            }
-                                                                                                        }
-                                                                                                    }
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+            }
+            if (fantinato) {
+                var FantinatoTemp = getFantinatoInformation(session, database);
+                session.send(FantinatoTemp);
+            }
+            if (quinto) {
+                var QuintoTemp = getQuintoInformation(session, database);
+                session.send(QuintoTemp);
+            }
+            if (greggio) {
+                var GreggioTemp = getGreggioInformation(session, database);
+                session.send(GreggioTemp);
+            }
+            if (chiarin) {
+                var ChiarinTemp = getChiarinInformation(session, database);
+                session.send(ChiarinTemp);
+            }
+            if (zancanaro) {
+                var ZancanaroTemp = getZancanaroInformation(session, database);
+                session.send(ZancanaroTemp);
+            }
+            if (lucchi) {
+                var LucchiTemp = getLucchiInformation(session, database);
+                session.send(LucchiTemp);
+            }
+            if (lucchi) {
+                var LucchiTemp = getLucchiInformation(session, database);
+                session.send(LucchiTemp);
+            }
+            if (orfei) {
+                var OrfeiTemp = getOrfeiInformation(session, database);
+                session.send(OrfeiTemp);
+            }
+            if (nunzio && role) {
+                var NunzioRole = getNunzioRole(session, database);
+                session.send(NunzioRole);
+            }
+            if (fantinato && role) {
+                var FantinatoRole = getFantinatoRole(session, database);
+                session.send(FantinatoRole);
+            }
+            if (quinto && role) {
+                var QuintoRole = getQuintoRole(session, database);
+                session.send(QuintoRole);
+            }
+            if (greggio && role) {
+                var GreggioRole = getGreggioRole(session, database);
+                session.send(GreggioRole);
+            }
+            if (chiarin && role) {
+                var ChiarinRole = getChiarinRole(session, database);
+                session.send(ChiarinRole);
+            }
+            if (zancanaro && role) {
+                var ZancanaroRole = getZancanaroRole(session, database);
+                session.send(ZancanaroRole);
+            }
+            if (lucchi && role) {
+                var LucchiRole = getLucchiRole(session, database);
+                session.send(LucchiRole);
+            }
+            if (orfei && role) {
+                var OrfeiRole = getOrfeiRole(session, database);
+                session.send(OrfeiRole);
+            }
+            if (nunzio && responsability) {
+                var NunzioRes = getNunzioResponsability(session, database);
+                session.send(NunzioRes);
+            }
+            if (fantinato && responsability) {
+                var FantinatoRes = getFantinatoResponsability(session, database);
+                session.send(FantinatoRes);
+            }
+            if (quinto && responsability) {
+                var QuintoRes = getQuintoResponsability(session, database);
+                session.send(QuintoRes);
+            }
+            if (greggio && responsability) {
+                var GreggioRes = getGreggioResponsability(session, database);
+                session.send(GreggioRes);
+            }
+            if (chiarin && responsability) {
+                var ChiarinRes = getChiarinResponsability(session, database);
+                session.send(ChiarinRes);
+            }
+            if (zancanaro && responsability) {
+                var ZancanaroRes = getZancanaroResponsability(session, database);
+                session.send(ZancanaroRes);
+            }
+            if (lucchi && responsability) {
+                var LucchiRes = getLucchiResponsability(session, database);
+                session.send(LucchiRes);
+            }
+            if (orfei && responsability) {
+                var OrfeiRes = getOrfeiResponsability(session, database);
+                session.send(OrfeiRes);
+            }
+            if (nunzio && mail) {
+                var NunzioMail = getNunzioMail(session, database);
+                session.send(NunzioMail);
+            }
+            if (fantinato && mail) {
+                var FantinatoMail = getFantinatoMail(session, database);
+                session.send(FantinatoMail);
+            }
+            if (quinto && mail) {
+                var QuintoMail = getQuintoMail(session, database);
+                session.send(QuintoMail);
+            }
+            if (greggio && mail) {
+                var GreggioMail = getGreggioMail(session, database);
+                session.send(GreggioMail);
+            }
+            if (chiarin && mail) {
+                var ChiarinMail = getChiarinMail(session, database);
+                session.send(ChiarinMail);
+            }
+            if (zancanaro && mail) {
+                var ZancanaroMail = getZancanaroMail(session, database);
+                session.send(ZancanaroMail);
+            }
+            if (lucchi && mail) {
+                var LucchiMail = getLucchiMail(session, database);
+                session.send(LucchiMail);
+            }
+            if (orfei && mail) {
+                var OrfeiMail = getOrfeiMail(session, database);
+                session.send(OrfeiMail);
+            }
+            if (nunzio && total_project) {
+                var NunzioProjects = getNunzioProjects(session, database);
+                session.send(NunzioProjects);
+            }
+            if (fantinato && total_project) {
+                var FantinatoProjects = getFantinatoProjects(session, database);
+                session.send(FantinatoProjects);
+            }
+            if (quinto && total_project) {
+                var QuintoProjects = getQuintoProjects(session, database);
+                session.send(QuintoProjects);
+            }
+            if (greggio && total_project) {
+                var GreggioProjects = getGreggioProjects(session, database);
+                session.send(GreggioProjects);
+            }
+            if (chiarin && total_project) {
+                var ChiarinProjects = getChiarinProjects(session, database);
+                session.send(ChiarinProjects);
+            }
+            if (zancanaro && total_project) {
+                var ZancanaroProjects = getZancanaroProjects(session, database);
+                session.send(ZancanaroProjects);
+            }
+            if (lucchi && total_project) {
+                var LucchiProjects = getLucchiProjects(session, database);
+                session.send(LucchiProjects);
+            }
+            if (orfei && total_project) {
+                var OrfeiProject = getOrfeiProjects(session, database);
+                session.send(OrfeiProject);
             }
         }
     ])
@@ -1663,14 +1570,34 @@ bot.dialog('CurrentProjectTemp', [
                 session.send(getUwpGestione);
                 session.beginDialog('Root');
                 break;
-            case "informazioni sul progetto electron":
-                var ElectronTemp = getElectronInformation(session, data);
-                session.send(ElectronTemp);
+            case "informazioni sul progetto parse":
+                var ParseTemp = getParseInformation(session, data);
+                session.send(ParseTemp);
                 session.beginDialog('Root');
                 break;
-            case "gestione del progetto electron":
-                var ElectronGestioneTemp = getElectronGestione(session, data);
-                session.send(getElectronGestione);
+            case "gestione del progetto parse":
+                var ParseGestioneTemp = getParseGestione(session, data);
+                session.send(ParseGestioneTemp);
+                session.beginDialog('Root');
+                break;
+            case "informazioni sul progetto deaf":
+                var DeafTemp = getDeafInformation(session, data);
+                session.send(DeafTemp);
+                session.beginDialog('Root');
+                break;
+            case "gestione del progetto deaf":
+                var DeafGestioneTemp = getDeafGestione(session, data);
+                session.send(DeafGestioneTemp);
+                session.beginDialog('Root');
+                break;
+            case "informazioni su utilities":
+                var UtilitiesTemp = getUtilitiesInformation(session, data);
+                session.send(UtilitiesTemp);
+                session.beginDialog('Root');
+                break;
+            case "gestione di utilities":
+                var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+                session.send(UtilitiesGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto ziz":
@@ -1705,55 +1632,70 @@ bot.dialog('CurrentProject', new botbuilder.IntentDialog({
         var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
         var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
         var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
-        var electron = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::electron');
+        var deaf = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::deaf');
+        var utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
+        var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
         var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
 
         if (ziz) {
             var ZizTemp = getZizInformation(session, data);
             session.send(ZizTemp);
             session.beginDialog('Root');
-        } else {
-            if (uwp) {
-                var UwpTemp = getUwpInformation(session, data);
-                session.send(UwpTemp);
-                session.beginDialog('Root');
-            } else {
-                if (electron) {
-                    var ElectronTemp = getElectronInformation(session, data);
-                    session.send(ElectronTemp);
-                    session.beginDialog('Root');
-                } else {
-                    if (website) {
-                        var WebTemp = getWebsiteInformation(session, data);
-                        session.send(WebTemp);
-                        session.beginDialog('Root');
-                    } else {
-                        if (ziz && responsability) {
-                            var ZizGestioneTemp = getZizGestione(session, data);
-                            session.send(getZizGestione);
-                            session.beginDialog('Root');
-                        } else {
-                            if (uwp && responsability) {
-                                var UwpGestioneTemp = getUwpGestione(session, data);
-                                session.send(getUwpGestione);
-                                session.beginDialog('Root');
-                            } else {
-                                if (electron && responsability) {
-                                    var ElectronGestioneTemp = getElectronGestione(session, data);
-                                    session.send(getElectronGestione);
-                                    session.beginDialog('Root');
-                                } else {
-                                    if (website && responsability) {
-                                        var WebGestioneTemp = getWebsiteGestione(session, data);
-                                        session.send(WebGestioneTemp);
-                                        session.beginDialog('Root');
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        }
+        if (uwp) {
+            var UwpTemp = getUwpInformation(session, data);
+            session.send(UwpTemp);
+            session.beginDialog('Root');
+        }
+        if (parse) {
+            var ParseTemp = getParseInformation(session, data);
+            session.send(ParseTemp);
+            session.beginDialog('Root');
+        }
+        if (website) {
+            var WebTemp = getWebsiteInformation(session, data);
+            session.send(WebTemp);
+            session.beginDialog('Root');
+        }
+        if (ziz && responsability) {
+            var ZizGestioneTemp = getZizGestione(session, data);
+            session.send(getZizGestione);
+            session.beginDialog('Root');
+        }
+        if (uwp && responsability) {
+            var UwpGestioneTemp = getUwpGestione(session, data);
+            session.send(UwpGestioneTemp);
+            session.beginDialog('Root');
+        }
+        if (parse && responsability) {
+            var ParseGestioneTemp = getParseGestione(session, data);
+            session.send(ParseGestioneTemp);
+            session.beginDialog('Root');
+        }
+        if (website && responsability) {
+            var WebGestioneTemp = getWebsiteGestione(session, data);
+            session.send(WebGestioneTemp);
+            session.beginDialog('Root');
+        }
+        if (deaf) {
+            var DeafTemp = getDeafFind(session, data);
+            session.send(DeafTemp);
+            session.beginDialog('Root');
+        }
+        if (deaf && responsability) {
+            var DeafGestioneTemp = getDeafGestione(session, data);
+            session.send(DeafGestioneTemp);
+            session.beginDialog('Root');
+        }
+        if (utilities) {
+            var UtilitiesTemp = getUtilitiesFind(session, data);
+            session.send(UtilitiesTemp);
+            session.beginDialog('Root');
+        }
+        if (utilities && responsability) {
+            var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+            session.send(UtilitiesGestioneTemp);
+            session.beginDialog('Root');
         }
     }
 ]).matches('None', [
@@ -1836,48 +1778,41 @@ bot.dialog('AllMail', new botbuilder.IntentDialog({
             var OrfeiMail = getOrfeiMail(session, data);
             session.send(OrfeiMail);
             session.beginDialog('Root');
-        } else {
-            if (lucchi) {
-                var LucchiMail = getLucchiMail(session, data);
-                session.send(LucchiMail);
-                session.beginDialog('Root');
-            } else {
-                if (zancanaro) {
-                    var ZancanaroMail = getZancanaroMail(session, data);
-                    session.send(ZancanaroMail);
-                    session.beginDialog('Root');
-                } else {
-                    if (chiarin) {
-                        var ChiarinMail = getChiarinMail(session, data);
-                        session.send(ChiarinMail);
-                        session.beginDialog('Root');
-                    } else {
-                        if (greggio) {
-                            var GreggioMail = getGreggioMail(session, data);
-                            session.send(GreggioMail);
-                            session.beginDialog('Root');
-                        } else {
-                            if (quinto) {
-                                var QuintoMail = getQuintoMail(session, data);
-                                session.send(QuintoMail);
-                                session.beginDialog('Root');
-                            } else {
-                                if (fantinato) {
-                                    var FantinatoMail = getFantinatoMail(session, data);
-                                    session.send(FantinatoMail);
-                                    session.beginDialog('Root');
-                                } else {
-                                    if (nunzio) {
-                                        var NunzioMail = getNunzioMail(session, data);
-                                        session.send(NunzioMail);
-                                        session.beginDialog('Root');
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        }
+        if (lucchi) {
+            var LucchiMail = getLucchiMail(session, data);
+            session.send(LucchiMail);
+            session.beginDialog('Root');
+        }
+        if (zancanaro) {
+            var ZancanaroMail = getZancanaroMail(session, data);
+            session.send(ZancanaroMail);
+            session.beginDialog('Root');
+        }
+        if (chiarin) {
+            var ChiarinMail = getChiarinMail(session, data);
+            session.send(ChiarinMail);
+            session.beginDialog('Root');
+        }
+        if (greggio) {
+            var GreggioMail = getGreggioMail(session, data);
+            session.send(GreggioMail);
+            session.beginDialog('Root');
+        }
+        if (quinto) {
+            var QuintoMail = getQuintoMail(session, data);
+            session.send(QuintoMail);
+            session.beginDialog('Root');
+        }
+        if (fantinato) {
+            var FantinatoMail = getFantinatoMail(session, data);
+            session.send(FantinatoMail);
+            session.beginDialog('Root');
+        }
+        if (nunzio) {
+            var NunzioMail = getNunzioMail(session, data);
+            session.send(NunzioMail);
+            session.beginDialog('Root');
         }
     }
 ]).matches('None', [
@@ -1914,9 +1849,19 @@ bot.dialog('FindAllTemp', [
                 session.send(UWPTemp);
                 session.beginDialog('Root');
                 break;
-            case "link progetto electron":
-                var ElectronTemp = getElectronFind(session, data);
-                session.send(ElectronTemp);
+            case "link progetto parse":
+                var ParseTemp = getParseFind(session, data);
+                session.send(ParseTemp);
+                session.beginDialog('Root');
+                break;
+            case "link progetto deaf":
+                var DeafTemp = getDeafFind(session, data);
+                session.send(DeafTemp);
+                session.beginDialog('Root');
+                break;
+            case "link utilities":
+                var UtilitiesTemp = getUtilitiesFind(session, data);
+                session.send(UtilitiesTemp);
                 session.beginDialog('Root');
                 break;
             case "link progetto website":
@@ -1944,7 +1889,9 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
     function(session, args, results) {
         var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
         var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
-        var electron = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::electron');
+        var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
+        var deaf = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::deaf');
+        var utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
         var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
         var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
         var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
@@ -1954,42 +1901,46 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
             var ZizTemp = getZizFind(session, data);
             session.send(ZizTemp);
             session.beginDialog('Root');
-        } else {
-            if (uwp) {
-                var UWPTemp = getUWPFind(session, data);
-                session.send(UWPTemp);
-                session.beginDialog('Root');
-            } else {
-                if (fast_ink) {
-                    var FastTemp = getFastInkFind(session, data);
-                    session.send(FastTemp);
-                    session.beginDialog('Root');
-                } else {
-                    if (volley) {
-                        var VolleyTemp = getVolleyFind(session, data);
-                        session.send(VolleyTemp);
-                        session.beginDialog('Root');
-                    } else {
-                        if (electron) {
-                            var ElectronTemp = getElectronFind(session, data);
-                            session.send(ElectronTemp);
-                            session.beginDialog('Root');
-                        } else {
-                            if (website) {
-                                var WebTemp = getWebsiteFind(session, data);
-                                session.send(WebTemp);
-                                session.beginDialog('Root');
-                            } else {
-                                if (bot_project) {
-                                    var BotTemp = getBotFind(session, data);
-                                    session.send(BotTemp);
-                                    session.beginDialog('Root');
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        }
+        if (uwp) {
+            var UWPTemp = getUWPFind(session, data);
+            session.send(UWPTemp);
+            session.beginDialog('Root');
+        }
+        if (fast_ink) {
+            var FastTemp = getFastInkFind(session, data);
+            session.send(FastTemp);
+            session.beginDialog('Root');
+        }
+        if (volley) {
+            var VolleyTemp = getVolleyFind(session, data);
+            session.send(VolleyTemp);
+            session.beginDialog('Root');
+        }
+        if (parse) {
+            var ParseTemp = getParseFind(session, data);
+            session.send(ParseTemp);
+            session.beginDialog('Root');
+        }
+        if (website) {
+            var WebTemp = getWebsiteFind(session, data);
+            session.send(WebTemp);
+            session.beginDialog('Root');
+        }
+        if (bot_project) {
+            var BotTemp = getBotFind(session, data);
+            session.send(BotTemp);
+            session.beginDialog('Root');
+        }
+        if (deaf) {
+            var DeafTemp = getDeafFind(session, data);
+            session.send(DeafTemp);
+            session.beginDialog('Root');
+        }
+        if (utilities) {
+            var UtilitiesTemp = getUtilitiesFind(session, data);
+            session.send(UtilitiesTemp);
+            session.beginDialog('Root');
         }
     }
 ]))
@@ -2272,11 +2223,11 @@ function CreateTotalProjectsCards(session) {
         ]),
 
         new botbuilder.HeroCard(session)
-        .title('Multiplatform Electron')
+        .title('Project Parse')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto electron', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto electron', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto parse', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto parse', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -2317,6 +2268,22 @@ function CreateTotalProjectsCards(session) {
         .buttons([
             botbuilder.CardAction.imBack(session, 'informazioni sul progetto website', 'Info'),
             botbuilder.CardAction.imBack(session, 'gestione del progetto website', 'Gestione')
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Project Deaf')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto deaf', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto deaf', 'Gestione')
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Utilities')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'informazioni su utilities', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione di utilities', 'Gestione')
         ])
     ]
 }
@@ -2334,11 +2301,11 @@ function CreateCurrentProjectCards(session) {
         ]),
 
         new botbuilder.HeroCard(session)
-        .title('Multiplatform Electron')
+        .title('Project Parse')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto electron', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto electron', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto parse', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto parse', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -2355,6 +2322,22 @@ function CreateCurrentProjectCards(session) {
         .buttons([
             botbuilder.CardAction.imBack(session, 'informazioni sul progetto website', 'Info'),
             botbuilder.CardAction.imBack(session, 'gestione del progetto website', 'Gestione')
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Project Deaf')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'informazioni sul progetto deaf', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del progetto deaf', 'Gestione')
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Utilities')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'informazioni su utilities', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione di utilities', 'Gestione')
         ])
     ]
 }
@@ -2433,10 +2416,10 @@ function createFindCards(session) {
         ]),
 
         new botbuilder.HeroCard(session)
-        .title('Multiplatform Electron')
+        .title('Project Parse')
         .text('Link progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto electron', 'Link'),
+            botbuilder.CardAction.imBack(session, 'link progetto parse', 'Link'),
         ]),
 
         new botbuilder.HeroCard(session)
@@ -2472,6 +2455,20 @@ function createFindCards(session) {
         .text('Link progetto')
         .buttons([
             botbuilder.CardAction.imBack(session, 'link progetto website', 'Link'),
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Project Deaf')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'link progetto deaf', 'Link')
+        ]),
+
+        new botbuilder.HeroCard(session)
+        .title('Utilities')
+        .text('Informazioni sul progetto')
+        .buttons([
+            botbuilder.CardAction.imBack(session, 'link utilities', 'Link')
         ])
     ]
 }
@@ -2692,8 +2689,8 @@ function getUwpInformation(session, parsed) {
     return ("Project Multiplatform UWP è un progetto di tipo " + parsed.database.progetti.project_multi_platform_uwp.tipo_progetto + ". E' un " + parsed.database.progetti.project_multi_platform_uwp.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_multi_platform_uwp.capo_progetto + ". La gestione è " + parsed.database.progetti.project_multi_platform_uwp.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_multi_platform_uwp.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_multi_platform_uwp.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_multi_platform_uwp.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_multi_platform_uwp.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_multi_platform_uwp.membri);
 }
 
-function getElectronInformation(session, parsed) {
-    return ("Project Multiplatform Electron è un progetto di tipo " + parsed.database.progetti.project_multi_platform_electron.tipo_progetto + ". E' un " + parsed.database.progetti.project_multi_platform_electron.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_multi_platform_electron.capo_progetto + ". La gestione è " + parsed.database.progetti.project_multi_platform_electron.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_multi_platform_electron.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_multi_platform_electron.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_multi_platform_electron.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_multi_platform_electron.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_multi_platform_electron.membri);
+function getParseInformation(session, parsed) {
+    return ("Project Parse è un progetto di tipo " + parsed.database.progetti.project_parse.tipo_progetto + ". E' un " + parsed.database.progetti.project_parse.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_parse.capo_progetto + ". La gestione è " + parsed.database.progetti.project_parse.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_parse.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_parse.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_parse.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_parse.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_parse.membri);
 }
 
 function getVolleyInformation(session, parsed) {
@@ -2710,6 +2707,14 @@ function getWebsiteInformation(session, parsed) {
 
 function getBotInformation(session, parsed) {
     return ("Project Ziz è un progetto di tipo " + parsed.database.progetti.project_bot.tipo_progetto + ". E' un " + parsed.database.progetti.project_bot.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_bot.capo_progetto + ". La gestione è " + parsed.database.progetti.project_bot.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_bot.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_bot.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_bot.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_bot.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_bot.membri);
+}
+
+function getDeafInformation(session, parsed) {
+    return ("Project Parse è un progetto di tipo " + parsed.database.progetti.project_parse.tipo_progetto + ". E' un " + parsed.database.progetti.project_parse.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_parse.capo_progetto + ". La gestione è " + parsed.database.progetti.project_parse.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_parse.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_parse.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_parse.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_parse.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_parse.membri);
+}
+
+function getUtilitiesInformation(session, parsed) {
+    return ("Project Parse è un progetto di tipo " + parsed.database.progetti.project_parse.tipo_progetto + ". E' un " + parsed.database.progetti.project_parse.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_parse.capo_progetto + ". La gestione è " + parsed.database.progetti.project_parse.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_parse.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_parse.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_parse.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_parse.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_parse.membri);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
