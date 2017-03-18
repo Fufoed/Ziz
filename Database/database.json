@@ -176,6 +176,20 @@
                 "membri": "Orfei, Nunzio",
                 "note": ""
             },
+            "project_deaf": {
+                "tipo_progetto": "App",
+                "descrizione_progetto": "Applicazione per persone non udenti",
+                "capo_progetto": "Lucchi",
+                "tipo_gestione": "Interna",
+                "link_repo": "https://github.com/teamperso/Project-Deaf.git",
+                "inizio_sviluppo": "Marzo 2017",
+                "fine_sviluppo": "Da vedere",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Lucchi, Zanca",
+                "note": ""
+            },
             "utilities": {
                 "tipo_progetto": "All",
                 "descrizione_progetto": "Repository per le Utility in .NET Standard e Node.js",

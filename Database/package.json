@@ -1,0 +1,27 @@
+{
+  "name": "project_ziz",
+  "version": "1.0.0",
+  "description": "A bot for internal use",
+  "main": "Ziz.js",
+  "dependencies": {
+    "botbuilder": "^3.5.3",
+    "cnn": "^0.0.1",
+    "convnet": "^1.0.0",
+    "core": "^3.5.0-rc9",
+    "convnetjs": "^0.3.0",
+    "dotenv-extended": "^1.0.4",
+    "dnn": "^0.1.0",
+    "http": "^0.0.0",
+    "https": "^1.0.0",
+    "npm": "^4.0.5",
+    "pusher": "^1.5.1",
+    "restify": "^4.3.0",
+    "sprintf": "^0.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node Ziz.js"
+  },
+  "author": "Orfei",
+  "license": "ISC"
+}
