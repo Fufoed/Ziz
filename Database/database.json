@@ -81,12 +81,13 @@
             "numero_progetti_attivi": "6",
             "numero_progetti_totali": "7",
             "lista_progetti": [
+                "Utilities",
                 "Fast Ink!",
                 "Project Bot",
+                "Project Deaf",
                 "Project Volley",
                 "Project Website",
-                "Project Multi Platform UWP",
-                "Project Multi Platform Electron",
+                "Project Parse",
                 "Project Ziz"
             ]
         },
@@ -94,15 +95,15 @@
             "fast_ink": {
                 "tipo_progetto": "App",
                 "descrizione_progetto": "Applicazione per il disegno e l'editing delle imamgini. Attualmente nello Store",
-                "capo_progetto": "Lucchi",
+                "capo_progetto": "Zanca",
                 "tipo_gestione": "Interno",
-                "link_repo": "https://gitlab.com/manuelelucchi/fastInk.git",
+                "link_repo": "https://github.com/teamperso/Fast-Ink.git",
                 "inizio_sviluppo": "2016",
                 "fine_sviluppo": "2016",
                 "versione": "1.2",
                 "supporto": "Si",
                 "come_procede": "Fermo",
-                "membri": "Lucchi, Chiarin",
+                "membri": "Zanca, Chiarin",
                 "note": ""
             },
             "project_bot": {
@@ -110,7 +111,7 @@
                 "descrizione_progetto": "Progetto di multipli Bot che eseguono diversi incarichi",
                 "capo_progetto": "Orfei",
                 "tipo_gestione": "Collaborazione",
-                "link_repo": "https://gitlab.com/manuelelucchi/Bot-Framework.git",
+                "link_repo": "https://github.com/teamperso/Bot.git",
                 "inizio_sviluppo": "2016",
                 "fine_sviluppo": "In Corso",
                 "versione": "Beta",
@@ -124,7 +125,7 @@
                 "descrizione_progetto": "Applicazione di pallavolo per la gestione di partite",
                 "capo_progetto": "Zanca",
                 "tipo_gestione": "Interno",
-                "link_repo": "https://gitlab.com/manuelelucchi/Project_Volley.git",
+                "link_repo": "https://github.com/teamperso/Volley-Scout.git",
                 "inizio_sviluppo": "2016",
                 "fine_sviluppo": "In corso",
                 "versione": "Da vedere",
@@ -136,43 +137,29 @@
             "project_website": {
                 "tipo_progetto": "Sito",
                 "descrizione_progetto": "Sito web del Team Perso",
-                "capo_progetto": "Lucchi",
+                "capo_progetto": "Pippo",
                 "tipo_gestione": "Interna",
-                "link_repo": "https://gitlab.com/manuelelucchi/TeamPersoWebsites.git",
+                "link_repo": "https://github.com/teamperso/Website.git",
                 "inizio_sviluppo": "Gennaio 2017",
                 "fine_sviluppo": "8/02/2017",
                 "versione": "1.0",
                 "supporto": "Si",
-                "come_procede": "Finito",
-                "membri": "Lucchi",
+                "come_procede": "Procede",
+                "membri": "Pippo, Lucchi",
                 "note": ""
             },
-            "project_multi_platform_uwp": {
-                "tipo_progetto": "App",
-                "descrizione_progetto": "Editor/Generatore di file Json e in futuro XML che fornisce una visione ad albero del file, con la possibilità di editarlo e aggiungerne componenti. Sviluppato in UWP",
-                "capo_progetto": "Lucchi",
-                "tipo_gestione": "Collaborazione",
-                "link_repo": "https://gitlab.com/manuelelucchi/Project-Multiplatform.git",
-                "inizio_sviluppo": "Febbraio 2017",
-                "fine_sviluppo": "In corso",
-                "versione": "1.0",
-                "supporto": "Si",
-                "come_procede": "Fermo",
-                "membri": "Lucchi, Chiarin",
-                "note": ""
-            },
-            "project_multi_platform_electron": {
+            "project_parse": {
                 "tipo_progetto": "Programma",
                 "descrizione_progetto": "Editor/Generatore di file Json e in futuro XML che fornisce una visione ad albero del file, con la possibilità di editarlo e aggiungerne componenti. Sviluppato in Electron",
                 "capo_progetto": "Fantinato",
                 "tipo_gestione": "Collaborazione",
-                "link_repo": "https://gitlab.com/manuelelucchi/Project-Multiplatform-Electron.git",
+                "link_repo": "https://github.com/teamperso/Project-Parse.git",
                 "inizio_sviluppo": "Febbraio 2017",
                 "fine_sviluppo": "In corso",
                 "versione": "1.0",
                 "supporto": "Si",
                 "come_procede": "Bene",
-                "membri": "Greggio, Fantinato, Quinto",
+                "membri": "Greggio, Fantinato",
                 "note": ""
             },
             "project_ziz": {
@@ -180,13 +167,27 @@
                 "descrizione_progetto": "Bot ad utilizzo interno, che spiega dettagli riguardanti team, progetti e altro",
                 "capo_progetto": "Orfei",
                 "tipo_gestione": "Interna",
-                "link_repo": "https://gitlab.com/manuelelucchi/Project_Ziz.git",
+                "link_repo": "https://github.com/teamperso/Project-Ziz.git",
                 "inizio_sviluppo": "Marzo 2017",
                 "fine_sviluppo": "Da vedere",
                 "versione": "1.0",
                 "supporto": "Si",
                 "come_procede": "Bene",
                 "membri": "Orfei, Nunzio",
+                "note": ""
+            },
+            "utilities": {
+                "tipo_progetto": "All",
+                "descrizione_progetto": "Repository per le Utility in .NET Standard e Node.js",
+                "capo_progetto": "Lucchi",
+                "tipo_gestione": "Interna",
+                "link_repo": "https://github.com/teamperso/Utilities.git",
+                "inizio_sviluppo": "Marzo 2017",
+                "fine_sviluppo": "Indefinito",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Tutti",
                 "note": ""
             }
         },
@@ -199,17 +200,16 @@
                     ".NET",
                     "UWP",
                     "ASP.NET Core",
-                    "Mixed Reality"
-                ],
-                "argomenti_da_imparare": [
                     "Mixed Reality",
-                    "UWP",
-                    ".NET"
+                    "Xamarin"
                 ],
                 "progetti_assegnati": [
-                    "Multiplatform UWP"
+                    "Project Deaf"
                 ],
-                "ruolo": "Chief .NET, UWP & Mixed Reality"
+                 "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Chief .NET"
             },
             "zancanaro": {
                 "mail": "marco.zancanaro123@outlook.com",
@@ -217,17 +217,17 @@
                 "nickname": "Wemmark",
                 "specialita": [
                     "UWP",
-                    ".NET"
-                ],
-                "argomenti_da_imparare": [
-                    "C++",
                     ".NET",
-                    "UWP"
+                    "Xamarin"
                 ],
                 "progetti_assegnati": [
-                    "C++"
+                    "Project Volley"
                 ],
-                "ruolo": "UWP developer"
+                "progetti_mantenere": [
+                    "Fast-Ink",
+                    "Utilities"
+                ],
+                "ruolo": ".NET developer"
             },
             "orfei": {
                 "mail": "samuele.orfei@outlook.it",
@@ -238,15 +238,14 @@
                     "Cortana Skills",
                     "AI"
                 ],
-                "argomenti_da_imparare": [
-                    "AI",
-                    "Cloud",
-                    "Deep Learning"
-                ],
                 "progetti_assegnati": [
-                    "project Ziz"
+                    "Project Ziz"
                 ],
-                "ruolo": "Chief AI, Cloud & Deep Learning Officer"
+                "progetti_mantenere": [
+                    "Project Bot",
+                    "Utilities"
+                ],
+                "ruolo": "Chief AI Officer"
             },
             "fantinato": {
                 "mail": "fantinato.filippo99@gmail.com",
@@ -254,96 +253,86 @@
                 "nickname": "pippo",
                 "specialita": [
                     "Electron",
-                    "Websites",
-                    "Ionic"
-                ],
-                "argomenti_da_imparare": [
-                    "Electron",
-                    "Ionic",
                     "Websites"
                 ],
                 "progetti_assegnati": [
-                    "Multiplatform Electron"
+                    "Project Website",
+                    "Project Parse"
                 ],
-                "ruolo": "Chief Multiplatform Applications, Programs & Web"
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Chief Programs & Web"
             },
             "greggio": {
                 "mail": "nico.greggio@gmail.com",
                 "username_github": "faesant",
                 "nickname": "greg",
                 "specialita": [
-                    "Electron",
-                    "Websites",
-                    "Ionic",
-                    "Translator"
-                ],
-                "argomenti_da_imparare": [
-                    "Electron",
-                    "Websites",
-                    "Ionic"
                 ],
                 "progetti_assegnati": [
-                    "Multiplatform Electron"
                 ],
-                "ruolo": "Electron, Ionic Developer, Translator"
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Developer"
             },
             "quinto": {
                 "mail": "tommaso.quinto@live.it",
                 "username_github": "tommasoquinto",
                 "nickname": "Tommy",
                 "specialita": [
-                    "Electron",
-                    "Ionic",
-                    "Websites"
-                ],
-                "argomenti_da_imparare": [
-                    "Electron",
-                    "Ionic",
-                    "Websites"
                 ],
                 "progetti_assegnati": [
                     "Multiplatform Electron"
                 ],
-                "ruolo": "Electron and Ionic Developer"
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Developerr"
             },
             "chiarin": {
                 "mail": "marco.chiarin1999@gmail.com",
                 "username_github": "justpanda",
                 "nickname": "panda",
                 "specialita": [
-                    "UWP",
-                    ".NET",
-                    "Translator"
-                ],
-                "argomenti_da_imparare": [
-                    "UWP",
-                    ".NET"
                 ],
                 "progetti_assegnati": [
-                    "Multiplatform UWP"
                 ],
-                "ruolo": "UWP Developer, Translator"
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Developer"
             },
             "nunzio": {
                 "mail": "nunzio22598@gmail.com",
                 "username_github": "Nunzio22",
                 "nickname": "nuccio",
                 "specialita": [
-                    "AI",
-                    "Deep Learning",
-                    "Cloud",
-                    "Social Media"
                 ],
                 "argomenti_da_imparare": [
-                    "AI",
-                    "Deep Learning",
-                    "Cloud"
                 ],
                 "progetti_assegnati": [
-                    "project Ziz"
                 ],
-                "ruolo": "AI Developer, Social Media Management"
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Developer"
             }
         }
     }
+
+    //Aggiungere
+
+    //Road Map
+    //Idee
+    //Skills
+    //What we "Potete anche dormire"
+    //Contacts
+    //Access Data
+    //Rules
+    //Roles
+    //Languages
+    //Bizspark Data
+
 }
