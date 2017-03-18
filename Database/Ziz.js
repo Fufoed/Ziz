@@ -18,6 +18,8 @@ var promise = require('promise');
 
 var data = require('./database.json');
 
+var pack = require('./package.json');
+
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
 var connector = new botbuilder.ChatConnector({
@@ -433,6 +435,78 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 var OrfeiProject = getOrfeiProjects(session, database);
                 session.send(OrfeiProject);
             }
+            if (ziz && responsability) {
+                var ZizGestioneTemp = getZizGestione(session, data);
+                session.send(ZizGestioneTemp);
+            }
+            if (uwp && responsability) {
+                var UwpGestioneTemp = getUwpGestione(session, data);
+                session.send(UwpGestioneTemp);
+            }
+            if (parse && responsability) {
+                var ParseGestioneTemp = getElectronGestione(session, data);
+                session.send(ParseGestioneTemp);
+            }
+            if (website && responsability) {
+                var WebGestioneTemp = getWebsiteGestione(session, data);
+                session.send(WebGestioneTemp);
+            }
+            if (volley && responsability) {
+                var VolleyGestioneTemp = getVolleyGestione(session, data);
+                session.send(VolleyGestioneTemp);
+            }
+            if (fast_ink && responsability) {
+                var FastInkGestioneTemp = getFastInkGestione(session, data);
+                session.send(FastInkGestioneTemp);
+            }
+            if (bot_project && responsability) {
+                var BotGestioneTemp = getBotGestione(session, data);
+                session.send(getBotGestione);
+            }
+            if (deaf && responsability) {
+                var DeafGestioneTemp = getDeafGestione(session, data);
+                session.send(DeafGestioneTemp);
+            }
+            if (utilities && responsability) {
+                var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+                session.send(UtilitiesGestioneTemp);
+            }
+            if (bot_project && find) {
+                var BotTemp = getBotFind(session, data);
+                session.send(BotTemp);
+            }
+            if (website && find) {
+                var WebTemp = getWebsiteFind(session, data);
+                session.send(WebTemp);
+            }
+            if (fast_ink && find) {
+                var FastTemp = getFastInkFind(session, data);
+                session.send(FastTemp);
+            }
+            if (volley && find) {
+                var VolleyTemp = getVolleyFind(session, data);
+                session.send(VolleyTemp);
+            }
+            if (parse && find) {
+                var ParseTemp = getParseFind(session, data);
+                session.send(ParseTemp);
+            }
+            if (deaf && find) {
+                var DeafTemp = getDeafFind(session, data);
+                session.send(DeafTemp);
+            }
+            if (utilities && find) {
+                var UtilitiesTemp = getUtilitiesFind(session, data);
+                session.send(UtilitiesTemp);
+            }
+            if (uwp && find) {
+                var UwpTemp = getUWPFind(session, data);
+                session.send(UwpTemp);
+            }
+            if (ziz && find) {
+                var ZizTemp = getZizFind(session, data);
+                session.send(ZizTemp);
+            }
         }
     ])
     .matches('Skills', [
@@ -773,7 +847,8 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
             var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
             var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
             var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
-            var electron = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::electron');
+            var deaf = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::deaf');
+            var utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
             var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
             var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
             var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
@@ -788,6 +863,16 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
             if (uwp) {
                 var UwpTemp = getUwpInformation(session, data);
                 session.send(UwpTemp);
+                session.beginDialog('Root');
+            }
+            if (deaf) {
+                var DeafTemp = getDeafInformation(session, data);
+                session.send(DeafTemp);
+                session.beginDialog('Root');
+            }
+            if (utilities) {
+                var UtilitiesTemp = getUtilitiesInformation(session, data);
+                session.send(UtilitiesTemp);
                 session.beginDialog('Root');
             }
             if (parse) {
@@ -847,7 +932,17 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
             }
             if (bot_project && responsability) {
                 var BotGestioneTemp = getBotGestione(session, data);
-                session.send(getBotGestione);
+                session.send(BotGestioneTemp);
+                session.beginDialog('Root');
+            }
+            if (deaf && responsability) {
+                var DeafGestioneTemp = getDeafGestione(session, data);
+                session.send(DeafGestioneTemp);
+                session.beginDialog('Root');
+            }
+            if (utilities && responsability) {
+                var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+                session.send(UtilitiesGestioneTemp);
                 session.beginDialog('Root');
             }
         }
@@ -2478,137 +2573,137 @@ function createFindCards(session) {
 function getOrfeiInformation(session, parsed) {
     var i = 0;
     var spec = '';
-    var imparare = '';
+    var mantenere = '';
     var assegnati = '';
     for (i = 0; i < parsed.database.membri.orfei.specialita.length; i++) {
         spec += parsed.database.membri.orfei.specialita[i] + ', ';
     }
-    for (i = 0; i < parsed.database.membri.orfei.argomenti_da_imparare.length; i++) {
-        imparare += parsed.database.membri.orfei.argomenti_da_imparare[i] + ', ';
+    for (i = 0; i < parsed.database.membri.orfei.progetti_mantenere.length; i++) {
+        mantenere += parsed.database.membri.orfei.progetti_mantenere[i] + ', ';
     }
     for (i = 0; i < parsed.database.membri.orfei.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.orfei.progetti_assegnati[i];
     }
-    return ("Questa persona è Samuele Orfei, il suo username github è " + parsed.database.membri.orfei.username_github + ", il suo soprannome è " + parsed.database.membri.orfei.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Samuele Orfei, il suo username github è " + parsed.database.membri.orfei.username_github + ", il suo soprannome è " + parsed.database.membri.orfei.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getLucchiInformation(session, parsed) {
     var i = 0;
     var spec = '';
-    var imparare = '';
+    var mantenere = '';
     var assegnati = '';
     for (i = 0; i < parsed.database.membri.lucchi.specialita.length; i++) {
         spec += parsed.database.membri.lucchi.specialita[i] + ', ';
     }
-    for (i = 0; i < parsed.database.membri.lucchi.argomenti_da_imparare.length; i++) {
-        imparare += parsed.database.membri.lucchi.argomenti_da_imparare[i] + ', ';
+    for (i = 0; i < parsed.database.membri.lucchi.progetti_mantenere.length; i++) {
+        mantenere += parsed.database.membri.lucchi.progetti_mantenere[i] + ', ';
     }
     for (i = 0; i < parsed.database.membri.lucchi.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.lucchi.progetti_assegnati[i];
     }
-    return ("Questa persona è Manuele Lucchi, il suo username github è " + parsed.database.membri.lucchi.username_github + ", il suo soprannome è " + parsed.database.membri.lucchi.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Manuele Lucchi, il suo username github è " + parsed.database.membri.lucchi.username_github + ", il suo soprannome è " + parsed.database.membri.lucchi.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getZancanaroInformation(session, parsed) {
     var i = 0;
     var spec = '';
-    var imparare = '';
+    var mantenere = '';
     var assegnati = '';
     for (i = 0; i < parsed.database.membri.zancanaro.specialita.length; i++) {
         spec += parsed.database.membri.zancanaro.specialita[i] + ', ';
     }
-    for (i = 0; i < parsed.database.membri.zancanaro.argomenti_da_imparare.length; i++) {
-        imparare += parsed.database.membri.zancanaro.argomenti_da_imparare[i] + ', ';
+    for (i = 0; i < parsed.database.membri.zancanaro.progetti_mantenere.length; i++) {
+        mantenere += parsed.database.membri.zancanaro.progetti_mantenere[i] + ', ';
     }
     for (i = 0; i < parsed.database.membri.zancanaro.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.zancanaro.progetti_assegnati[i];
     }
-    return ("Questa persona è Marco Zancanaro, il suo username github è " + parsed.database.membri.zancanaro.username_github + ", il suo soprannome è " + parsed.database.membri.zancanaro.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Marco Zancanaro, il suo username github è " + parsed.database.membri.zancanaro.username_github + ", il suo soprannome è " + parsed.database.membri.zancanaro.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getFantinatoInformation(session, parsed) {
     var i = 0;
     var spec = '';
-    var imparare = '';
+    var mantenere = '';
     var assegnati = '';
     for (i = 0; i < parsed.database.membri.fantinato.specialita.length; i++) {
         spec += parsed.database.membri.fantinato.specialita[i] + ', ';
     }
-    for (i = 0; i < parsed.database.membri.fantinato.argomenti_da_imparare.length; i++) {
-        imparare += parsed.database.membri.fantinato.argomenti_da_imparare[i] + ', ';
+    for (i = 0; i < parsed.database.membri.fantinato.progetti_mantenere.length; i++) {
+        mantenere += parsed.database.membri.fantinato.progetti_mantenere[i] + ', ';
     }
     for (i = 0; i < parsed.database.membri.fantinato.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.fantinato.progetti_assegnati[i];
     }
-    return ("Questa persona è Filippo Fantinato, il suo username github è " + parsed.database.membri.fantinato.username_github + ", il suo soprannome è " + parsed.database.membri.fantinato.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Filippo Fantinato, il suo username github è " + parsed.database.membri.fantinato.username_github + ", il suo soprannome è " + parsed.database.membri.fantinato.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getChiarinInformation(session, parsed) {
     var i = 0;
     var spec = '';
-    var imparare = '';
+    var mantenere = '';
     var assegnati = '';
     for (i = 0; i < parsed.database.membri.chiarin.specialita.length; i++) {
         spec += parsed.database.membri.chiarin.specialita[i] + ', ';
     }
-    for (i = 0; i < parsed.database.membri.chiarin.argomenti_da_imparare.length; i++) {
-        imparare += parsed.database.membri.chiarin.argomenti_da_imparare[i] + ', ';
+    for (i = 0; i < parsed.database.membri.chiarin.progetti_mantenere.length; i++) {
+        mantenere += parsed.database.membri.chiarin.progetti_mantenere[i] + ', ';
     }
     for (i = 0; i < parsed.database.membri.chiarin.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.chiarin.progetti_assegnati[i];
     }
-    return ("Questa persona è Marco Chiarin, il suo username github è " + parsed.database.membri.chiarin.username_github + ", il suo soprannome è " + parsed.database.membri.chiarin.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Marco Chiarin, il suo username github è " + parsed.database.membri.chiarin.username_github + ", il suo soprannome è " + parsed.database.membri.chiarin.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getGreggioInformation(session, parsed) {
     var i = 0;
     var spec = '';
-    var imparare = '';
+    var mantenere = '';
     var assegnati = '';
     for (i = 0; i < parsed.database.membri.greggio.specialita.length; i++) {
         spec += parsed.database.membri.greggio.specialita[i] + ', ';
     }
-    for (i = 0; i < parsed.database.membri.greggio.argomenti_da_imparare.length; i++) {
-        imparare += parsed.database.membri.greggio.argomenti_da_imparare[i] + ', ';
+    for (i = 0; i < parsed.database.membri.greggio.progetti_mantenere.length; i++) {
+        mantenere += parsed.database.membri.greggio.progetti_mantenere[i] + ', ';
     }
     for (i = 0; i < parsed.database.membri.greggio.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.greggio.progetti_assegnati[i];
     }
-    return ("Questa persona è Nicolò Greggio, il suo username github è " + parsed.database.membri.greggio.username_github + ", il suo soprannome è " + parsed.database.membri.greggio.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Nicolò Greggio, il suo username github è " + parsed.database.membri.greggio.username_github + ", il suo soprannome è " + parsed.database.membri.greggio.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getQuintoInformation(session, parsed) {
     var i = 0;
     var spec = '';
-    var imparare = '';
+    var mantenere = '';
     var assegnati = '';
     for (i = 0; i < parsed.database.membri.quinto.specialita.length; i++) {
         spec += parsed.database.membri.quinto.specialita[i] + ', ';
     }
-    for (i = 0; i < parsed.database.membri.quinto.argomenti_da_imparare.length; i++) {
-        imparare += parsed.database.membri.quinto.argomenti_da_imparare[i] + ', ';
+    for (i = 0; i < parsed.database.membri.quinto.progetti_mantenere.length; i++) {
+        mantenere += parsed.database.membri.quinto.progetti_mantenere[i] + ', ';
     }
     for (i = 0; i < parsed.database.membri.quinto.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.quinto.progetti_assegnati[i];
     }
-    return ("Questa persona è Tommaso Quinto, il suo username github è " + parsed.database.membri.quinto.username_github + ", il suo soprannome è " + parsed.database.membri.quinto.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Tommaso Quinto, il suo username github è " + parsed.database.membri.quinto.username_github + ", il suo soprannome è " + parsed.database.membri.quinto.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 function getNunzioInformation(session, parsed) {
     var i = 0;
     var spec = '';
-    var imparare = '';
+    var mantenere = '';
     var assegnati = '';
     for (i = 0; i < parsed.database.membri.nunzio.specialita.length; i++) {
         spec += parsed.database.membri.nunzio.specialita[i] + ', ';
     }
-    for (i = 0; i < parsed.database.membri.nunzio.argomenti_da_imparare.length; i++) {
-        imparare += parsed.database.membri.nunzio.argomenti_da_imparare[i] + ', ';
+    for (i = 0; i < parsed.database.membri.nunzio.progetti_mantenere.length; i++) {
+        mantenere += parsed.database.membri.nunzio.progetti_mantenere[i] + ', ';
     }
     for (i = 0; i < parsed.database.membri.nunzio.progetti_assegnati.length; i++) {
         assegnati += parsed.database.membri.nunzio.progetti_assegnati[i];
     }
-    return ("Questa persona è Salvatore Nunzio Savà, il suo username github è " + parsed.database.membri.nunzio.username_github + ", il suo soprannome è " + parsed.database.membri.nunzio.nickname + ", le sue specialità sono: " + spec + ", gli argomenti che deve imparare sono: " + imparare + ", i progetti a lui assegnati sono " + assegnati);
+    return ("Questa persona è Salvatore Nunzio Savà, il suo username github è " + parsed.database.membri.nunzio.username_github + ", il suo soprannome è " + parsed.database.membri.nunzio.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2710,11 +2805,11 @@ function getBotInformation(session, parsed) {
 }
 
 function getDeafInformation(session, parsed) {
-    return ("Project Parse è un progetto di tipo " + parsed.database.progetti.project_parse.tipo_progetto + ". E' un " + parsed.database.progetti.project_parse.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_parse.capo_progetto + ". La gestione è " + parsed.database.progetti.project_parse.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_parse.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_parse.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_parse.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_parse.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_parse.membri);
+    return ("Project Deaf è un progetto di tipo " + parsed.database.progetti.project_deaf.tipo_progetto + ". E' un " + parsed.database.progetti.project_deaf.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_deaf.capo_progetto + ". La gestione è " + parsed.database.progetti.project_deaf.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_deaf.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_deaf.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_deaf.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_deaf.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_deaf.membri);
 }
 
 function getUtilitiesInformation(session, parsed) {
-    return ("Project Parse è un progetto di tipo " + parsed.database.progetti.project_parse.tipo_progetto + ". E' un " + parsed.database.progetti.project_parse.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_parse.capo_progetto + ". La gestione è " + parsed.database.progetti.project_parse.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_parse.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_parse.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_parse.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_parse.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_parse.membri);
+    return ("Utilities è un progetto di tipo " + parsed.database.progetti.utilities.tipo_progetto + ". E' un " + parsed.database.progetti.utilities.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.utilities.capo_progetto + ". La gestione è " + parsed.database.progetti.utilities.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.utilities.link_repo + ". E' stato cominciato a " + parsed.database.progetti.utilities.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.utilities.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.utilities.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.utilities.membri);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2724,11 +2819,11 @@ function getOrfeiProjects(session, parsed) {
 }
 
 function getLucchiProjects(session, parsed) {
-    return ("I progetti fatti da lucchi sono: multiplatform UWP, Website");
+    return ("I progetti fatti da lucchi sono: Deaf");
 }
 
 function getFantinatoProjects(session, parsed) {
-    return ("I progetti fatti da fantinato sono: multiplatform Electron");
+    return ("I progetti fatti da fantinato sono: Parse, Website");
 }
 
 function getZancanaroProjects(session, parsed) {
@@ -2740,11 +2835,11 @@ function getChiarinProjects(session, parsed) {
 }
 
 function getGreggioProjects(session, parsed) {
-    return ("I progetti fatti da Greggio sono: multiplatform Electron");
+    return ("I progetti fatti da Greggio sono: Parse");
 }
 
 function getQuintoProjects(session, parsed) {
-    return ("I progetti fatti da Quinto sono: multiplatform Electron");
+    return ("I progetti fatti da Quinto sono: Parse");
 }
 
 function getNunzioProjects(session, parsed) {
@@ -2819,8 +2914,8 @@ function getBotFind(session, parsed) {
     return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_bot.link_repo);
 }
 
-function getElectronFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_multi_platform_electron.link_repo);
+function getParseFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_parse.link_repo);
 }
 
 function getUWPFind(session, parsed) {
@@ -2833,6 +2928,14 @@ function getFastInkFind(session, parsed) {
 
 function getWebsiteFind(session, parsed) {
     return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_website.link_repo);
+}
+
+function getDeafFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_deaf.link_repo);
+}
+
+function getUtilitiesFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.utilities.link_repo);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------
