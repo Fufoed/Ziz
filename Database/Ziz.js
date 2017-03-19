@@ -18,7 +18,7 @@ var promise = require('promise');
 
 var data = require('./database.json');
 
-var pack = require('./package.json');
+//var pack = require('./package.json');
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -303,131 +303,131 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 session.send(BullshitTemp);
             }
             if (nunzio && role) {
-                var NunzioRole = getNunzioRole(session, database);
+                var NunzioRole = getNunzioRole(session, data);
                 session.send(NunzioRole);
             }
             if (fantinato && role) {
-                var FantinatoRole = getFantinatoRole(session, database);
+                var FantinatoRole = getFantinatoRole(session, data);
                 session.send(FantinatoRole);
             }
             if (quinto && role) {
-                var QuintoRole = getQuintoRole(session, database);
+                var QuintoRole = getQuintoRole(session, data);
                 session.send(QuintoRole);
             }
             if (greggio && role) {
-                var GreggioRole = getGreggioRole(session, database);
+                var GreggioRole = getGreggioRole(session, data);
                 session.send(GreggioRole);
             }
             if (chiarin && role) {
-                var ChiarinRole = getChiarinRole(session, database);
+                var ChiarinRole = getChiarinRole(session, data);
                 session.send(ChiarinRole);
             }
             if (zancanaro && role) {
-                var ZancanaroRole = getZancanaroRole(session, database);
+                var ZancanaroRole = getZancanaroRole(session, data);
                 session.send(ZancanaroRole);
             }
             if (lucchi && role) {
-                var LucchiRole = getLucchiRole(session, database);
+                var LucchiRole = getLucchiRole(session, data);
                 session.send(LucchiRole);
             }
             if (orfei && role) {
-                var OrfeiRole = getOrfeiRole(session, database);
+                var OrfeiRole = getOrfeiRole(session, data);
                 session.send(OrfeiRole);
             }
             if (nunzio && responsability) {
-                var NunzioRes = getNunzioResponsability(session, database);
+                var NunzioRes = getNunzioResponsability(session, data);
                 session.send(NunzioRes);
             }
             if (fantinato && responsability) {
-                var FantinatoRes = getFantinatoResponsability(session, database);
+                var FantinatoRes = getFantinatoResponsability(session, data);
                 session.send(FantinatoRes);
             }
             if (quinto && responsability) {
-                var QuintoRes = getQuintoResponsability(session, database);
+                var QuintoRes = getQuintoResponsability(session, data);
                 session.send(QuintoRes);
             }
             if (greggio && responsability) {
-                var GreggioRes = getGreggioResponsability(session, database);
+                var GreggioRes = getGreggioResponsability(session, data);
                 session.send(GreggioRes);
             }
             if (chiarin && responsability) {
-                var ChiarinRes = getChiarinResponsability(session, database);
+                var ChiarinRes = getChiarinResponsability(session, data);
                 session.send(ChiarinRes);
             }
             if (zancanaro && responsability) {
-                var ZancanaroRes = getZancanaroResponsability(session, database);
+                var ZancanaroRes = getZancanaroResponsability(session, data);
                 session.send(ZancanaroRes);
             }
             if (lucchi && responsability) {
-                var LucchiRes = getLucchiResponsability(session, database);
+                var LucchiRes = getLucchiResponsability(session, data);
                 session.send(LucchiRes);
             }
             if (orfei && responsability) {
-                var OrfeiRes = getOrfeiResponsability(session, database);
+                var OrfeiRes = getOrfeiResponsability(session, data);
                 session.send(OrfeiRes);
             }
             if (nunzio && mail) {
-                var NunzioMail = getNunzioMail(session, database);
+                var NunzioMail = getNunzioMail(session, data);
                 session.send(NunzioMail);
             }
             if (fantinato && mail) {
-                var FantinatoMail = getFantinatoMail(session, database);
+                var FantinatoMail = getFantinatoMail(session, data);
                 session.send(FantinatoMail);
             }
             if (quinto && mail) {
-                var QuintoMail = getQuintoMail(session, database);
+                var QuintoMail = getQuintoMail(session, data);
                 session.send(QuintoMail);
             }
             if (greggio && mail) {
-                var GreggioMail = getGreggioMail(session, database);
+                var GreggioMail = getGreggioMail(session, data);
                 session.send(GreggioMail);
             }
             if (chiarin && mail) {
-                var ChiarinMail = getChiarinMail(session, database);
+                var ChiarinMail = getChiarinMail(session, data);
                 session.send(ChiarinMail);
             }
             if (zancanaro && mail) {
-                var ZancanaroMail = getZancanaroMail(session, database);
+                var ZancanaroMail = getZancanaroMail(session, data);
                 session.send(ZancanaroMail);
             }
             if (lucchi && mail) {
-                var LucchiMail = getLucchiMail(session, database);
+                var LucchiMail = getLucchiMail(session, data);
                 session.send(LucchiMail);
             }
             if (orfei && mail) {
-                var OrfeiMail = getOrfeiMail(session, database);
+                var OrfeiMail = getOrfeiMail(session, data);
                 session.send(OrfeiMail);
             }
             if (nunzio && total_project) {
-                var NunzioProjects = getNunzioProjects(session, database);
+                var NunzioProjects = getNunzioProjects(session, data);
                 session.send(NunzioProjects);
             }
             if (fantinato && total_project) {
-                var FantinatoProjects = getFantinatoProjects(session, database);
+                var FantinatoProjects = getFantinatoProjects(session, data);
                 session.send(FantinatoProjects);
             }
             if (quinto && total_project) {
-                var QuintoProjects = getQuintoProjects(session, database);
+                var QuintoProjects = getQuintoProjects(session, data);
                 session.send(QuintoProjects);
             }
             if (greggio && total_project) {
-                var GreggioProjects = getGreggioProjects(session, database);
+                var GreggioProjects = getGreggioProjects(session, data);
                 session.send(GreggioProjects);
             }
             if (chiarin && total_project) {
-                var ChiarinProjects = getChiarinProjects(session, database);
+                var ChiarinProjects = getChiarinProjects(session, data);
                 session.send(ChiarinProjects);
             }
             if (zancanaro && total_project) {
-                var ZancanaroProjects = getZancanaroProjects(session, database);
+                var ZancanaroProjects = getZancanaroProjects(session, data);
                 session.send(ZancanaroProjects);
             }
             if (lucchi && total_project) {
-                var LucchiProjects = getLucchiProjects(session, database);
+                var LucchiProjects = getLucchiProjects(session, data);
                 session.send(LucchiProjects);
             }
             if (orfei && total_project) {
-                var OrfeiProject = getOrfeiProjects(session, database);
+                var OrfeiProject = getOrfeiProjects(session, data);
                 session.send(OrfeiProject);
             }
             if (ziz && responsability) {
@@ -1079,37 +1079,37 @@ bot.dialog('AllRole', new botbuilder.IntentDialog({
                 session.beginDialog('Root');
             }
             if (fantinato) {
-                var FantinatoRole = getFantinatoRole(session, database);
+                var FantinatoRole = getFantinatoRole(session, data);
                 session.send(FantinatoRole);
                 session.beginDialog('Root');
             }
             if (quinto) {
-                var QuintoRole = getQuintoRole(session, database);
+                var QuintoRole = getQuintoRole(session, data);
                 session.send(QuintoRole);
                 session.beginDialog('Root');
             }
             if (greggio) {
-                var GreggioRole = getGreggioRole(session, database);
+                var GreggioRole = getGreggioRole(session, data);
                 session.send(GreggioRole);
                 session.beginDialog('Root');
             }
             if (chiarin) {
-                var ChiarinRole = getChiarinRole(session, database);
+                var ChiarinRole = getChiarinRole(session, data);
                 session.send(ChiarinRole);
                 session.beginDialog('Root');
             }
             if (zancanaro) {
-                var ZancanaroRole = getZancanaroRole(session, database);
+                var ZancanaroRole = getZancanaroRole(session, data);
                 session.send(ZancanaroRole);
                 session.beginDialog('Root');
             }
             if (lucchi) {
-                var LucchiRole = getLucchiRole(session, database);
+                var LucchiRole = getLucchiRole(session, data);
                 session.send(LucchiRole);
                 session.beginDialog('Root');
             }
             if (orfei) {
-                var OrfeiRole = getOrfeiRole(session, database);
+                var OrfeiRole = getOrfeiRole(session, data);
                 session.send(OrfeiRole);
                 session.beginDialog('Root');
             }
@@ -1348,167 +1348,167 @@ bot.dialog('AllPeople', new botbuilder.IntentDialog({
             var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
             var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
             if (nunzio) {
-                var NunzioTemp = getNunzioInformation(session, database);
+                var NunzioTemp = getNunzioInformation(session, data);
                 session.send(NunzioTemp);
             }
             if (fantinato) {
-                var FantinatoTemp = getFantinatoInformation(session, database);
+                var FantinatoTemp = getFantinatoInformation(session, data);
                 session.send(FantinatoTemp);
             }
             if (quinto) {
-                var QuintoTemp = getQuintoInformation(session, database);
+                var QuintoTemp = getQuintoInformation(session, data);
                 session.send(QuintoTemp);
             }
             if (greggio) {
-                var GreggioTemp = getGreggioInformation(session, database);
+                var GreggioTemp = getGreggioInformation(session, data);
                 session.send(GreggioTemp);
             }
             if (chiarin) {
-                var ChiarinTemp = getChiarinInformation(session, database);
+                var ChiarinTemp = getChiarinInformation(session, data);
                 session.send(ChiarinTemp);
             }
             if (zancanaro) {
-                var ZancanaroTemp = getZancanaroInformation(session, database);
+                var ZancanaroTemp = getZancanaroInformation(session, data);
                 session.send(ZancanaroTemp);
             }
             if (lucchi) {
-                var LucchiTemp = getLucchiInformation(session, database);
+                var LucchiTemp = getLucchiInformation(session, data);
                 session.send(LucchiTemp);
             }
             if (lucchi) {
-                var LucchiTemp = getLucchiInformation(session, database);
+                var LucchiTemp = getLucchiInformation(session, data);
                 session.send(LucchiTemp);
             }
             if (orfei) {
-                var OrfeiTemp = getOrfeiInformation(session, database);
+                var OrfeiTemp = getOrfeiInformation(session, data);
                 session.send(OrfeiTemp);
             }
             if (nunzio && role) {
-                var NunzioRole = getNunzioRole(session, database);
+                var NunzioRole = getNunzioRole(session, data);
                 session.send(NunzioRole);
             }
             if (fantinato && role) {
-                var FantinatoRole = getFantinatoRole(session, database);
+                var FantinatoRole = getFantinatoRole(session, data);
                 session.send(FantinatoRole);
             }
             if (quinto && role) {
-                var QuintoRole = getQuintoRole(session, database);
+                var QuintoRole = getQuintoRole(session, data);
                 session.send(QuintoRole);
             }
             if (greggio && role) {
-                var GreggioRole = getGreggioRole(session, database);
+                var GreggioRole = getGreggioRole(session, data);
                 session.send(GreggioRole);
             }
             if (chiarin && role) {
-                var ChiarinRole = getChiarinRole(session, database);
+                var ChiarinRole = getChiarinRole(session, data);
                 session.send(ChiarinRole);
             }
             if (zancanaro && role) {
-                var ZancanaroRole = getZancanaroRole(session, database);
+                var ZancanaroRole = getZancanaroRole(session, data);
                 session.send(ZancanaroRole);
             }
             if (lucchi && role) {
-                var LucchiRole = getLucchiRole(session, database);
+                var LucchiRole = getLucchiRole(session, data);
                 session.send(LucchiRole);
             }
             if (orfei && role) {
-                var OrfeiRole = getOrfeiRole(session, database);
+                var OrfeiRole = getOrfeiRole(session, data);
                 session.send(OrfeiRole);
             }
             if (nunzio && responsability) {
-                var NunzioRes = getNunzioResponsability(session, database);
+                var NunzioRes = getNunzioResponsability(session, data);
                 session.send(NunzioRes);
             }
             if (fantinato && responsability) {
-                var FantinatoRes = getFantinatoResponsability(session, database);
+                var FantinatoRes = getFantinatoResponsability(session, data);
                 session.send(FantinatoRes);
             }
             if (quinto && responsability) {
-                var QuintoRes = getQuintoResponsability(session, database);
+                var QuintoRes = getQuintoResponsability(session, data);
                 session.send(QuintoRes);
             }
             if (greggio && responsability) {
-                var GreggioRes = getGreggioResponsability(session, database);
+                var GreggioRes = getGreggioResponsability(session, data);
                 session.send(GreggioRes);
             }
             if (chiarin && responsability) {
-                var ChiarinRes = getChiarinResponsability(session, database);
+                var ChiarinRes = getChiarinResponsability(session, data);
                 session.send(ChiarinRes);
             }
             if (zancanaro && responsability) {
-                var ZancanaroRes = getZancanaroResponsability(session, database);
+                var ZancanaroRes = getZancanaroResponsability(session, data);
                 session.send(ZancanaroRes);
             }
             if (lucchi && responsability) {
-                var LucchiRes = getLucchiResponsability(session, database);
+                var LucchiRes = getLucchiResponsability(session, data);
                 session.send(LucchiRes);
             }
             if (orfei && responsability) {
-                var OrfeiRes = getOrfeiResponsability(session, database);
+                var OrfeiRes = getOrfeiResponsability(session, data);
                 session.send(OrfeiRes);
             }
             if (nunzio && mail) {
-                var NunzioMail = getNunzioMail(session, database);
+                var NunzioMail = getNunzioMail(session, data);
                 session.send(NunzioMail);
             }
             if (fantinato && mail) {
-                var FantinatoMail = getFantinatoMail(session, database);
+                var FantinatoMail = getFantinatoMail(session, data);
                 session.send(FantinatoMail);
             }
             if (quinto && mail) {
-                var QuintoMail = getQuintoMail(session, database);
+                var QuintoMail = getQuintoMail(session, data);
                 session.send(QuintoMail);
             }
             if (greggio && mail) {
-                var GreggioMail = getGreggioMail(session, database);
+                var GreggioMail = getGreggioMail(session, data);
                 session.send(GreggioMail);
             }
             if (chiarin && mail) {
-                var ChiarinMail = getChiarinMail(session, database);
+                var ChiarinMail = getChiarinMail(session, data);
                 session.send(ChiarinMail);
             }
             if (zancanaro && mail) {
-                var ZancanaroMail = getZancanaroMail(session, database);
+                var ZancanaroMail = getZancanaroMail(session, data);
                 session.send(ZancanaroMail);
             }
             if (lucchi && mail) {
-                var LucchiMail = getLucchiMail(session, database);
+                var LucchiMail = getLucchiMail(session, data);
                 session.send(LucchiMail);
             }
             if (orfei && mail) {
-                var OrfeiMail = getOrfeiMail(session, database);
+                var OrfeiMail = getOrfeiMail(session, data);
                 session.send(OrfeiMail);
             }
             if (nunzio && total_project) {
-                var NunzioProjects = getNunzioProjects(session, database);
+                var NunzioProjects = getNunzioProjects(session, data);
                 session.send(NunzioProjects);
             }
             if (fantinato && total_project) {
-                var FantinatoProjects = getFantinatoProjects(session, database);
+                var FantinatoProjects = getFantinatoProjects(session, data);
                 session.send(FantinatoProjects);
             }
             if (quinto && total_project) {
-                var QuintoProjects = getQuintoProjects(session, database);
+                var QuintoProjects = getQuintoProjects(session, data);
                 session.send(QuintoProjects);
             }
             if (greggio && total_project) {
-                var GreggioProjects = getGreggioProjects(session, database);
+                var GreggioProjects = getGreggioProjects(session, data);
                 session.send(GreggioProjects);
             }
             if (chiarin && total_project) {
-                var ChiarinProjects = getChiarinProjects(session, database);
+                var ChiarinProjects = getChiarinProjects(session, data);
                 session.send(ChiarinProjects);
             }
             if (zancanaro && total_project) {
-                var ZancanaroProjects = getZancanaroProjects(session, database);
+                var ZancanaroProjects = getZancanaroProjects(session, data);
                 session.send(ZancanaroProjects);
             }
             if (lucchi && total_project) {
-                var LucchiProjects = getLucchiProjects(session, database);
+                var LucchiProjects = getLucchiProjects(session, data);
                 session.send(LucchiProjects);
             }
             if (orfei && total_project) {
-                var OrfeiProject = getOrfeiProjects(session, database);
+                var OrfeiProject = getOrfeiProjects(session, data);
                 session.send(OrfeiProject);
             }
         }
