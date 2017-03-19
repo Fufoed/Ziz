@@ -83,7 +83,7 @@
             "lista_progetti": [
                 "Utilities",
                 "Fast Ink!",
-                "Project Bot",
+                "Team Perso Bot Model Core",
                 "Project Deaf",
                 "Project Volley",
                 "Project Website",
@@ -106,9 +106,9 @@
                 "membri": "Zanca, Chiarin",
                 "note": ""
             },
-            "project_bot": {
+            "team_perso_bot_model_core": {
                 "tipo_progetto": "AI",
-                "descrizione_progetto": "Progetto di multipli Bot che eseguono diversi incarichi",
+                "descrizione_progetto": "Core di tutti i nostri bot",
                 "capo_progetto": "Orfei",
                 "tipo_gestione": "Collaborazione",
                 "link_repo": "https://github.com/teamperso/Bot.git",
@@ -256,7 +256,7 @@
                     "Project Ziz"
                 ],
                 "progetti_mantenere": [
-                    "Project Bot",
+                    "Team Perso Bot Model Core",
                     "Utilities"
                 ],
                 "ruolo": "Chief AI Officer"
