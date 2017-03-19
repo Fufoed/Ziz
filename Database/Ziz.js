@@ -186,6 +186,54 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                     session.send("Error");
                 })
             }
+            if (team_perso) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TeamTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Team')
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (responsability) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllResponsabilityTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllResponsability');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (role) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllRoleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('AllRole');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (find) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('FindAllTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('FindAll');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
             if (bot_project) {
                 var BotTemp = getBotInformation(session, data);
                 session.send(BotTemp);
@@ -249,54 +297,6 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             if (zancanaro) {
                 var ZancanaroTemp = getZancanaroInformation(session, data);
                 session.send(ZancanaroTemp);
-            }
-            if (team_perso) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('TeamTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Team')
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-            }
-            if (responsability) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllResponsabilityTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('AllResponsability');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-            }
-            if (role) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllRoleTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('AllRole');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-            }
-            if (find) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('FindAllTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('FindAll');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
             }
             if (easter_egg) {
                 var BullshitTemp = getBullshit(session);
