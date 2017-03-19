@@ -1,24 +1,24 @@
-var builder = require('core');
+var builder = require('../Node.js/node_modules/core');
 
-var botbuilder = require('botbuilder');
+var botbuilder = require('../Node.js/node_modules/botbuilder');
 
 var https = require('https');
 
 var http = require('http');
 
-var restify = require('restify');
+var restify = require('../Node.js/node_modules/restify');
 
 var fs = require('fs');
 
-var request = require('request');
+var request = require('../Node.js/node_modules/request');
 
-var async = require('async');
+var async = require('../Node.js/node_modules/async');
 
-var promise = require('promise');
+var promise = require('../Node.js/node_modules/promise');
 
 var path = require('path');
 
-var data = require('./database.json');
+var data = require('../Database/database.json');
 
 //var pack = require('./package.json');
 
