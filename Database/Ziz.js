@@ -114,7 +114,6 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
             var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
             var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
-            var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
             var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
             var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
             var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
@@ -127,7 +126,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
             var email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
 
-            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !uwp && !parse && !volley && !fast_ink && !website && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio && !utilities && !deaf) {
+            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !parse && !volley && !fast_ink && !website && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio && !utilities && !deaf) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('NothingTemp');
@@ -214,10 +213,6 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             if (utilities) {
                 var UtilitiesTemp = getUtilitiesInformation(session, data);
                 session.send(UtilitiesTemp);
-            }
-            if (uwp) {
-                var UwpTemp = getUwpInformation(session, data);
-                session.send(UwpTemp);
             }
             if (ziz) {
                 var ZizTemp = getZizInformation(session, data);
@@ -439,10 +434,6 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 var ZizGestioneTemp = getZizGestione(session, data);
                 session.send(ZizGestioneTemp);
             }
-            if (uwp && responsability) {
-                var UwpGestioneTemp = getUwpGestione(session, data);
-                session.send(UwpGestioneTemp);
-            }
             if (parse && responsability) {
                 var ParseGestioneTemp = getElectronGestione(session, data);
                 session.send(ParseGestioneTemp);
@@ -498,10 +489,6 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             if (utilities && find) {
                 var UtilitiesTemp = getUtilitiesFind(session, data);
                 session.send(UtilitiesTemp);
-            }
-            if (uwp && find) {
-                var UwpTemp = getUWPFind(session, data);
-                session.send(UwpTemp);
             }
             if (ziz && find) {
                 var ZizTemp = getZizFind(session, data);
@@ -746,16 +733,6 @@ bot.dialog('TotalProjectTemp', [
     },
     function(session, results) {
         switch (results.response) {
-            case "informazioni sul progetto uwp":
-                var UwpTemp = getUwpInformation(session, data);
-                session.send(UwpTemp);
-                session.beginDialog('Root');
-                break;
-            case "gestione del progetto uwp":
-                var UwpGestioneTemp = getUwpGestione(session, data);
-                session.send(UwpGestioneTemp);
-                session.beginDialog('Root');
-                break;
             case "informazioni sul progetto parse":
                 var ParseTemp = getParseInformation(session, data);
                 session.send(ParseTemp);
@@ -846,7 +823,6 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
         function(session, args, results) {
             var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
             var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
-            var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
             var deaf = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::deaf');
             var utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
             var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
@@ -858,11 +834,6 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
             if (ziz) {
                 var ZizTemp = getZizInformation(session, data);
                 session.send(ZizTemp);
-                session.beginDialog('Root');
-            }
-            if (uwp) {
-                var UwpTemp = getUwpInformation(session, data);
-                session.send(UwpTemp);
                 session.beginDialog('Root');
             }
             if (deaf) {
@@ -888,11 +859,6 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
             if (ziz && responsability) {
                 var ZizGestioneTemp = getZizGestione(session, data);
                 session.send(ZizGestioneTemp);
-                session.beginDialog('Root');
-            }
-            if (uwp && responsability) {
-                var UwpGestioneTemp = getUwpGestione(session, data);
-                session.send(UwpGestioneTemp);
                 session.beginDialog('Root');
             }
             if (parse && responsability) {
@@ -1655,16 +1621,6 @@ bot.dialog('CurrentProjectTemp', [
     },
     function(session, results) {
         switch (results.response) {
-            case "informazioni sul progetto uwp":
-                var UwpTemp = getUwpInformation(session, data);
-                session.send(UwpTemp);
-                session.beginDialog('Root');
-                break;
-            case "gestione del progetto uwp":
-                var UwpGestioneTemp = getUwpGestione(session, data);
-                session.send(getUwpGestione);
-                session.beginDialog('Root');
-                break;
             case "informazioni sul progetto parse":
                 var ParseTemp = getParseInformation(session, data);
                 session.send(ParseTemp);
@@ -1726,7 +1682,6 @@ bot.dialog('CurrentProject', new botbuilder.IntentDialog({
     function(session, args, results) {
         var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
         var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
-        var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
         var deaf = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::deaf');
         var utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
         var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
@@ -1735,11 +1690,6 @@ bot.dialog('CurrentProject', new botbuilder.IntentDialog({
         if (ziz) {
             var ZizTemp = getZizInformation(session, data);
             session.send(ZizTemp);
-            session.beginDialog('Root');
-        }
-        if (uwp) {
-            var UwpTemp = getUwpInformation(session, data);
-            session.send(UwpTemp);
             session.beginDialog('Root');
         }
         if (parse) {
@@ -1755,11 +1705,6 @@ bot.dialog('CurrentProject', new botbuilder.IntentDialog({
         if (ziz && responsability) {
             var ZizGestioneTemp = getZizGestione(session, data);
             session.send(getZizGestione);
-            session.beginDialog('Root');
-        }
-        if (uwp && responsability) {
-            var UwpGestioneTemp = getUwpGestione(session, data);
-            session.send(UwpGestioneTemp);
             session.beginDialog('Root');
         }
         if (parse && responsability) {
@@ -1939,11 +1884,6 @@ bot.dialog('FindAllTemp', [
                 session.send(VolleyTemp);
                 session.beginDialog('Root');
                 break;
-            case "link progetto uwp":
-                var UWPTemp = getUWPFind(session, data);
-                session.send(UWPTemp);
-                session.beginDialog('Root');
-                break;
             case "link progetto parse":
                 var ParseTemp = getParseFind(session, data);
                 session.send(ParseTemp);
@@ -1983,7 +1923,6 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
 }).matches('GetInformation', [
     function(session, args, results) {
         var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
-        var uwp = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::uwp');
         var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
         var deaf = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::deaf');
         var utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
@@ -1995,11 +1934,6 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
         if (ziz) {
             var ZizTemp = getZizFind(session, data);
             session.send(ZizTemp);
-            session.beginDialog('Root');
-        }
-        if (uwp) {
-            var UWPTemp = getUWPFind(session, data);
-            session.send(UWPTemp);
             session.beginDialog('Root');
         }
         if (fast_ink) {
@@ -2310,14 +2244,6 @@ function CreatePeopleCards(session) {
 function CreateTotalProjectsCards(session) {
     return [
         new botbuilder.HeroCard(session)
-        .title('Multiplatform UWP')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto uwp', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto uwp', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
         .title('Project Parse')
         .text('Informazioni sul progetto')
         .buttons([
@@ -2387,14 +2313,6 @@ function CreateTotalProjectsCards(session) {
 
 function CreateCurrentProjectCards(session) {
     return [
-        new botbuilder.HeroCard(session)
-        .title('Multiplatform UWP')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto uwp', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto uwp', 'Gestione')
-        ]),
-
         new botbuilder.HeroCard(session)
         .title('Project Parse')
         .text('Informazioni sul progetto')
@@ -2503,13 +2421,6 @@ function CreateMailCards(session) {
 
 function createFindCards(session) {
     return [
-        new botbuilder.HeroCard(session)
-        .title('Multiplatform UWP')
-        .text('Link progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto uwp', 'Link'),
-        ]),
-
         new botbuilder.HeroCard(session)
         .title('Project Parse')
         .text('Link progetto')
@@ -2747,7 +2658,7 @@ function getOrfeiResponsability(session, parsed) {
 }
 
 function getLucchiResponsability(session, parsed) {
-    return ("Lucchi per ora si occupa di project website, project chiron e project multiplatform UWP");
+    return ("Lucchi per ora si occupa di project deaf");
 }
 
 function getZancanaroResponsability(session, parsed) {
@@ -2755,19 +2666,19 @@ function getZancanaroResponsability(session, parsed) {
 }
 
 function getFantinatoResponsability(session, parsed) {
-    return ("Fantinato per ora si occupa di project multiplatform electron");
+    return ("Fantinato per ora si occupa di project parse e website");
 }
 
 function getChiarinResponsability(session, parsed) {
-    return ("Chiarin per ora sta lavorando al project multiplatform UWP");
+    return ("Chiarin per ora sta lavorando al project deaf");
 }
 
 function getGreggioResponsability(session, parsed) {
-    return ("Greggio per ora sta lavorando al project multiplatform electron");
+    return ("Greggio per ora sta lavorando al project parse");
 }
 
 function getQuintoResponsability(session, parsed) {
-    return ("Quinto per ora sta lavorando al project multiplatform electron");
+    return ("Quinto per ora sta lavorando al project parse");
 }
 
 function getNunzioResponsability(session, parsed) {
@@ -2778,10 +2689,6 @@ function getNunzioResponsability(session, parsed) {
 
 function getZizInformation(session, parsed) {
     return ("Project Ziz è un progetto di tipo " + parsed.database.progetti.project_ziz.tipo_progetto + ". E' un " + parsed.database.progetti.project_ziz.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_ziz.capo_progetto + ". La gestione è " + parsed.database.progetti.project_ziz.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_ziz.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_ziz.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_ziz.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_ziz.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_ziz.membri);
-}
-
-function getUwpInformation(session, parsed) {
-    return ("Project Multiplatform UWP è un progetto di tipo " + parsed.database.progetti.project_multi_platform_uwp.tipo_progetto + ". E' un " + parsed.database.progetti.project_multi_platform_uwp.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_multi_platform_uwp.capo_progetto + ". La gestione è " + parsed.database.progetti.project_multi_platform_uwp.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_multi_platform_uwp.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_multi_platform_uwp.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_multi_platform_uwp.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_multi_platform_uwp.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_multi_platform_uwp.membri);
 }
 
 function getParseInformation(session, parsed) {
@@ -2916,10 +2823,6 @@ function getBotFind(session, parsed) {
 
 function getParseFind(session, parsed) {
     return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_parse.link_repo);
-}
-
-function getUWPFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_multi_platform_uwp.link_repo);
 }
 
 function getFastInkFind(session, parsed) {

@@ -51,7 +51,7 @@
             "OLEEEE",
             "STOH",
             "TRISA",
-            "Ci ha innculato",
+            "Ci ha inculato",
             "Prof mi sento preso per il culo",
             "Nebbia fitta in val Padana",
             "Che  ingenuità",
@@ -64,7 +64,7 @@
             "CWOOOOOOOOOOOOOOOOOOOOOOOO"
         ],
         "team_generale": {
-            "link_sito": "www.teamperso.com",
+            "link_sito": "http://www.teamperso.com",
             "numero_membri": "8",
             "lista_membri": [
                 "Lucchi",
@@ -79,7 +79,7 @@
         },
         "progetti_generale": {
             "numero_progetti_attivi": "6",
-            "numero_progetti_totali": "7",
+            "numero_progetti_totali": "8",
             "lista_progetti": [
                 "Utilities",
                 "Fast Ink!",
@@ -220,7 +220,7 @@
                 "progetti_assegnati": [
                     "Project Deaf"
                 ],
-                 "progetti_mantenere": [
+                "progetti_mantenere": [
                     "Utilities"
                 ],
                 "ruolo": "Chief .NET"
@@ -282,10 +282,8 @@
                 "mail": "nico.greggio@gmail.com",
                 "username_github": "faesant",
                 "nickname": "greg",
-                "specialita": [
-                ],
-                "progetti_assegnati": [
-                ],
+                "specialita": [],
+                "progetti_assegnati": [],
                 "progetti_mantenere": [
                     "Utilities"
                 ],
@@ -295,8 +293,7 @@
                 "mail": "tommaso.quinto@live.it",
                 "username_github": "tommasoquinto",
                 "nickname": "Tommy",
-                "specialita": [
-                ],
+                "specialita": [],
                 "progetti_assegnati": [
                     "Multiplatform Electron"
                 ],
@@ -309,10 +306,8 @@
                 "mail": "marco.chiarin1999@gmail.com",
                 "username_github": "justpanda",
                 "nickname": "panda",
-                "specialita": [
-                ],
-                "progetti_assegnati": [
-                ],
+                "specialita": [],
+                "progetti_assegnati": [],
                 "progetti_mantenere": [
                     "Utilities"
                 ],
@@ -322,12 +317,9 @@
                 "mail": "nunzio22598@gmail.com",
                 "username_github": "Nunzio22",
                 "nickname": "nuccio",
-                "specialita": [
-                ],
-                "argomenti_da_imparare": [
-                ],
-                "progetti_assegnati": [
-                ],
+                "specialita": [],
+                "argomenti_da_imparare": [],
+                "progetti_assegnati": [],
                 "progetti_mantenere": [
                     "Utilities"
                 ],
@@ -335,18 +327,17 @@
             }
         }
     }
-
-    //Aggiungere
-
-    //Road Map
-    //Idee
-    //Skills
-    //What we "Potete anche dormire"
-    //Contacts
-    //Access Data
-    //Rules
-    //Roles
-    //Languages
-    //Bizspark Data
-
 }
+
+//Aggiungere
+
+//Road Map
+//Idee
+//Skills
+//What we "Potete anche dormire"
+//Contacts
+//Access Data
+//Rules
+//Roles
+//Languages
+//Bizspark Data
