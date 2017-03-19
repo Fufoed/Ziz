@@ -16,6 +16,8 @@ var async = require('async');
 
 var promise = require('promise');
 
+var path = require('path');
+
 var data = require('./database.json');
 
 //var pack = require('./package.json');
