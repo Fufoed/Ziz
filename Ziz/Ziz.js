@@ -496,6 +496,48 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 var ZizTemp = getZizFind(session, data);
                 session.send(ZizTemp);
             }
+            if (orfei && lucchi) {
+                var OrfeiTemp = getOrfeiInformation(session, data);
+                var LucchiTemp = getLucchiInformation(session, data);
+                session.send(OrfeiTemp);
+                session.send(LucchiTemp);
+            }
+            if (orfei && fantinato) {
+                var OrfeiTemp = getOrfeiInformation(session, data);
+                var FantinatoTemp = getFantinatoInformation(session, data);
+                session.send(OrfeiTemp);
+                session.send(FantinatoTemp);
+            }
+            if (orfei && zancanaro) {
+                var OrfeiTemp = getOrfeiInformation(session, data);
+                var ZancanaroTemp = getZancanaroInformation(session, data);
+                session.send(OrfeiTemp);
+                session.send(ZancanaroTemp);
+            }
+            if (orfei && chiarin) {
+                var OrfeiTemp = getOrfeiInformation(session, data);
+                var ChiarinTemp = getChiarinInformation(session, data);
+                session.send(OrfeiTemp);
+                session.send(ChiarinTemp);
+            }
+            if (orfei && greggio) {
+                var OrfeiTemp = getOrfeiInformation(session, data);
+                var GreggioTemp = getGreggioInformation(session, data);
+                session.send(OrfeiTemp);
+                session.send(GreggioTemp);
+            }
+            if (orfei && quinto) {
+                var OrfeiTemp = getOrfeiInformation(session, data);
+                var QuintoTemp = getQuintoInformation(session, data);
+                session.send(OrfeiTemp);
+                session.send(QuintoTemp);
+            }
+            if (orfei && nunzio) {
+                var OrfeiTemp = getOrfeiInformation(session, data);
+                var NunzioTemp = getNunzioInformation(session, data);
+                session.send(OrfeiTemp);
+                session.send(NunzioTemp);
+            }
         }
     ])
     .matches('Skills', [
