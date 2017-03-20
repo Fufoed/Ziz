@@ -119,7 +119,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
             var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
             var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
-            var bot_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::bot');
+            var TPBMC = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::tpbmc');
             var deaf = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::deaf');
             var utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
             var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
@@ -128,7 +128,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
             var email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
 
-            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !parse && !volley && !fast_ink && !website && !bot_project && !current_project && !total_project && !total_people && !email && !nunzio && !utilities && !deaf) {
+            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !parse && !volley && !fast_ink && !website && !TPBMC && !current_project && !total_project && !total_people && !email && !nunzio && !utilities && !deaf) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('NothingTemp');
@@ -236,9 +236,9 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                     session.send("Error");
                 })
             }
-            if (bot_project) {
-                var BotTemp = getBotInformation(session, data);
-                session.send(BotTemp);
+            if (TPBMC) {
+                var TPBMCTemp = getTPBMCInformation(session, data);
+                session.send(TPBMCTemp);
             }
             if (website) {
                 var WebTemp = getWebsiteInformation(session, data);
@@ -452,9 +452,9 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 var FastInkGestioneTemp = getFastInkGestione(session, data);
                 session.send(FastInkGestioneTemp);
             }
-            if (bot_project && responsability) {
-                var BotGestioneTemp = getBotGestione(session, data);
-                session.send(getBotGestione);
+            if (TPBMC && responsability) {
+                var TPBMCGestioneTemp = getTPBMCGestione(session, data);
+                session.send(TPBMCGestioneTemp);
             }
             if (deaf && responsability) {
                 var DeafGestioneTemp = getDeafGestione(session, data);
@@ -464,9 +464,9 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
                 session.send(UtilitiesGestioneTemp);
             }
-            if (bot_project && find) {
-                var BotTemp = getBotFind(session, data);
-                session.send(BotTemp);
+            if (TPBMC && find) {
+                var TPBMCTemp = getTPBMCFind(session, data);
+                session.send(TPBMCTemp);
             }
             if (website && find) {
                 var WebTemp = getWebsiteFind(session, data);
@@ -765,14 +765,14 @@ bot.dialog('TotalProjectTemp', [
                 session.send(UtilitiesGestioneTemp);
                 session.beginDialog('Root');
                 break;
-            case "informazioni sul progetto bot":
-                var BotTemp = getBotInformation(session, data);
-                session.send(BotTemp);
+            case "informazioni sul team perso bot model core":
+                var TPBMCTemp = getTPBMCInformation(session, data);
+                session.send(TPBMCTemp);
                 session.beginDialog('Root');
                 break;
-            case "gestione del progetto bot":
-                var BotGestioneTemp = getBotGestione(session, data);
-                session.send(BotGestioneTemp);
+            case "gestione del team perso bot model core":
+                var TPBMCGestioneTemp = getTPBMCGestione(session, data);
+                session.send(TPBMCGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto ziz":
@@ -831,7 +831,7 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
             var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
             var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
             var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
-            var bot_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::bot');
+            var TPBMC = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::tpbmc');
 
             if (ziz) {
                 var ZizTemp = getZizInformation(session, data);
@@ -883,9 +883,9 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
                 session.send(FastInkTemp);
                 session.beginDialog('Root');
             }
-            if (bot_project) {
-                var BotTemp = getBotInformation(session, data);
-                session.send(BotTemp);
+            if (TPBMC) {
+                var TPBMCTemp = getTPBMCInformation(session, data);
+                session.send(TPBMCTemp);
                 session.beginDialog('Root');
             }
             if (volley && responsability) {
@@ -898,9 +898,9 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
                 session.send(FastInkGestioneTemp);
                 session.beginDialog('Root');
             }
-            if (bot_project && responsability) {
-                var BotGestioneTemp = getBotGestione(session, data);
-                session.send(BotGestioneTemp);
+            if (TPBMC && responsability) {
+                var TPBMCGestioneTemp = getTPBMCGestione(session, data);
+                session.send(TPBMCGestioneTemp);
                 session.beginDialog('Root');
             }
             if (deaf && responsability) {
@@ -1911,7 +1911,7 @@ bot.dialog('FindAllTemp', [
                 session.send(FastTemp);
                 session.beginDialog('Root');
                 break;
-            case "link progetto bot":
+            case "link team perso bot model core":
                 var BotTemp = getBotFind(session, data);
                 session.send(BotTemp);
                 session.beginDialog('Root');
@@ -1931,7 +1931,7 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
         var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
         var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
         var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
-        var bot_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::bot');
+        var TPBMC = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::tpbmc');
 
         if (ziz) {
             var ZizTemp = getZizFind(session, data);
@@ -1958,9 +1958,9 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
             session.send(WebTemp);
             session.beginDialog('Root');
         }
-        if (bot_project) {
-            var BotTemp = getBotFind(session, data);
-            session.send(BotTemp);
+        if (TPBMC) {
+            var TPBMCTemp = getTPBMCFind(session, data);
+            session.send(TPBMCTemp);
             session.beginDialog('Root');
         }
         if (deaf) {
@@ -2262,11 +2262,11 @@ function CreateTotalProjectsCards(session) {
         ]),
 
         new botbuilder.HeroCard(session)
-        .title('Bot')
+        .title('Team Perso Bot Model Core')
         .text('Informazioni sul progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto bot', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto bot', 'Gestione')
+            botbuilder.CardAction.imBack(session, 'informazioni sul team perso bot model core', 'Info'),
+            botbuilder.CardAction.imBack(session, 'gestione del team perso bot model core', 'Gestione')
         ]),
 
         new botbuilder.HeroCard(session)
@@ -2438,10 +2438,10 @@ function createFindCards(session) {
         ]),
 
         new botbuilder.HeroCard(session)
-        .title('Bot')
+        .title('Team Perso Bot Model Core')
         .text('Link progetto')
         .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto bot', 'Link'),
+            botbuilder.CardAction.imBack(session, 'link team perso bot model core', 'Link'),
         ]),
 
         new botbuilder.HeroCard(session)
@@ -2709,8 +2709,8 @@ function getWebsiteInformation(session, parsed) {
     return ("Project Website è un progetto di tipo " + parsed.database.progetti.project_website.tipo_progetto + ". E' un " + parsed.database.progetti.project_website.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_website.capo_progetto + ". La gestione è " + parsed.database.progetti.project_website.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_website.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_website.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_website.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_website.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_website.membri);
 }
 
-function getBotInformation(session, parsed) {
-    return ("Project Ziz è un progetto di tipo " + parsed.database.progetti.project_bot.tipo_progetto + ". E' un " + parsed.database.progetti.project_bot.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_bot.capo_progetto + ". La gestione è " + parsed.database.progetti.project_bot.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_bot.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_bot.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_bot.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_bot.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_bot.membri);
+function getTPBMCInformation(session, parsed) {
+    return ("T.P.B.M.C. è un progetto di tipo " + parsed.database.progetti.team_perso_bot_model_core.tipo_progetto + ". E' un " + parsed.database.progetti.team_perso_bot_model_core.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.team_perso_bot_model_core.capo_progetto + ". La gestione è " + parsed.database.progetti.team_perso_bot_model_core.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.team_perso_bot_model_core.link_repo + ". E' stato cominciato a " + parsed.database.progetti.team_perso_bot_model_core.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.team_perso_bot_model_core.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.team_perso_bot_model_core.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.team_perso_bot_model_core.membri);
 }
 
 function getDeafInformation(session, parsed) {
@@ -2819,8 +2819,8 @@ function getVolleyFind(session, parsed) {
     return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_volley.link_repo);
 }
 
-function getBotFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_bot.link_repo);
+function getTPBMCFind(session, parsed) {
+    return ("Questo progetto si trova a questo link " + parsed.database.progetti.team_perso_bot_model_core.link_repo);
 }
 
 function getParseFind(session, parsed) {
