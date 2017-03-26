@@ -1,0 +1,45 @@
+{
+    "rules":{
+        "software":{
+            "ide":[
+                "Visual Studio",
+                "Unity 3D"
+            ],
+            "texteditor":[
+                "Visual Studio Code",
+                "Atom"
+            ],
+            "messaging":[
+                "Slack",
+                "Whatsapp"
+            ],
+            "note":[
+                "Onenote"
+            ],
+            "versioning":[
+                "Gitlab",
+                "Gitkraken"
+            ],
+            "storage":[
+                "OneDrive"
+            ]
+        },
+        "rules_chat":[
+            "Per parlare di cose in più, gruppo Team Perso o Team Perso Academy su Whatsapp",
+            "Per parlare delle cose di programmazione, Slack. Sia su PC che su Mobile"
+        ],
+        "rules_note":[
+            "Si userà OneNote configurato su un blocco appunti dedicato Team Perso"
+        ],
+        "rules_cloud":[
+            "Si userà OneDrive configurato su una cartella dedicata"
+        ],
+        "rules_projects":[
+            "Per progetti condivisi, Hosting con GtiLab e Push/Pull da GitHub Desktop",
+            "Per progetti singoli, uguale ma senza condivisione"
+        ],
+        "rules_learning":[
+            "Ognuno dovrà studiare qualcosa di nuovo possibilmente che non stia già studiando qualcun altro"
+        ]
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "projects":{
+         "relu-core": {
+                "tipo_progetto": "AI",
+                "descrizione_progetto": "Core di tutti i nostri bot",
+                "capo_progetto": "Orfei",
+                "link_repo": "https://github.com/teamperso/RELU-Core.git",
+                "inizio_sviluppo": "2016",
+                "fine_sviluppo": "In Corso",
+                "versione": "Beta",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Orfei, Nunzio",
+                "note": "Al momento non sono Hostati"
+            },
+            "project_website": {
+                "tipo_progetto": "Sito",
+                "descrizione_progetto": "Sito web del Team Perso",
+                "capo_progetto": "Pippo",
+                "link_repo": "https://github.com/teamperso/Website.git",
+                "inizio_sviluppo": "Gennaio 2017",
+                "fine_sviluppo": "8/02/2017",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Procede",
+                "membri": "Pippo, Lucchi",
+                "note": ""
+            },
+            "project_parse": {
+                "tipo_progetto": "Programma",
+                "descrizione_progetto": "Editor/Generatore di file Json e in futuro XML che fornisce una visione ad albero del file, con la possibilità di editarlo e aggiungerne componenti. Sviluppato in Electron",
+                "capo_progetto": "Fantinato",
+                "link_repo": "https://github.com/teamperso/Project-Parse.git",
+                "inizio_sviluppo": "Febbraio 2017",
+                "fine_sviluppo": "In corso",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Greggio, Fantinato",
+                "note": ""
+            },
+            "project_ziz": {
+                "tipo_progetto": "Bot",
+                "descrizione_progetto": "Bot ad utilizzo interno, che spiega dettagli riguardanti team, progetti e altro",
+                "capo_progetto": "Orfei",
+                "link_repo": "https://github.com/teamperso/Project-Ziz.git",
+                "inizio_sviluppo": "Marzo 2017",
+                "fine_sviluppo": "Da vedere",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Orfei, Nunzio",
+                "note": ""
+            },
+            "utilities": {
+                "tipo_progetto": "All",
+                "descrizione_progetto": "Repository per le Utility in .NET, Node.js, Web and Deep Learning",
+                "capo_progetto": "Lucchi",
+                "link_repo": "https://github.com/teamperso/Utilities.git",
+                "inizio_sviluppo": "Marzo 2017",
+                "fine_sviluppo": "Indefinito",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Tutti",
+                "note": ""
+            },
+            "research":{
+                "tipo_progetto": "All",
+                "descrizione_progetto": "Repository per la ricerca su .NET, Node.js, Web and Deep Learning",
+                "capo_progetto": "Lucchi",
+                "link_repo": "https://github.com/teamperso/Utilities.git",
+                "inizio_sviluppo": "Marzo 2017",
+                "fine_sviluppo": "Indefinito",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Tutti",
+                "note": ""
+            }
+    }
+}

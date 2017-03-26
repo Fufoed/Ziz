@@ -1,0 +1,27 @@
+{
+    "general": {
+        "members_general": {
+            "numero_membri": "5",
+            "lista_membri": [
+                "Lucchi",
+                "Zancanaro",
+                "Orfei",
+                "Fantinato",
+                "Greggio"
+            ]
+        },
+        "projects_general": {
+            "lista_progetti": [
+                "Utilities",
+                "Fast Ink!",
+                "RELU Core",
+                "Utilities",
+                "Project Website",
+                "Project Parse",
+                "Project Ziz",
+                "Research"
+            ]
+        },
+        "link_sito": "http://www.teamperso.com"
+    }
+}
