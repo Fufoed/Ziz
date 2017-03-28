@@ -20,6 +20,10 @@ var path = require('path');
 
 var data = require('../Database/database.json');
 
+var TeamPersoHeroCard = require('../../Team-Perso-Bot-Model-Core/Core/Card/TeamPersoHeroCard');
+
+var TeamPersoDatabaseManager = require('../../Team-Perso-Bot-Model-Core/Core/Config/TeamPersoDatabaseManager');
+
 //var pack = require('./package.json');
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
