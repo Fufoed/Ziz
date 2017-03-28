@@ -1,0 +1,330 @@
+{
+    "database": {
+        "Easter_Egg": [
+            "Puntoliiiiiiiiiiino",
+            "Sanata",
+            "Saned",
+            "Mangia la foglia finchè si estende",
+            "Fgata",
+            "D",
+            "CDCDCDCDCDCDC",
+            "Sapere",
+            "Perso",
+            "Pacco",
+            "EH va bon dai",
+            "GhezzzBoro",
+            "Ehi Cesare",
+            "Eh Ciò",
+            "EAEAEAEEEEAEAE",
+            "VIAAAAAAAA",
+            "Fallito",
+            "Java non ha le stesse funziona di Java",
+            "Wuo wuo Bella",
+            "GNOOOOOOOO",
+            "Ma quello lo fa la macchina",
+            "Bello linux",
+            "E i driver?",
+            "Pettini",
+            "Vittoria",
+            "Io mi merito il 9 in comporteamento",
+            "Prendete 3 e amen",
+            "Cesare 4",
+            "Applina",
+            "Mi sono trovato in minoranza",
+            "Ciao Nathan :)",
+            "L'italia è una pozzanghera",
+            "Scusate, di solito copio-incollo",
+            "Jason",
+            "Dinosauri",
+            "Questo è un discorso generale",
+            "7",
+            "Potete anche dormire",
+            "Shhhhhhh sssssss",
+            "Non vorrei andare troppo veloce",
+            "Criminali",
+            "Boys and Girls",
+            "Aderenze",
+            "Comunista di merda",
+            "Shiiiiiiiii",
+            "Remove",
+            "Dov è il nostro orologio?",
+            "OLEEEE",
+            "STOH",
+            "TRISA",
+            "Ci ha inculato",
+            "Prof mi sento preso per il culo",
+            "Nebbia fitta in val Padana",
+            "Che  ingenuità",
+            "Sei polemico",
+            "L'assemblea",
+            "Uante Breboooo",
+            "Massimooooooooooooooooooooooooo",
+            "Chi fa il rappresentante questo mese?",
+            "Tossici di merda",
+            "CWOOOOOOOOOOOOOOOOOOOOOOOO"
+        ],
+        "team_generale": {
+            "link_sito": "http://www.teamperso.com",
+            "numero_membri": "8",
+            "lista_membri": [
+                "Lucchi",
+                "Zancanaro",
+                "Orfei",
+                "Fantinato",
+                "Greggio",
+                "Quinto",
+                "Chiarin",
+                "Nunzio"
+            ]
+        },
+        "progetti_generale": {
+            "numero_progetti_attivi": "6",
+            "numero_progetti_totali": "8",
+            "lista_progetti": [
+                "Utilities",
+                "Fast Ink!",
+                "Team Perso Bot Model Core",
+                "Project Deaf",
+                "Project Volley",
+                "Project Website",
+                "Project Parse",
+                "Project Ziz"
+            ]
+        },
+        "progetti": {
+            "fast_ink": {
+                "tipo_progetto": "App",
+                "descrizione_progetto": "Applicazione per il disegno e l'editing delle imamgini. Attualmente nello Store",
+                "capo_progetto": "Zanca",
+                "tipo_gestione": "Interno",
+                "link_repo": "https://github.com/teamperso/Fast-Ink.git",
+                "inizio_sviluppo": "2016",
+                "fine_sviluppo": "2016",
+                "versione": "1.2",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Zanca, Chiarin",
+                "note": ""
+            },
+            "team_perso_bot_model_core": {
+                "tipo_progetto": "AI",
+                "descrizione_progetto": "Core di tutti i nostri bot",
+                "capo_progetto": "Orfei",
+                "tipo_gestione": "Collaborazione",
+                "link_repo": "https://github.com/teamperso/Bot.git",
+                "inizio_sviluppo": "2016",
+                "fine_sviluppo": "In Corso",
+                "versione": "Beta",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Orfei, Nunzio",
+                "note": "Al momento non sono Hostati"
+            },
+            "project_volley": {
+                "tipo_progetto": "App",
+                "descrizione_progetto": "Applicazione di pallavolo per la gestione di partite",
+                "capo_progetto": "Zanca",
+                "tipo_gestione": "Interno",
+                "link_repo": "https://github.com/teamperso/Volley-Scout.git",
+                "inizio_sviluppo": "2016",
+                "fine_sviluppo": "In corso",
+                "versione": "Da vedere",
+                "supporto": "Si",
+                "come_procede": "Fermo",
+                "membri": "Lucchi, Zanca",
+                "note": ""
+            },
+            "project_website": {
+                "tipo_progetto": "Sito",
+                "descrizione_progetto": "Sito web del Team Perso",
+                "capo_progetto": "Pippo",
+                "tipo_gestione": "Interna",
+                "link_repo": "https://github.com/teamperso/Website.git",
+                "inizio_sviluppo": "Gennaio 2017",
+                "fine_sviluppo": "8/02/2017",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Procede",
+                "membri": "Pippo, Lucchi",
+                "note": ""
+            },
+            "project_parse": {
+                "tipo_progetto": "Programma",
+                "descrizione_progetto": "Editor/Generatore di file Json e in futuro XML che fornisce una visione ad albero del file, con la possibilità di editarlo e aggiungerne componenti. Sviluppato in Electron",
+                "capo_progetto": "Fantinato",
+                "tipo_gestione": "Collaborazione",
+                "link_repo": "https://github.com/teamperso/Project-Parse.git",
+                "inizio_sviluppo": "Febbraio 2017",
+                "fine_sviluppo": "In corso",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Greggio, Fantinato",
+                "note": ""
+            },
+            "project_ziz": {
+                "tipo_progetto": "Bot",
+                "descrizione_progetto": "Bot ad utilizzo interno, che spiega dettagli riguardanti team, progetti e altro",
+                "capo_progetto": "Orfei",
+                "tipo_gestione": "Interna",
+                "link_repo": "https://github.com/teamperso/Project-Ziz.git",
+                "inizio_sviluppo": "Marzo 2017",
+                "fine_sviluppo": "Da vedere",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Orfei, Nunzio",
+                "note": ""
+            },
+            "project_deaf": {
+                "tipo_progetto": "App",
+                "descrizione_progetto": "Applicazione per persone non udenti",
+                "capo_progetto": "Lucchi",
+                "tipo_gestione": "Interna",
+                "link_repo": "https://github.com/teamperso/Project-Deaf.git",
+                "inizio_sviluppo": "Marzo 2017",
+                "fine_sviluppo": "Da vedere",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Lucchi, Zanca",
+                "note": ""
+            },
+            "utilities": {
+                "tipo_progetto": "All",
+                "descrizione_progetto": "Repository per le Utility in .NET Standard e Node.js",
+                "capo_progetto": "Lucchi",
+                "tipo_gestione": "Interna",
+                "link_repo": "https://github.com/teamperso/Utilities.git",
+                "inizio_sviluppo": "Marzo 2017",
+                "fine_sviluppo": "Indefinito",
+                "versione": "1.0",
+                "supporto": "Si",
+                "come_procede": "Bene",
+                "membri": "Tutti",
+                "note": ""
+            }
+        },
+        "membri": {
+            "lucchi": {
+                "mail": "manuelelucchi@live.com",
+                "username_github": "manuelelucchi",
+                "nickname": "L",
+                "specialita": [
+                    ".NET",
+                    "UWP",
+                    "ASP.NET Core",
+                    "Mixed Reality",
+                    "Xamarin"
+                ],
+                "progetti_assegnati": [
+                    "Project Deaf"
+                ],
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Chief .NET"
+            },
+            "zancanaro": {
+                "mail": "marco.zancanaro123@outlook.com",
+                "username_github": "marcoZ",
+                "nickname": "Wemmark",
+                "specialita": [
+                    "UWP",
+                    ".NET",
+                    "Xamarin"
+                ],
+                "progetti_assegnati": [
+                    "Project Volley"
+                ],
+                "progetti_mantenere": [
+                    "Fast-Ink",
+                    "Utilities"
+                ],
+                "ruolo": ".NET developer"
+            },
+            "orfei": {
+                "mail": "samuele.orfei@outlook.it",
+                "username_github": "fufoed",
+                "nickname": "Fei",
+                "specialita": [
+                    "Bot",
+                    "Cortana Skills",
+                    "AI"
+                ],
+                "progetti_assegnati": [
+                    "Project Ziz"
+                ],
+                "progetti_mantenere": [
+                    "Team Perso Bot Model Core",
+                    "Utilities"
+                ],
+                "ruolo": "Chief AI Officer"
+            },
+            "fantinato": {
+                "mail": "fantinato.filippo99@gmail.com",
+                "username_github": "filippofantinato",
+                "nickname": "pippo",
+                "specialita": [
+                    "Electron",
+                    "Websites"
+                ],
+                "progetti_assegnati": [
+                    "Project Website",
+                    "Project Parse"
+                ],
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Chief Programs & Web"
+            },
+            "greggio": {
+                "mail": "nico.greggio@gmail.com",
+                "username_github": "faesant",
+                "nickname": "greg",
+                "specialita": [],
+                "progetti_assegnati": [],
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Developer"
+            },
+            "quinto": {
+                "mail": "tommaso.quinto@live.it",
+                "username_github": "tommasoquinto",
+                "nickname": "Tommy",
+                "specialita": [],
+                "progetti_assegnati": [
+                    "Multiplatform Electron"
+                ],
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Developer"
+            },
+            "chiarin": {
+                "mail": "marco.chiarin1999@gmail.com",
+                "username_github": "justpanda",
+                "nickname": "panda",
+                "specialita": [],
+                "progetti_assegnati": [],
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Developer"
+            },
+            "nunzio": {
+                "mail": "nunzio22598@gmail.com",
+                "username_github": "Nunzio22",
+                "nickname": "nuccio",
+                "specialita": [],
+                "argomenti_da_imparare": [],
+                "progetti_assegnati": [],
+                "progetti_mantenere": [
+                    "Utilities"
+                ],
+                "ruolo": "Developer"
+            }
+        }
+    }
+}

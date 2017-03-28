@@ -1,0 +1,20 @@
+{
+    "books":{
+        "deep learning":[
+            "CNTK Book",
+            "Deep Learning"
+        ],
+        "azure":[
+
+        ],
+        "node":[
+
+        ],
+        ".net":[
+
+        ],
+        "web":[
+
+        ]
+    }
+}

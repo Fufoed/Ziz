@@ -1,0 +1,63 @@
+{
+    "roadmap":{
+        "continue":{
+            "lucchi":[
+                "Mantenimento Utilities.Net",
+                "Mantenimento Utilities.CNTK"
+            ],
+            "orfei":[
+                "Mantenimento Utilities.Node",
+                "Mantenimento Utilities.CNTK"
+            ],
+            "pippo":[
+                "Mantentimento Utilities.Web"
+            ],
+            "greggio":[
+                "Mantentimento Utilities.Node"
+            ],
+            "zancanaro":[
+                "Mantenimento Fast Ink",
+                "Mantenimento Utilities.Net"
+            ]
+        },
+        "presents":{
+            "lucchi":[
+                "Research.Net.UWP.BotChat"
+            ],
+            "orfei":[
+                "Project Ziz",
+                "RELU Core"
+            ],
+            "pippo":[
+                "Website"
+            ],
+            "greggio":[
+                "Project Parse"
+            ],
+            "zancanaro":[
+
+            ]
+        },
+        "future":{
+            "lucchi":[
+                "Docker",
+                "CNTK",
+                "Research.Net.Xamarin.BotChat"
+            ],
+            "orfei":[
+                "Medical Bot",
+                "CNTK"
+            ],
+            "pippo":[
+                "Research.Web.BotChat"
+            ],
+            "greggio":[
+                "Research.Node.BotChat"
+            ],
+            "zancanaro":[
+                "Microsoft Graph",
+                "Unit Test"
+            ]
+        }
+    }
+}
