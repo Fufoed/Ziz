@@ -18,7 +18,11 @@ var promise = require('../Node.js/node_modules/promise');
 
 var path = require('path');
 
-var data = require('../Database/database.json');
+var easterEgg = require('../Database - New/EasterEgg.json');
+
+var works = require('../Database - New/Projects');
+
+var persone = require('../Database - New/Members');
 
 //var pack = require('./package.json');
 
@@ -42,8 +46,8 @@ server.listen(process.env.port || process.env.PORT || 3978,
 
 var bullshit = [];
 
-for (var i = 0; i < data.database.Easter_Egg.length; i++) {
-    bullshit[i] = data.database.Easter_Egg[i];
+for (var i = 0; i < easterEgg.easter_egg.length; i++) {
+    bullshit[i] = easterEgg.easter_egg[i];
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------
@@ -237,67 +241,67 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 })
             }
             if (TPBMC) {
-                var TPBMCTemp = getTPBMCInformation(session, data);
+                var TPBMCTemp = getTPBMCInformation(session, works);
                 session.send(TPBMCTemp);
             }
             if (website) {
-                var WebTemp = getWebsiteInformation(session, data);
+                var WebTemp = getWebsiteInformation(session, works);
                 session.send(WebTemp);
             }
             if (fast_ink) {
-                var FastTemp = getFastInkInformation(session, data);
+                var FastTemp = getFastInkInformation(session, works);
                 session.send(FastTemp);
             }
             if (volley) {
-                var VolleyTemp = getVolleyInformation(session, data);
+                var VolleyTemp = getVolleyInformation(session, works);
                 session.send(VolleyTemp);
             }
             if (parse) {
-                var ParseTemp = getParseInformation(session, data);
+                var ParseTemp = getParseInformation(session, works);
                 session.send(ParseTemp);
             }
             if (deaf) {
-                var DeafTemp = getDeafInformation(session, data);
+                var DeafTemp = getDeafInformation(session, works);
                 session.send(DeafTemp);
             }
             if (utilities) {
-                var UtilitiesTemp = getUtilitiesInformation(session, data);
+                var UtilitiesTemp = getUtilitiesInformation(session, works);
                 session.send(UtilitiesTemp);
             }
             if (ziz) {
-                var ZizTemp = getZizInformation(session, data);
+                var ZizTemp = getZizInformation(session, works);
                 session.send(ZizTemp);
             }
             if (fantinato) {
-                var FantinatoTemp = getFantinatoInformation(session, data);
+                var FantinatoTemp = getFantinatoInformation(session, persone);
                 session.send(FantinatoTemp);
             }
             if (quinto) {
-                var QuintoTemp = getQuintoInformation(session, data);
+                var QuintoTemp = getQuintoInformation(session, persone);
                 session.send(QuintoTemp);
             }
             if (greggio) {
-                var GreggioTemp = getGreggioInformation(session, data);
+                var GreggioTemp = getGreggioInformation(session, persone);
                 session.send(GreggioTemp);
             }
             if (orfei) {
-                var OrfeiTemp = getOrfeiInformation(session, data);
+                var OrfeiTemp = getOrfeiInformation(session, persone);
                 session.send(OrfeiTemp);
             }
             if (lucchi) {
-                var LucchiTemp = getLucchiInformation(session, data);
+                var LucchiTemp = getLucchiInformation(session, persone);
                 session.send(LucchiTemp);
             }
             if (nunzio) {
-                var NunzioTemp = getNunzioInformation(session, data);
+                var NunzioTemp = getNunzioInformation(session, persone);
                 session.send(NunzioTemp);
             }
             if (chiarin) {
-                var ChiarinTemp = getChiarinInformation(session, data);
+                var ChiarinTemp = getChiarinInformation(session, persone);
                 session.send(ChiarinTemp);
             }
             if (zancanaro) {
-                var ZancanaroTemp = getZancanaroInformation(session, data);
+                var ZancanaroTemp = getZancanaroInformation(session, persone);
                 session.send(ZancanaroTemp);
             }
             if (easter_egg) {
@@ -305,236 +309,236 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 session.send(BullshitTemp);
             }
             if (nunzio && role) {
-                var NunzioRole = getNunzioRole(session, data);
+                var NunzioRole = getNunzioRole(session, persone);
                 session.send(NunzioRole);
             }
             if (fantinato && role) {
-                var FantinatoRole = getFantinatoRole(session, data);
+                var FantinatoRole = getFantinatoRole(session, persone);
                 session.send(FantinatoRole);
             }
             if (quinto && role) {
-                var QuintoRole = getQuintoRole(session, data);
+                var QuintoRole = getQuintoRole(session, persone);
                 session.send(QuintoRole);
             }
             if (greggio && role) {
-                var GreggioRole = getGreggioRole(session, data);
+                var GreggioRole = getGreggioRole(session, persone);
                 session.send(GreggioRole);
             }
             if (chiarin && role) {
-                var ChiarinRole = getChiarinRole(session, data);
+                var ChiarinRole = getChiarinRole(session, persone);
                 session.send(ChiarinRole);
             }
             if (zancanaro && role) {
-                var ZancanaroRole = getZancanaroRole(session, data);
+                var ZancanaroRole = getZancanaroRole(session, persone);
                 session.send(ZancanaroRole);
             }
             if (lucchi && role) {
-                var LucchiRole = getLucchiRole(session, data);
+                var LucchiRole = getLucchiRole(session, persone);
                 session.send(LucchiRole);
             }
             if (orfei && role) {
-                var OrfeiRole = getOrfeiRole(session, data);
+                var OrfeiRole = getOrfeiRole(session, persone);
                 session.send(OrfeiRole);
             }
             if (nunzio && responsability) {
-                var NunzioRes = getNunzioResponsability(session, data);
+                var NunzioRes = getNunzioResponsability(session, persone);
                 session.send(NunzioRes);
             }
             if (fantinato && responsability) {
-                var FantinatoRes = getFantinatoResponsability(session, data);
+                var FantinatoRes = getFantinatoResponsability(session, persone);
                 session.send(FantinatoRes);
             }
             if (quinto && responsability) {
-                var QuintoRes = getQuintoResponsability(session, data);
+                var QuintoRes = getQuintoResponsability(session, persone);
                 session.send(QuintoRes);
             }
             if (greggio && responsability) {
-                var GreggioRes = getGreggioResponsability(session, data);
+                var GreggioRes = getGreggioResponsability(session, persone);
                 session.send(GreggioRes);
             }
             if (chiarin && responsability) {
-                var ChiarinRes = getChiarinResponsability(session, data);
+                var ChiarinRes = getChiarinResponsability(session, persone);
                 session.send(ChiarinRes);
             }
             if (zancanaro && responsability) {
-                var ZancanaroRes = getZancanaroResponsability(session, data);
+                var ZancanaroRes = getZancanaroResponsability(session, persone);
                 session.send(ZancanaroRes);
             }
             if (lucchi && responsability) {
-                var LucchiRes = getLucchiResponsability(session, data);
+                var LucchiRes = getLucchiResponsability(session, persone);
                 session.send(LucchiRes);
             }
             if (orfei && responsability) {
-                var OrfeiRes = getOrfeiResponsability(session, data);
+                var OrfeiRes = getOrfeiResponsability(session, persone);
                 session.send(OrfeiRes);
             }
             if (nunzio && mail) {
-                var NunzioMail = getNunzioMail(session, data);
+                var NunzioMail = getNunzioMail(session, persone);
                 session.send(NunzioMail);
             }
             if (fantinato && mail) {
-                var FantinatoMail = getFantinatoMail(session, data);
+                var FantinatoMail = getFantinatoMail(session, persone);
                 session.send(FantinatoMail);
             }
             if (quinto && mail) {
-                var QuintoMail = getQuintoMail(session, data);
+                var QuintoMail = getQuintoMail(session, persone);
                 session.send(QuintoMail);
             }
             if (greggio && mail) {
-                var GreggioMail = getGreggioMail(session, data);
+                var GreggioMail = getGreggioMail(session, persone);
                 session.send(GreggioMail);
             }
             if (chiarin && mail) {
-                var ChiarinMail = getChiarinMail(session, data);
+                var ChiarinMail = getChiarinMail(session, persone);
                 session.send(ChiarinMail);
             }
             if (zancanaro && mail) {
-                var ZancanaroMail = getZancanaroMail(session, data);
+                var ZancanaroMail = getZancanaroMail(session, persone);
                 session.send(ZancanaroMail);
             }
             if (lucchi && mail) {
-                var LucchiMail = getLucchiMail(session, data);
+                var LucchiMail = getLucchiMail(session, persone);
                 session.send(LucchiMail);
             }
             if (orfei && mail) {
-                var OrfeiMail = getOrfeiMail(session, data);
+                var OrfeiMail = getOrfeiMail(session, persone);
                 session.send(OrfeiMail);
             }
             if (nunzio && total_project) {
-                var NunzioProjects = getNunzioProjects(session, data);
+                var NunzioProjects = getNunzioProjects(session, persone, works);
                 session.send(NunzioProjects);
             }
             if (fantinato && total_project) {
-                var FantinatoProjects = getFantinatoProjects(session, data);
+                var FantinatoProjects = getFantinatoProjects(session, persone, works);
                 session.send(FantinatoProjects);
             }
             if (quinto && total_project) {
-                var QuintoProjects = getQuintoProjects(session, data);
+                var QuintoProjects = getQuintoProjects(session, persone, works);
                 session.send(QuintoProjects);
             }
             if (greggio && total_project) {
-                var GreggioProjects = getGreggioProjects(session, data);
+                var GreggioProjects = getGreggioProjects(session, persone, works);
                 session.send(GreggioProjects);
             }
             if (chiarin && total_project) {
-                var ChiarinProjects = getChiarinProjects(session, data);
+                var ChiarinProjects = getChiarinProjects(session, persone, works);
                 session.send(ChiarinProjects);
             }
             if (zancanaro && total_project) {
-                var ZancanaroProjects = getZancanaroProjects(session, data);
+                var ZancanaroProjects = getZancanaroProjects(session, persone, works);
                 session.send(ZancanaroProjects);
             }
             if (lucchi && total_project) {
-                var LucchiProjects = getLucchiProjects(session, data);
+                var LucchiProjects = getLucchiProjects(session, persone, works);
                 session.send(LucchiProjects);
             }
             if (orfei && total_project) {
-                var OrfeiProject = getOrfeiProjects(session, data);
+                var OrfeiProject = getOrfeiProjects(session, persone, works);
                 session.send(OrfeiProject);
             }
             if (ziz && responsability) {
-                var ZizGestioneTemp = getZizGestione(session, data);
+                var ZizGestioneTemp = getZizGestione(session, persone, works);
                 session.send(ZizGestioneTemp);
             }
             if (parse && responsability) {
-                var ParseGestioneTemp = getElectronGestione(session, data);
+                var ParseGestioneTemp = getElectronGestione(session, persone, works);
                 session.send(ParseGestioneTemp);
             }
             if (website && responsability) {
-                var WebGestioneTemp = getWebsiteGestione(session, data);
+                var WebGestioneTemp = getWebsiteGestione(session, persone, works);
                 session.send(WebGestioneTemp);
             }
             if (volley && responsability) {
-                var VolleyGestioneTemp = getVolleyGestione(session, data);
+                var VolleyGestioneTemp = getVolleyGestione(session, persone, works);
                 session.send(VolleyGestioneTemp);
             }
             if (fast_ink && responsability) {
-                var FastInkGestioneTemp = getFastInkGestione(session, data);
+                var FastInkGestioneTemp = getFastInkGestione(session, persone, works);
                 session.send(FastInkGestioneTemp);
             }
             if (TPBMC && responsability) {
-                var TPBMCGestioneTemp = getTPBMCGestione(session, data);
+                var TPBMCGestioneTemp = getTPBMCGestione(session, persone, works);
                 session.send(TPBMCGestioneTemp);
             }
             if (deaf && responsability) {
-                var DeafGestioneTemp = getDeafGestione(session, data);
+                var DeafGestioneTemp = getDeafGestione(session, persone, works);
                 session.send(DeafGestioneTemp);
             }
             if (utilities && responsability) {
-                var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+                var UtilitiesGestioneTemp = getUtilitiesGestione(session, persone, works);
                 session.send(UtilitiesGestioneTemp);
             }
             if (TPBMC && find) {
-                var TPBMCTemp = getTPBMCFind(session, data);
+                var TPBMCTemp = getTPBMCFind(session, works);
                 session.send(TPBMCTemp);
             }
             if (website && find) {
-                var WebTemp = getWebsiteFind(session, data);
+                var WebTemp = getWebsiteFind(session, works);
                 session.send(WebTemp);
             }
             if (fast_ink && find) {
-                var FastTemp = getFastInkFind(session, data);
+                var FastTemp = getFastInkFind(session, works);
                 session.send(FastTemp);
             }
             if (volley && find) {
-                var VolleyTemp = getVolleyFind(session, data);
+                var VolleyTemp = getVolleyFind(session, works);
                 session.send(VolleyTemp);
             }
             if (parse && find) {
-                var ParseTemp = getParseFind(session, data);
+                var ParseTemp = getParseFind(session, works);
                 session.send(ParseTemp);
             }
             if (deaf && find) {
-                var DeafTemp = getDeafFind(session, data);
+                var DeafTemp = getDeafFind(session, works);
                 session.send(DeafTemp);
             }
             if (utilities && find) {
-                var UtilitiesTemp = getUtilitiesFind(session, data);
+                var UtilitiesTemp = getUtilitiesFind(session, works);
                 session.send(UtilitiesTemp);
             }
             if (ziz && find) {
-                var ZizTemp = getZizFind(session, data);
+                var ZizTemp = getZizFind(session, works);
                 session.send(ZizTemp);
             }
             if (orfei && lucchi) {
-                var OrfeiTemp = getOrfeiInformation(session, data);
-                var LucchiTemp = getLucchiInformation(session, data);
+                var OrfeiTemp = getOrfeiInformation(session, persone);
+                var LucchiTemp = getLucchiInformation(session, persone);
                 session.send(OrfeiTemp);
                 session.send(LucchiTemp);
             }
             if (orfei && fantinato) {
-                var OrfeiTemp = getOrfeiInformation(session, data);
-                var FantinatoTemp = getFantinatoInformation(session, data);
+                var OrfeiTemp = getOrfeiInformation(session, persone);
+                var FantinatoTemp = getFantinatoInformation(session, persone);
                 session.send(OrfeiTemp);
                 session.send(FantinatoTemp);
             }
             if (orfei && zancanaro) {
-                var OrfeiTemp = getOrfeiInformation(session, data);
-                var ZancanaroTemp = getZancanaroInformation(session, data);
+                var OrfeiTemp = getOrfeiInformation(session, persone);
+                var ZancanaroTemp = getZancanaroInformation(session, persone);
                 session.send(OrfeiTemp);
                 session.send(ZancanaroTemp);
             }
             if (orfei && chiarin) {
-                var OrfeiTemp = getOrfeiInformation(session, data);
-                var ChiarinTemp = getChiarinInformation(session, data);
+                var OrfeiTemp = getOrfeiInformation(session, persone);
+                var ChiarinTemp = getChiarinInformation(session, persone);
                 session.send(OrfeiTemp);
                 session.send(ChiarinTemp);
             }
             if (orfei && greggio) {
-                var OrfeiTemp = getOrfeiInformation(session, data);
-                var GreggioTemp = getGreggioInformation(session, data);
+                var OrfeiTemp = getOrfeiInformation(session, persone);
+                var GreggioTemp = getGreggioInformation(session, persone);
                 session.send(OrfeiTemp);
                 session.send(GreggioTemp);
             }
             if (orfei && quinto) {
-                var OrfeiTemp = getOrfeiInformation(session, data);
-                var QuintoTemp = getQuintoInformation(session, data);
+                var OrfeiTemp = getOrfeiInformation(session, persone);
+                var QuintoTemp = getQuintoInformation(session, persone);
                 session.send(OrfeiTemp);
                 session.send(QuintoTemp);
             }
             if (orfei && nunzio) {
-                var OrfeiTemp = getOrfeiInformation(session, data);
-                var NunzioTemp = getNunzioInformation(session, data);
+                var OrfeiTemp = getOrfeiInformation(session, persone);
+                var NunzioTemp = getNunzioInformation(session, persone);
                 session.send(OrfeiTemp);
                 session.send(NunzioTemp);
             }
@@ -778,82 +782,82 @@ bot.dialog('TotalProjectTemp', [
     function(session, results) {
         switch (results.response) {
             case "informazioni sul progetto parse":
-                var ParseTemp = getParseInformation(session, data);
+                var ParseTemp = getParseInformation(session, works);
                 session.send(ParseTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto parse":
-                var ParseGestioneTemp = getParseGestione(session, data);
+                var ParseGestioneTemp = getParseGestione(session, works);
                 session.send(ParseGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto deaf":
-                var DeafTemp = getDeafInformation(session, data);
+                var DeafTemp = getDeafInformation(session, works);
                 session.send(DeafTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto deaf":
-                var DeafGestioneTemp = getDeafGestione(session, data);
+                var DeafGestioneTemp = getDeafGestione(session, works);
                 session.send(DeafGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni su utilities":
-                var UtilitiesTemp = getUtilitiesInformation(session, data);
+                var UtilitiesTemp = getUtilitiesInformation(session, works);
                 session.send(UtilitiesTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione di utilities":
-                var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+                var UtilitiesGestioneTemp = getUtilitiesGestione(session, works);
                 session.send(UtilitiesGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul team perso bot model core":
-                var TPBMCTemp = getTPBMCInformation(session, data);
+                var TPBMCTemp = getTPBMCInformation(session, works);
                 session.send(TPBMCTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del team perso bot model core":
-                var TPBMCGestioneTemp = getTPBMCGestione(session, data);
+                var TPBMCGestioneTemp = getTPBMCGestione(session, works);
                 session.send(TPBMCGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto ziz":
-                var ZizTemp = getZizInformation(session, data);
+                var ZizTemp = getZizInformation(session, works);
                 session.send(ZizTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto ziz":
-                var ZizGestioneTemp = getZizGestione(session, data);
+                var ZizGestioneTemp = getZizGestione(session, works);
                 session.send(ZizGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto volley":
-                var VolleyTemp = getVolleyInformation(session, data);
+                var VolleyTemp = getVolleyInformation(session, works);
                 session.send(VolleyTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto volley":
-                var VolleyGestioneTemp = getVolleyGestione(session, data);
+                var VolleyGestioneTemp = getVolleyGestione(session, works);
                 session.send(VolleyGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni su fast ink":
-                var FastInkTemp = getFastInkInformation(session, data);
+                var FastInkTemp = getFastInkInformation(session, works);
                 session.send(FastInkTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione di fast ink":
-                var FastInkGestioneTemp = getFastInkGestione(session, data);
+                var FastInkGestioneTemp = getFastInkGestione(session, works);
                 session.send(FastInkGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto website":
-                var WebTemp = getWebsiteInformation(session, data);
+                var WebTemp = getWebsiteInformation(session, works);
                 session.send(WebTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto website":
-                var WebGestioneTemp = getWebsiteGestione(session, data);
+                var WebGestioneTemp = getWebsiteGestione(session, works);
                 session.send(WebGestioneTemp);
                 session.beginDialog('Root');
                 break;
@@ -876,82 +880,82 @@ bot.dialog('TotalProject', new botbuilder.IntentDialog({
             var TPBMC = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::tpbmc');
 
             if (ziz) {
-                var ZizTemp = getZizInformation(session, data);
+                var ZizTemp = getZizInformation(session, works);
                 session.send(ZizTemp);
                 session.beginDialog('Root');
             }
             if (deaf) {
-                var DeafTemp = getDeafInformation(session, data);
+                var DeafTemp = getDeafInformation(session, works);
                 session.send(DeafTemp);
                 session.beginDialog('Root');
             }
             if (utilities) {
-                var UtilitiesTemp = getUtilitiesInformation(session, data);
+                var UtilitiesTemp = getUtilitiesInformation(session, works);
                 session.send(UtilitiesTemp);
                 session.beginDialog('Root');
             }
             if (parse) {
-                var ParseTemp = getParseInformation(session, data);
+                var ParseTemp = getParseInformation(session, works);
                 session.send(ParseTemp);
                 session.beginDialog('Root');
             }
             if (website) {
-                var WebTemp = getWebsiteInformation(session, data);
+                var WebTemp = getWebsiteInformation(session, works);
                 session.send(WebTemp);
                 session.beginDialog('Root');
             }
             if (ziz && responsability) {
-                var ZizGestioneTemp = getZizGestione(session, data);
+                var ZizGestioneTemp = getZizGestione(session, works);
                 session.send(ZizGestioneTemp);
                 session.beginDialog('Root');
             }
             if (parse && responsability) {
-                var ParseGestioneTemp = getElectronGestione(session, data);
+                var ParseGestioneTemp = getElectronGestione(session, works);
                 session.send(ParseGestioneTemp);
                 session.beginDialog('Root');
             }
             if (website && responsability) {
-                var WebGestioneTemp = getWebsiteGestione(session, data);
+                var WebGestioneTemp = getWebsiteGestione(session, works);
                 session.send(WebGestioneTemp);
                 session.beginDialog('Root');
             }
             if (volley) {
-                var VolleyTemp = getVolleyInformation(session, data);
+                var VolleyTemp = getVolleyInformation(session, works);
                 session.send(VolleyTemp);
                 session.beginDialog('Root');
             }
             if (fast_ink) {
-                var FastInkTemp = getFastInkInformation(session, data);
+                var FastInkTemp = getFastInkInformation(session, works);
                 session.send(FastInkTemp);
                 session.beginDialog('Root');
             }
             if (TPBMC) {
-                var TPBMCTemp = getTPBMCInformation(session, data);
+                var TPBMCTemp = getTPBMCInformation(session, works);
                 session.send(TPBMCTemp);
                 session.beginDialog('Root');
             }
             if (volley && responsability) {
-                var VolleyGestioneTemp = getVolleyGestione(session, data);
+                var VolleyGestioneTemp = getVolleyGestione(session, works);
                 session.send(VolleyGestioneTemp);
                 session.beginDialog('Root');
             }
             if (fast_ink && responsability) {
-                var FastInkGestioneTemp = getFastInkGestione(session, data);
+                var FastInkGestioneTemp = getFastInkGestione(session, works);
                 session.send(FastInkGestioneTemp);
                 session.beginDialog('Root');
             }
             if (TPBMC && responsability) {
-                var TPBMCGestioneTemp = getTPBMCGestione(session, data);
+                var TPBMCGestioneTemp = getTPBMCGestione(session, works);
                 session.send(TPBMCGestioneTemp);
                 session.beginDialog('Root');
             }
             if (deaf && responsability) {
-                var DeafGestioneTemp = getDeafGestione(session, data);
+                var DeafGestioneTemp = getDeafGestione(session, works);
                 session.send(DeafGestioneTemp);
                 session.beginDialog('Root');
             }
             if (utilities && responsability) {
-                var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+                var UtilitiesGestioneTemp = getUtilitiesGestione(session, works);
                 session.send(UtilitiesGestioneTemp);
                 session.beginDialog('Root');
             }
@@ -1061,42 +1065,42 @@ bot.dialog('AllRoleTemp', [
     function(session, results) {
         switch (results.response) {
             case 'ruolo di orfei':
-                var OrfeiRole = getOrfeiRole(session, data);
+                var OrfeiRole = getOrfeiRole(session, persone);
                 session.send(OrfeiRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di lucchi':
-                var LucchiRole = getLucchiRole(session, data);
+                var LucchiRole = getLucchiRole(session, persone);
                 session.send(LucchiRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di zancanaro':
-                var ZancanaroRole = getZancanaroRole(session, data);
+                var ZancanaroRole = getZancanaroRole(session, persone);
                 session.send(ZancanaroRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di fantinato':
-                var FantinatoRole = getFantinatoRole(session, data);
+                var FantinatoRole = getFantinatoRole(session, persone);
                 session.send(FantinatoRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di chiarin':
-                var ChiarinRole = getChiarinRole(session, data);
+                var ChiarinRole = getChiarinRole(session, persone);
                 session.send(ChiarinRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di quinto':
-                var QuintoRole = getQuintoRole(session, data);
+                var QuintoRole = getQuintoRole(session, persone);
                 session.send(QuintoRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di greggio':
-                var GreggioRole = getGreggioRole(session, data);
+                var GreggioRole = getGreggioRole(session, persone);
                 session.send(GreggioRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di nunzio':
-                var NunzioRole = getNunzioRole(session, data);
+                var NunzioRole = getNunzioRole(session, persone);
                 session.send(NunzioRole);
                 session.beginDialog('Root');
                 break;
@@ -1118,42 +1122,42 @@ bot.dialog('AllRole', new botbuilder.IntentDialog({
             var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
             var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
             if (nunzio) {
-                var NunzioRole = getNunzioRole(session, parsed);
+                var NunzioRole = getNunzioRole(session, persone);
                 session.send(NunzioRole);
                 session.beginDialog('Root');
             }
             if (fantinato) {
-                var FantinatoRole = getFantinatoRole(session, data);
+                var FantinatoRole = getFantinatoRole(session, persone);
                 session.send(FantinatoRole);
                 session.beginDialog('Root');
             }
             if (quinto) {
-                var QuintoRole = getQuintoRole(session, data);
+                var QuintoRole = getQuintoRole(session, persone);
                 session.send(QuintoRole);
                 session.beginDialog('Root');
             }
             if (greggio) {
-                var GreggioRole = getGreggioRole(session, data);
+                var GreggioRole = getGreggioRole(session, persone);
                 session.send(GreggioRole);
                 session.beginDialog('Root');
             }
             if (chiarin) {
-                var ChiarinRole = getChiarinRole(session, data);
+                var ChiarinRole = getChiarinRole(session, persone);
                 session.send(ChiarinRole);
                 session.beginDialog('Root');
             }
             if (zancanaro) {
-                var ZancanaroRole = getZancanaroRole(session, data);
+                var ZancanaroRole = getZancanaroRole(session, persone);
                 session.send(ZancanaroRole);
                 session.beginDialog('Root');
             }
             if (lucchi) {
-                var LucchiRole = getLucchiRole(session, data);
+                var LucchiRole = getLucchiRole(session, persone);
                 session.send(LucchiRole);
                 session.beginDialog('Root');
             }
             if (orfei) {
-                var OrfeiRole = getOrfeiRole(session, data);
+                var OrfeiRole = getOrfeiRole(session, persone);
                 session.send(OrfeiRole);
                 session.beginDialog('Root');
             }
@@ -1180,195 +1184,195 @@ bot.dialog('AllPeopleTemp', [
     function(session, results) {
         switch (results.response) {
             case "ruolo di orfei":
-                var OrfeiRuolo = getOrfeiRole(session, data);
+                var OrfeiRuolo = getOrfeiRole(session, persone);
                 session.send(OrfeiRuolo);
                 session.beginDialog('Root');
                 break;
             case "informazioni su orfei":
-                var OrfeiInformazioni = getOrfeiInformation(session, data);
+                var OrfeiInformazioni = getOrfeiInformation(session, persone);
                 session.send(OrfeiInformazioni);
                 session.beginDialog('Root');
                 break;
             case "responsabilità di orfei":
-                var OrfeiRes = getOrfeiResponsability(session, data);
+                var OrfeiRes = getOrfeiResponsability(session, persone);
                 session.send(OrfeiRes);
                 session.beginDialog('Root');
                 break;
             case "progetti di orfei":
-                var OrfeiProject = getOrfeiProjects(session, data);
+                var OrfeiProject = getOrfeiProjects(session, persone, works);
                 session.send(OrfeiProject);
                 session.beginDialog('Root');
                 break;
             case "email di orfei":
-                var OrfeiMail = getOrfeiMail(session, data);
+                var OrfeiMail = getOrfeiMail(session, persone);
                 session.send(OrfeiMail);
                 break;
             case "ruolo di lucchi":
-                var LucchiRuolo = getLucchiRole(session, data);
+                var LucchiRuolo = getLucchiRole(session, persone);
                 session.send(LucchiRuolo);
                 session.beginDialog('Root');
                 break;
             case "informazioni su lucchi":
-                var LucchiInformazioni = getLucchiInformation(session, data);
+                var LucchiInformazioni = getLucchiInformation(session, persone);
                 session.send(LucchiInformazioni);
                 session.beginDialog('Root');
                 break;
             case "responsabilità di lucchi":
-                var LucchiRes = getLucchiResponsability(session, data);
+                var LucchiRes = getLucchiResponsability(session, persone);
                 session.send(LucchiRes);
                 session.beginDialog('Root');
                 break;
             case "progetti di lucchi":
-                var LucchiProjects = getLucchiProjects(session, data);
+                var LucchiProjects = getLucchiProjects(session, persone, works);
                 session.send(LucchiProjects);
                 session.beginDialog('Root');
                 break;
             case "mail di lucchi":
-                var LucchiMail = getLucchiMail(session, data);
+                var LucchiMail = getLucchiMail(session, persone);
                 session.send(LucchiMail);
                 break;
             case "ruolo di zancanaro":
-                var ZancanaroRuolo = getZancanaroRole(session, data);
+                var ZancanaroRuolo = getZancanaroRole(session, persone);
                 session.send(ZancanaroRuolo);
                 session.beginDialog('Root');
                 break;
             case "informazioni su zancanaro":
-                var ZancanaroInformazioni = getZancanaroInformation(session, data);
+                var ZancanaroInformazioni = getZancanaroInformation(session, persone);
                 session.send(ZancanaroInformazioni);
                 session.beginDialog('Root');
                 break;
             case "responsabilità di zancanaro":
-                var ZancanaroRes = getZancanaroResponsability(session, data);
+                var ZancanaroRes = getZancanaroResponsability(session, persone);
                 session.send(ZancanaroRes);
                 session.beginDialog('Root');
                 break;
             case "progetti di zancanaro":
-                var ZancanaroProjects = getZancanaroProjects(session, data);
+                var ZancanaroProjects = getZancanaroProjects(session, persone, works);
                 session.send(ZancanaroProjects);
                 session.beginDialog('Root');
                 break;
             case "email di zancanaro":
-                var ZancanaroMail = getZancanaroMail(session, data);
+                var ZancanaroMail = getZancanaroMail(session, persone);
                 session.send(ZancanaroMail);
                 break;
             case "ruolo di fantinato":
-                var FantinatoRuolo = getFantinatoRole(session, data);
+                var FantinatoRuolo = getFantinatoRole(session, persone);
                 session.send(FantinatoRuolo);
                 session.beginDialog('Root');
                 break;
             case "informazioni su fantinato":
-                var FantinatoInformazioni = getFantinatoInformation(session, data);
+                var FantinatoInformazioni = getFantinatoInformation(session, persone);
                 session.send(FantinatoInformazioni);
                 session.beginDialog('Root');
                 break;
             case "responsabilità di fantinato":
-                var FantinatoRes = getFantinatoResponsability(session, data);
+                var FantinatoRes = getFantinatoResponsability(session, persone);
                 session.send(FantinatoRes);
                 session.beginDialog('Root');
                 break;
             case "progetti di fantinato":
-                var FantinatoProjects = getFantinatoProjects(session, data);
+                var FantinatoProjects = getFantinatoProjects(session, persone, works);
                 session.send(FantinatoProjects);
                 session.beginDialog('Root');
                 break;
             case "email di fantinato":
-                var FantinatoMail = getFantinatoMail(session, data);
+                var FantinatoMail = getFantinatoMail(session, persone);
                 session.send(FantinatoMail);
                 break;
             case "ruolo di chiarin":
-                var ChiarinRuolo = getChiarinRole(session, data);
+                var ChiarinRuolo = getChiarinRole(session, persone);
                 session.send(ChiarinRuolo);
                 session.beginDialog('Root');
                 break;
             case "informazioni su chiarin":
-                var ChiarinInformazioni = getChiarinInformation(session, data);
+                var ChiarinInformazioni = getChiarinInformation(session, persone);
                 session.send(ChiarinInformazioni);
                 session.beginDialog('Root');
                 break;
             case "responsabilità di chiarin":
-                var ChiarinRes = getChiarinResponsability(session, data);
+                var ChiarinRes = getChiarinResponsability(session, persone);
                 session.send(ChiarinRes);
                 session.beginDialog('Root');
                 break;
             case "progetti di chiarin":
-                var ChiarinProjects = getChiarinProjects(session, data);
+                var ChiarinProjects = getChiarinProjects(session, persone, works);
                 session.send(ChiarinProjects);
                 session.beginDialog('Root');
                 break;
             case "email di chiarin":
-                var ChiarinMail = getChiarinMail(session, data);
+                var ChiarinMail = getChiarinMail(session, persone);
                 session.send(ChiarinMail);
                 break;
             case "ruolo di greggio":
-                var GreggioRuolo = getGreggioRole(session, data);
+                var GreggioRuolo = getGreggioRole(session, persone);
                 session.send(GreggioRuolo);
                 session.beginDialog('Root');
                 break;
             case "informazioni su greggio":
-                var GreggioInformazioni = getGreggioInformation(session, data);
+                var GreggioInformazioni = getGreggioInformation(session, persone);
                 session.send(GreggioInformazioni);
                 session.beginDialog('Root');
                 break;
             case "responsabilità di greggio":
-                var GreggioRes = getGreggioResponsability(session, data);
+                var GreggioRes = getGreggioResponsability(session, persone);
                 session.send(GreggioRes);
                 session.beginDialog('Root');
                 break;
             case "progetti di greggio":
-                var GreggioProjects = getGreggioProjects(session, data);
+                var GreggioProjects = getGreggioProjects(session, persone, works);
                 session.send(GreggioProjects);
                 session.beginDialog('Root');
                 break;
             case "email di greggio":
-                var GreggioMail = getGreggioMail(session, data);
+                var GreggioMail = getGreggioMail(session, persone);
                 session.send(GreggioMail);
                 break;
             case "ruolo di quinto":
-                var QuintoRuolo = getQuintoRole(session, data);
+                var QuintoRuolo = getQuintoRole(session, persone);
                 session.send(QuintoRuolo);
                 session.beginDialog('Root');
                 break;
             case "informazioni su quinto":
-                var QuintoInformazioni = getQuintoInformation(session, data);
+                var QuintoInformazioni = getQuintoInformation(session, persone);
                 session.send(QuintoInformazioni);
                 session.beginDialog('Root');
                 break;
             case "responsabilità di quinto":
-                var QuintoRes = getQuintoResponsability(session, data);
+                var QuintoRes = getQuintoResponsability(session, persone);
                 session.send(QuintoRes);
                 session.beginDialog('Root');
                 break;
             case "progetti di quinto":
-                var QuintoProjects = getQuintoProjects(session, data);
+                var QuintoProjects = getQuintoProjects(session, persone, works);
                 session.send(QuintoProjects);
                 session.beginDialog('Root');
                 break;
             case "email di quinto":
-                var QuintoMail = getQuintoMail(session, data);
+                var QuintoMail = getQuintoMail(session, persone);
                 session.send(QuintoMail);
                 break;
             case "ruolo di nunzio":
-                var NunzioRuolo = getNunzioRole(session, data);
+                var NunzioRuolo = getNunzioRole(session, persone);
                 session.send(NunzioRuolo);
                 session.beginDialog('Root');
                 break;
             case "informazioni su nunzio":
-                var NunzioInformazioni = getNunzioInformation(session, data);
+                var NunzioInformazioni = getNunzioInformation(session, persone);
                 session.send(NunzioInformazioni);
                 session.beginDialog('Root');
                 break;
             case "responsabilità di nunzio":
-                var QuintoRes = getNunzioResponsability(session, data);
+                var QuintoRes = getNunzioResponsability(session, persone);
                 session.send(NunzioRes);
                 session.beginDialog('Root');
                 break;
             case "progetti di nunzio":
-                var NunzioProjects = getNunzioProjects(session, data);
+                var NunzioProjects = getNunzioProjects(session, persone, works);
                 session.send(NunzioProjects);
                 session.beginDialog('Root');
                 break;
             case "email di nunzio":
-                var NunzioMail = getNunzioMail(session, data);
+                var NunzioMail = getNunzioMail(session, persone);
                 session.send(NunzioMail);
                 break;
         }
@@ -1392,167 +1396,167 @@ bot.dialog('AllPeople', new botbuilder.IntentDialog({
             var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
             var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
             if (nunzio) {
-                var NunzioTemp = getNunzioInformation(session, data);
+                var NunzioTemp = getNunzioInformation(session, persone);
                 session.send(NunzioTemp);
             }
             if (fantinato) {
-                var FantinatoTemp = getFantinatoInformation(session, data);
+                var FantinatoTemp = getFantinatoInformation(session, persone);
                 session.send(FantinatoTemp);
             }
             if (quinto) {
-                var QuintoTemp = getQuintoInformation(session, data);
+                var QuintoTemp = getQuintoInformation(session, persone);
                 session.send(QuintoTemp);
             }
             if (greggio) {
-                var GreggioTemp = getGreggioInformation(session, data);
+                var GreggioTemp = getGreggioInformation(session, persone);
                 session.send(GreggioTemp);
             }
             if (chiarin) {
-                var ChiarinTemp = getChiarinInformation(session, data);
+                var ChiarinTemp = getChiarinInformation(session, persone);
                 session.send(ChiarinTemp);
             }
             if (zancanaro) {
-                var ZancanaroTemp = getZancanaroInformation(session, data);
+                var ZancanaroTemp = getZancanaroInformation(session, persone);
                 session.send(ZancanaroTemp);
             }
             if (lucchi) {
-                var LucchiTemp = getLucchiInformation(session, data);
+                var LucchiTemp = getLucchiInformation(session, persone);
                 session.send(LucchiTemp);
             }
             if (lucchi) {
-                var LucchiTemp = getLucchiInformation(session, data);
+                var LucchiTemp = getLucchiInformation(session, persone);
                 session.send(LucchiTemp);
             }
             if (orfei) {
-                var OrfeiTemp = getOrfeiInformation(session, data);
+                var OrfeiTemp = getOrfeiInformation(session, persone);
                 session.send(OrfeiTemp);
             }
             if (nunzio && role) {
-                var NunzioRole = getNunzioRole(session, data);
+                var NunzioRole = getNunzioRole(session, persone);
                 session.send(NunzioRole);
             }
             if (fantinato && role) {
-                var FantinatoRole = getFantinatoRole(session, data);
+                var FantinatoRole = getFantinatoRole(session, persone);
                 session.send(FantinatoRole);
             }
             if (quinto && role) {
-                var QuintoRole = getQuintoRole(session, data);
+                var QuintoRole = getQuintoRole(session, persone);
                 session.send(QuintoRole);
             }
             if (greggio && role) {
-                var GreggioRole = getGreggioRole(session, data);
+                var GreggioRole = getGreggioRole(session, persone);
                 session.send(GreggioRole);
             }
             if (chiarin && role) {
-                var ChiarinRole = getChiarinRole(session, data);
+                var ChiarinRole = getChiarinRole(session, persone);
                 session.send(ChiarinRole);
             }
             if (zancanaro && role) {
-                var ZancanaroRole = getZancanaroRole(session, data);
+                var ZancanaroRole = getZancanaroRole(session, persone);
                 session.send(ZancanaroRole);
             }
             if (lucchi && role) {
-                var LucchiRole = getLucchiRole(session, data);
+                var LucchiRole = getLucchiRole(session, persone);
                 session.send(LucchiRole);
             }
             if (orfei && role) {
-                var OrfeiRole = getOrfeiRole(session, data);
+                var OrfeiRole = getOrfeiRole(session, persone);
                 session.send(OrfeiRole);
             }
             if (nunzio && responsability) {
-                var NunzioRes = getNunzioResponsability(session, data);
+                var NunzioRes = getNunzioResponsability(session, persone);
                 session.send(NunzioRes);
             }
             if (fantinato && responsability) {
-                var FantinatoRes = getFantinatoResponsability(session, data);
+                var FantinatoRes = getFantinatoResponsability(session, persone);
                 session.send(FantinatoRes);
             }
             if (quinto && responsability) {
-                var QuintoRes = getQuintoResponsability(session, data);
+                var QuintoRes = getQuintoResponsability(session, persone);
                 session.send(QuintoRes);
             }
             if (greggio && responsability) {
-                var GreggioRes = getGreggioResponsability(session, data);
+                var GreggioRes = getGreggioResponsability(session, persone);
                 session.send(GreggioRes);
             }
             if (chiarin && responsability) {
-                var ChiarinRes = getChiarinResponsability(session, data);
+                var ChiarinRes = getChiarinResponsability(session, persone);
                 session.send(ChiarinRes);
             }
             if (zancanaro && responsability) {
-                var ZancanaroRes = getZancanaroResponsability(session, data);
+                var ZancanaroRes = getZancanaroResponsability(session, persone);
                 session.send(ZancanaroRes);
             }
             if (lucchi && responsability) {
-                var LucchiRes = getLucchiResponsability(session, data);
+                var LucchiRes = getLucchiResponsability(session, persone);
                 session.send(LucchiRes);
             }
             if (orfei && responsability) {
-                var OrfeiRes = getOrfeiResponsability(session, data);
+                var OrfeiRes = getOrfeiResponsability(session, persone);
                 session.send(OrfeiRes);
             }
             if (nunzio && mail) {
-                var NunzioMail = getNunzioMail(session, data);
+                var NunzioMail = getNunzioMail(session, persone);
                 session.send(NunzioMail);
             }
             if (fantinato && mail) {
-                var FantinatoMail = getFantinatoMail(session, data);
+                var FantinatoMail = getFantinatoMail(session, persone);
                 session.send(FantinatoMail);
             }
             if (quinto && mail) {
-                var QuintoMail = getQuintoMail(session, data);
+                var QuintoMail = getQuintoMail(session, persone);
                 session.send(QuintoMail);
             }
             if (greggio && mail) {
-                var GreggioMail = getGreggioMail(session, data);
+                var GreggioMail = getGreggioMail(session, persone);
                 session.send(GreggioMail);
             }
             if (chiarin && mail) {
-                var ChiarinMail = getChiarinMail(session, data);
+                var ChiarinMail = getChiarinMail(session, persone);
                 session.send(ChiarinMail);
             }
             if (zancanaro && mail) {
-                var ZancanaroMail = getZancanaroMail(session, data);
+                var ZancanaroMail = getZancanaroMail(session, persone);
                 session.send(ZancanaroMail);
             }
             if (lucchi && mail) {
-                var LucchiMail = getLucchiMail(session, data);
+                var LucchiMail = getLucchiMail(session, persone);
                 session.send(LucchiMail);
             }
             if (orfei && mail) {
-                var OrfeiMail = getOrfeiMail(session, data);
+                var OrfeiMail = getOrfeiMail(session, persone);
                 session.send(OrfeiMail);
             }
             if (nunzio && total_project) {
-                var NunzioProjects = getNunzioProjects(session, data);
+                var NunzioProjects = getNunzioProjects(session, persone, works);
                 session.send(NunzioProjects);
             }
             if (fantinato && total_project) {
-                var FantinatoProjects = getFantinatoProjects(session, data);
+                var FantinatoProjects = getFantinatoProjects(session, persone, works);
                 session.send(FantinatoProjects);
             }
             if (quinto && total_project) {
-                var QuintoProjects = getQuintoProjects(session, data);
+                var QuintoProjects = getQuintoProjects(session, persone, works);
                 session.send(QuintoProjects);
             }
             if (greggio && total_project) {
-                var GreggioProjects = getGreggioProjects(session, data);
+                var GreggioProjects = getGreggioProjects(session, persone, works);
                 session.send(GreggioProjects);
             }
             if (chiarin && total_project) {
-                var ChiarinProjects = getChiarinProjects(session, data);
+                var ChiarinProjects = getChiarinProjects(session, persone, works);
                 session.send(ChiarinProjects);
             }
             if (zancanaro && total_project) {
-                var ZancanaroProjects = getZancanaroProjects(session, data);
+                var ZancanaroProjects = getZancanaroProjects(session, persone, works);
                 session.send(ZancanaroProjects);
             }
             if (lucchi && total_project) {
-                var LucchiProjects = getLucchiProjects(session, data);
+                var LucchiProjects = getLucchiProjects(session, persone, works);
                 session.send(LucchiProjects);
             }
             if (orfei && total_project) {
-                var OrfeiProject = getOrfeiProjects(session, data);
+                var OrfeiProject = getOrfeiProjects(session, persone, works);
                 session.send(OrfeiProject);
             }
         }
@@ -1666,52 +1670,52 @@ bot.dialog('CurrentProjectTemp', [
     function(session, results) {
         switch (results.response) {
             case "informazioni sul progetto parse":
-                var ParseTemp = getParseInformation(session, data);
+                var ParseTemp = getParseInformation(session, works);
                 session.send(ParseTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto parse":
-                var ParseGestioneTemp = getParseGestione(session, data);
+                var ParseGestioneTemp = getParseGestione(session, works);
                 session.send(ParseGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto deaf":
-                var DeafTemp = getDeafInformation(session, data);
+                var DeafTemp = getDeafInformation(session, works);
                 session.send(DeafTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto deaf":
-                var DeafGestioneTemp = getDeafGestione(session, data);
+                var DeafGestioneTemp = getDeafGestione(session, works);
                 session.send(DeafGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni su utilities":
-                var UtilitiesTemp = getUtilitiesInformation(session, data);
+                var UtilitiesTemp = getUtilitiesInformation(session, works);
                 session.send(UtilitiesTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione di utilities":
-                var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+                var UtilitiesGestioneTemp = getUtilitiesGestione(session, works);
                 session.send(UtilitiesGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto ziz":
-                var ZizTemp = getZizInformation(session, data);
+                var ZizTemp = getZizInformation(session, works);
                 session.send(ZizTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto ziz":
-                var ZizGestioneTemp = getZizGestione(session, data);
+                var ZizGestioneTemp = getZizGestione(session, works);
                 session.send(getZizGestione);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto website":
-                var WebTemp = getWebsiteInformation(session, data);
+                var WebTemp = getWebsiteInformation(session, works);
                 session.send(WebTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto website":
-                var WebGestioneTemp = getWebsiteGestione(session, data);
+                var WebGestioneTemp = getWebsiteGestione(session, works);
                 session.send(WebGestioneTemp);
                 session.beginDialog('Root');
                 break;
@@ -1732,52 +1736,52 @@ bot.dialog('CurrentProject', new botbuilder.IntentDialog({
         var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
 
         if (ziz) {
-            var ZizTemp = getZizInformation(session, data);
+            var ZizTemp = getZizInformation(session, works);
             session.send(ZizTemp);
             session.beginDialog('Root');
         }
         if (parse) {
-            var ParseTemp = getParseInformation(session, data);
+            var ParseTemp = getParseInformation(session, works);
             session.send(ParseTemp);
             session.beginDialog('Root');
         }
         if (website) {
-            var WebTemp = getWebsiteInformation(session, data);
+            var WebTemp = getWebsiteInformation(session, works);
             session.send(WebTemp);
             session.beginDialog('Root');
         }
         if (ziz && responsability) {
-            var ZizGestioneTemp = getZizGestione(session, data);
+            var ZizGestioneTemp = getZizGestione(session, works);
             session.send(getZizGestione);
             session.beginDialog('Root');
         }
         if (parse && responsability) {
-            var ParseGestioneTemp = getParseGestione(session, data);
+            var ParseGestioneTemp = getParseGestione(session, works);
             session.send(ParseGestioneTemp);
             session.beginDialog('Root');
         }
         if (website && responsability) {
-            var WebGestioneTemp = getWebsiteGestione(session, data);
+            var WebGestioneTemp = getWebsiteGestione(session, works);
             session.send(WebGestioneTemp);
             session.beginDialog('Root');
         }
         if (deaf) {
-            var DeafTemp = getDeafFind(session, data);
+            var DeafTemp = getDeafFind(session, works);
             session.send(DeafTemp);
             session.beginDialog('Root');
         }
         if (deaf && responsability) {
-            var DeafGestioneTemp = getDeafGestione(session, data);
+            var DeafGestioneTemp = getDeafGestione(session, works);
             session.send(DeafGestioneTemp);
             session.beginDialog('Root');
         }
         if (utilities) {
-            var UtilitiesTemp = getUtilitiesFind(session, data);
+            var UtilitiesTemp = getUtilitiesFind(session, works);
             session.send(UtilitiesTemp);
             session.beginDialog('Root');
         }
         if (utilities && responsability) {
-            var UtilitiesGestioneTemp = getUtilitiesGestione(session, data);
+            var UtilitiesGestioneTemp = getUtilitiesGestione(session, works);
             session.send(UtilitiesGestioneTemp);
             session.beginDialog('Root');
         }
@@ -1802,42 +1806,42 @@ bot.dialog('AllMailTemp', [
     function(session, results) {
         switch (results.response) {
             case "email di orfei":
-                var OrfeiMail = getOrfeiMail(session, data);
+                var OrfeiMail = getOrfeiMail(session, persone);
                 session.send(OrfeiMail);
                 session.beginDialog('Root');
                 break;
             case "email di lucchi":
-                var LucchiMail = getLucchiMail(session, data);
+                var LucchiMail = getLucchiMail(session, persone);
                 session.send(LucchiMail);
                 session.beginDialog('Root');
                 break;
             case "email di fantinato":
-                var FantinatoMail = getFantinatoMail(session, data);
+                var FantinatoMail = getFantinatoMail(session, persone);
                 session.send(FantinatoMail);
                 session.beginDialog('Root');
                 break;
             case "email di zancanaro":
-                var ZancanaroMail = getZancanaroMail(session, data);
+                var ZancanaroMail = getZancanaroMail(session, persone);
                 session.send(ZancanaroMail);
                 session.beginDialog('Root');
                 break;
             case "email di greggio":
-                var GreggioMail = getGreggioMail(session, data);
+                var GreggioMail = getGreggioMail(session, persone);
                 session.send(GreggioMail);
                 session.beginDialog('Root');
                 break;
             case "email di chiarin":
-                var ChiarinMail = getChiarinMail(session, data);
+                var ChiarinMail = getChiarinMail(session, persone);
                 session.send(ChiarinMail);
                 session.beginDialog('Root');
                 break;
             case "email di quinto":
-                var QuintoMail = getQuintoMail(session, data);
+                var QuintoMail = getQuintoMail(session, persone);
                 session.send(QuintoMail);
                 session.beginDialog('Root');
                 break;
             case "email di nunzio":
-                var NunzioMail = getNunzioMail(session, data);
+                var NunzioMail = getNunzioMail(session, persone);
                 session.send(NunzioMail);
                 session.beginDialog('Root');
                 break;
@@ -1859,42 +1863,42 @@ bot.dialog('AllMail', new botbuilder.IntentDialog({
         var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
 
         if (orfei) {
-            var OrfeiMail = getOrfeiMail(session, data);
+            var OrfeiMail = getOrfeiMail(session, persone);
             session.send(OrfeiMail);
             session.beginDialog('Root');
         }
         if (lucchi) {
-            var LucchiMail = getLucchiMail(session, data);
+            var LucchiMail = getLucchiMail(session, persone);
             session.send(LucchiMail);
             session.beginDialog('Root');
         }
         if (zancanaro) {
-            var ZancanaroMail = getZancanaroMail(session, data);
+            var ZancanaroMail = getZancanaroMail(session, persone);
             session.send(ZancanaroMail);
             session.beginDialog('Root');
         }
         if (chiarin) {
-            var ChiarinMail = getChiarinMail(session, data);
+            var ChiarinMail = getChiarinMail(session, persone);
             session.send(ChiarinMail);
             session.beginDialog('Root');
         }
         if (greggio) {
-            var GreggioMail = getGreggioMail(session, data);
+            var GreggioMail = getGreggioMail(session, persone);
             session.send(GreggioMail);
             session.beginDialog('Root');
         }
         if (quinto) {
-            var QuintoMail = getQuintoMail(session, data);
+            var QuintoMail = getQuintoMail(session, persone);
             session.send(QuintoMail);
             session.beginDialog('Root');
         }
         if (fantinato) {
-            var FantinatoMail = getFantinatoMail(session, data);
+            var FantinatoMail = getFantinatoMail(session, persone);
             session.send(FantinatoMail);
             session.beginDialog('Root');
         }
         if (nunzio) {
-            var NunzioMail = getNunzioMail(session, data);
+            var NunzioMail = getNunzioMail(session, persone);
             session.send(NunzioMail);
             session.beginDialog('Root');
         }
@@ -1919,42 +1923,42 @@ bot.dialog('FindAllTemp', [
     function(session, results) {
         switch (results.response) {
             case "link progetto ziz":
-                var ZizTemp = getZizFind(session, data);
+                var ZizTemp = getZizFind(session, works);
                 session.send(ZizTemp);
                 session.beginDialog('Root');
                 break;
             case "link progetto volley":
-                var VolleyTemp = getVolleyFind(session, data);
+                var VolleyTemp = getVolleyFind(session, works);
                 session.send(VolleyTemp);
                 session.beginDialog('Root');
                 break;
             case "link progetto parse":
-                var ParseTemp = getParseFind(session, data);
+                var ParseTemp = getParseFind(session, works);
                 session.send(ParseTemp);
                 session.beginDialog('Root');
                 break;
             case "link progetto deaf":
-                var DeafTemp = getDeafFind(session, data);
+                var DeafTemp = getDeafFind(session, works);
                 session.send(DeafTemp);
                 session.beginDialog('Root');
                 break;
             case "link utilities":
-                var UtilitiesTemp = getUtilitiesFind(session, data);
+                var UtilitiesTemp = getUtilitiesFind(session, works);
                 session.send(UtilitiesTemp);
                 session.beginDialog('Root');
                 break;
             case "link progetto website":
-                var WebTemp = getWebsiteFind(session, data);
+                var WebTemp = getWebsiteFind(session, works);
                 session.send(WebTemp);
                 session.beginDialog('Root');
                 break;
             case "link fast ink":
-                var FastTemp = getFastInkFind(session, data);
+                var FastTemp = getFastInkFind(session, works);
                 session.send(FastTemp);
                 session.beginDialog('Root');
                 break;
             case "link team perso bot model core":
-                var BotTemp = getBotFind(session, data);
+                var BotTemp = getBotFind(session, works);
                 session.send(BotTemp);
                 session.beginDialog('Root');
                 break;
@@ -1976,42 +1980,42 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
         var TPBMC = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::tpbmc');
 
         if (ziz) {
-            var ZizTemp = getZizFind(session, data);
+            var ZizTemp = getZizFind(session, works);
             session.send(ZizTemp);
             session.beginDialog('Root');
         }
         if (fast_ink) {
-            var FastTemp = getFastInkFind(session, data);
+            var FastTemp = getFastInkFind(session, works);
             session.send(FastTemp);
             session.beginDialog('Root');
         }
         if (volley) {
-            var VolleyTemp = getVolleyFind(session, data);
+            var VolleyTemp = getVolleyFind(session, works);
             session.send(VolleyTemp);
             session.beginDialog('Root');
         }
         if (parse) {
-            var ParseTemp = getParseFind(session, data);
+            var ParseTemp = getParseFind(session, works);
             session.send(ParseTemp);
             session.beginDialog('Root');
         }
         if (website) {
-            var WebTemp = getWebsiteFind(session, data);
+            var WebTemp = getWebsiteFind(session, works);
             session.send(WebTemp);
             session.beginDialog('Root');
         }
         if (TPBMC) {
-            var TPBMCTemp = getTPBMCFind(session, data);
+            var TPBMCTemp = getTPBMCFind(session, works);
             session.send(TPBMCTemp);
             session.beginDialog('Root');
         }
         if (deaf) {
-            var DeafTemp = getDeafFind(session, data);
+            var DeafTemp = getDeafFind(session, works);
             session.send(DeafTemp);
             session.beginDialog('Root');
         }
         if (utilities) {
-            var UtilitiesTemp = getUtilitiesFind(session, data);
+            var UtilitiesTemp = getUtilitiesFind(session, works);
             session.send(UtilitiesTemp);
             session.beginDialog('Root');
         }
