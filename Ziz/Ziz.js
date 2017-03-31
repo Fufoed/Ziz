@@ -1,22 +1,8 @@
-var builder = require('../Node.js/node_modules/core');
-
 var botbuilder = require('../Node.js/node_modules/botbuilder');
-
-var https = require('https');
-
-var http = require('http');
 
 var restify = require('../Node.js/node_modules/restify');
 
-var fs = require('fs');
-
-var request = require('../Node.js/node_modules/request');
-
 var async = require('../Node.js/node_modules/async');
-
-var promise = require('../Node.js/node_modules/promise');
-
-var path = require('path');
 
 var easterEgg = require('../Database - New/EasterEgg.json');
 
@@ -24,7 +10,23 @@ var works = require('../Database - New/Projects');
 
 var persone = require('../Database - New/Members');
 
-//var pack = require('./package.json');
+var roadMap = require('../Database - New/RoadMap');
+
+var books = require('../Database - New/Books');
+
+var contacts = require('../Database - New/Contacts');
+
+var general = require('../Database - New/General');
+
+var ideas = require('../Database - New/Ideas');
+
+var rules = require('../Database - New/Rules');
+
+var JsonModifier = require('../RELU-Core/Core/Config/RELU-JSONManager');
+
+var HerocardCreator = require('../RELU-Core/Core/Card/RELU-HeroCard');
+
+var setupEntities = require('../RELU-Core/Core/LUIS/RELU-LUISEntities');
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -106,33 +108,12 @@ bot.dialog('Root', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
-            var team_perso = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
-            var responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'Responsibility');
-            var role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
-            var find = botbuilder.EntityRecognizer.findEntity(args.entities, 'find');
-            var easter_egg = botbuilder.EntityRecognizer.findEntity(args.entities, 'easter_egg');
-            var orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
-            var lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
-            var zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
-            var chiarin = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::chiarin');
-            var greggio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::greggio');
-            var quinto = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::quinto');
-            var fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
-            var nunzio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::nunzio');
-            var ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
-            var volley = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::volley');
-            var fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
-            var website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
-            var TPBMC = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::tpbmc');
-            var deaf = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::deaf');
-            var utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
-            var parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
-            var current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
-            var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
-            var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
-            var email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
+            var team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, chiarin, greggio, quinto, fantinato, nunzio, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email;
+            var entities = [team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, chiarin, greggio, quinto, fantinato, nunzio, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email];
+            var built = ['Team_Perso', 'Responsibility', 'role', 'find', 'easter_egg', 'people::orfei', 'people::lucchi', 'people::zancanaro', 'people::chiarin', 'people::greggio', 'people::quinto', 'people::fantinato', 'people::nunzio', 'project::ziz', 'project::fast ink', 'project::website', 'project::Relu', 'project::utilities', 'project::parse', 'current_project', 'total_project', 'people', 'email'];
+            var BuiltEntities = setupEntities.EntitySetup(23, entities, built, session, args);
 
-            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !parse && !volley && !fast_ink && !website && !TPBMC && !current_project && !total_project && !total_people && !email && !nunzio && !utilities && !deaf) {
+            /*if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !chiarin && !greggio && !quinto && !fantinato && !ziz && !parse && !volley && !fast_ink && !website && !TPBMC && !current_project && !total_project && !total_people && !email && !nunzio && !utilities && !deaf) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('NothingTemp');
@@ -541,7 +522,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 var NunzioTemp = getNunzioInformation(session, persone);
                 session.send(OrfeiTemp);
                 session.send(NunzioTemp);
-            }
+            }*/
         }
     ])
     .matches('Skills', [
@@ -562,7 +543,12 @@ server.post('/api/messages', connector.listen());
 bot.dialog('NothingTemp', [
     function(session) {
         session.send("Scegli una delle opzioni");
-        var nothingCards = CreateNothingCards();
+        var title = ['Persone', 'Progetti Totali', 'Progetti Correnti', 'Team Perso'];
+        var text = ['Informazioni sulle persone', 'Informazioni sui progetti totali', 'Informazioni sui progetti correnti', 'Informazioni sul team'];
+        var linkImages = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://www.elia-group.com/images/team1.jpg'];
+        var buttonReturn = ['persone', 'progetti totali', 'progetti correnti', 'team'];
+        var buttonText = ['Persone', 'Progetti totali', 'Progetti correnti', 'Team'];
+        var nothingCards = HerocardCreator.CreateCards(session, 4, title, text, 1, linkImages, buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(nothingCards);
@@ -627,35 +613,24 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
-            var current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
-            var total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
-            var total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
-            var team_perso = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
-            if (team_perso) {
+            var current_project, total_project, total_people, team_perso;
+            var entities = [current_project, total_project, total_people, team_perso];
+            var built = ['current_project', 'total_project', 'people', 'Team_Perso'];
+            var results = setupEntities.EntitySetup(4, entities, built, session, args);
+
+            if (results[0]) {
                 async.parallel([
                     function(callback) {
-                        session.beginDialog('TeamTemp');
+                        session.beginDialog('CurrentProjectTemp');
                     },
                     function(callback) {
-                        session.beginDialog('Team');
+                        session.beginDialog('CurrentProject');
                     }
                 ], function(error, results) {
                     session.send("Error");
                 })
             }
-            if (total_people) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllPeopleTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('AllPeople');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-            }
-            if (total_project) {
+            if (results[1]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('TotalProjectTemp');
@@ -667,13 +642,25 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
                     session.send("Error");
                 })
             }
-            if (current_project) {
+            if (results[2]) {
                 async.parallel([
                     function(callback) {
-                        session.beginDialog('CurrentProjectTemp');
+                        session.beginDialog('AllPeopleTemp');
                     },
                     function(callback) {
-                        session.beginDialog('CurrentProject');
+                        session.beginDialog('AllPeople');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (results[3]) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TeamTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Team');
                     }
                 ], function(error, results) {
                     session.send("Error");
@@ -692,7 +679,12 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
 bot.dialog('TeamTemp', [
     function(session) {
         session.send("Cosa vuoi sapere del team?");
-        var teamCards = CreateTeamCards(session);
+        var title = ['Membri', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilità', 'Info'];
+        var text = ['Informazioni sui membri', 'Informazioni sui ruoli', 'Informazioni su tutti i progetti', 'Informazioni sui progetti correnti', 'Responsabilità dei membri', 'Informazioni sul team perso'];
+        var linkImages = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://thumbs.dreamstime.com/z/insieme-dell-icona-ruoli-sociali-38476263.jpg', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://previews.123rf.com/images/sentavio/sentavio1511/sentavio151100481/48577270-stile-piatto-web-moderno-uomo-d-affari-icona-infografica-collage-Illustrazione-vettoriale-di-uomo-d--Archivio-Fotografico.jpg', ''];
+        var buttonReturn = ['persone', 'ruoli', 'progetti totali', 'progetti correnti', 'responsabilità', 'informazioni'];
+        var buttonText = ['Persone', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilità', 'Informazioni'];
+        var teamCards = HerocardCreator.CreateCards(session, 4, title, text, 1, linkImages, buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(teamCards);
@@ -772,7 +764,11 @@ bot.dialog('TeamTemp', [
 bot.dialog('TotalProjectTemp', [
     function(session) {
         session.send("Cosa vuoi sapere sui progetti?");
-        var totalProjectCards = CreateTotalProjectsCards(session);
+        var title = ['Project Parse', 'Utilities', 'RELU', 'Project Ziz', 'Fast Ink', 'Website'];
+        var text = ['Informazione sul progetto Parse', 'Informazioni su utilities', 'Informazioni su RELU', 'Informazioni sul progetto Ziz', 'Informazioni su fast ink', 'Informazioni su Website'];
+        var buttonReturn = ['informazioni sul progetto parse', 'gestione del progetto parse', 'informazioni su utilities', 'gestione di utilities', 'informazioni su RELU', 'gestione di RELU', 'informazioni sul progetto ziz', 'gestione del progetto ziz', 'informazioni su fast ink', 'gestione di fast ink', 'informazioni sul progetto website', 'gestione del progetto website'];
+        var buttonText = ['Info', 'Gestione'];
+        var totalProjectCards = HerocardCreator.CreateCards(session, 6, title, text, 2, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(totalProjectCards);
@@ -1055,7 +1051,11 @@ bot.dialog('Team', new botbuilder.IntentDialog({
 bot.dialog('AllRoleTemp', [
     function(session) {
         session.send("Di chi vuoi sapere il ruolo?");
-        var roleCards = CreateRoleCards(session);
+        var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro', 'Quinto', 'Chiarin', 'Nunzio'];
+        var text = ['Ruolo di Orfei', 'Ruolo di Lucchi', 'Ruolo di Fantinato', 'Ruolo di Greggio', 'Ruolo di Zancanaro', 'Ruolo di Quinto', 'Ruolo di Chiarin', 'Ruolo di Nunzio'];
+        var buttonReturn = ['ruolo di orfei', 'ruolo di lucchi', 'ruolo di fantinato', 'ruolo di greggio', 'ruolo di zancanaro', 'ruolo di quinto', 'ruolo di chiarin', 'ruolo di nunzio'];
+        var buttonText = ['Ruolo'];
+        var roleCards = HerocardCreator.CreateCards(session, 8, title, text, 1, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(roleCards)
@@ -1796,7 +1796,11 @@ bot.dialog('CurrentProject', new botbuilder.IntentDialog({
 bot.dialog('AllMailTemp', [
     function(session) {
         session.send("Di chi vuoi sapere la mail?");
-        var MailCards = CreateMailCards(session);
+        var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro', 'Quinto', 'Chiarin', 'Nunzio'];
+        var text = ['Email di Orfei', 'Email di Lucchi', 'Email di Fantinato', 'Email di Greggio', 'Email di Zancanaro', 'Email di Quinto', 'Email di Chiarin', 'Email di Nunzio'];
+        var buttonReturn = ['email di orfei', 'email di lucchi', 'email di fantinato', 'email di greggio', 'email di zancanaro', 'email di quinto', 'email di chiarin', 'email di nunzio'];
+        var buttonText = ['Email'];
+        var MailCards = HerocardCreator.CreateCards(session, 8, title, text, 1, '', buttonReturn, buttonText);
         var reply = botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(MailCards);
@@ -2022,177 +2026,6 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
     }
 ]))
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------
-
-function CreateNothingCards(session) {
-    return [
-        new builder.HeroCard(session)
-        .title('Persone')
-        .text('Informazioni sulle persone')
-        .images([
-            builder.CardImage.create(session, 'http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png')
-        ])
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'persone', 'Persone')
-        ]),
-
-        new builder.HeroCard(session)
-        .title('Progetti')
-        .text('Informazioni su tutti i progetti')
-        .images([
-            builder.CardImage.create(session, 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png')
-        ])
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'progetti totali', 'Progetti totali')
-        ]),
-
-        new builder.HeroCard(session)
-        .title('Progetti')
-        .text('Informazioni sui progetti correnti')
-        .images([
-            builder.CardImage.create(session, 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png')
-        ])
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'progetti correnti', 'Progetti correnti')
-        ]),
-
-        new builder.HeroCard(session)
-        .title('Team Perso')
-        .text('Informazioni sul team')
-        .images([
-            builder.CardImage.create(session, 'http://www.elia-group.com/images/team1.jpg')
-        ])
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'team', 'Team')
-        ])
-    ];
-}
-
-//---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-function CreateTeamCards(session) {
-    return [
-        new botbuilder.HeroCard(session)
-        .title('Membri')
-        .text('Informazioni sui membri')
-        .images([
-            botbuilder.CardImage.create(session, 'http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png')
-        ])
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'persone', 'Membri')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Ruoli')
-        .text('Informazioni sui ruoli')
-        .images([
-            botbuilder.CardImage.create(session, 'https://thumbs.dreamstime.com/z/insieme-dell-icona-ruoli-sociali-38476263.jpg')
-        ])
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'ruoli', 'Ruoli')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Progetti')
-        .text('Informazioni su tutti i progetti')
-        .images([
-            botbuilder.CardImage.create(session, 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png')
-        ])
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'progetti totali', 'Progetti Totali')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Progetti')
-        .text('Informazioni sui progetti correnti')
-        .images([
-            botbuilder.CardImage.create(session, 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png')
-        ])
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'progetti correnti', 'Progetti Correnti')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Responsabilità')
-        .text('Responsabilità dei membri del team')
-        .images([
-            botbuilder.CardImage.create(session, 'http://previews.123rf.com/images/sentavio/sentavio1511/sentavio151100481/48577270-stile-piatto-web-moderno-uomo-d-affari-icona-infografica-collage-Illustrazione-vettoriale-di-uomo-d--Archivio-Fotografico.jpg')
-        ])
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'responsabilità', 'Responsabilità')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Info')
-        .text('Info sul Team Perso')
-        .buttons([
-            botbuilder.CardAction.imBack(session, "informazioni", 'Info')
-        ])
-    ];
-}
-
-//---------------------------------------------------------------------------------------------------------------------------------------------------
-
-function CreateRoleCards(session) {
-    return [
-        new botbuilder.HeroCard(session)
-        .title('Orfei')
-        .text('Informazioni su Orfei')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'ruolo di orfei', 'ruolo')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Lucchi')
-        .text('Informazioni su Lucchi')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'ruolo di lucchi', 'ruolo')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Fantinato')
-        .text('Informazioni su Fantinato')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'ruolo di fantinato', 'ruolo')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Zancanaro')
-        .text('Informazioni su Zancanaro')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'ruolo di zancanaro', 'ruolo')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Greggio')
-        .text('Informazioni su Greggio')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'ruolo di greggio', 'ruolo')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Quinto')
-        .text('Informazioni su Quinto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'ruolo di quinto', 'ruolo')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Chiarin')
-        .text('Informazioni su Chiarin')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'ruolo di chiarin', 'ruolo')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Nunzio')
-        .text('Informazioni su Nunzio')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'ruolo di nunzio', 'ruolo')
-        ]),
-    ]
-}
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function CreatePeopleCards(session) {
@@ -2287,76 +2120,6 @@ function CreatePeopleCards(session) {
     ]
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-function CreateTotalProjectsCards(session) {
-    return [
-        new botbuilder.HeroCard(session)
-        .title('Project Parse')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto parse', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto parse', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Project Ziz')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto ziz', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto ziz', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Team Perso Bot Model Core')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul team perso bot model core', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del team perso bot model core', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Fast Ink')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su fast ink', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione di fast ink', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Volley')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto volley', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto volley', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Website')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto website', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto website', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Project Deaf')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto deaf', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto deaf', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Utilities')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su utilities', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione di utilities', 'Gestione')
-        ])
-    ]
-}
-
 //------------------------------------------------------------------------------------------------------------------------------------------------
 
 function CreateCurrentProjectCards(session) {
@@ -2399,68 +2162,6 @@ function CreateCurrentProjectCards(session) {
         .buttons([
             botbuilder.CardAction.imBack(session, 'informazioni su utilities', 'Info'),
             botbuilder.CardAction.imBack(session, 'gestione di utilities', 'Gestione')
-        ])
-    ]
-}
-
-//-----------------------------------------------------------------------------------------------------------------------------------------------------
-
-function CreateMailCards(session) {
-    return [
-        new botbuilder.HeroCard(session)
-        .title('Orfei')
-        .text('Informazioni su Orfei')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'email di orfei', 'Email')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Lucchi')
-        .text('Informazioni su Lucchi')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'email di lucchi', 'Email')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Fantinato')
-        .text('Informazioni su Fantinato')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'email di fantinato', 'Email')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Zancanaro')
-        .text('Informazioni su Zancanaro')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'email di zancanaro', 'Email')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Greggio')
-        .text('Informazioni su Greggio')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'email di greggio', 'Email')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Quinto')
-        .text('Informazioni su Quinto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'email di quinto', 'Email')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Chiarin')
-        .text('Informazioni su Chiarin')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'email di chiarin', 'Email')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Nunzio')
-        .text('Informazioni su Nunzio')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'email di nunzio', 'Email')
         ])
     ]
 }
