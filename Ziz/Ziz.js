@@ -1173,8 +1173,12 @@ bot.dialog('AllRole', new botbuilder.IntentDialog({
 
 bot.dialog('AllPeopleTemp', [
     function(session) {
-        session.send("Queste sono le persone appartenenti al team perso. Vuoi sapere altro?")
-        var PeopleCards = CreatePeopleCards(session);
+        session.send("Queste sono le persone appartenenti al team perso. Vuoi sapere altro?");
+        var title = ['Orfei', 'Lucchi', 'Fantinato', 'Zancanaro'];
+        var text = ['Informazioni su Orfei', 'Informazioni su Lucchi', 'Informazioni su Fantinato', 'Informazioni su Zancanaro'];
+        var buttonReturn = ['informazioni su orfei', 'responsabilità di orfei', 'email di orfei', 'ruolo di orfei', 'progetti di orfei', 'informazioni su lucchi', 'responsabilità di lucchi', 'email di lucchi', 'ruolo di lucchi', 'progetti di lucchi', 'informazioni su fantinato', 'responsabilità di fantinato', 'email di fantinato', 'ruolo di fantinato', 'progetti di fantinato', 'informazioni su zancanaro', 'responsabilità di zancanaro', 'email di zancanaro', 'ruolo di zancanaro', 'progetti di zancanaro'];
+        var buttonText = ['Info', 'Responsabilità', 'Email', 'Ruolo', 'Progetti'];
+        var PeopleCards = HerocardCreator.CreateCards(session, 8, title, text, 5, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(PeopleCards)
@@ -1660,7 +1664,11 @@ function textToSpeech(text, filename, accessToken, session, callback) {
 bot.dialog('CurrentProjectTemp', [
     function(session) {
         session.send("Questi sono i progetti correnti");
-        var CurrentProjectCards = CreateCurrentProjectCards(session);
+        var title = ['RELU', 'Utilities', 'Project Ziz', 'Website'];
+        var text = ['Informazioni su RELU', 'Informazioni su Utilities', 'Informazioni su Ziz', 'Informazioni su Website'];
+        var buttonReturn = ['informazioni su RELU', 'gestione di RELU', 'informazioni su utilities', 'gestione di utilities', 'informazioni sul progetto ziz', 'gestione del progetto ziz', 'informazioni sul progetto website', 'gestione del progetto website'];
+        var buttonText = ['Info', 'Gestione'];
+        var CurrentProjectCards = HerocardCreator.CreateCards(session, 4, title, text, 2, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(CurrentProjectCards);
@@ -1917,7 +1925,11 @@ bot.dialog('AllMail', new botbuilder.IntentDialog({
 bot.dialog('FindAllTemp', [
     function(session) {
         session.send("Scegli il progetto che vuoi trovare");
-        var FindCArds = createFindCards(session);
+        var title = ['Project Ziz', 'Project Parse', 'Utilities', 'Website', 'Fast Ink', 'RELU'];
+        var text = ['Link project Ziz', 'Link Project Parse', 'Link Utilities', 'Link Utilities', 'Link Fast Ink', 'Link RELU'];
+        var buttonReturn = ['link project ziz', 'link progetto parse', 'link utilities', 'link progetto website', 'link fast ink', 'link RELU'];
+        var buttonText = ['Link'];
+        var FindCArds = HerocardCreator.CreateCards(session, 6, title, text, 1, '', buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(FindCArds)
@@ -1931,19 +1943,9 @@ bot.dialog('FindAllTemp', [
                 session.send(ZizTemp);
                 session.beginDialog('Root');
                 break;
-            case "link progetto volley":
-                var VolleyTemp = getVolleyFind(session, works);
-                session.send(VolleyTemp);
-                session.beginDialog('Root');
-                break;
             case "link progetto parse":
                 var ParseTemp = getParseFind(session, works);
                 session.send(ParseTemp);
-                session.beginDialog('Root');
-                break;
-            case "link progetto deaf":
-                var DeafTemp = getDeafFind(session, works);
-                session.send(DeafTemp);
                 session.beginDialog('Root');
                 break;
             case "link utilities":
@@ -1961,7 +1963,7 @@ bot.dialog('FindAllTemp', [
                 session.send(FastTemp);
                 session.beginDialog('Root');
                 break;
-            case "link team perso bot model core":
+            case "link RELU":
                 var BotTemp = getBotFind(session, works);
                 session.send(BotTemp);
                 session.beginDialog('Root');
@@ -2025,208 +2027,6 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
         }
     }
 ]))
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------
-
-function CreatePeopleCards(session) {
-    return [
-        new botbuilder.HeroCard(session)
-        .title('Orfei')
-        .text('Informazioni su Orfei')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su orfei', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ruolo di orfei', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'responsabilità di orfei', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'progetti di orfei', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'email di orfei', 'Mail')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Lucchi')
-        .text('Informazioni su Lucchi')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su lucchi', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ruolo di lucchi', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'responsabilità di lucchi', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'progetti di lucchi', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'email di lucchi', 'Mail')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Fantinato')
-        .text('Informazioni su Fantinato')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su fantinato', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ruolo di fantinato', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'responsabilità di fantinato', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'progetti di fantinato', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'email di fantinato', 'Mail')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Zancanaro')
-        .text('Informazioni su Zancanaro')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su zancanaro', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ruolo di zancanaro', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'responsabilità di zancanaro', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'progetti di zancanaro', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'email di zancanaro', 'Mail')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Greggio')
-        .text('Informazioni su Greggio')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su greggio', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ruolo di greggio', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'responsabilità di greggio', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'progetti di greggio', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'email di greggio', 'Mail')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Quinto')
-        .text('Informazioni su Quinto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su quinto', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ruolo di quinto', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'responsabilità di quinto', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'progetti di quinto', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'email di quinto', 'Mail')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Chiarin')
-        .text('Informazioni su Chiarin')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su chiarin', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ruolo di chiarin', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'responsabilità di chiarin', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'progetti di chiarin', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'email di chiarin', 'Mail')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Nunzio')
-        .text('Informazioni su Nunzio')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su nunzio', 'Info'),
-            botbuilder.CardAction.imBack(session, 'ruolo di nunzio', 'Ruolo'),
-            botbuilder.CardAction.imBack(session, 'responsabilità di nunzio', 'Responsabilità'),
-            botbuilder.CardAction.imBack(session, 'progetti di nunzio', 'Progetti'),
-            botbuilder.CardAction.imBack(session, 'email di nunzio', 'Mail')
-        ])
-    ]
-}
-
-//------------------------------------------------------------------------------------------------------------------------------------------------
-
-function CreateCurrentProjectCards(session) {
-    return [
-        new botbuilder.HeroCard(session)
-        .title('Project Parse')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto parse', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto parse', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Project Ziz')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto ziz', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto ziz', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Website')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto website', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto website', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Project Deaf')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni sul progetto deaf', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione del progetto deaf', 'Gestione')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Utilities')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'informazioni su utilities', 'Info'),
-            botbuilder.CardAction.imBack(session, 'gestione di utilities', 'Gestione')
-        ])
-    ]
-}
-
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-function createFindCards(session) {
-    return [
-        new botbuilder.HeroCard(session)
-        .title('Project Parse')
-        .text('Link progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto parse', 'Link'),
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Project Ziz')
-        .text('Link progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto ziz', 'Link'),
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Team Perso Bot Model Core')
-        .text('Link progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'link team perso bot model core', 'Link'),
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Fast Ink')
-        .text('Link progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'link fast ink', 'Link'),
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Volley')
-        .text('Link progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto volley', 'Link'),
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Website')
-        .text('Link progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto website', 'Link'),
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Project Deaf')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'link progetto deaf', 'Link')
-        ]),
-
-        new botbuilder.HeroCard(session)
-        .title('Utilities')
-        .text('Informazioni sul progetto')
-        .buttons([
-            botbuilder.CardAction.imBack(session, 'link utilities', 'Link')
-        ])
-    ]
-}
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
