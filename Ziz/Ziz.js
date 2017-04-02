@@ -2030,174 +2030,25 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getOrfeiInformation(session, parsed) {
-    var i = 0;
-    var spec = '';
-    var mantenere = '';
-    var assegnati = '';
-    for (i = 0; i < parsed.database.membri.orfei.specialita.length; i++) {
-        spec += parsed.database.membri.orfei.specialita[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.orfei.progetti_mantenere.length; i++) {
-        mantenere += parsed.database.membri.orfei.progetti_mantenere[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.orfei.progetti_assegnati.length; i++) {
-        assegnati += parsed.database.membri.orfei.progetti_assegnati[i];
-    }
-    return ("Questa persona è Samuele Orfei, il suo username github è " + parsed.database.membri.orfei.username_github + ", il suo soprannome è " + parsed.database.membri.orfei.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
-}
+function getPeopleInformation(session, json, mantain, gitusername, assigned, role, speciality, mail, nickname, name)
+{
+    var project_mantain = JsonModifier.JsonReader(session, json, mantain, name);
+     var gitUser = JsonModifier.JsonReader(session, json, gitusername, name);
+     var project_assigned = JsonModifier.JsonReader(session, json, assigned, name);
+     var person_role = JsonModifier.JsonReader(session, json, role, name);
+     var spec = JsonModifier.JsonReader(session, json, speciality, name);
+     var email = JsonModifier.JsonReader(session, json, mail, name);
+     var person_nickname = JsonModifier.JsonReader(session, json, nickname, name);
 
-function getLucchiInformation(session, parsed) {
-    var i = 0;
-    var spec = '';
-    var mantenere = '';
-    var assegnati = '';
-    for (i = 0; i < parsed.database.membri.lucchi.specialita.length; i++) {
-        spec += parsed.database.membri.lucchi.specialita[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.lucchi.progetti_mantenere.length; i++) {
-        mantenere += parsed.database.membri.lucchi.progetti_mantenere[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.lucchi.progetti_assegnati.length; i++) {
-        assegnati += parsed.database.membri.lucchi.progetti_assegnati[i];
-    }
-    return ("Questa persona è Manuele Lucchi, il suo username github è " + parsed.database.membri.lucchi.username_github + ", il suo soprannome è " + parsed.database.membri.lucchi.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
-}
-
-function getZancanaroInformation(session, parsed) {
-    var i = 0;
-    var spec = '';
-    var mantenere = '';
-    var assegnati = '';
-    for (i = 0; i < parsed.database.membri.zancanaro.specialita.length; i++) {
-        spec += parsed.database.membri.zancanaro.specialita[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.zancanaro.progetti_mantenere.length; i++) {
-        mantenere += parsed.database.membri.zancanaro.progetti_mantenere[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.zancanaro.progetti_assegnati.length; i++) {
-        assegnati += parsed.database.membri.zancanaro.progetti_assegnati[i];
-    }
-    return ("Questa persona è Marco Zancanaro, il suo username github è " + parsed.database.membri.zancanaro.username_github + ", il suo soprannome è " + parsed.database.membri.zancanaro.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
-}
-
-function getFantinatoInformation(session, parsed) {
-    var i = 0;
-    var spec = '';
-    var mantenere = '';
-    var assegnati = '';
-    for (i = 0; i < parsed.database.membri.fantinato.specialita.length; i++) {
-        spec += parsed.database.membri.fantinato.specialita[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.fantinato.progetti_mantenere.length; i++) {
-        mantenere += parsed.database.membri.fantinato.progetti_mantenere[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.fantinato.progetti_assegnati.length; i++) {
-        assegnati += parsed.database.membri.fantinato.progetti_assegnati[i];
-    }
-    return ("Questa persona è Filippo Fantinato, il suo username github è " + parsed.database.membri.fantinato.username_github + ", il suo soprannome è " + parsed.database.membri.fantinato.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
-}
-
-function getChiarinInformation(session, parsed) {
-    var i = 0;
-    var spec = '';
-    var mantenere = '';
-    var assegnati = '';
-    for (i = 0; i < parsed.database.membri.chiarin.specialita.length; i++) {
-        spec += parsed.database.membri.chiarin.specialita[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.chiarin.progetti_mantenere.length; i++) {
-        mantenere += parsed.database.membri.chiarin.progetti_mantenere[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.chiarin.progetti_assegnati.length; i++) {
-        assegnati += parsed.database.membri.chiarin.progetti_assegnati[i];
-    }
-    return ("Questa persona è Marco Chiarin, il suo username github è " + parsed.database.membri.chiarin.username_github + ", il suo soprannome è " + parsed.database.membri.chiarin.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
-}
-
-function getGreggioInformation(session, parsed) {
-    var i = 0;
-    var spec = '';
-    var mantenere = '';
-    var assegnati = '';
-    for (i = 0; i < parsed.database.membri.greggio.specialita.length; i++) {
-        spec += parsed.database.membri.greggio.specialita[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.greggio.progetti_mantenere.length; i++) {
-        mantenere += parsed.database.membri.greggio.progetti_mantenere[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.greggio.progetti_assegnati.length; i++) {
-        assegnati += parsed.database.membri.greggio.progetti_assegnati[i];
-    }
-    return ("Questa persona è Nicolò Greggio, il suo username github è " + parsed.database.membri.greggio.username_github + ", il suo soprannome è " + parsed.database.membri.greggio.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
-}
-
-function getQuintoInformation(session, parsed) {
-    var i = 0;
-    var spec = '';
-    var mantenere = '';
-    var assegnati = '';
-    for (i = 0; i < parsed.database.membri.quinto.specialita.length; i++) {
-        spec += parsed.database.membri.quinto.specialita[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.quinto.progetti_mantenere.length; i++) {
-        mantenere += parsed.database.membri.quinto.progetti_mantenere[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.quinto.progetti_assegnati.length; i++) {
-        assegnati += parsed.database.membri.quinto.progetti_assegnati[i];
-    }
-    return ("Questa persona è Tommaso Quinto, il suo username github è " + parsed.database.membri.quinto.username_github + ", il suo soprannome è " + parsed.database.membri.quinto.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
-}
-
-function getNunzioInformation(session, parsed) {
-    var i = 0;
-    var spec = '';
-    var mantenere = '';
-    var assegnati = '';
-    for (i = 0; i < parsed.database.membri.nunzio.specialita.length; i++) {
-        spec += parsed.database.membri.nunzio.specialita[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.nunzio.progetti_mantenere.length; i++) {
-        mantenere += parsed.database.membri.nunzio.progetti_mantenere[i] + ', ';
-    }
-    for (i = 0; i < parsed.database.membri.nunzio.progetti_assegnati.length; i++) {
-        assegnati += parsed.database.membri.nunzio.progetti_assegnati[i];
-    }
-    return ("Questa persona è Salvatore Nunzio Savà, il suo username github è " + parsed.database.membri.nunzio.username_github + ", il suo soprannome è " + parsed.database.membri.nunzio.nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + mantenere + ", i progetti a lui assegnati sono " + assegnati);
+     return("Questa persona è " + name + ", il suo username github è " + gitUser + ", il suo soprannome è " + person_nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + project_mantain + ", i progetti a lui assegnati sono " + project_assigned + ". La sua email è " + email + ", il suo ruolo nel team è " + person_role);;
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getOrfeiRole(session, parsed) {
-    return ("Il ruolo di orfei è " + parsed.database.membri.orfei.ruolo);
-}
-
-function getLucchiRole(session, parsed) {
-    return ("Il ruolo di lucchi è " + parsed.database.membri.lucchi.ruolo);
-}
-
-function getFantinatoRole(session, parsed) {
-    return ("Il ruolo di fantinato è " + parsed.database.membri.fantinato.ruolo);
-}
-
-function getZancanaroRole(session, parsed) {
-    return ("Il ruolo di zancanaro è " + parsed.database.membri.zancanaro.ruolo);
-}
-
-function getChiarinRole(session, parsed) {
-    return ("Il ruolo di chiarin è " + parsed.database.membri.chiarin.ruolo);
-}
-
-function getQuintoRole(session, parsed) {
-    return ("Il ruolo di quinto è " + parsed.database.membri.quinto.ruolo);
-}
-
-function getGreggioRole(session, parsed) {
-    return ("Il ruolo di greggio è " + parsed.database.membri.greggio.ruolo);
-}
-
-function getNunzioRole(session, parsed) {
-    return ("Il ruolo di nunzio è " + parsed.database.membri.nunzio.ruolo);
+function getPeopleRole(session, json, role, name)
+{
+    var person_role = JsonModifier.JsonReader(session, json, role, name)
+    return ("Il ruolo di " + name + " è " + person_role);
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2235,6 +2086,22 @@ function getNunzioResponsability(session, parsed) {
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function getProjectInformation(session, json, type, description, chief, link_repo, begin_develop, end_develop, version, support, how_going, member, note, project)
+{
+    var project_type = JsonModifier.JsonReader(session, json, type, project);
+    var project_description = JsonModifier.JsonReader(session, json, description, project);
+    var project_chief = JsonModifier.JsonReader(session, json, chief, project);
+    var project_link_repo = JsonModifier.JsonReader(session, json, link_repo, project);
+    var project_begin_develop = JsonModifier.JsonReader(session, json, begin_develop, project);
+    var project_end_develop = JsonModifier.JsonReader(session, json, end_develop, project);
+    var project_version = JsonModifier.JsonReader(session, json, version, project);
+    var project_support = JsonModifier.JsonReader(session, json, support, project);
+    var project_how_going = JsonModifier.JsonReader(session, json, how_going, project);
+    var project_member = JsonModifier.JsonReader(session, json, member, project);
+    var project_note = JsonModifier.JsonReader(session, json, note, project);
+    return (project + " è un progetto di tipo " + project_type + ". E' un " + project_description + ". La gestione è di " + project_chief + ". Questo progetto lo si può trovare a questo link " + project_link_repo + ". E' stato cominciato il " + project_begin_develop + "e la data di fine è " + project_end_develop + "")
+}
 
 function getZizInformation(session, parsed) {
     return ("Project Ziz è un progetto di tipo " + parsed.database.progetti.project_ziz.tipo_progetto + ". E' un " + parsed.database.progetti.project_ziz.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_ziz.capo_progetto + ". La gestione è " + parsed.database.progetti.project_ziz.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_ziz.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_ziz.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_ziz.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_ziz.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_ziz.membri);
@@ -2324,70 +2191,16 @@ function getBullshit(session) {
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getOrfeiMail(session, parsed) {
-    return ("L'email di orfei è " + parsed.database.membri.orfei.mail);
-}
-
-function getLucchiMail(session, parsed) {
-    return ("L'email di lucchi è " + parsed.database.membri.lucchi.mail);
-}
-
-function getFantinatoMail(session, parsed) {
-    return ("L'email di fantinato è " + parsed.database.membri.fantinato.mail);
-}
-
-function getZancanaroMail(session, parsed) {
-    return ("L'email di zancanaro è " + parsed.database.membri.zancanaro.mail);
-}
-
-function getGreggioMail(session, parsed) {
-    return ("L'email di greggio è " + parsed.database.membri.greggio.mail);
-}
-
-function getChiarinMail(session, parsed) {
-    return ("L'email di chiarin è " + parsed.database.membri.chiarin.mail);
-}
-
-function getQuintoMail(session, parsed) {
-    return ("L'email di quinto è " + parsed.database.membri.quinto.mail);
-}
-
-function getNunzioMail(session, parsed) {
-    return ("L'email di nunzio è " + parsed.database.membri.nunzio.mail);
+function getPeopleMail(session, json, mail, name)
+{
+    var email = JsonModifier.JsonReader(session, json, mail, name);
+    return ("L' email di " + name + " è " + email);
 }
 
 //-----------------------------------------------------------------------------------------------------------
 
-function getZizFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_ziz.link_repo);
+function getProjectFind(session, json, link, project)
+{
+    var link_project = JsonModifier.JsonReader(session, json, link, project);
+    return (project + " si può trovare al link " + link_project);
 }
-
-function getVolleyFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_volley.link_repo);
-}
-
-function getTPBMCFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.team_perso_bot_model_core.link_repo);
-}
-
-function getParseFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_parse.link_repo);
-}
-
-function getFastInkFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.fast_ink.link_repo);
-}
-
-function getWebsiteFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_website.link_repo);
-}
-
-function getDeafFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.project_deaf.link_repo);
-}
-
-function getUtilitiesFind(session, parsed) {
-    return ("Questo progetto si trova a questo link " + parsed.database.progetti.utilities.link_repo);
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------
