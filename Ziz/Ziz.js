@@ -531,6 +531,11 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             session.beginDialog('Root');
         }
     ])
+    .matches('Modify', [
+        function(session, args, results) {
+
+        }
+    ])
     .matches('None', [
         function(session, args, results) {
             session.send("Wrong action");
@@ -609,7 +614,7 @@ bot.dialog('NothingTemp', [
     }
 ])
 
-bot.dialog('Nothing', new botbuilder.IntentDialog({
+/*bot.dialog('Nothing', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
@@ -674,7 +679,7 @@ bot.dialog('Nothing', new botbuilder.IntentDialog({
             session.beginDialog('Root');
         }
     ])
-)
+)*/
 
 bot.dialog('TeamTemp', [
     function(session) {
@@ -778,82 +783,62 @@ bot.dialog('TotalProjectTemp', [
     function(session, results) {
         switch (results.response) {
             case "informazioni sul progetto parse":
-                var ParseTemp = getParseInformation(session, works);
+                var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
                 session.send(ParseTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto parse":
-                var ParseGestioneTemp = getParseGestione(session, works);
+                var ParseGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_parse');
                 session.send(ParseGestioneTemp);
                 session.beginDialog('Root');
                 break;
-            case "informazioni sul progetto deaf":
-                var DeafTemp = getDeafInformation(session, works);
-                session.send(DeafTemp);
-                session.beginDialog('Root');
-                break;
-            case "gestione del progetto deaf":
-                var DeafGestioneTemp = getDeafGestione(session, works);
-                session.send(DeafGestioneTemp);
-                session.beginDialog('Root');
-                break;
             case "informazioni su utilities":
-                var UtilitiesTemp = getUtilitiesInformation(session, works);
+                var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
                 session.send(UtilitiesTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione di utilities":
-                var UtilitiesGestioneTemp = getUtilitiesGestione(session, works);
+                var UtilitiesGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'utilities');
                 session.send(UtilitiesGestioneTemp);
                 session.beginDialog('Root');
                 break;
-            case "informazioni sul team perso bot model core":
-                var TPBMCTemp = getTPBMCInformation(session, works);
-                session.send(TPBMCTemp);
+            case "informazioni su RELU":
+                var RELUemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
+                session.send(RELUTemp);
                 session.beginDialog('Root');
                 break;
-            case "gestione del team perso bot model core":
-                var TPBMCGestioneTemp = getTPBMCGestione(session, works);
+            case "gestione di RELU":
+                var TPBMCGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'relu-core');
                 session.send(TPBMCGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto ziz":
-                var ZizTemp = getZizInformation(session, works);
+                var ZizTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_ziz');
                 session.send(ZizTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto ziz":
-                var ZizGestioneTemp = getZizGestione(session, works);
+                var ZizGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_ziz');
                 session.send(ZizGestioneTemp);
                 session.beginDialog('Root');
                 break;
-            case "informazioni sul progetto volley":
-                var VolleyTemp = getVolleyInformation(session, works);
-                session.send(VolleyTemp);
-                session.beginDialog('Root');
-                break;
-            case "gestione del progetto volley":
-                var VolleyGestioneTemp = getVolleyGestione(session, works);
-                session.send(VolleyGestioneTemp);
-                session.beginDialog('Root');
-                break;
             case "informazioni su fast ink":
-                var FastInkTemp = getFastInkInformation(session, works);
+                var FastInkTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'fast_ink');
                 session.send(FastInkTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione di fast ink":
-                var FastInkGestioneTemp = getFastInkGestione(session, works);
+                var FastInkGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'fast_ink');
                 session.send(FastInkGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto website":
-                var WebTemp = getWebsiteInformation(session, works);
+                var WebTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_website');
                 session.send(WebTemp);
                 session.beginDialog('Root');
                 break;
             case "gestione del progetto website":
-                var WebGestioneTemp = getWebsiteGestione(session, works);
+                var WebGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_website');
                 session.send(WebGestioneTemp);
                 session.beginDialog('Root');
                 break;
@@ -1051,11 +1036,11 @@ bot.dialog('Team', new botbuilder.IntentDialog({
 bot.dialog('AllRoleTemp', [
     function(session) {
         session.send("Di chi vuoi sapere il ruolo?");
-        var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro', 'Quinto', 'Chiarin', 'Nunzio'];
-        var text = ['Ruolo di Orfei', 'Ruolo di Lucchi', 'Ruolo di Fantinato', 'Ruolo di Greggio', 'Ruolo di Zancanaro', 'Ruolo di Quinto', 'Ruolo di Chiarin', 'Ruolo di Nunzio'];
-        var buttonReturn = ['ruolo di orfei', 'ruolo di lucchi', 'ruolo di fantinato', 'ruolo di greggio', 'ruolo di zancanaro', 'ruolo di quinto', 'ruolo di chiarin', 'ruolo di nunzio'];
+        var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro'];
+        var text = ['Ruolo di Orfei', 'Ruolo di Lucchi', 'Ruolo di Fantinato', 'Ruolo di Greggio', 'Ruolo di Zancanaro'];
+        var buttonReturn = ['ruolo di orfei', 'ruolo di lucchi', 'ruolo di fantinato', 'ruolo di greggio', 'ruolo di zancanaro'];
         var buttonText = ['Ruolo'];
-        var roleCards = HerocardCreator.CreateCards(session, 8, title, text, 1, '', buttonReturn, buttonText);
+        var roleCards = HerocardCreator.CreateCards(session, 5, title, text, 1, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(roleCards)
@@ -1065,43 +1050,28 @@ bot.dialog('AllRoleTemp', [
     function(session, results) {
         switch (results.response) {
             case 'ruolo di orfei':
-                var OrfeiRole = getOrfeiRole(session, persone);
+                var OrfeiRole = getPeopleRole(session, persone, 'ruolo', 'orfei');
                 session.send(OrfeiRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di lucchi':
-                var LucchiRole = getLucchiRole(session, persone);
+                var LucchiRole = getPeopleRole(session, persone, 'ruolo', 'lucchi');
                 session.send(LucchiRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di zancanaro':
-                var ZancanaroRole = getZancanaroRole(session, persone);
+                var ZancanaroRole = getPeopleRole(session, persone, 'ruolo', 'zancanaro');
                 session.send(ZancanaroRole);
                 session.beginDialog('Root');
                 break;
             case 'ruolo di fantinato':
-                var FantinatoRole = getFantinatoRole(session, persone);
+                var FantinatoRole = getPeopleRole(session, persone, 'ruolo', 'fantinato');
                 session.send(FantinatoRole);
                 session.beginDialog('Root');
                 break;
-            case 'ruolo di chiarin':
-                var ChiarinRole = getChiarinRole(session, persone);
-                session.send(ChiarinRole);
-                session.beginDialog('Root');
-                break;
-            case 'ruolo di quinto':
-                var QuintoRole = getQuintoRole(session, persone);
-                session.send(QuintoRole);
-                session.beginDialog('Root');
-                break;
             case 'ruolo di greggio':
-                var GreggioRole = getGreggioRole(session, persone);
+                var GreggioRole = getPeopleRole(session, persone, 'ruolo', 'greggio');
                 session.send(GreggioRole);
-                session.beginDialog('Root');
-                break;
-            case 'ruolo di nunzio':
-                var NunzioRole = getNunzioRole(session, persone);
-                session.send(NunzioRole);
                 session.beginDialog('Root');
                 break;
         }
@@ -1178,7 +1148,7 @@ bot.dialog('AllPeopleTemp', [
         var text = ['Informazioni su Orfei', 'Informazioni su Lucchi', 'Informazioni su Fantinato', 'Informazioni su Zancanaro'];
         var buttonReturn = ['informazioni su orfei', 'responsabilità di orfei', 'email di orfei', 'ruolo di orfei', 'progetti di orfei', 'informazioni su lucchi', 'responsabilità di lucchi', 'email di lucchi', 'ruolo di lucchi', 'progetti di lucchi', 'informazioni su fantinato', 'responsabilità di fantinato', 'email di fantinato', 'ruolo di fantinato', 'progetti di fantinato', 'informazioni su zancanaro', 'responsabilità di zancanaro', 'email di zancanaro', 'ruolo di zancanaro', 'progetti di zancanaro'];
         var buttonText = ['Info', 'Responsabilità', 'Email', 'Ruolo', 'Progetti'];
-        var PeopleCards = HerocardCreator.CreateCards(session, 8, title, text, 5, '', buttonReturn, buttonText);
+        var PeopleCards = HerocardCreator.CreateCards(session, 5, title, text, 5, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(PeopleCards)
@@ -1188,12 +1158,12 @@ bot.dialog('AllPeopleTemp', [
     function(session, results) {
         switch (results.response) {
             case "ruolo di orfei":
-                var OrfeiRuolo = getOrfeiRole(session, persone);
+                var OrfeiRuolo = getPeopleRole(session, persone, 'ruolo', 'orfei');
                 session.send(OrfeiRuolo);
                 session.beginDialog('Root');
                 break;
             case "informazioni su orfei":
-                var OrfeiInformazioni = getOrfeiInformation(session, persone);
+                var OrfeiInformazioni = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
                 session.send(OrfeiInformazioni);
                 session.beginDialog('Root');
                 break;
@@ -1203,12 +1173,12 @@ bot.dialog('AllPeopleTemp', [
                 session.beginDialog('Root');
                 break;
             case "progetti di orfei":
-                var OrfeiProject = getOrfeiProjects(session, persone, works);
+                var OrfeiProject = getPeopleProject(session, persone, 'progetti_assegnati', 'orfei');
                 session.send(OrfeiProject);
                 session.beginDialog('Root');
                 break;
             case "email di orfei":
-                var OrfeiMail = getOrfeiMail(session, persone);
+                var OrfeiMail = getPeopleMail(session, persone, 'mail', 'orfei');
                 session.send(OrfeiMail);
                 break;
             case "ruolo di lucchi":
@@ -1283,30 +1253,6 @@ bot.dialog('AllPeopleTemp', [
                 var FantinatoMail = getFantinatoMail(session, persone);
                 session.send(FantinatoMail);
                 break;
-            case "ruolo di chiarin":
-                var ChiarinRuolo = getChiarinRole(session, persone);
-                session.send(ChiarinRuolo);
-                session.beginDialog('Root');
-                break;
-            case "informazioni su chiarin":
-                var ChiarinInformazioni = getChiarinInformation(session, persone);
-                session.send(ChiarinInformazioni);
-                session.beginDialog('Root');
-                break;
-            case "responsabilità di chiarin":
-                var ChiarinRes = getChiarinResponsability(session, persone);
-                session.send(ChiarinRes);
-                session.beginDialog('Root');
-                break;
-            case "progetti di chiarin":
-                var ChiarinProjects = getChiarinProjects(session, persone, works);
-                session.send(ChiarinProjects);
-                session.beginDialog('Root');
-                break;
-            case "email di chiarin":
-                var ChiarinMail = getChiarinMail(session, persone);
-                session.send(ChiarinMail);
-                break;
             case "ruolo di greggio":
                 var GreggioRuolo = getGreggioRole(session, persone);
                 session.send(GreggioRuolo);
@@ -1330,54 +1276,6 @@ bot.dialog('AllPeopleTemp', [
             case "email di greggio":
                 var GreggioMail = getGreggioMail(session, persone);
                 session.send(GreggioMail);
-                break;
-            case "ruolo di quinto":
-                var QuintoRuolo = getQuintoRole(session, persone);
-                session.send(QuintoRuolo);
-                session.beginDialog('Root');
-                break;
-            case "informazioni su quinto":
-                var QuintoInformazioni = getQuintoInformation(session, persone);
-                session.send(QuintoInformazioni);
-                session.beginDialog('Root');
-                break;
-            case "responsabilità di quinto":
-                var QuintoRes = getQuintoResponsability(session, persone);
-                session.send(QuintoRes);
-                session.beginDialog('Root');
-                break;
-            case "progetti di quinto":
-                var QuintoProjects = getQuintoProjects(session, persone, works);
-                session.send(QuintoProjects);
-                session.beginDialog('Root');
-                break;
-            case "email di quinto":
-                var QuintoMail = getQuintoMail(session, persone);
-                session.send(QuintoMail);
-                break;
-            case "ruolo di nunzio":
-                var NunzioRuolo = getNunzioRole(session, persone);
-                session.send(NunzioRuolo);
-                session.beginDialog('Root');
-                break;
-            case "informazioni su nunzio":
-                var NunzioInformazioni = getNunzioInformation(session, persone);
-                session.send(NunzioInformazioni);
-                session.beginDialog('Root');
-                break;
-            case "responsabilità di nunzio":
-                var QuintoRes = getNunzioResponsability(session, persone);
-                session.send(NunzioRes);
-                session.beginDialog('Root');
-                break;
-            case "progetti di nunzio":
-                var NunzioProjects = getNunzioProjects(session, persone, works);
-                session.send(NunzioProjects);
-                session.beginDialog('Root');
-                break;
-            case "email di nunzio":
-                var NunzioMail = getNunzioMail(session, persone);
-                session.send(NunzioMail);
                 break;
         }
     }
@@ -1687,16 +1585,6 @@ bot.dialog('CurrentProjectTemp', [
                 session.send(ParseGestioneTemp);
                 session.beginDialog('Root');
                 break;
-            case "informazioni sul progetto deaf":
-                var DeafTemp = getDeafInformation(session, works);
-                session.send(DeafTemp);
-                session.beginDialog('Root');
-                break;
-            case "gestione del progetto deaf":
-                var DeafGestioneTemp = getDeafGestione(session, works);
-                session.send(DeafGestioneTemp);
-                session.beginDialog('Root');
-                break;
             case "informazioni su utilities":
                 var UtilitiesTemp = getUtilitiesInformation(session, works);
                 session.send(UtilitiesTemp);
@@ -1840,21 +1728,6 @@ bot.dialog('AllMailTemp', [
             case "email di greggio":
                 var GreggioMail = getGreggioMail(session, persone);
                 session.send(GreggioMail);
-                session.beginDialog('Root');
-                break;
-            case "email di chiarin":
-                var ChiarinMail = getChiarinMail(session, persone);
-                session.send(ChiarinMail);
-                session.beginDialog('Root');
-                break;
-            case "email di quinto":
-                var QuintoMail = getQuintoMail(session, persone);
-                session.send(QuintoMail);
-                session.beginDialog('Root');
-                break;
-            case "email di nunzio":
-                var NunzioMail = getNunzioMail(session, persone);
-                session.send(NunzioMail);
                 session.beginDialog('Root');
                 break;
         }
@@ -2030,23 +1903,21 @@ bot.dialog('FindAll', new botbuilder.IntentDialog({
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleInformation(session, json, mantain, gitusername, assigned, role, speciality, mail, nickname, name)
-{
+function getPeopleInformation(session, json, mantain, gitusername, assigned, role, speciality, mail, nickname, name) {
     var project_mantain = JsonModifier.JsonReader(session, json, mantain, name);
-     var gitUser = JsonModifier.JsonReader(session, json, gitusername, name);
-     var project_assigned = JsonModifier.JsonReader(session, json, assigned, name);
-     var person_role = JsonModifier.JsonReader(session, json, role, name);
-     var spec = JsonModifier.JsonReader(session, json, speciality, name);
-     var email = JsonModifier.JsonReader(session, json, mail, name);
-     var person_nickname = JsonModifier.JsonReader(session, json, nickname, name);
+    var gitUser = JsonModifier.JsonReader(session, json, gitusername, name);
+    var project_assigned = JsonModifier.JsonReader(session, json, assigned, name);
+    var person_role = JsonModifier.JsonReader(session, json, role, name);
+    var spec = JsonModifier.JsonReader(session, json, speciality, name);
+    var email = JsonModifier.JsonReader(session, json, mail, name);
+    var person_nickname = JsonModifier.JsonReader(session, json, nickname, name);
 
-     return("Questa persona è " + name + ", il suo username github è " + gitUser + ", il suo soprannome è " + person_nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + project_mantain + ", i progetti a lui assegnati sono " + project_assigned + ". La sua email è " + email + ", il suo ruolo nel team è " + person_role);;
+    return ("Questa persona è " + name + ", il suo username github è " + gitUser + ", il suo soprannome è " + person_nickname + ", le sue specialità sono: " + spec + ", i progetti che deve mantenere sono: " + project_mantain + ", i progetti a lui assegnati sono " + project_assigned + ". La sua email è " + email + ", il suo ruolo nel team è " + person_role);;
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleRole(session, json, role, name)
-{
+function getPeopleRole(session, json, role, name) {
     var person_role = JsonModifier.JsonReader(session, json, role, name)
     return ("Il ruolo di " + name + " è " + person_role);
 }
@@ -2087,8 +1958,7 @@ function getNunzioResponsability(session, parsed) {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getProjectInformation(session, json, type, description, chief, link_repo, begin_develop, end_develop, version, support, how_going, member, note, project)
-{
+function getProjectInformation(session, json, type, description, chief, link_repo, begin_develop, end_develop, version, support, how_going, member, note, project) {
     var project_type = JsonModifier.JsonReader(session, json, type, project);
     var project_description = JsonModifier.JsonReader(session, json, description, project);
     var project_chief = JsonModifier.JsonReader(session, json, chief, project);
@@ -2100,87 +1970,25 @@ function getProjectInformation(session, json, type, description, chief, link_rep
     var project_how_going = JsonModifier.JsonReader(session, json, how_going, project);
     var project_member = JsonModifier.JsonReader(session, json, member, project);
     var project_note = JsonModifier.JsonReader(session, json, note, project);
-    return (project + " è un progetto di tipo " + project_type + ". E' un " + project_description + ". La gestione è di " + project_chief + ". Questo progetto lo si può trovare a questo link " + project_link_repo + ". E' stato cominciato il " + project_begin_develop + "e la data di fine è " + project_end_develop + "")
-}
-
-function getZizInformation(session, parsed) {
-    return ("Project Ziz è un progetto di tipo " + parsed.database.progetti.project_ziz.tipo_progetto + ". E' un " + parsed.database.progetti.project_ziz.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_ziz.capo_progetto + ". La gestione è " + parsed.database.progetti.project_ziz.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_ziz.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_ziz.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_ziz.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_ziz.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_ziz.membri);
-}
-
-function getParseInformation(session, parsed) {
-    return ("Project Parse è un progetto di tipo " + parsed.database.progetti.project_parse.tipo_progetto + ". E' un " + parsed.database.progetti.project_parse.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_parse.capo_progetto + ". La gestione è " + parsed.database.progetti.project_parse.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_parse.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_parse.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_parse.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_parse.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_parse.membri);
-}
-
-function getVolleyInformation(session, parsed) {
-    return ("Project Volley è un progetto di tipo " + parsed.database.progetti.project_volley.tipo_progetto + ". E' un " + parsed.database.progetti.project_volley.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_volley.capo_progetto + ". La gestione è " + parsed.database.progetti.project_volley.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_volley.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_volley.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_volley.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_volley.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_volley.membri);
-}
-
-function getFastInkInformation(session, parsed) {
-    return ("Fast Ink è un progetto di tipo " + parsed.database.progetti.fast_ink.tipo_progetto + ". E' un " + parsed.database.progetti.fast_ink.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.fast_ink.capo_progetto + ". La gestione è " + parsed.database.progetti.fast_ink.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.fast_ink.link_repo + ". E' stato cominciato a " + parsed.database.progetti.fast_ink.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.fast_ink.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.fast_ink.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.fast_ink.membri);
-}
-
-function getWebsiteInformation(session, parsed) {
-    return ("Project Website è un progetto di tipo " + parsed.database.progetti.project_website.tipo_progetto + ". E' un " + parsed.database.progetti.project_website.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_website.capo_progetto + ". La gestione è " + parsed.database.progetti.project_website.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_website.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_website.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_website.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_website.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_website.membri);
-}
-
-function getTPBMCInformation(session, parsed) {
-    return ("T.P.B.M.C. è un progetto di tipo " + parsed.database.progetti.team_perso_bot_model_core.tipo_progetto + ". E' un " + parsed.database.progetti.team_perso_bot_model_core.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.team_perso_bot_model_core.capo_progetto + ". La gestione è " + parsed.database.progetti.team_perso_bot_model_core.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.team_perso_bot_model_core.link_repo + ". E' stato cominciato a " + parsed.database.progetti.team_perso_bot_model_core.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.team_perso_bot_model_core.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.team_perso_bot_model_core.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.team_perso_bot_model_core.membri);
-}
-
-function getDeafInformation(session, parsed) {
-    return ("Project Deaf è un progetto di tipo " + parsed.database.progetti.project_deaf.tipo_progetto + ". E' un " + parsed.database.progetti.project_deaf.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.project_deaf.capo_progetto + ". La gestione è " + parsed.database.progetti.project_deaf.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.project_deaf.link_repo + ". E' stato cominciato a " + parsed.database.progetti.project_deaf.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.project_deaf.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.project_deaf.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.project_deaf.membri);
-}
-
-function getUtilitiesInformation(session, parsed) {
-    return ("Utilities è un progetto di tipo " + parsed.database.progetti.utilities.tipo_progetto + ". E' un " + parsed.database.progetti.utilities.descrizione_progetto + ". La gestione è di " + parsed.database.progetti.utilities.capo_progetto + ". La gestione è " + parsed.database.progetti.utilities.tipo_gestione + ". Questo progetto lo si può trovare a questo link: " + parsed.database.progetti.utilities.link_repo + ". E' stato cominciato a " + parsed.database.progetti.utilities.inizio_sviluppo + "e la data di fine è " + parsed.database.progetti.utilities.fine_sviluppo + ". E' supportato e la versione corrente è la " + parsed.database.progetti.utilities.versione + ". I membri che ci lavorano sono: " + parsed.database.progetti.utilities.membri);
+    return (project + " è un progetto di tipo " + project_type + ". E' un " + project_description + ". La gestione è di " + project_chief + ". Questo progetto lo si può trovare a questo link " + project_link_repo + ". E' stato cominciato il " + project_begin_develop + "e la data di fine è " + project_end_develop + ". La versione corrente è la " + project_version + ". E' supportato e procede " + project_how_going + ". I membri che lavorano sono " + project_member + ". Note: " + project_note);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getOrfeiProjects(session, parsed) {
-    return ("I progetti fatti da orfei sono: project Ziz");
-}
-
-function getLucchiProjects(session, parsed) {
-    return ("I progetti fatti da lucchi sono: Deaf");
-}
-
-function getFantinatoProjects(session, parsed) {
-    return ("I progetti fatti da fantinato sono: Parse, Website");
-}
-
-function getZancanaroProjects(session, parsed) {
-    return ("I progetti fatti da Zancanaro sono: Volley");
-}
-
-function getChiarinProjects(session, parsed) {
-    return ("I progetti fatti da Chiarin sono: multiplatform UWP");
-}
-
-function getGreggioProjects(session, parsed) {
-    return ("I progetti fatti da Greggio sono: Parse");
-}
-
-function getQuintoProjects(session, parsed) {
-    return ("I progetti fatti da Quinto sono: Parse");
-}
-
-function getNunzioProjects(session, parsed) {
-    return ("I progetti fatti da lucchi sono: project Ziz");
+function getPeopleProject(session, json, assigned, name) {
+    var project = JsonModifier.JsonReader(session, json, assigned, name);
+    return ("I progetti fatti da " + name + " sono " + project);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getTeamInformation(session, parsed) {
-    var membri = '';
-    var progetti = '';
-    for (var i = 0; i < parsed.database.team_generale.lista_membri.length; i++) {
-        membri += parsed.database.team_generale.lista_membri[i] + ', ';
-    }
-    for (var i = 0; i < parsed.database.progetti_generale.lista_progetti.length; i++) {
-        progetti += parsed.database.progetti_generale.lista_progetti[i] + ', ';
-    }
-    return ("Questo è il team perso. E' composto da " + parsed.database.team_generale.numero_membri + ", che sono " + membri + ". Il numero di progetti totali per ora è di " + parsed.database.progetti_generale.numero_progetti_totale + ", quelli attivi sono " + parsed.database.progetti_generale.numero_progetti_attivi + ". I progetti sono " + progetti + ". Per maggiori Informazioni visitare il sito " + parsed.database.team_generale.link_sito);
+function getTeamInformation(session, json, nProject, nMembers, MemberList, ProjectList, link) {
+    var Projects = JsonModifier.JsonReader(session, json, nProject);
+    var ListProject = JsonModifier.JsonReader(session, json, ProjectList);
+    var site_link = JsonModifier.JsonReader(session, json, link);
+    var Members = JsonModifier.JsonReader(session, json, nMembers);
+    var ListMember = JsonModifier.JsonReader(session, json, MemberList);
+    return ("Questo è il team perso. E' composto da " + Members + ", che sono " + ListMember + ". Il numero di progetti totali per ora è di " + Projects + ". I progetti sono " + ListProject + ". Per maggiori Informazioni visitare il sito " + site_link);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2191,16 +1999,21 @@ function getBullshit(session) {
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleMail(session, json, mail, name)
-{
+function getPeopleMail(session, json, mail, name) {
     var email = JsonModifier.JsonReader(session, json, mail, name);
     return ("L' email di " + name + " è " + email);
 }
 
 //-----------------------------------------------------------------------------------------------------------
 
-function getProjectFind(session, json, link, project)
-{
+function getProjectFind(session, json, link, project) {
     var link_project = JsonModifier.JsonReader(session, json, link, project);
     return (project + " si può trovare al link " + link_project);
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+function getProjectGestione(session, json, chief, project) {
+    var boss = JsonModifier.JsonReader(session, json, chief, project);
+    return (boss + " si occupa di questo progetto");
 }

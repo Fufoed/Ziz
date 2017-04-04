@@ -11,6 +11,7 @@
             ]
         },
         "projects_general": {
+            "numero_progetti": 8,
             "lista_progetti": [
                 "Utilities",
                 "Fast Ink!",
