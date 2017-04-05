@@ -702,11 +702,11 @@ bot.dialog('TeamTemp', [
 bot.dialog('TotalProjectTemp', [
     function(session) {
         session.send("Cosa vuoi sapere sui progetti?");
-        var title = ['Project Parse', 'Utilities', 'RELU', 'Project Ziz', 'Fast Ink', 'Website'];
+        var title = ['Project Parse', 'Utilities', 'RELU', 'Project Ziz', 'Fast Ink', 'Website', 'Research'];
         var text = ['Informazione sul progetto Parse', 'Informazioni su utilities', 'Informazioni su RELU', 'Informazioni sul progetto Ziz', 'Informazioni su fast ink', 'Informazioni su Website'];
-        var buttonReturn = ['informazioni sul progetto parse', 'gestione del progetto parse', 'informazioni su utilities', 'gestione di utilities', 'informazioni su RELU', 'gestione di RELU', 'informazioni sul progetto ziz', 'gestione del progetto ziz', 'informazioni su fast ink', 'gestione di fast ink', 'informazioni sul progetto website', 'gestione del progetto website'];
+        var buttonReturn = ['informazioni sul progetto parse', 'gestione del progetto parse', 'informazioni su utilities', 'gestione di utilities', 'informazioni su RELU', 'gestione di RELU', 'informazioni sul progetto ziz', 'gestione del progetto ziz', 'informazioni su fast ink', 'gestione di fast ink', 'informazioni sul progetto website', 'gestione del progetto website', 'informazioni su research', 'gestione di research'];
         var buttonText = ['Info', 'Gestione'];
-        var totalProjectCards = HerocardCreator.CreateCards(session, 6, title, text, 2, '', buttonReturn, buttonText);
+        var totalProjectCards = HerocardCreator.CreateCards(session, 7, title, text, 2, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(totalProjectCards);
@@ -773,6 +773,16 @@ bot.dialog('TotalProjectTemp', [
             case "gestione del progetto website":
                 var WebGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_website');
                 session.send(WebGestioneTemp);
+                session.beginDialog('Root');
+                break;
+            case "informazioni su research":
+                var ResearchTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'research');
+                session.send(ResearchTemp);
+                session.beginDialog('Root');
+                break;
+            case "gestione di research":
+                var ResearchTempGestione = getProjectGestione(session, works, 'capo_progetto', 'research');
+                session.send(ResearchTempGestione);
                 session.beginDialog('Root');
                 break;
         }
