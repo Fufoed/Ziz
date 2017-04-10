@@ -108,208 +108,208 @@ bot.dialog('Root', new botbuilder.IntentDialog({
         recognizers: [recognize]
     }).matches('GetInformation', [
         function(session, args, results) {
-            var team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, chiarin, greggio, quinto, fantinato, nunzio, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email, research;
-            var entities = [team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, chiarin, greggio, quinto, fantinato, nunzio, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email, research];
-            var built = ['Team_Perso', 'Responsibility', 'role', 'find', 'easter_egg', 'people::orfei', 'people::lucchi', 'people::zancanaro', 'people::chiarin', 'people::greggio', 'people::quinto', 'people::fantinato', 'people::nunzio', 'project::ziz', 'project::fast ink', 'project::website', 'project::Relu', 'project::utilities', 'project::parse', 'current_project', 'total_project', 'people', 'email', 'project::research'];
-            var BuiltEntities = setupEntities.EntitySetup(24, entities, built, session, args);
+            var team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, greggio, fantinato, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email, research;
+            var entities = [team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, greggio, fantinato, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email, research];
+            var built = ['Team_Perso', 'Responsibility', 'role', 'find', 'easter_egg', 'people::orfei', 'people::lucchi', 'people::zancanaro', 'people::greggio', 'people::fantinato', 'project::ziz', 'project::fast ink', 'project::website', 'project::Relu', 'project::utilities', 'project::parse', 'current_project', 'total_project', 'people', 'email', 'project::research'];
+            var BuiltEntities = setupEntities.EntitySetup(21, entities, built, session, args);
 
-            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !greggio && !fantinato && !ziz && !parse && !fast_ink && !website && !RELU && !current_project && !total_project && !total_people && !email && !utilities && !research) {
+            if (!BuiltEntities[0] && !BuiltEntities[1] && !BuiltEntities[2] && !BuiltEntities[3] && !BuiltEntities[4] && !BuiltEntities[5] && !BuiltEntities[6] && !BuiltEntities[7] && !BuiltEntities[8] && !BuiltEntities[9] && !BuiltEntities[10] && !BuiltEntities[11] && !BuiltEntities[12] && !BuiltEntities[13] && !BuiltEntities[15] && !BuiltEntities[16] && !BuiltEntities[17] && !BuiltEntities[18] && !BuiltEntities[19] && !BuiltEntities[20] && !BuiltEntities[21]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('NothingTemp');
                     },
                     function(callback) {
-                        session.beginDialog('Nothing');
+                        session.beginDialog('Root');
                     }
                 ], function(error, results) {
                     session.send("Error");
                 });
             }
-            if (email) {
+            if (BuiltEntities[20]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('AllMailTemp');
                     },
                     function(callback) {
-                        session.beginDialog('AllMail');
+                        session.beginDialog('Root');
                     }
                 ], function(error, results) {
                     session.send("Error");
                 })
             }
-            if (total_people) {
+            if (BuiltEntities[18]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('AllPeopleTemp');
                     },
                     function(callback) {
-                        session.beginDialog('AllPeople');
+                        session.beginDialog('Root');
                     }
                 ], function(error, results) {
                     session.send("Error");
                 })
             }
-            if (total_project) {
+            if (BuiltEntities[17]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('TotalProjectTemp');
                     },
                     function(callback) {
-                        session.beginDialog('TotalProject');
+                        session.beginDialog('Root');
                     }
                 ], function(error, results) {
                     session.send("Error");
                 })
             }
-            if (current_project) {
+            if (BuiltEntities[17]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('CurrentProjectTemp');
                     },
                     function(callback) {
-                        session.beginDialog('CurrentProject');
+                        session.beginDialog('Root');
                     }
                 ], function(error, results) {
                     session.send("Error");
                 })
             }
-            if (team_perso) {
+            if (BuiltEntities[0]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('TeamTemp');
                     },
                     function(callback) {
-                        session.beginDialog('Team')
+                        session.beginDialog('Root')
                     }
                 ], function(error, results) {
                     session.send("Error");
                 })
             }
-            if (responsability) {
+            if (BuiltEntities[1]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('AllResponsabilityTemp');
                     },
                     function(callback) {
-                        session.beginDialog('AllResponsability');
+                        session.beginDialog('Root');
                     }
                 ], function(error, results) {
                     session.send("Error");
                 })
             }
-            if (role) {
+            if (BuiltEntities[2]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('AllRoleTemp');
                     },
                     function(callback) {
-                        session.beginDialog('AllRole');
+                        session.beginDialog('Root');
                     }
                 ], function(error, results) {
                     session.send("Error");
                 })
             }
-            if (find) {
+            if (BuiltEntities[3]) {
                 async.parallel([
                     function(callback) {
                         session.beginDialog('FindAllTemp');
                     },
                     function(callback) {
-                        session.beginDialog('FindAll');
+                        session.beginDialog('Root');
                     }
                 ], function(error, results) {
                     session.send("Error");
                 })
             }
-            if (research) {
+            if (BuiltEntities[21]) {
                 var ResearchTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'research');
                 session.send(ResearchTemp);
             }
-            if (RELU) {
+            if (BuiltEntities[13]) {
                 var RELUTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
                 session.send(RELUTemp);
             }
-            if (website) {
+            if (BuiltEntities[12]) {
                 var WebTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_website');
                 session.send(WebTemp);
             }
-            if (fast_ink) {
+            if (BuiltEntities[11]) {
                 var FastTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'fast_ink');
                 session.send(FastTemp);
             }
-            if (parse) {
+            if (BuiltEntities[15]) {
                 var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
                 session.send(ParseTemp);
             }
-            if (utilities) {
+            if (BuiltEntities[14]) {
                 var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
                 session.send(UtilitiesTemp);
             }
-            if (ziz) {
+            if (BuiltEntities[10]) {
                 var ZizTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_ziz');
                 session.send(ZizTemp);
             }
-            if (fantinato) {
+            if (BuiltEntities[9]) {
                 var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
                 session.send(FantinatoTemp);
             }
-            if (greggio) {
+            if (BuiltEntities[8]) {
                 var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
                 session.send(GreggioTemp);
             }
-            if (orfei) {
+            if (BuiltEntities[5]) {
                 var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
                 session.send(OrfeiTemp);
             }
-            if (lucchi) {
+            if (BuiltEntities[6]) {
                 var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
                 session.send(LucchiTemp);
             }
-            if (zancanaro) {
+            if (BuiltEntities[7]) {
                 var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
                 session.send(ZancanaroTemp);
             }
-            if (easter_egg) {
+            if (BuiltEntities[4]) {
                 var BullshitTemp = getBullshit(session);
                 session.send(BullshitTemp);
             }
-            if (fantinato && role) {
+            if (BuiltEntities[9] && BuiltEntities[2]) {
                 var FantinatoRole = getPeopleRole(session, persone, 'ruolo', 'fantinato');
                 session.send(FantinatoRole);
             }
-            if (greggio && role) {
+            if (BuiltEntities[8] && BuiltEntities[2]) {
                 var GreggioRole = getPeopleRole(session, persone, 'ruolo', 'greggio');
                 session.send(GreggioRole);
             }
-            if (zancanaro && role) {
+            if (BuiltEntities[7] && BuiltEntities[2]) {
                 var ZancanaroRole = getPeopleRole(session, persone, 'ruolo', 'zancanaro');
                 session.send(ZancanaroRole);
             }
-            if (lucchi && role) {
+            if (BuiltEntities[6] && BuiltEntities[2]) {
                 var LucchiRole = getPeopleRole(session, persone, 'ruolo', 'lucchi');
                 session.send(LucchiRole);
             }
-            if (orfei && role) {
+            if (BuiltEntities[5] && BuiltEntities[2]) {
                 var OrfeiRole = getPeopleRole(session, persone, 'ruolo', 'orfei');
                 session.send(OrfeiRole);
             }
-            if (fantinato && responsability) {
+            if (BuiltEntities[9] && BuiltEntities[1]) {
                 var FantinatoRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'fantinato');
                 session.send(FantinatoRes);
             }
-            if (greggio && responsability) {
+            if (BuiltEntities[8] && BuiltEntities[1]) {
                 var GreggioRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'greggio');
                 session.send(GreggioRes);
             }
-            if (zancanaro && responsability) {
+            if (BuiltEntities[7] && BuiltEntities[1]) {
                 var ZancanaroRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'zancanaro');
                 session.send(ZancanaroRes);
             }
-            if (lucchi && responsability) {
+            if (BuiltEntities[6] && BuiltEntities[1]) {
                 var LucchiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'lucchi');
                 session.send(LucchiRes);
             }
-            if (orfei && responsability) {
+            if (BuiltEntities[5] && BuiltEntities[1]) {
                 var OrfeiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'orfei');
                 session.send(OrfeiRes);
             }
@@ -433,11 +433,11 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             session.beginDialog('Root');
         }
     ])
-    .matches('Modify', [
+    /*.matches('Modify', [
         function(session, args, results) {
 
         }
-    ])
+    ])*/
     .matches('None', [
         function(session, args, results) {
             session.send("Wrong action");
