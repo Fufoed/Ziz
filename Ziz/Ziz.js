@@ -313,113 +313,113 @@ bot.dialog('Root', new botbuilder.IntentDialog({
                 var OrfeiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'orfei');
                 session.send(OrfeiRes);
             }
-            if (fantinato && mail) {
+            if (BuiltEntities[9] && BuiltEntities[20]) {
                 var FantinatoMail = getPeopleMail(session, persone, 'mail', 'fantinato');
                 session.send(FantinatoMail);
             }
-            if (greggio && mail) {
+            if (BuiltEntities[8] && BuiltEntities[20]) {
                 var GreggioMail = getPeopleMail(session, persone, 'mail', 'greggio');
                 session.send(GreggioMail);
             }
-            if (zancanaro && mail) {
+            if (BuiltEntities[7] && BuiltEntities[20]) {
                 var ZancanaroMail = getPeopleMail(session, persone, 'mail', 'zancanaro');
                 session.send(ZancanaroMail);
             }
-            if (lucchi && mail) {
+            if (BuiltEntities[6] && BuiltEntities[20]) {
                 var LucchiMail = getPeopleMail(session, persone, 'mail', 'lucchi');
                 session.send(LucchiMail);
             }
-            if (orfei && mail) {
+            if (BuiltEntities[5] && BuiltEntities[20]) {
                 var OrfeiMail = getPeopleMail(session, persone, 'mail', 'orfei');
                 session.send(OrfeiMail);
             }
-            if (fantinato && total_project) {
+            if (BuiltEntities[9] && BuiltEntities[17]) {
                 var FantinatoProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'fantinato');
                 session.send(FantinatoProjects);
             }
-            if (greggio && total_project) {
+            if (BuiltEntities[8] && BuiltEntities[17]) {
                 var GreggioProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'greggio');
                 session.send(GreggioProjects);
             }
-            if (zancanaro && total_project) {
+            if (BuiltEntities[7] && BuiltEntities[17]) {
                 var ZancanaroProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'zancanaro');
                 session.send(ZancanaroProjects);
             }
-            if (lucchi && total_project) {
+            if (BuiltEntities[6] && BuiltEntities[17]) {
                 var LucchiProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'lucchi');
                 session.send(LucchiProjects);
             }
-            if (orfei && total_project) {
+            if (BuiltEntities[5] && BuiltEntities[17]) {
                 var OrfeiProject = getPeopleProject(session, persone, 'progetti_assegnati', 'orfei');
                 session.send(OrfeiProject);
             }
-            if (ziz && responsability) {
+            if (BuiltEntities[10] && BuiltEntities[1]) {
                 var ZizGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_ziz');
                 session.send(ZizGestioneTemp);
             }
-            if (parse && responsability) {
+            if (BuiltEntities[15] && BuiltEntities[1]) {
                 var ParseGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_parse');
                 session.send(ParseGestioneTemp);
             }
-            if (website && responsability) {
+            if (BuiltEntities[12] && BuiltEntities[1]) {
                 var WebGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_website');
                 session.send(WebGestioneTemp);
             }
-            if (fast_ink && responsability) {
+            if (BuiltEntities[11] && BuiltEntities[1]) {
                 var FastInkGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'fast_ink');
                 session.send(FastInkGestioneTemp);
             }
-            if (RELU && responsability) {
-                var TPBMCGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'relu-core');
+            if (BuiltEntities[13] && BuiltEntities[1]) {
+                var RELUGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'relu-core');
                 session.send(RELUGestioneTemp);
             }
-            if (utilities && responsability) {
+            if (BuiltEntities[14] && BuiltEntities[1]) {
                 var UtilitiesGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'utilities');
                 session.send(UtilitiesGestioneTemp);
             }
-            if (RELU && find) {
+            if (BuiltEntities[13] && BuiltEntities[3]) {
                 var RELUTemp = getProjectFind(session, works, 'link_repo', 'relu-core');
                 session.send(TPBMCTemp);
             }
-            if (website && find) {
+            if (BuiltEntities[12] && BuiltEntities[3]) {
                 var WebTemp = getProjectFind(session, works, 'link_repo', 'project_website');
                 session.send(WebTemp);
             }
-            if (fast_ink && find) {
+            if (BuiltEntities[11] && BuiltEntities[3]) {
                 var FastTemp = getProjectFind(session, works, 'link_repo', 'fast_ink');
                 session.send(FastTemp);
             }
-            if (parse && find) {
+            if (BuiltEntities[15] && BuiltEntities[3]) {
                 var ParseTemp = getProjectFind(session, works, 'link_repo', 'project_parse');
                 session.send(ParseTemp);
             }
-            if (utilities && find) {
+            if (BuiltEntities[14] && BuiltEntities[3]) {
                 var UtilitiesTemp = getProjectFind(session, works, 'link_repo', 'utilities');
                 session.send(UtilitiesTemp);
             }
-            if (ziz && find) {
+            if (BuiltEntities[10] && BuiltEntities[3]) {
                 var ZizTemp = getProjectFind(session, works, 'link_repo', 'project_ziz');
                 session.send(ZizTemp);
             }
-            if (orfei && lucchi) {
+            if (BuiltEntities[5] && BuiltEntities[6]) {
                 var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
                 var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
                 session.send(OrfeiTemp);
                 session.send(LucchiTemp);
             }
-            if (orfei && fantinato) {
+            if (BuiltEntities[5] && BuiltEntities[9]) {
                 var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
                 var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
                 session.send(OrfeiTemp);
                 session.send(FantinatoTemp);
             }
-            if (orfei && zancanaro) {
+            if (BuiltEntities[5] && BuiltEntities[7]) {
                 var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
                 var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
                 session.send(OrfeiTemp);
                 session.send(ZancanaroTemp);
             }
-            if (orfei && greggio) {
+            if (BuiltEntities[5] && BuiltEntities[8]) {
                 var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
                 var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
                 session.send(OrfeiTemp);
