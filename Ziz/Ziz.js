@@ -22,11 +22,11 @@ var ideas = require('../Database - New/Ideas');
 
 var rules = require('../Database - New/Rules');
 
-var JsonModifier = require('../RELU-Core/Core/Config/RELU-JSONManager');
+var JsonModifier = require('../RELU-Core/Node.js/Core/Config/RELU-JSONManager');
 
-var HerocardCreator = require('../RELU-Core/Core/Card/RELU-HeroCard');
+var HerocardCreator = require('../RELU-Core/Node.js/Core/Card/RELU-HeroCard');
 
-var setupEntities = require('../RELU-Core/Core/LUIS/RELU-LUISEntities');
+var setupEntities = require('../RELU-Core/Node.js/Core/LUIS/RELU-LUISEntities');
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
