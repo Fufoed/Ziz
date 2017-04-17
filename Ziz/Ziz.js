@@ -1,8 +1,8 @@
-var botbuilder = require('../Node.js/node_modules/botbuilder');
+var botbuilder = require('node_modules/botbuilder');
 
-var restify = require('../Node.js/node_modules/restify');
+var restify = require('node_modules/restify');
 
-var async = require('../Node.js/node_modules/async');
+var async = require('node_modules/async');
 
 var easterEgg = require('../Database - New/EasterEgg.json');
 
