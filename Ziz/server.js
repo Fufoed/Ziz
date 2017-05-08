@@ -4,6 +4,8 @@ var port = process.env.PORT || 1337;
 
 var botbuilder = require('botbuilder');
 
+var relucore = require('relu-core');
+
 var promise = require('promise');
 
 var rp = require('rp');
@@ -29,12 +31,6 @@ var general = require('./Database/General');
 var ideas = require('./Database/Ideas');
 
 var rules = require('./Database/Rules');
-
-var JsonModifier = require('./RELU-Core/Node.js/Core/Config/RELU-JSONManager');
-
-var HerocardCreator = require('./RELU-Core/Node.js/Core/Card/RELU-HeroCard');
-
-var setupEntities = require('./RELU-Core/Node.js/Core/LUIS/RELU-LUISEntities');
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1316,13 +1312,13 @@ bot.dialog('FindAllTemp', [
 
 function getPeopleInformation(session, json, mantain, gitusername, assigned, role, speciality, mail, nickname, name)
 {
-    var project_mantain = JsonModifier.JsonReader(session, json, mantain, name);
-    var gitUser = JsonModifier.JsonReader(session, json, gitusername, name);
-    var project_assigned = JsonModifier.JsonReader(session, json, assigned, name);
-    var person_role = JsonModifier.JsonReader(session, json, role, name);
-    var spec = JsonModifier.JsonReader(session, json, speciality, name);
-    var email = JsonModifier.JsonReader(session, json, mail, name);
-    var person_nickname = JsonModifier.JsonReader(session, json, nickname, name);
+    var project_mantain = relucore.ReluConfig.JsonReader(session, json, mantain, name);
+    var gitUser = relucore.ReluConfig.JsonReader(session, json, gitusername, name);
+    var project_assigned = relucore.ReluConfig.JsonReader(session, json, assigned, name);
+    var person_role = relucore.ReluConfig.JsonReader(session, json, role, name);
+    var spec = relucore.ReluConfig.JsonReader(session, json, speciality, name);
+    var email = relucore.ReluConfig.JsonReader(session, json, mail, name);
+    var person_nickname = relucore.ReluConfig.JsonReader(session, json, nickname, name);
 
     return ("Questa persona e " + name + ", il suo username github e " + gitUser + ", il suo soprannome e " + person_nickname + ", le sue specialita sono: " + spec + ", i progetti che deve mantenere sono: " + project_mantain + ", i progetti a lui assegnati sono " + project_assigned + ". La sua email e " + email + ", il suo ruolo nel team e " + person_role);;
 }
@@ -1331,7 +1327,7 @@ function getPeopleInformation(session, json, mantain, gitusername, assigned, rol
 
 function getPeopleRole(session, json, role, name)
 {
-    var person_role = JsonModifier.JsonReader(session, json, role, name)
+    var person_role = relucore.ReluConfig.JsonReader(session, json, role, name)
     return ("Il ruolo di " + name + " e " + person_role);
 }
 
@@ -1339,17 +1335,17 @@ function getPeopleRole(session, json, role, name)
 
 function getProjectInformation(session, json, type, description, chief, link_repo, begin_develop, end_develop, version, support, how_going, member, note, project)
 {
-    var project_type = JsonModifier.JsonReader(session, json, type, project);
-    var project_description = JsonModifier.JsonReader(session, json, description, project);
-    var project_chief = JsonModifier.JsonReader(session, json, chief, project);
-    var project_link_repo = JsonModifier.JsonReader(session, json, link_repo, project);
-    var project_begin_develop = JsonModifier.JsonReader(session, json, begin_develop, project);
-    var project_end_develop = JsonModifier.JsonReader(session, json, end_develop, project);
-    var project_version = JsonModifier.JsonReader(session, json, version, project);
-    var project_support = JsonModifier.JsonReader(session, json, support, project);
-    var project_how_going = JsonModifier.JsonReader(session, json, how_going, project);
-    var project_member = JsonModifier.JsonReader(session, json, member, project);
-    var project_note = JsonModifier.JsonReader(session, json, note, project);
+    var project_type = relucore.ReluConfig.JsonReader(session, json, type, project);
+    var project_description = relucore.ReluConfig.JsonReader(session, json, description, project);
+    var project_chief = relucore.ReluConfig.JsonReader(session, json, chief, project);
+    var project_link_repo = relucore.ReluConfig.JsonReader(session, json, link_repo, project);
+    var project_begin_develop = relucore.ReluConfig.JsonReader(session, json, begin_develop, project);
+    var project_end_develop = relucore.ReluConfig.JsonReader(session, json, end_develop, project);
+    var project_version = relucore.ReluConfig.JsonReader(session, json, version, project);
+    var project_support = relucore.ReluConfig.JsonReader(session, json, support, project);
+    var project_how_going = relucore.ReluConfig.JsonReader(session, json, how_going, project);
+    var project_member = relucore.ReluConfig.JsonReader(session, json, member, project);
+    var project_note = relucore.ReluConfig.JsonReader(session, json, note, project);
     return (project + " e un progetto di tipo " + project_type + ".<br> E' un " + project_description + ".<br> La gestione e di " + project_chief + ".<br> Questo progetto lo si puo trovare a questo link: " + project_link_repo + ".<br> E' stato cominciato il " + project_begin_develop + "e la data di fine e " + project_end_develop + ".<br> La versione corrente e la " + project_version + ".<br> E' supportato e procede " + project_how_going + ".<br> I membri che lavorano sono:<br> " + project_member + ".<br> Note: " + project_note);
 }
 
@@ -1357,7 +1353,7 @@ function getProjectInformation(session, json, type, description, chief, link_rep
 
 function getPeopleProject(session, json, assigned, name)
 {
-    var project = JsonModifier.JsonReader(session, json, assigned, name);
+    var project = relucore.ReluConfig.JsonReader(session, json, assigned, name);
     return ("I progetti fatti da " + name + " sono " + project);
 }
 
@@ -1365,11 +1361,11 @@ function getPeopleProject(session, json, assigned, name)
 
 function getTeamInformation(session, json, nProject, nMembers, MemberList, ProjectList, link)
 {
-    var Projects = JsonModifier.JsonReader(session, json, nProject);
-    var ListProject = JsonModifier.JsonReader(session, json, ProjectList);
-    var site_link = JsonModifier.JsonReader(session, json, link);
-    var Members = JsonModifier.JsonReader(session, json, nMembers);
-    var ListMember = JsonModifier.JsonReader(session, json, MemberList);
+    var Projects = relucore.ReluConfig.JsonReader(session, json, nProject);
+    var ListProject = relucore.ReluConfig.JsonReader(session, json, ProjectList);
+    var site_link = relucore.ReluConfig.JsonReader(session, json, link);
+    var Members = relucore.ReluConfig.JsonReader(session, json, nMembers);
+    var ListMember = relucore.ReluConfig.JsonReader(session, json, MemberList);
     return ("Questo e il team perso. <br>E' composto da " + Members + " membri, che sono:<br> " + ListMember + ". <br>Il numero di progetti totali per ora e di " + Projects + " progetti.<br> I progetti sono:<br> " + ListProject + ".<br> Per maggiori Informazioni visitare il sito: " + site_link);
 }
 
@@ -1384,7 +1380,7 @@ function getBullshit(session)
 
 function getPeopleMail(session, json, mail, name)
 {
-    var email = JsonModifier.JsonReader(session, json, mail, name);
+    var email = relucore.ReluConfig.JsonReader(session, json, mail, name);
     return ("L' email di " + name + " e " + email);
 }
 
@@ -1392,7 +1388,7 @@ function getPeopleMail(session, json, mail, name)
 
 function getProjectFind(session, json, link, project)
 {
-    var link_project = JsonModifier.JsonReader(session, json, link, project);
+    var link_project = relucore.ReluConfig.JsonReader(session, json, link, project);
     return (project + " si puo trovare al link " + link_project);
 }
 
@@ -1400,7 +1396,7 @@ function getProjectFind(session, json, link, project)
 
 function getProjectGestione(session, json, chief, project)
 {
-    var boss = JsonModifier.JsonReader(session, json, chief, project);
+    var boss = relucore.ReluConfig.JsonReader(session, json, chief, project);
     return (boss + " si occupa di questo progetto");
 }
 
@@ -1408,7 +1404,7 @@ function getProjectGestione(session, json, chief, project)
 
 function getPeopleResponsability(session, json, assegnati, name)
 {
-    var assigned = JsonModifier.JsonReader(session, json, assegnati, name);
+    var assigned = relucore.ReluConfig.JsonReader(session, json, assegnati, name);
     return (name + " per ora si occupa di " + assigned);
 }
 
