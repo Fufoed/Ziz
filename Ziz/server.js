@@ -43,14 +43,12 @@ var intent = new botbuilder.IntentDialog();
 
 var bot = new botbuilder.UniversalBot(connector);
 
-var server = restify.createServer(function (req, res)
-{
+var server = restify.createServer(function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
 });
 
 server.listen(process.env.port || process.env.PORT || 3978,
-    function ()
-    {
+    function() {
         console.log(server.name + " Listening to " + server.url);
     });
 
@@ -61,8 +59,7 @@ server.listen(process.env.port || process.env.PORT || 3978,
 
 var bullshit = [];
 
-for (var i = 0; i < easterEgg.easter_egg.length; i++)
-{
+for (var i = 0; i < easterEgg.easter_egg.length; i++) {
     bullshit[i] = easterEgg.easter_egg[i];
 }
 
@@ -109,447 +106,358 @@ var recognize = new botbuilder.LuisRecognizer(model);
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 bot.dialog('/', [
-    function (session)
-    {
+    function(session) {
         session.send("Hi, I'm Ziz. For more information please visit www.teamperso.com");
         session.beginDialog('Root');
     },
-    function (session, results)
-    {
+    function(session, results) {
         session.endConversation("Goodbye until next time");
     }
 ]);
 
 bot.dialog('Root', new botbuilder.IntentDialog({
-    recognizers: [recognize]
-}).matches('GetInformation', [
-    function (session, args, results)
-    {
-        var team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, greggio, fantinato, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email, research;
-        team_perso = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
-        responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
-        role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
-        find = botbuilder.EntityRecognizer.findEntity(args.entities, 'find');
-        easter_egg = botbuilder.EntityRecognizer.findEntity(args.entities, 'easter_egg');
-        orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
-        lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
-        zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
-        greggio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::greggio');
-        fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
-        ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
-        fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
-        website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
-        RELU = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::RELU');
-        utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
-        parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
-        current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
-        total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
-        total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
-        email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
-        research = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::research');
+        recognizers: [recognize]
+    }).matches('GetInformation', [
+        function(session, args, results) {
+            var team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, greggio, fantinato, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email, research;
+            team_perso = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
+            responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
+            role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
+            find = botbuilder.EntityRecognizer.findEntity(args.entities, 'find');
+            easter_egg = botbuilder.EntityRecognizer.findEntity(args.entities, 'easter_egg');
+            orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
+            lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
+            zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
+            greggio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::greggio');
+            fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
+            ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
+            fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
+            website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
+            RELU = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::RELU');
+            utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
+            parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
+            current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
+            total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
+            total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
+            email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
+            research = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::research');
 
-        if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !greggio && !fantinato && !ziz && !fast_ink && !website && !RELU && !utilities && !parse && !current_project && !total_project && !total_people && !email && !research)
-        {
-            async.parallel([
-                function (callback)
-                {
-                    session.beginDialog('NothingTemp');
-                },
-                function (callback)
-                {
-                    session.beginDialog('Root');
-                }
-            ], function (error, results)
-            {
-                session.send("Error");
-            });
+            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !greggio && !fantinato && !ziz && !fast_ink && !website && !RELU && !utilities && !parse && !current_project && !total_project && !total_people && !email && !research) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('NothingTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Root');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                });
+            }
+            if (email) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllMailTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Root');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (total_people) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllPeopleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Root');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (total_project) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TotalProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Root');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (current_project) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('CurrentProjectTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Root');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (team_perso) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('TeamTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Root')
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (responsability) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllResponsabilityTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Root');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (role) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('AllRoleTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Root');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (find) {
+                async.parallel([
+                    function(callback) {
+                        session.beginDialog('FindAllTemp');
+                    },
+                    function(callback) {
+                        session.beginDialog('Root');
+                    }
+                ], function(error, results) {
+                    session.send("Error");
+                })
+            }
+            if (research) {
+                var ResearchTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'research');
+                session.send(ResearchTemp);
+            }
+            if (RELU) {
+                var RELUTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
+                session.send(RELUTemp);
+            }
+            if (website) {
+                var WebTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_website');
+                session.send(WebTemp);
+            }
+            if (fast_ink) {
+                var FastTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'fast_ink');
+                session.send(FastTemp);
+            }
+            if (parse) {
+                var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
+                session.send(ParseTemp);
+            }
+            if (utilities) {
+                var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
+                session.send(UtilitiesTemp);
+            }
+            if (ziz) {
+                var ZizTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_ziz');
+                session.send(ZizTemp);
+            }
+            if (fantinato) {
+                var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
+                session.send(FantinatoTemp);
+            }
+            if (greggio) {
+                var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
+                session.send(GreggioTemp);
+            }
+            if (orfei) {
+                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+                session.send(OrfeiTemp);
+            }
+            if (lucchi) {
+                var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
+                session.send(LucchiTemp);
+            }
+            if (zancanaro) {
+                var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
+                session.send(ZancanaroTemp);
+            }
+            if (easter_egg) {
+                var BullshitTemp = getBullshit(session);
+                session.send(BullshitTemp);
+            }
+            if (fantinato && role) {
+                var FantinatoRole = getPeopleRole(session, persone, 'ruolo', 'fantinato');
+                session.send(FantinatoRole);
+            }
+            if (greggio && role) {
+                var GreggioRole = getPeopleRole(session, persone, 'ruolo', 'greggio');
+                session.send(GreggioRole);
+            }
+            if (zancanaro && role) {
+                var ZancanaroRole = getPeopleRole(session, persone, 'ruolo', 'zancanaro');
+                session.send(ZancanaroRole);
+            }
+            if (lucchi && role) {
+                var LucchiRole = getPeopleRole(session, persone, 'ruolo', 'lucchi');
+                session.send(LucchiRole);
+            }
+            if (orfei && role) {
+                var OrfeiRole = getPeopleRole(session, persone, 'ruolo', 'orfei');
+                session.send(OrfeiRole);
+            }
+            if (fantinato && responsability) {
+                var FantinatoRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'fantinato');
+                session.send(FantinatoRes);
+            }
+            if (greggio && responsability) {
+                var GreggioRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'greggio');
+                session.send(GreggioRes);
+            }
+            if (zancanaro && responsability) {
+                var ZancanaroRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'zancanaro');
+                session.send(ZancanaroRes);
+            }
+            if (lucchi && responsability) {
+                var LucchiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'lucchi');
+                session.send(LucchiRes);
+            }
+            if (orfei && responsability) {
+                var OrfeiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'orfei');
+                session.send(OrfeiRes);
+            }
+            if (fantinato && email) {
+                var FantinatoMail = getPeopleMail(session, persone, 'mail', 'fantinato');
+                session.send(FantinatoMail);
+            }
+            if (greggio && email) {
+                var GreggioMail = getPeopleMail(session, persone, 'mail', 'greggio');
+                session.send(GreggioMail);
+            }
+            if (zancanaro && email) {
+                var ZancanaroMail = getPeopleMail(session, persone, 'mail', 'zancanaro');
+                session.send(ZancanaroMail);
+            }
+            if (lucchi && email) {
+                var LucchiMail = getPeopleMail(session, persone, 'mail', 'lucchi');
+                session.send(LucchiMail);
+            }
+            if (orfei && email) {
+                var OrfeiMail = getPeopleMail(session, persone, 'mail', 'orfei');
+                session.send(OrfeiMail);
+            }
+            if (fantinato && total_project) {
+                var FantinatoProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'fantinato');
+                session.send(FantinatoProjects);
+            }
+            if (greggio && total_project) {
+                var GreggioProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'greggio');
+                session.send(GreggioProjects);
+            }
+            if (zancanaro && total_project) {
+                var ZancanaroProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'zancanaro');
+                session.send(ZancanaroProjects);
+            }
+            if (lucchi && total_project) {
+                var LucchiProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'lucchi');
+                session.send(LucchiProjects);
+            }
+            if (orfei && total_project) {
+                var OrfeiProject = getPeopleProject(session, persone, 'progetti_assegnati', 'orfei');
+                session.send(OrfeiProject);
+            }
+            if (ziz && responsability) {
+                var ZizGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_ziz');
+                session.send(ZizGestioneTemp);
+            }
+            if (parse && responsability) {
+                var ParseGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_parse');
+                session.send(ParseGestioneTemp);
+            }
+            if (website && responsability) {
+                var WebGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_website');
+                session.send(WebGestioneTemp);
+            }
+            if (fast_ink && responsability) {
+                var FastInkGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'fast_ink');
+                session.send(FastInkGestioneTemp);
+            }
+            if (RELU && responsability) {
+                var RELUGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'relu-core');
+                session.send(RELUGestioneTemp);
+            }
+            if (utilities && responsability) {
+                var UtilitiesGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'utilities');
+                session.send(UtilitiesGestioneTemp);
+            }
+            if (RELU && find) {
+                var RELUTemp = getProjectFind(session, works, 'link_repo', 'relu-core');
+                session.send(TPBMCTemp);
+            }
+            if (website && find) {
+                var WebTemp = getProjectFind(session, works, 'link_repo', 'project_website');
+                session.send(WebTemp);
+            }
+            if (fast_ink && find) {
+                var FastTemp = getProjectFind(session, works, 'link_repo', 'fast_ink');
+                session.send(FastTemp);
+            }
+            if (parse && find) {
+                var ParseTemp = getProjectFind(session, works, 'link_repo', 'project_parse');
+                session.send(ParseTemp);
+            }
+            if (utilities && find) {
+                var UtilitiesTemp = getProjectFind(session, works, 'link_repo', 'utilities');
+                session.send(UtilitiesTemp);
+            }
+            if (ziz && find) {
+                var ZizTemp = getProjectFind(session, works, 'link_repo', 'project_ziz');
+                session.send(ZizTemp);
+            }
+            if (orfei && lucchi) {
+                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+                var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
+                session.send(OrfeiTemp);
+                session.send(LucchiTemp);
+            }
+            if (orfei && fantinato) {
+                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+                var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
+                session.send(OrfeiTemp);
+                session.send(FantinatoTemp);
+            }
+            if (orfei && zancanaro) {
+                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+                var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
+                session.send(OrfeiTemp);
+                session.send(ZancanaroTemp);
+            }
+            if (orfei && greggio) {
+                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+                var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
+                session.send(OrfeiTemp);
+                session.send(GreggioTemp);
+            }
         }
-        if (email)
-        {
-            async.parallel([
-                function (callback)
-                {
-                    session.beginDialog('AllMailTemp');
-                },
-                function (callback)
-                {
-                    session.beginDialog('Root');
-                }
-            ], function (error, results)
-            {
-                session.send("Error");
-            })
-        }
-        if (total_people)
-        {
-            async.parallel([
-                function (callback)
-                {
-                    session.beginDialog('AllPeopleTemp');
-                },
-                function (callback)
-                {
-                    session.beginDialog('Root');
-                }
-            ], function (error, results)
-            {
-                session.send("Error");
-            })
-        }
-        if (total_project)
-        {
-            async.parallel([
-                function (callback)
-                {
-                    session.beginDialog('TotalProjectTemp');
-                },
-                function (callback)
-                {
-                    session.beginDialog('Root');
-                }
-            ], function (error, results)
-            {
-                session.send("Error");
-            })
-        }
-        if (current_project)
-        {
-            async.parallel([
-                function (callback)
-                {
-                    session.beginDialog('CurrentProjectTemp');
-                },
-                function (callback)
-                {
-                    session.beginDialog('Root');
-                }
-            ], function (error, results)
-            {
-                session.send("Error");
-            })
-        }
-        if (team_perso)
-        {
-            async.parallel([
-                function (callback)
-                {
-                    session.beginDialog('TeamTemp');
-                },
-                function (callback)
-                {
-                    session.beginDialog('Root')
-                }
-            ], function (error, results)
-            {
-                session.send("Error");
-            })
-        }
-        if (responsability)
-        {
-            async.parallel([
-                function (callback)
-                {
-                    session.beginDialog('AllResponsabilityTemp');
-                },
-                function (callback)
-                {
-                    session.beginDialog('Root');
-                }
-            ], function (error, results)
-            {
-                session.send("Error");
-            })
-        }
-        if (role)
-        {
-            async.parallel([
-                function (callback)
-                {
-                    session.beginDialog('AllRoleTemp');
-                },
-                function (callback)
-                {
-                    session.beginDialog('Root');
-                }
-            ], function (error, results)
-            {
-                session.send("Error");
-            })
-        }
-        if (find)
-        {
-            async.parallel([
-                function (callback)
-                {
-                    session.beginDialog('FindAllTemp');
-                },
-                function (callback)
-                {
-                    session.beginDialog('Root');
-                }
-            ], function (error, results)
-            {
-                session.send("Error");
-            })
-        }
-        if (research)
-        {
-            var ResearchTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'research');
-            session.send(ResearchTemp);
-        }
-        if (RELU)
-        {
-            var RELUTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
-            session.send(RELUTemp);
-        }
-        if (website)
-        {
-            var WebTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_website');
-            session.send(WebTemp);
-        }
-        if (fast_ink)
-        {
-            var FastTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'fast_ink');
-            session.send(FastTemp);
-        }
-        if (parse)
-        {
-            var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
-            session.send(ParseTemp);
-        }
-        if (utilities)
-        {
-            var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
-            session.send(UtilitiesTemp);
-        }
-        if (ziz)
-        {
-            var ZizTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_ziz');
-            session.send(ZizTemp);
-        }
-        if (fantinato)
-        {
-            var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
-            session.send(FantinatoTemp);
-        }
-        if (greggio)
-        {
-            var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
-            session.send(GreggioTemp);
-        }
-        if (orfei)
-        {
-            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-            session.send(OrfeiTemp);
-        }
-        if (lucchi)
-        {
-            var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
-            session.send(LucchiTemp);
-        }
-        if (zancanaro)
-        {
-            var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
-            session.send(ZancanaroTemp);
-        }
-        if (easter_egg)
-        {
-            var BullshitTemp = getBullshit(session);
-            session.send(BullshitTemp);
-        }
-        if (fantinato && role)
-        {
-            var FantinatoRole = getPeopleRole(session, persone, 'ruolo', 'fantinato');
-            session.send(FantinatoRole);
-        }
-        if (greggio && role)
-        {
-            var GreggioRole = getPeopleRole(session, persone, 'ruolo', 'greggio');
-            session.send(GreggioRole);
-        }
-        if (zancanaro && role)
-        {
-            var ZancanaroRole = getPeopleRole(session, persone, 'ruolo', 'zancanaro');
-            session.send(ZancanaroRole);
-        }
-        if (lucchi && role)
-        {
-            var LucchiRole = getPeopleRole(session, persone, 'ruolo', 'lucchi');
-            session.send(LucchiRole);
-        }
-        if (orfei && role)
-        {
-            var OrfeiRole = getPeopleRole(session, persone, 'ruolo', 'orfei');
-            session.send(OrfeiRole);
-        }
-        if (fantinato && responsability)
-        {
-            var FantinatoRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'fantinato');
-            session.send(FantinatoRes);
-        }
-        if (greggio && responsability)
-        {
-            var GreggioRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'greggio');
-            session.send(GreggioRes);
-        }
-        if (zancanaro && responsability)
-        {
-            var ZancanaroRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'zancanaro');
-            session.send(ZancanaroRes);
-        }
-        if (lucchi && responsability)
-        {
-            var LucchiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'lucchi');
-            session.send(LucchiRes);
-        }
-        if (orfei && responsability)
-        {
-            var OrfeiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'orfei');
-            session.send(OrfeiRes);
-        }
-        if (fantinato && email)
-        {
-            var FantinatoMail = getPeopleMail(session, persone, 'mail', 'fantinato');
-            session.send(FantinatoMail);
-        }
-        if (greggio && email)
-        {
-            var GreggioMail = getPeopleMail(session, persone, 'mail', 'greggio');
-            session.send(GreggioMail);
-        }
-        if (zancanaro && email)
-        {
-            var ZancanaroMail = getPeopleMail(session, persone, 'mail', 'zancanaro');
-            session.send(ZancanaroMail);
-        }
-        if (lucchi && email)
-        {
-            var LucchiMail = getPeopleMail(session, persone, 'mail', 'lucchi');
-            session.send(LucchiMail);
-        }
-        if (orfei && email)
-        {
-            var OrfeiMail = getPeopleMail(session, persone, 'mail', 'orfei');
-            session.send(OrfeiMail);
-        }
-        if (fantinato && total_project)
-        {
-            var FantinatoProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'fantinato');
-            session.send(FantinatoProjects);
-        }
-        if (greggio && total_project)
-        {
-            var GreggioProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'greggio');
-            session.send(GreggioProjects);
-        }
-        if (zancanaro && total_project)
-        {
-            var ZancanaroProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'zancanaro');
-            session.send(ZancanaroProjects);
-        }
-        if (lucchi && total_project)
-        {
-            var LucchiProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'lucchi');
-            session.send(LucchiProjects);
-        }
-        if (orfei && total_project)
-        {
-            var OrfeiProject = getPeopleProject(session, persone, 'progetti_assegnati', 'orfei');
-            session.send(OrfeiProject);
-        }
-        if (ziz && responsability)
-        {
-            var ZizGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_ziz');
-            session.send(ZizGestioneTemp);
-        }
-        if (parse && responsability)
-        {
-            var ParseGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_parse');
-            session.send(ParseGestioneTemp);
-        }
-        if (website && responsability)
-        {
-            var WebGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_website');
-            session.send(WebGestioneTemp);
-        }
-        if (fast_ink && responsability)
-        {
-            var FastInkGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'fast_ink');
-            session.send(FastInkGestioneTemp);
-        }
-        if (RELU && responsability)
-        {
-            var RELUGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'relu-core');
-            session.send(RELUGestioneTemp);
-        }
-        if (utilities && responsability)
-        {
-            var UtilitiesGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'utilities');
-            session.send(UtilitiesGestioneTemp);
-        }
-        if (RELU && find)
-        {
-            var RELUTemp = getProjectFind(session, works, 'link_repo', 'relu-core');
-            session.send(TPBMCTemp);
-        }
-        if (website && find)
-        {
-            var WebTemp = getProjectFind(session, works, 'link_repo', 'project_website');
-            session.send(WebTemp);
-        }
-        if (fast_ink && find)
-        {
-            var FastTemp = getProjectFind(session, works, 'link_repo', 'fast_ink');
-            session.send(FastTemp);
-        }
-        if (parse && find)
-        {
-            var ParseTemp = getProjectFind(session, works, 'link_repo', 'project_parse');
-            session.send(ParseTemp);
-        }
-        if (utilities && find)
-        {
-            var UtilitiesTemp = getProjectFind(session, works, 'link_repo', 'utilities');
-            session.send(UtilitiesTemp);
-        }
-        if (ziz && find)
-        {
-            var ZizTemp = getProjectFind(session, works, 'link_repo', 'project_ziz');
-            session.send(ZizTemp);
-        }
-        if (orfei && lucchi)
-        {
-            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-            var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
-            session.send(OrfeiTemp);
-            session.send(LucchiTemp);
-        }
-        if (orfei && fantinato)
-        {
-            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-            var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
-            session.send(OrfeiTemp);
-            session.send(FantinatoTemp);
-        }
-        if (orfei && zancanaro)
-        {
-            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-            var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
-            session.send(OrfeiTemp);
-            session.send(ZancanaroTemp);
-        }
-        if (orfei && greggio)
-        {
-            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-            var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
-            session.send(OrfeiTemp);
-            session.send(GreggioTemp);
-        }
-    }
-])
+    ])
     .matches('Skills', [
-        function (session, args, results)
-        {
+        function(session, args, results) {
             session.send("Io sono un bot che fornisce informazioni riguardo al team perso. Puoi chiedermi informazioni sui membri, sui progetti correnti e suoi progetti totali. Posso dirti chi gestisce i vari progetti e chi sono i capi delle vaie divisioni. Se vuoi vedere o provare i nostri progetti posso fornirti anche il link, l'unica cosa che devi fare ? chiedere");
             session.beginDialog('Root');
         }
@@ -560,8 +468,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
         }
     ])*/
     .matches('None', [
-        function (session, args, results)
-        {
+        function(session, args, results) {
             session.send("Wrong action");
             session.beginDialog('Root');
         }
@@ -570,8 +477,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
 server.post('/api/messages', connector.listen());
 
 bot.dialog('NothingTemp', [
-    function (session)
-    {
+    function(session) {
         session.send("Scegli una delle opzioni");
         var title = ['Persone', 'Progetti Totali', 'Progetti Correnti', 'Team Perso'];
         var text = ['Informazioni sulle persone', 'Informazioni sui progetti totali', 'Informazioni sui progetti correnti', 'Informazioni sul team'];
@@ -585,67 +491,53 @@ bot.dialog('NothingTemp', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function (session, results)
-    {
-        switch (results.response)
-        {
+    function(session, results) {
+        switch (results.response) {
             case "team":
                 async.parallel([
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('TeamTemp');
                     },
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function (error, results)
-                {
+                ], function(error, results) {
                     session.send("Error");
                 })
                 break;
             case "persone":
                 async.parallel([
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('AllPeopleTemp');
                     },
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function (error, results)
-                {
+                ], function(error, results) {
                     session.send("Error");
                 })
                 break;
             case "progetti totali":
                 async.parallel([
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('TotalProjectTemp');
                     },
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function (error, results)
-                {
+                ], function(error, results) {
                     session.send("Error");
                 })
                 break;
             case "progetti correnti":
                 async.parallel([
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('CurrentProjectTemp');
                     },
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function (error, results)
-                {
+                ], function(error, results) {
                     session.send("Error");
                 })
                 break;
@@ -654,8 +546,7 @@ bot.dialog('NothingTemp', [
 ])
 
 bot.dialog('TeamTemp', [
-    function (session)
-    {
+    function(session) {
         session.send("Cosa vuoi sapere del team?");
         var title = ['Membri', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilit?', 'Info'];
         var text = ['Informazioni sui membri', 'Informazioni sui ruoli', 'Informazioni su tutti i progetti', 'Informazioni sui progetti correnti', 'Responsabilit? dei membri', 'Informazioni sul team perso'];
@@ -669,82 +560,65 @@ bot.dialog('TeamTemp', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function (session, results)
-    {
-        switch (results.response)
-        {
+    function(session, results) {
+        switch (results.response) {
             case "persone":
                 async.parallel([
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('AllPeopleTemp');
                     },
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function (error, results)
-                {
+                ], function(error, results) {
                     session.send("Error");
                 })
                 break;
             case "progetti totali":
                 async.parallel([
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('TotalProjectTemp');
                     },
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function (error, results)
-                {
+                ], function(error, results) {
                     session.send("Error");
                 })
                 break;
             case "progetti correnti":
                 async.parallel([
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('CurrentProjectTemp');
                     },
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function (error, results)
-                {
+                ], function(error, results) {
                     session.send("Error");
                 })
                 break;
             case "ruoli":
                 async.parallel([
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('AllRoleTemp');
                     },
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function (error, results)
-                {
+                ], function(error, results) {
                     session.send("Error");
                 })
                 break;
             case "responsabilita":
                 async.parallel([
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('AllResponsabilityTemp');
                     },
-                    function (callback)
-                    {
+                    function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function (error, results)
-                {
+                ], function(error, results) {
                     session.send("Error");
                 })
                 break;
@@ -757,8 +631,7 @@ bot.dialog('TeamTemp', [
 ])
 
 bot.dialog('TotalProjectTemp', [
-    function (session)
-    {
+    function(session) {
         session.send("Cosa vuoi sapere sui progetti?");
         var title = ['Project Parse', 'Utilities', 'RELU', 'Project Ziz', 'Fast Ink', 'Website', 'Research'];
         var text = ['Informazione sul progetto Parse', 'Informazioni su utilities', 'Informazioni su RELU', 'Informazioni sul progetto Ziz', 'Informazioni su fast ink', 'Informazioni su Website'];
@@ -771,10 +644,8 @@ bot.dialog('TotalProjectTemp', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function (session, results)
-    {
-        switch (results.response)
-        {
+    function(session, results) {
+        switch (results.response) {
             case "informazioni sul progetto parse":
                 var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
                 session.send(ParseTemp);
@@ -850,8 +721,7 @@ bot.dialog('TotalProjectTemp', [
 ])
 
 bot.dialog('AllRoleTemp', [
-    function (session)
-    {
+    function(session) {
         session.send("Di chi vuoi sapere il ruolo?");
         var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro'];
         var text = ['Ruolo di Orfei', 'Ruolo di Lucchi', 'Ruolo di Fantinato', 'Ruolo di Greggio', 'Ruolo di Zancanaro'];
@@ -864,10 +734,8 @@ bot.dialog('AllRoleTemp', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function (session, results)
-    {
-        switch (results.response)
-        {
+    function(session, results) {
+        switch (results.response) {
             case 'ruolo di orfei':
                 var OrfeiRole = getPeopleRole(session, persone, 'ruolo', 'orfei');
                 session.send(OrfeiRole);
@@ -898,8 +766,7 @@ bot.dialog('AllRoleTemp', [
 ])
 
 bot.dialog('AllPeopleTemp', [
-    function (session)
-    {
+    function(session) {
         session.send("Queste sono le persone appartenenti al team perso. Vuoi sapere altro?");
         var title = ['Orfei', 'Lucchi', 'Fantinato', 'Zancanaro'];
         var text = ['Informazioni su Orfei', 'Informazioni su Lucchi', 'Informazioni su Fantinato', 'Informazioni su Zancanaro'];
@@ -912,10 +779,8 @@ bot.dialog('AllPeopleTemp', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function (session, results)
-    {
-        switch (results.response)
-        {
+    function(session, results) {
+        switch (results.response) {
             case "ruolo di orfei":
                 var OrfeiRuolo = getPeopleRole(session, persone, 'ruolo', 'orfei');
                 session.send(OrfeiRuolo);
@@ -1130,8 +995,7 @@ function textToSpeech(text, filename, accessToken, session, callback) {
 }*/
 
 bot.dialog('CurrentProjectTemp', [
-    function (session)
-    {
+    function(session) {
         session.send("Questi sono i progetti correnti");
         var title = ['RELU', 'Utilities', 'Project Ziz', 'Website'];
         var text = ['Informazioni su RELU', 'Informazioni su Utilities', 'Informazioni su Ziz', 'Informazioni su Website', 'Informazioni su Research'];
@@ -1144,10 +1008,8 @@ bot.dialog('CurrentProjectTemp', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function (session, results)
-    {
-        switch (results.response)
-        {
+    function(session, results) {
+        switch (results.response) {
             case "informazioni su utilities":
                 var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
                 session.send(UtilitiesTemp);
@@ -1203,8 +1065,7 @@ bot.dialog('CurrentProjectTemp', [
 ])
 
 bot.dialog('AllMailTemp', [
-    function (session)
-    {
+    function(session) {
         session.send("Di chi vuoi sapere la mail?");
         var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro', 'Quinto', 'Chiarin', 'Nunzio'];
         var text = ['Email di Orfei', 'Email di Lucchi', 'Email di Fantinato', 'Email di Greggio', 'Email di Zancanaro', 'Email di Quinto', 'Email di Chiarin', 'Email di Nunzio'];
@@ -1217,10 +1078,8 @@ bot.dialog('AllMailTemp', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function (session, results)
-    {
-        switch (results.response)
-        {
+    function(session, results) {
+        switch (results.response) {
             case "email di orfei":
                 var OrfeiMail = getPeopleMail(session, persone, 'mail', 'orfei');
                 session.send(OrfeiMail);
@@ -1251,8 +1110,7 @@ bot.dialog('AllMailTemp', [
 ])
 
 bot.dialog('FindAllTemp', [
-    function (session)
-    {
+    function(session) {
         session.send("Scegli il progetto che vuoi trovare");
         var title = ['Project Ziz', 'Project Parse', 'Utilities', 'Website', 'Fast Ink', 'RELU', 'Research'];
         var text = ['Link project Ziz', 'Link Project Parse', 'Link Utilities', 'Link Utilities', 'Link Fast Ink', 'Link RELU', 'Link Research'];
@@ -1265,10 +1123,8 @@ bot.dialog('FindAllTemp', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function (session, results)
-    {
-        switch (results.response)
-        {
+    function(session, results) {
+        switch (results.response) {
             case "link progetto ziz":
                 var ZizTemp = getProjectFind(session, works, 'link_repo', 'project_ziz');
                 session.send(ZizTemp);
@@ -1310,8 +1166,7 @@ bot.dialog('FindAllTemp', [
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleInformation(session, json, mantain, gitusername, assigned, role, speciality, mail, nickname, name)
-{
+function getPeopleInformation(session, json, mantain, gitusername, assigned, role, speciality, mail, nickname, name) {
     var project_mantain = relucore.ReluConfig.JsonReader(session, json, mantain, name);
     var gitUser = relucore.ReluConfig.JsonReader(session, json, gitusername, name);
     var project_assigned = relucore.ReluConfig.JsonReader(session, json, assigned, name);
@@ -1325,16 +1180,14 @@ function getPeopleInformation(session, json, mantain, gitusername, assigned, rol
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleRole(session, json, role, name)
-{
+function getPeopleRole(session, json, role, name) {
     var person_role = relucore.ReluConfig.JsonReader(session, json, role, name)
     return ("Il ruolo di " + name + " e " + person_role);
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getProjectInformation(session, json, type, description, chief, link_repo, begin_develop, end_develop, version, support, how_going, member, note, project)
-{
+function getProjectInformation(session, json, type, description, chief, link_repo, begin_develop, end_develop, version, support, how_going, member, note, project) {
     var project_type = relucore.ReluConfig.JsonReader(session, json, type, project);
     var project_description = relucore.ReluConfig.JsonReader(session, json, description, project);
     var project_chief = relucore.ReluConfig.JsonReader(session, json, chief, project);
@@ -1351,16 +1204,14 @@ function getProjectInformation(session, json, type, description, chief, link_rep
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleProject(session, json, assigned, name)
-{
+function getPeopleProject(session, json, assigned, name) {
     var project = relucore.ReluConfig.JsonReader(session, json, assigned, name);
     return ("I progetti fatti da " + name + " sono " + project);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getTeamInformation(session, json, nProject, nMembers, MemberList, ProjectList, link)
-{
+function getTeamInformation(session, json, nProject, nMembers, MemberList, ProjectList, link) {
     var Projects = relucore.ReluConfig.JsonReader(session, json, nProject);
     var ListProject = relucore.ReluConfig.JsonReader(session, json, ProjectList);
     var site_link = relucore.ReluConfig.JsonReader(session, json, link);
@@ -1371,40 +1222,34 @@ function getTeamInformation(session, json, nProject, nMembers, MemberList, Proje
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getBullshit(session)
-{
+function getBullshit(session) {
     return bullshit[(parseInt(Math.random() * bullshit.length) | 0)];
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleMail(session, json, mail, name)
-{
+function getPeopleMail(session, json, mail, name) {
     var email = relucore.ReluConfig.JsonReader(session, json, mail, name);
     return ("L' email di " + name + " e " + email);
 }
 
 //-----------------------------------------------------------------------------------------------------------
 
-function getProjectFind(session, json, link, project)
-{
+function getProjectFind(session, json, link, project) {
     var link_project = relucore.ReluConfig.JsonReader(session, json, link, project);
     return (project + " si puo trovare al link " + link_project);
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 
-function getProjectGestione(session, json, chief, project)
-{
+function getProjectGestione(session, json, chief, project) {
     var boss = relucore.ReluConfig.JsonReader(session, json, chief, project);
     return (boss + " si occupa di questo progetto");
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleResponsability(session, json, assegnati, name)
-{
+function getPeopleResponsability(session, json, assegnati, name) {
     var assigned = relucore.ReluConfig.JsonReader(session, json, assegnati, name);
     return (name + " per ora si occupa di " + assigned);
 }
-
