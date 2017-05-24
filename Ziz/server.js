@@ -484,7 +484,7 @@ bot.dialog('NothingTemp', [
         var linkImages = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://www.elia-group.com/images/team1.jpg'];
         var buttonReturn = ['persone', 'progetti totali', 'progetti correnti', 'team'];
         var buttonText = ['Persone', 'Progetti totali', 'Progetti correnti', 'Team'];
-        var nothingCards = HerocardCreator.CreateCards(session, 4, title, text, 1, linkImages, buttonReturn, buttonText);
+        var nothingCards = relucore.ReluCard(session, 4, title, text, 1, linkImages, buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(nothingCards);
@@ -553,7 +553,7 @@ bot.dialog('TeamTemp', [
         var linkImages = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://thumbs.dreamstime.com/z/insieme-dell-icona-ruoli-sociali-38476263.jpg', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://previews.123rf.com/images/sentavio/sentavio1511/sentavio151100481/48577270-stile-piatto-web-moderno-uomo-d-affari-icona-infografica-collage-Illustrazione-vettoriale-di-uomo-d--Archivio-Fotografico.jpg', ''];
         var buttonReturn = ['persone', 'ruoli', 'progetti totali', 'progetti correnti', 'responsabilit?', 'informazioni'];
         var buttonText = ['Persone', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilit?', 'Informazioni'];
-        var teamCards = HerocardCreator.CreateCards(session, 4, title, text, 1, linkImages, buttonReturn, buttonText);
+        var teamCards = relucore.ReluCard(session, 4, title, text, 1, linkImages, buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(teamCards);
@@ -637,7 +637,7 @@ bot.dialog('TotalProjectTemp', [
         var text = ['Informazione sul progetto Parse', 'Informazioni su utilities', 'Informazioni su RELU', 'Informazioni sul progetto Ziz', 'Informazioni su fast ink', 'Informazioni su Website'];
         var buttonReturn = ['informazioni sul progetto parse', 'gestione del progetto parse', 'informazioni su utilities', 'gestione di utilities', 'informazioni su RELU', 'gestione di RELU', 'informazioni sul progetto ziz', 'gestione del progetto ziz', 'informazioni su fast ink', 'gestione di fast ink', 'informazioni sul progetto website', 'gestione del progetto website', 'informazioni su research', 'gestione di research'];
         var buttonText = ['Info', 'Gestione'];
-        var totalProjectCards = HerocardCreator.CreateCards(session, 7, title, text, 2, '', buttonReturn, buttonText);
+        var totalProjectCards = relucore.ReluCard(session, 7, title, text, 2, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(totalProjectCards);
@@ -727,7 +727,7 @@ bot.dialog('AllRoleTemp', [
         var text = ['Ruolo di Orfei', 'Ruolo di Lucchi', 'Ruolo di Fantinato', 'Ruolo di Greggio', 'Ruolo di Zancanaro'];
         var buttonReturn = ['ruolo di orfei', 'ruolo di lucchi', 'ruolo di fantinato', 'ruolo di greggio', 'ruolo di zancanaro'];
         var buttonText = ['Ruolo'];
-        var roleCards = HerocardCreator.CreateCards(session, 5, title, text, 1, '', buttonReturn, buttonText);
+        var roleCards = relucore.ReluCard(session, 5, title, text, 1, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(roleCards)
@@ -772,7 +772,7 @@ bot.dialog('AllPeopleTemp', [
         var text = ['Informazioni su Orfei', 'Informazioni su Lucchi', 'Informazioni su Fantinato', 'Informazioni su Zancanaro'];
         var buttonReturn = ['informazioni su orfei', 'responsabilita di orfei', 'email di orfei', 'ruolo di orfei', 'progetti di orfei', 'informazioni su lucchi', 'responsabilita di lucchi', 'email di lucchi', 'ruolo di lucchi', 'progetti di lucchi', 'informazioni su fantinato', 'responsabilita di fantinato', 'email di fantinato', 'ruolo di fantinato', 'progetti di fantinato', 'informazioni su zancanaro', 'responsabilita di zancanaro', 'email di zancanaro', 'ruolo di zancanaro', 'progetti di zancanaro'];
         var buttonText = ['Info', 'Responsabilita', 'Email', 'Ruolo', 'Progetti'];
-        var PeopleCards = HerocardCreator.CreateCards(session, 5, title, text, 5, '', buttonReturn, buttonText);
+        var PeopleCards = relucore.ReluCard(session, 5, title, text, 5, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(PeopleCards)
@@ -1001,7 +1001,7 @@ bot.dialog('CurrentProjectTemp', [
         var text = ['Informazioni su RELU', 'Informazioni su Utilities', 'Informazioni su Ziz', 'Informazioni su Website', 'Informazioni su Research'];
         var buttonReturn = ['informazioni su RELU', 'gestione di RELU', 'informazioni su utilities', 'gestione di utilities', 'informazioni sul progetto ziz', 'gestione del progetto ziz', 'informazioni sul progetto website', 'gestione del progetto website', 'informazioni su research', 'gestione di research'];
         var buttonText = ['Info', 'Gestione'];
-        var CurrentProjectCards = HerocardCreator.CreateCards(session, 5, title, text, 2, '', buttonReturn, buttonText);
+        var CurrentProjectCards = relucore.ReluCard(session, 5, title, text, 2, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(CurrentProjectCards);
@@ -1071,7 +1071,7 @@ bot.dialog('AllMailTemp', [
         var text = ['Email di Orfei', 'Email di Lucchi', 'Email di Fantinato', 'Email di Greggio', 'Email di Zancanaro', 'Email di Quinto', 'Email di Chiarin', 'Email di Nunzio'];
         var buttonReturn = ['email di orfei', 'email di lucchi', 'email di fantinato', 'email di greggio', 'email di zancanaro', 'email di quinto', 'email di chiarin', 'email di nunzio'];
         var buttonText = ['Email'];
-        var MailCards = HerocardCreator.CreateCards(session, 8, title, text, 1, '', buttonReturn, buttonText);
+        var MailCards = relucore.ReluCard(session, 8, title, text, 1, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(MailCards);
@@ -1116,7 +1116,7 @@ bot.dialog('FindAllTemp', [
         var text = ['Link project Ziz', 'Link Project Parse', 'Link Utilities', 'Link Utilities', 'Link Fast Ink', 'Link RELU', 'Link Research'];
         var buttonReturn = ['link project ziz', 'link progetto parse', 'link utilities', 'link progetto website', 'link fast ink', 'link RELU', 'link research'];
         var buttonText = ['Link'];
-        var FindCArds = HerocardCreator.CreateCards(session, 7, title, text, 1, '', buttonText);
+        var FindCArds = relucore.ReluCard(session, 7, title, text, 1, '', buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(FindCArds)

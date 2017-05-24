@@ -11,7 +11,7 @@
     "botbuilder": "^3.7.0",
     "deasync": "^0.1.9",
     "promise": "^7.1.1",
-    "relu-core": "^0.4.0",
+    "relu-core": "^0.7.0",
     "request": "^2.81.0",
     "restify": "^4.3.0",
     "rp": "^0.2.0",
