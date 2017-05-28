@@ -1,5 +1,6 @@
 'use strict';
 var http = require('http');
+
 var port = process.env.PORT || 1337;
 
 var botbuilder = require('botbuilder');
@@ -23,6 +24,8 @@ var persone = require('./Database/Members');
 var roadMap = require('./Database/RoadMap');
 
 var books = require('./Database/Books');
+
+var schema = require('./Database/schema.json');
 
 var contacts = require('./Database/Contacts');
 
@@ -145,110 +148,36 @@ bot.dialog('Root', new botbuilder.IntentDialog({
             if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !greggio && !fantinato && !ziz && !fast_ink && !website && !RELU && !utilities && !parse && !current_project && !total_project && !total_people && !email && !research) {
                 async.parallel([
                     function(callback) {
-                        session.beginDialog('NothingTemp');
+                        session.beginDialog('/Nothing');
                     },
                     function(callback) {
                         session.beginDialog('Root');
                     }
-                ], function(error, results) {
-                    session.send("Error");
-                });
+                ])
             }
             if (email) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllMailTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
+                session.beginDialog('/AllMail');
             }
             if (total_people) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllPeopleTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
+                session.beginDialog('/AllPeople');
             }
             if (total_project) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('TotalProjectTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
+                session.beginDialog('/TotalProject');
             }
             if (current_project) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('CurrentProjectTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
+                session.beginDialog('/CurrentProject');
             }
             if (team_perso) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('TeamTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root')
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
+                session.beginDialog('/Team');
             }
             if (responsability) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllResponsabilityTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
+                session.beginDialog('/AllResponsability');
             }
             if (role) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllRoleTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
+                session.beginDialog('/AllRole');
             }
             if (find) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('FindAllTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
+                session.beginDialog('/FindAll');
             }
             if (research) {
                 var ResearchTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'research');
@@ -476,161 +405,41 @@ bot.dialog('Root', new botbuilder.IntentDialog({
 
 server.post('/api/messages', connector.listen());
 
-bot.dialog('NothingTemp', [
+bot.dialog('/Nothing', [
     function(session) {
-        session.send("Scegli una delle opzioni");
         var title = ['Persone', 'Progetti Totali', 'Progetti Correnti', 'Team Perso'];
         var text = ['Informazioni sulle persone', 'Informazioni sui progetti totali', 'Informazioni sui progetti correnti', 'Informazioni sul team'];
         var linkImages = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://www.elia-group.com/images/team1.jpg'];
-        var buttonReturn = ['persone', 'progetti totali', 'progetti correnti', 'team'];
+        var buttonDialog = ['Team', 'TotalProject', 'CurrentProject', 'AllPeople'];
         var buttonText = ['Persone', 'Progetti totali', 'Progetti correnti', 'Team'];
-        var nothingCards = relucore.ReluCard(session, 4, title, text, 1, linkImages, buttonReturn, buttonText);
+        var nothingCards = relucore.ReluCard(session, 4, title, text, 1, linkImages, buttonDialog, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(nothingCards);
-
-        botbuilder.Prompts.text(session, reply);
-    },
-    function(session, results) {
-        switch (results.response) {
-            case "team":
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('TeamTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-                break;
-            case "persone":
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllPeopleTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-                break;
-            case "progetti totali":
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('TotalProjectTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-                break;
-            case "progetti correnti":
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('CurrentProjectTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-                break;
-        }
+        session.send("Scegli una delle opzioni");
+        session.send(reply);
     }
 ])
 
-bot.dialog('TeamTemp', [
+
+bot.dialog('/Team', [
     function(session) {
         session.send("Cosa vuoi sapere del team?");
-        var title = ['Membri', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilit?', 'Info'];
-        var text = ['Informazioni sui membri', 'Informazioni sui ruoli', 'Informazioni su tutti i progetti', 'Informazioni sui progetti correnti', 'Responsabilit? dei membri', 'Informazioni sul team perso'];
+        var title = ['Membri', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilita', 'Info'];
+        var text = ['Informazioni sui membri', 'Informazioni sui ruoli', 'Informazioni su tutti i progetti', 'Informazioni sui progetti correnti', 'Responsabilita dei membri', 'Informazioni sul team perso'];
         var linkImages = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://thumbs.dreamstime.com/z/insieme-dell-icona-ruoli-sociali-38476263.jpg', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://previews.123rf.com/images/sentavio/sentavio1511/sentavio151100481/48577270-stile-piatto-web-moderno-uomo-d-affari-icona-infografica-collage-Illustrazione-vettoriale-di-uomo-d--Archivio-Fotografico.jpg', ''];
-        var buttonReturn = ['persone', 'ruoli', 'progetti totali', 'progetti correnti', 'responsabilit?', 'informazioni'];
-        var buttonText = ['Persone', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilit?', 'Informazioni'];
-        var teamCards = relucore.ReluCard(session, 4, title, text, 1, linkImages, buttonReturn, buttonText);
+        var buttonDialog = ['AllPeople', 'AllRole', 'TotalProject', 'CurrentProject', 'AllResponsability', 'informazioni'];
+        var buttonText = ['Persone', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilita', 'TeamInformazioni'];
+        var teamCards = relucore.ReluCard(session, 6, title, text, 1, linkImages, buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(teamCards);
 
-        botbuilder.Prompts.text(session, reply);
-    },
-    function(session, results) {
-        switch (results.response) {
-            case "persone":
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllPeopleTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-                break;
-            case "progetti totali":
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('TotalProjectTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-                break;
-            case "progetti correnti":
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('CurrentProjectTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-                break;
-            case "ruoli":
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllRoleTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-                break;
-            case "responsabilita":
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('AllResponsabilityTemp');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ], function(error, results) {
-                    session.send("Error");
-                })
-                break;
-            case "informazioni":
-                var TeamTemp = getTeamInformation(session, general, 'numero_progetti', 'numero_membri', 'lista_membri', 'lista_progetti', 'link_sito');
-                session.send(TeamTemp);
-                break;
-        }
+        session.send(reply);
     }
 ])
 
-bot.dialog('TotalProjectTemp', [
+bot.dialog('/TotalProject', [
     function(session) {
         session.send("Cosa vuoi sapere sui progetti?");
         var title = ['Project Parse', 'Utilities', 'RELU', 'Project Ziz', 'Fast Ink', 'Website', 'Research'];
@@ -720,7 +529,7 @@ bot.dialog('TotalProjectTemp', [
     }
 ])
 
-bot.dialog('AllRoleTemp', [
+bot.dialog('/AllRole', [
     function(session) {
         session.send("Di chi vuoi sapere il ruolo?");
         var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro'];
@@ -765,7 +574,7 @@ bot.dialog('AllRoleTemp', [
     }
 ])
 
-bot.dialog('AllPeopleTemp', [
+bot.dialog('/AllPeople', [
     function(session) {
         session.send("Queste sono le persone appartenenti al team perso. Vuoi sapere altro?");
         var title = ['Orfei', 'Lucchi', 'Fantinato', 'Zancanaro'];
@@ -994,7 +803,7 @@ function textToSpeech(text, filename, accessToken, session, callback) {
     speechToText(filename, accessToken, session, callback);
 }*/
 
-bot.dialog('CurrentProjectTemp', [
+bot.dialog('/CurrentProject', [
     function(session) {
         session.send("Questi sono i progetti correnti");
         var title = ['RELU', 'Utilities', 'Project Ziz', 'Website'];
@@ -1064,7 +873,7 @@ bot.dialog('CurrentProjectTemp', [
     }
 ])
 
-bot.dialog('AllMailTemp', [
+bot.dialog('/AllMail', [
     function(session) {
         session.send("Di chi vuoi sapere la mail?");
         var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro', 'Quinto', 'Chiarin', 'Nunzio'];
@@ -1109,7 +918,7 @@ bot.dialog('AllMailTemp', [
     }
 ])
 
-bot.dialog('FindAllTemp', [
+bot.dialog('/FindAll', [
     function(session) {
         session.send("Scegli il progetto che vuoi trovare");
         var title = ['Project Ziz', 'Project Parse', 'Utilities', 'Website', 'Fast Ink', 'RELU', 'Research'];
@@ -1174,15 +983,81 @@ function getPeopleInformation(session, json, mantain, gitusername, assigned, rol
     var spec = relucore.ReluConfig.JsonReader(session, json, speciality, name);
     var email = relucore.ReluConfig.JsonReader(session, json, mail, name);
     var person_nickname = relucore.ReluConfig.JsonReader(session, json, nickname, name);
-
-    return ("Questa persona e " + name + ", il suo username github e " + gitUser + ", il suo soprannome e " + person_nickname + ", le sue specialita sono: " + spec + ", i progetti che deve mantenere sono: " + project_mantain + ", i progetti a lui assegnati sono " + project_assigned + ". La sua email e " + email + ", il suo ruolo nel team e " + person_role);;
+    var msg = new botbuilder.Message(session).addAttachment({
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "contentType": "application/vnd.microsoft.card.adaptive",
+        "content": {
+            "body": [{
+                    "type": "TextBlock",
+                    "text": name,
+                    "weight": "bolder"
+                },
+                {
+                    "separation": "strong",
+                    "type": "FactSet",
+                    "facts": [{
+                            "title": "Progetti da mantenere",
+                            "value": project_mantain
+                        },
+                        {
+                            "title": "Username github",
+                            "value": gitUser
+                        },
+                        {
+                            "title": "Progetti assegnati",
+                            "value": project_assigned
+                        },
+                        {
+                            "title": "Ruolo",
+                            "value": person_role
+                        },
+                        {
+                            "title": "Specialita",
+                            "value": spec
+                        },
+                        {
+                            "title": "Email",
+                            "value": email
+                        },
+                        {
+                            "title": "Nickname",
+                            "value": person_nickname
+                        }
+                    ]
+                }
+            ]
+        }
+    })
+    return (msg);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function getPeopleRole(session, json, role, name) {
     var person_role = relucore.ReluConfig.JsonReader(session, json, role, name)
-    return ("Il ruolo di " + name + " e " + person_role);
+    var msg = new botbuilder.Message(session).addAttachment({
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "contentType": "application/vnd.microsoft.card.adaptive",
+        "content": {
+            "body": [{
+                    "type": "TextBlock",
+                    "text": name,
+                    "weight": "bolder"
+                },
+                {
+                    "separation": "strong",
+                    "type": "FactSet",
+                    "facts": [{
+                        "title": "Ruolo",
+                        "value": person_role
+                    }]
+                }
+            ]
+        }
+    })
+    return (msg);
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1199,14 +1074,97 @@ function getProjectInformation(session, json, type, description, chief, link_rep
     var project_how_going = relucore.ReluConfig.JsonReader(session, json, how_going, project);
     var project_member = relucore.ReluConfig.JsonReader(session, json, member, project);
     var project_note = relucore.ReluConfig.JsonReader(session, json, note, project);
-    return (project + " e un progetto di tipo " + project_type + ".<br> E' un " + project_description + ".<br> La gestione e di " + project_chief + ".<br> Questo progetto lo si puo trovare a questo link: " + project_link_repo + ".<br> E' stato cominciato il " + project_begin_develop + "e la data di fine e " + project_end_develop + ".<br> La versione corrente e la " + project_version + ".<br> E' supportato e procede " + project_how_going + ".<br> I membri che lavorano sono:<br> " + project_member + ".<br> Note: " + project_note);
+    var msg = new botbuilder.Message(session).addAttachment({
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "contentType": "application/vnd.microsoft.card.adaptive",
+        "content": {
+            "body": [{
+                    "type": "TextBlock",
+                    "text": project,
+                    "weight": "bolder"
+                },
+                {
+                    "separation": "strong",
+                    "type": "FactSet",
+                    "facts": [{
+                            "title": "Tipo",
+                            "value": project_type
+                        },
+                        {
+                            "title": "Descrizione",
+                            "value": project_description
+                        },
+                        {
+                            "title": "Capo",
+                            "value": chief
+                        },
+                        {
+                            "title": "Link",
+                            "value": project_link_repo
+                        },
+                        {
+                            "title": "Inizio sviluppo",
+                            "value": project_begin_develop
+                        },
+                        {
+                            "title": "Fine sviluppo",
+                            "value": project_end_develop
+                        },
+                        {
+                            "title": "Versione",
+                            "value": project_version
+                        },
+                        {
+                            "title": "Supporto",
+                            "value": project_support
+                        },
+                        {
+                            "title": "Come procede",
+                            "value": project_how_going
+                        },
+                        {
+                            "title": "Membri",
+                            "value": project_member
+                        },
+                        {
+                            "title": "Note",
+                            "value": project_note
+                        }
+                    ]
+                }
+            ]
+        }
+    })
+    return (msg);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function getPeopleProject(session, json, assigned, name) {
     var project = relucore.ReluConfig.JsonReader(session, json, assigned, name);
-    return ("I progetti fatti da " + name + " sono " + project);
+    var msg = new botbuilder.Message(session).addAttachment({
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "contentType": "application/vnd.microsoft.card.adaptive",
+        "content": {
+            "body": [{
+                    "type": "TextBlock",
+                    "text": name,
+                    "weight": "bolder"
+                },
+                {
+                    "separation": "strong",
+                    "type": "FactSet",
+                    "facts": [{
+                        "title": "Progetti",
+                        "value": project
+                    }]
+                }
+            ]
+        }
+    })
+    return (msg);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1217,7 +1175,37 @@ function getTeamInformation(session, json, nProject, nMembers, MemberList, Proje
     var site_link = relucore.ReluConfig.JsonReader(session, json, link);
     var Members = relucore.ReluConfig.JsonReader(session, json, nMembers);
     var ListMember = relucore.ReluConfig.JsonReader(session, json, MemberList);
-    return ("Questo e il team perso. <br>E' composto da " + Members + " membri, che sono:<br> " + ListMember + ". <br>Il numero di progetti totali per ora e di " + Projects + " progetti.<br> I progetti sono:<br> " + ListProject + ".<br> Per maggiori Informazioni visitare il sito: " + site_link);
+    var msg = new botbuilder.Message(session).addAttachment({
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "contentType": "application/vnd.microsoft.card.adaptive",
+        "content": {
+            "body": [{
+                    "type": "TextBlock",
+                    "text": "Team Perso",
+                    "weight": "bolder"
+                },
+                {
+                    "separation": "strong",
+                    "type": "FactSet",
+                    "facts": [{
+                            "title": "Progetti",
+                            "value": Projects
+                        },
+                        {
+                            "title": "Link",
+                            "value": site_link
+                        },
+                        {
+                            "title": "Membri",
+                            "value": ListMember
+                        }
+                    ]
+                }
+            ]
+        }
+    })
+    return (msg);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1230,26 +1218,237 @@ function getBullshit(session) {
 
 function getPeopleMail(session, json, mail, name) {
     var email = relucore.ReluConfig.JsonReader(session, json, mail, name);
-    return ("L' email di " + name + " e " + email);
+    var msg = new botbuilder.Message(session).addAttachment({
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "contentType": "application/vnd.microsoft.card.adaptive",
+        "content": {
+            "body": [{
+                    "type": "TextBlock",
+                    "text": name,
+                    "weight": "bolder"
+                },
+                {
+                    "separation": "strong",
+                    "type": "FactSet",
+                    "facts": [{
+                        "title": "Email",
+                        "value": email
+                    }]
+                }
+            ]
+        }
+    })
+    return (msg);
 }
 
 //-----------------------------------------------------------------------------------------------------------
 
 function getProjectFind(session, json, link, project) {
     var link_project = relucore.ReluConfig.JsonReader(session, json, link, project);
-    return (project + " si puo trovare al link " + link_project);
+    var msg = new botbuilder.Message(session).addAttachment({
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "contentType": "application/vnd.microsoft.card.adaptive",
+        "content": {
+            "body": [{
+                    "type": "TextBlock",
+                    "text": project,
+                    "weight": "bolder"
+                },
+                {
+                    "separation": "strong",
+                    "type": "FactSet",
+                    "facts": [{
+                        "title": "Link",
+                        "value": link_project
+                    }]
+                }
+            ]
+        }
+    })
+    return (msg);
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 
 function getProjectGestione(session, json, chief, project) {
     var boss = relucore.ReluConfig.JsonReader(session, json, chief, project);
-    return (boss + " si occupa di questo progetto");
+    var msg = new botbuilder.Message(session).addAttachment({
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "contentType": "application/vnd.microsoft.card.adaptive",
+        "content": {
+            "body": [{
+                    "type": "TextBlock",
+                    "text": chief,
+                    "weight": "bolder"
+                },
+                {
+                    "separation": "strong",
+                    "type": "FactSet",
+                    "facts": [{
+                        "title": "Gestione",
+                        "value": boss + "ha fatto " + project
+                    }]
+                }
+            ]
+        }
+    })
+    return (msg);
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------
 
 function getPeopleResponsability(session, json, assegnati, name) {
     var assigned = relucore.ReluConfig.JsonReader(session, json, assegnati, name);
-    return (name + " per ora si occupa di " + assigned);
+    var msg = new botbuilder.Message(session).addAttachment({
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "contentType": "application/vnd.microsoft.card.adaptive",
+        "content": {
+            "body": [{
+                    "type": "TextBlock",
+                    "text": name,
+                    "weight": "bolder"
+                },
+                {
+                    "separation": "strong",
+                    "type": "FactSet",
+                    "facts": [{
+                        "title": "Assegnati",
+                        "value": assigned
+                    }]
+                }
+            ]
+        }
+    })
+    return (msg);
 }
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+
+bot.beginDialogAction('Team', '/ProtoTeam');
+
+bot.beginDialogAction('TotalProject', '/ProtoTotalProject');
+
+bot.beginDialogAction('CurrentProject', '/ProtoCurrentProject');
+
+bot.beginDialogAction('AllPeople', '/ProtoAllPeople');
+
+bot.beginDialogAction('AllRole', '/ProtoAllRole');
+
+bot.beginDialogAction('AllResponsability', '/ProtoAllResponsability');
+
+bot.beginDialogAction('FindAll', '/ProtoFindAll');
+
+bot.beginDialogAction('AllMail', '/ProtoAllMail');
+
+bot.beginDialogAction('TeamInformation', '/ProtoTeamInfo');
+
+bot.beginDialogAction('ParseInfo', '/ProtoParseInfo');
+
+bot.beginDialogAction('FastInfo', '/ProtoFastInfo');
+
+bot.beginDialogAction('ZizInfo', '/ProtoZizInfo');
+
+bot.beginDialogAction('UtilitiesInfo', '/ProtoUtilitiesInfo');
+
+bot.beginDialogAction('ResearchInfo', '/ProtoResearchInfo');
+
+bot.beginDialogAction('WebInfo', '/ProtoWebInfo');
+
+bot.beginDialogAction('RELUInfo', '/ProtoReluInfo');
+
+bot.dialog('/ProtoTeamInfo', [
+    function(session) {
+        var TeamTemp = getTeamInformation(session, general, 'numero_progetti', 'numero_membri', 'lista_membri', 'lista_progetti', 'link_sito');
+        session.send(TeamTemp);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoParseInfo', [
+    function(session) {
+        var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
+        session.send(ParseTemp);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoZizInfo', [
+    function(session) {
+        var ZizTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_ziz');
+        session.send(ZizTemp);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoUtilitiesInfo', [
+    function(session) {
+        var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
+        session.send(UtilitiesTemp);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoResearchInfo', [
+    function(session) {
+        var ResearchTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'research');
+        session.send(ResearchTemp);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoWebInfo', [
+    function(session) {
+        var WebTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_website');
+        session.send(WebTemp);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoReluInfo', [
+    function(session) {
+        var RELUemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
+        session.send(RELUTemp);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoFastInfo', [
+    function(session) {
+        var FastInkTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'fast_ink');
+        session.send(FastInkTemp);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoTeam', [
+    function(session) {
+        async.parallel([
+            function(callback) {
+                session.beginDialog('/Team')
+            },
+            function(callback) {
+                session.beginDialog('Root');
+            }
+        ])
+    }
+])
+
+bot.dialog('/ProtoTotalProject', [
+    function(session) {
+        async.parallel([
+            function(callback) {
+                session.beginDialog('/TotalProject')
+            },
+            function(callback) {
+                session.beginDialog('Root');
+            }
+        ])
+    }
+])

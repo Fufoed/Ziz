@@ -7,11 +7,11 @@
     "name": "samue"
   },
   "dependencies": {
-    "async": "^2.3.0",
-    "botbuilder": "^3.7.0",
+    "async": "^2.4.1",
+    "botbuilder": "^3.8.3",
     "deasync": "^0.1.9",
     "promise": "^7.1.1",
-    "relu-core": "^0.7.0",
+    "relu-core": "^0.8.0",
     "request": "^2.81.0",
     "restify": "^4.3.0",
     "rp": "^0.2.0",
