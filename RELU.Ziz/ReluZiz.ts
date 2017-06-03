@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 var http = require('http');
 
 var port = process.env.PORT || 1337;
@@ -46,12 +46,14 @@ var intent = new botbuilder.IntentDialog();
 
 var bot = new botbuilder.UniversalBot(connector);
 
-var server = restify.createServer(function(req, res) {
+var server = restify.createServer(function (req, res)
+{
     res.writeHead(200, { 'Content-Type': 'text/plain' });
 });
 
 server.listen(process.env.port || process.env.PORT || 3978,
-    function() {
+    function ()
+    {
         console.log(server.name + " Listening to " + server.url);
     });
 
@@ -62,7 +64,8 @@ server.listen(process.env.port || process.env.PORT || 3978,
 
 var bullshit = [];
 
-for (var i = 0; i < easterEgg.easter_egg.length; i++) {
+for (var i = 0; i < easterEgg.easter_egg.length; i++)
+{
     bullshit[i] = easterEgg.easter_egg[i];
 }
 
@@ -109,284 +112,348 @@ var recognize = new botbuilder.LuisRecognizer(model);
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 bot.dialog('/', [
-    function(session) {
+    function (session)
+    {
         session.send("Hi, I'm Ziz. For more information please visit www.teamperso.com");
         session.beginDialog('Root');
     },
-    function(session, results) {
+    function (session, results)
+    {
         session.endConversation("Goodbye until next time");
     }
 ]);
 
 bot.dialog('Root', new botbuilder.IntentDialog({
-        recognizers: [recognize]
-    }).matches('GetInformation', [
-        function(session, args, results) {
-            var team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, greggio, fantinato, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email, research;
-            team_perso = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
-            responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
-            role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
-            find = botbuilder.EntityRecognizer.findEntity(args.entities, 'find');
-            easter_egg = botbuilder.EntityRecognizer.findEntity(args.entities, 'easter_egg');
-            orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
-            lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
-            zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
-            greggio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::greggio');
-            fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
-            ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
-            fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
-            website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
-            RELU = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::RELU');
-            utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
-            parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
-            current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
-            total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
-            total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
-            email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
-            research = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::research');
+    recognizers: [recognize]
+}).matches('GetInformation', [
+    function (session, args, results)
+    {
+        var team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, greggio, fantinato, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email, research;
+        team_perso = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
+        responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
+        role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
+        find = botbuilder.EntityRecognizer.findEntity(args.entities, 'find');
+        easter_egg = botbuilder.EntityRecognizer.findEntity(args.entities, 'easter_egg');
+        orfei = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::orfei');
+        lucchi = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::lucchi');
+        zancanaro = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::zancanaro');
+        greggio = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::greggio');
+        fantinato = botbuilder.EntityRecognizer.findEntity(args.entities, 'people::fantinato');
+        ziz = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::ziz');
+        fast_ink = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::fast ink');
+        website = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::website');
+        RELU = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::RELU');
+        utilities = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::utilities');
+        parse = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::parse');
+        current_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'current_project');
+        total_project = botbuilder.EntityRecognizer.findEntity(args.entities, 'total_project');
+        total_people = botbuilder.EntityRecognizer.findEntity(args.entities, 'people');
+        email = botbuilder.EntityRecognizer.findEntity(args.entities, 'email');
+        research = botbuilder.EntityRecognizer.findEntity(args.entities, 'project::research');
 
-            if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !greggio && !fantinato && !ziz && !fast_ink && !website && !RELU && !utilities && !parse && !current_project && !total_project && !total_people && !email && !research) {
-                async.parallel([
-                    function(callback) {
-                        session.beginDialog('/Nothing');
-                    },
-                    function(callback) {
-                        session.beginDialog('Root');
-                    }
-                ])
-            }
-            if (email) {
-                session.beginDialog('/AllMail');
-            }
-            if (total_people) {
-                session.beginDialog('/AllPeople');
-            }
-            if (total_project) {
-                session.beginDialog('/TotalProject');
-            }
-            if (current_project) {
-                session.beginDialog('/CurrentProject');
-            }
-            if (team_perso) {
-                session.beginDialog('/Team');
-            }
-            if (responsability) {
-                session.beginDialog('/AllResponsability');
-            }
-            if (role) {
-                session.beginDialog('/AllRole');
-            }
-            if (find) {
-                session.beginDialog('/FindAll');
-            }
-            if (research) {
-                var ResearchTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'research');
-                session.send(ResearchTemp);
-            }
-            if (RELU) {
-                var RELUTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
-                session.send(RELUTemp);
-            }
-            if (website) {
-                var WebTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_website');
-                session.send(WebTemp);
-            }
-            if (fast_ink) {
-                var FastTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'fast_ink');
-                session.send(FastTemp);
-            }
-            if (parse) {
-                var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
-                session.send(ParseTemp);
-            }
-            if (utilities) {
-                var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
-                session.send(UtilitiesTemp);
-            }
-            if (ziz) {
-                var ZizTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_ziz');
-                session.send(ZizTemp);
-            }
-            if (fantinato) {
-                var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
-                session.send(FantinatoTemp);
-            }
-            if (greggio) {
-                var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
-                session.send(GreggioTemp);
-            }
-            if (orfei) {
-                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-                session.send(OrfeiTemp);
-            }
-            if (lucchi) {
-                var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
-                session.send(LucchiTemp);
-            }
-            if (zancanaro) {
-                var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
-                session.send(ZancanaroTemp);
-            }
-            if (easter_egg) {
-                var BullshitTemp = getBullshit(session);
-                session.send(BullshitTemp);
-            }
-            if (fantinato && role) {
-                var FantinatoRole = getPeopleRole(session, persone, 'ruolo', 'fantinato');
-                session.send(FantinatoRole);
-            }
-            if (greggio && role) {
-                var GreggioRole = getPeopleRole(session, persone, 'ruolo', 'greggio');
-                session.send(GreggioRole);
-            }
-            if (zancanaro && role) {
-                var ZancanaroRole = getPeopleRole(session, persone, 'ruolo', 'zancanaro');
-                session.send(ZancanaroRole);
-            }
-            if (lucchi && role) {
-                var LucchiRole = getPeopleRole(session, persone, 'ruolo', 'lucchi');
-                session.send(LucchiRole);
-            }
-            if (orfei && role) {
-                var OrfeiRole = getPeopleRole(session, persone, 'ruolo', 'orfei');
-                session.send(OrfeiRole);
-            }
-            if (fantinato && responsability) {
-                var FantinatoRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'fantinato');
-                session.send(FantinatoRes);
-            }
-            if (greggio && responsability) {
-                var GreggioRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'greggio');
-                session.send(GreggioRes);
-            }
-            if (zancanaro && responsability) {
-                var ZancanaroRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'zancanaro');
-                session.send(ZancanaroRes);
-            }
-            if (lucchi && responsability) {
-                var LucchiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'lucchi');
-                session.send(LucchiRes);
-            }
-            if (orfei && responsability) {
-                var OrfeiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'orfei');
-                session.send(OrfeiRes);
-            }
-            if (fantinato && email) {
-                var FantinatoMail = getPeopleMail(session, persone, 'mail', 'fantinato');
-                session.send(FantinatoMail);
-            }
-            if (greggio && email) {
-                var GreggioMail = getPeopleMail(session, persone, 'mail', 'greggio');
-                session.send(GreggioMail);
-            }
-            if (zancanaro && email) {
-                var ZancanaroMail = getPeopleMail(session, persone, 'mail', 'zancanaro');
-                session.send(ZancanaroMail);
-            }
-            if (lucchi && email) {
-                var LucchiMail = getPeopleMail(session, persone, 'mail', 'lucchi');
-                session.send(LucchiMail);
-            }
-            if (orfei && email) {
-                var OrfeiMail = getPeopleMail(session, persone, 'mail', 'orfei');
-                session.send(OrfeiMail);
-            }
-            if (fantinato && total_project) {
-                var FantinatoProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'fantinato');
-                session.send(FantinatoProjects);
-            }
-            if (greggio && total_project) {
-                var GreggioProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'greggio');
-                session.send(GreggioProjects);
-            }
-            if (zancanaro && total_project) {
-                var ZancanaroProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'zancanaro');
-                session.send(ZancanaroProjects);
-            }
-            if (lucchi && total_project) {
-                var LucchiProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'lucchi');
-                session.send(LucchiProjects);
-            }
-            if (orfei && total_project) {
-                var OrfeiProject = getPeopleProject(session, persone, 'progetti_assegnati', 'orfei');
-                session.send(OrfeiProject);
-            }
-            if (ziz && responsability) {
-                var ZizGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_ziz');
-                session.send(ZizGestioneTemp);
-            }
-            if (parse && responsability) {
-                var ParseGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_parse');
-                session.send(ParseGestioneTemp);
-            }
-            if (website && responsability) {
-                var WebGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_website');
-                session.send(WebGestioneTemp);
-            }
-            if (fast_ink && responsability) {
-                var FastInkGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'fast_ink');
-                session.send(FastInkGestioneTemp);
-            }
-            if (RELU && responsability) {
-                var RELUGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'relu-core');
-                session.send(RELUGestioneTemp);
-            }
-            if (utilities && responsability) {
-                var UtilitiesGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'utilities');
-                session.send(UtilitiesGestioneTemp);
-            }
-            if (RELU && find) {
-                var RELUTemp = getProjectFind(session, works, 'link_repo', 'relu-core');
-                session.send(TPBMCTemp);
-            }
-            if (website && find) {
-                var WebTemp = getProjectFind(session, works, 'link_repo', 'project_website');
-                session.send(WebTemp);
-            }
-            if (fast_ink && find) {
-                var FastTemp = getProjectFind(session, works, 'link_repo', 'fast_ink');
-                session.send(FastTemp);
-            }
-            if (parse && find) {
-                var ParseTemp = getProjectFind(session, works, 'link_repo', 'project_parse');
-                session.send(ParseTemp);
-            }
-            if (utilities && find) {
-                var UtilitiesTemp = getProjectFind(session, works, 'link_repo', 'utilities');
-                session.send(UtilitiesTemp);
-            }
-            if (ziz && find) {
-                var ZizTemp = getProjectFind(session, works, 'link_repo', 'project_ziz');
-                session.send(ZizTemp);
-            }
-            if (orfei && lucchi) {
-                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-                var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
-                session.send(OrfeiTemp);
-                session.send(LucchiTemp);
-            }
-            if (orfei && fantinato) {
-                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-                var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
-                session.send(OrfeiTemp);
-                session.send(FantinatoTemp);
-            }
-            if (orfei && zancanaro) {
-                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-                var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
-                session.send(OrfeiTemp);
-                session.send(ZancanaroTemp);
-            }
-            if (orfei && greggio) {
-                var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
-                var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
-                session.send(OrfeiTemp);
-                session.send(GreggioTemp);
-            }
+        if (!team_perso && !responsability && !role && !find && !easter_egg && !orfei && !lucchi && !zancanaro && !greggio && !fantinato && !ziz && !fast_ink && !website && !RELU && !utilities && !parse && !current_project && !total_project && !total_people && !email && !research)
+        {
+            async.parallel([
+                function (callback)
+                {
+                    session.beginDialog('/Nothing');
+                },
+                function (callback)
+                {
+                    session.beginDialog('Root');
+                }
+            ])
         }
-    ])
+        if (email)
+        {
+            session.beginDialog('/AllMail');
+        }
+        if (total_people)
+        {
+            session.beginDialog('/AllPeople');
+        }
+        if (total_project)
+        {
+            session.beginDialog('/TotalProject');
+        }
+        if (current_project)
+        {
+            session.beginDialog('/CurrentProject');
+        }
+        if (team_perso)
+        {
+            session.beginDialog('/Team');
+        }
+        if (responsability)
+        {
+            session.beginDialog('/AllResponsability');
+        }
+        if (role)
+        {
+            session.beginDialog('/AllRole');
+        }
+        if (find)
+        {
+            session.beginDialog('/FindAll');
+        }
+        if (research)
+        {
+            var ResearchTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'research');
+            session.send(ResearchTemp);
+        }
+        if (RELU)
+        {
+            var RELUTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
+            session.send(RELUTemp);
+        }
+        if (website)
+        {
+            var WebTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_website');
+            session.send(WebTemp);
+        }
+        if (fast_ink)
+        {
+            var FastTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'fast_ink');
+            session.send(FastTemp);
+        }
+        if (parse)
+        {
+            var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
+            session.send(ParseTemp);
+        }
+        if (utilities)
+        {
+            var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
+            session.send(UtilitiesTemp);
+        }
+        if (ziz)
+        {
+            var ZizTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_ziz');
+            session.send(ZizTemp);
+        }
+        if (fantinato)
+        {
+            var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
+            session.send(FantinatoTemp);
+        }
+        if (greggio)
+        {
+            var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
+            session.send(GreggioTemp);
+        }
+        if (orfei)
+        {
+            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+            session.send(OrfeiTemp);
+        }
+        if (lucchi)
+        {
+            var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
+            session.send(LucchiTemp);
+        }
+        if (zancanaro)
+        {
+            var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
+            session.send(ZancanaroTemp);
+        }
+        if (easter_egg)
+        {
+            var BullshitTemp = getBullshit(session);
+            session.send(BullshitTemp);
+        }
+        if (fantinato && role)
+        {
+            var FantinatoRole = getPeopleRole(session, persone, 'ruolo', 'fantinato');
+            session.send(FantinatoRole);
+        }
+        if (greggio && role)
+        {
+            var GreggioRole = getPeopleRole(session, persone, 'ruolo', 'greggio');
+            session.send(GreggioRole);
+        }
+        if (zancanaro && role)
+        {
+            var ZancanaroRole = getPeopleRole(session, persone, 'ruolo', 'zancanaro');
+            session.send(ZancanaroRole);
+        }
+        if (lucchi && role)
+        {
+            var LucchiRole = getPeopleRole(session, persone, 'ruolo', 'lucchi');
+            session.send(LucchiRole);
+        }
+        if (orfei && role)
+        {
+            var OrfeiRole = getPeopleRole(session, persone, 'ruolo', 'orfei');
+            session.send(OrfeiRole);
+        }
+        if (fantinato && responsability)
+        {
+            var FantinatoRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'fantinato');
+            session.send(FantinatoRes);
+        }
+        if (greggio && responsability)
+        {
+            var GreggioRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'greggio');
+            session.send(GreggioRes);
+        }
+        if (zancanaro && responsability)
+        {
+            var ZancanaroRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'zancanaro');
+            session.send(ZancanaroRes);
+        }
+        if (lucchi && responsability)
+        {
+            var LucchiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'lucchi');
+            session.send(LucchiRes);
+        }
+        if (orfei && responsability)
+        {
+            var OrfeiRes = getPeopleResponsability(session, persone, 'progetti_assegnati', 'orfei');
+            session.send(OrfeiRes);
+        }
+        if (fantinato && email)
+        {
+            var FantinatoMail = getPeopleMail(session, persone, 'mail', 'fantinato');
+            session.send(FantinatoMail);
+        }
+        if (greggio && email)
+        {
+            var GreggioMail = getPeopleMail(session, persone, 'mail', 'greggio');
+            session.send(GreggioMail);
+        }
+        if (zancanaro && email)
+        {
+            var ZancanaroMail = getPeopleMail(session, persone, 'mail', 'zancanaro');
+            session.send(ZancanaroMail);
+        }
+        if (lucchi && email)
+        {
+            var LucchiMail = getPeopleMail(session, persone, 'mail', 'lucchi');
+            session.send(LucchiMail);
+        }
+        if (orfei && email)
+        {
+            var OrfeiMail = getPeopleMail(session, persone, 'mail', 'orfei');
+            session.send(OrfeiMail);
+        }
+        if (fantinato && total_project)
+        {
+            var FantinatoProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'fantinato');
+            session.send(FantinatoProjects);
+        }
+        if (greggio && total_project)
+        {
+            var GreggioProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'greggio');
+            session.send(GreggioProjects);
+        }
+        if (zancanaro && total_project)
+        {
+            var ZancanaroProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'zancanaro');
+            session.send(ZancanaroProjects);
+        }
+        if (lucchi && total_project)
+        {
+            var LucchiProjects = getPeopleProject(session, persone, 'progetti_assegnati', 'lucchi');
+            session.send(LucchiProjects);
+        }
+        if (orfei && total_project)
+        {
+            var OrfeiProject = getPeopleProject(session, persone, 'progetti_assegnati', 'orfei');
+            session.send(OrfeiProject);
+        }
+        if (ziz && responsability)
+        {
+            var ZizGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_ziz');
+            session.send(ZizGestioneTemp);
+        }
+        if (parse && responsability)
+        {
+            var ParseGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_parse');
+            session.send(ParseGestioneTemp);
+        }
+        if (website && responsability)
+        {
+            var WebGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_website');
+            session.send(WebGestioneTemp);
+        }
+        if (fast_ink && responsability)
+        {
+            var FastInkGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'fast_ink');
+            session.send(FastInkGestioneTemp);
+        }
+        if (RELU && responsability)
+        {
+            var RELUGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'relu-core');
+            session.send(RELUGestioneTemp);
+        }
+        if (utilities && responsability)
+        {
+            var UtilitiesGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'utilities');
+            session.send(UtilitiesGestioneTemp);
+        }
+        if (RELU && find)
+        {
+            var RELUTemp = getProjectFind(session, works, 'link_repo', 'relu-core');
+            session.send(TPBMCTemp);
+        }
+        if (website && find)
+        {
+            var WebTemp = getProjectFind(session, works, 'link_repo', 'project_website');
+            session.send(WebTemp);
+        }
+        if (fast_ink && find)
+        {
+            var FastTemp = getProjectFind(session, works, 'link_repo', 'fast_ink');
+            session.send(FastTemp);
+        }
+        if (parse && find)
+        {
+            var ParseTemp = getProjectFind(session, works, 'link_repo', 'project_parse');
+            session.send(ParseTemp);
+        }
+        if (utilities && find)
+        {
+            var UtilitiesTemp = getProjectFind(session, works, 'link_repo', 'utilities');
+            session.send(UtilitiesTemp);
+        }
+        if (ziz && find)
+        {
+            var ZizTemp = getProjectFind(session, works, 'link_repo', 'project_ziz');
+            session.send(ZizTemp);
+        }
+        if (orfei && lucchi)
+        {
+            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+            var LucchiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
+            session.send(OrfeiTemp);
+            session.send(LucchiTemp);
+        }
+        if (orfei && fantinato)
+        {
+            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+            var FantinatoTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
+            session.send(OrfeiTemp);
+            session.send(FantinatoTemp);
+        }
+        if (orfei && zancanaro)
+        {
+            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+            var ZancanaroTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
+            session.send(OrfeiTemp);
+            session.send(ZancanaroTemp);
+        }
+        if (orfei && greggio)
+        {
+            var OrfeiTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+            var GreggioTemp = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
+            session.send(OrfeiTemp);
+            session.send(GreggioTemp);
+        }
+    }
+])
     .matches('Skills', [
-        function(session, args, results) {
+        function (session, args, results)
+        {
             session.send("Io sono un bot che fornisce informazioni riguardo al team perso. Puoi chiedermi informazioni sui membri, sui progetti correnti e suoi progetti totali. Posso dirti chi gestisce i vari progetti e chi sono i capi delle vaie divisioni. Se vuoi vedere o provare i nostri progetti posso fornirti anche il link, l'unica cosa che devi fare ? chiedere");
             session.beginDialog('Root');
         }
@@ -397,7 +464,8 @@ bot.dialog('Root', new botbuilder.IntentDialog({
         }
     ])*/
     .matches('None', [
-        function(session, args, results) {
+        function (session, args, results)
+        {
             session.send("Wrong action");
             session.beginDialog('Root');
         }
@@ -406,7 +474,8 @@ bot.dialog('Root', new botbuilder.IntentDialog({
 server.post('/api/messages', connector.listen());
 
 bot.dialog('/Nothing', [
-    function(session) {
+    function (session)
+    {
         var title = ['Persone', 'Progetti Totali', 'Progetti Correnti', 'Team Perso'];
         var text = ['Informazioni sulle persone', 'Informazioni sui progetti totali', 'Informazioni sui progetti correnti', 'Informazioni sul team'];
         var linkImages = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://www.elia-group.com/images/team1.jpg'];
@@ -423,7 +492,8 @@ bot.dialog('/Nothing', [
 
 
 bot.dialog('/Team', [
-    function(session) {
+    function (session)
+    {
         session.send("Cosa vuoi sapere del team?");
         var title = ['Membri', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilita', 'Info'];
         var text = ['Informazioni sui membri', 'Informazioni sui ruoli', 'Informazioni su tutti i progetti', 'Informazioni sui progetti correnti', 'Responsabilita dei membri', 'Informazioni sul team perso'];
@@ -440,7 +510,8 @@ bot.dialog('/Team', [
 ])
 
 bot.dialog('/TotalProject', [
-    function(session) {
+    function (session)
+    {
         session.send("Cosa vuoi sapere sui progetti?");
         var title = ['Project Parse', 'Utilities', 'RELU', 'Project Ziz', 'Fast Ink', 'Website', 'Research'];
         var text = ['Informazione sul progetto Parse', 'Informazioni su utilities', 'Informazioni su RELU', 'Informazioni sul progetto Ziz', 'Informazioni su fast ink', 'Informazioni su Website'];
@@ -453,8 +524,10 @@ bot.dialog('/TotalProject', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function(session, results) {
-        switch (results.response) {
+    function (session, results)
+    {
+        switch (results.response)
+        {
             case "informazioni sul progetto parse":
                 var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
                 session.send(ParseTemp);
@@ -530,7 +603,8 @@ bot.dialog('/TotalProject', [
 ])
 
 bot.dialog('/AllRole', [
-    function(session) {
+    function (session)
+    {
         session.send("Di chi vuoi sapere il ruolo?");
         var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro'];
         var text = ['Ruolo di Orfei', 'Ruolo di Lucchi', 'Ruolo di Fantinato', 'Ruolo di Greggio', 'Ruolo di Zancanaro'];
@@ -543,8 +617,10 @@ bot.dialog('/AllRole', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function(session, results) {
-        switch (results.response) {
+    function (session, results)
+    {
+        switch (results.response)
+        {
             case 'ruolo di orfei':
                 var OrfeiRole = getPeopleRole(session, persone, 'ruolo', 'orfei');
                 session.send(OrfeiRole);
@@ -575,7 +651,8 @@ bot.dialog('/AllRole', [
 ])
 
 bot.dialog('/AllPeople', [
-    function(session) {
+    function (session)
+    {
         session.send("Queste sono le persone appartenenti al team perso. Vuoi sapere altro?");
         var title = ['Orfei', 'Lucchi', 'Fantinato', 'Zancanaro'];
         var text = ['Informazioni su Orfei', 'Informazioni su Lucchi', 'Informazioni su Fantinato', 'Informazioni su Zancanaro'];
@@ -588,8 +665,10 @@ bot.dialog('/AllPeople', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function(session, results) {
-        switch (results.response) {
+    function (session, results)
+    {
+        switch (results.response)
+        {
             case "ruolo di orfei":
                 var OrfeiRuolo = getPeopleRole(session, persone, 'ruolo', 'orfei');
                 session.send(OrfeiRuolo);
@@ -804,7 +883,8 @@ function textToSpeech(text, filename, accessToken, session, callback) {
 }*/
 
 bot.dialog('/CurrentProject', [
-    function(session) {
+    function (session)
+    {
         session.send("Questi sono i progetti correnti");
         var title = ['RELU', 'Utilities', 'Project Ziz', 'Website'];
         var text = ['Informazioni su RELU', 'Informazioni su Utilities', 'Informazioni su Ziz', 'Informazioni su Website', 'Informazioni su Research'];
@@ -817,8 +897,10 @@ bot.dialog('/CurrentProject', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function(session, results) {
-        switch (results.response) {
+    function (session, results)
+    {
+        switch (results.response)
+        {
             case "informazioni su utilities":
                 var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
                 session.send(UtilitiesTemp);
@@ -874,7 +956,8 @@ bot.dialog('/CurrentProject', [
 ])
 
 bot.dialog('/AllMail', [
-    function(session) {
+    function (session)
+    {
         session.send("Di chi vuoi sapere la mail?");
         var title = ['Orfei', 'Lucchi', 'Fantinato', 'Greggio', 'Zancanaro', 'Quinto', 'Chiarin', 'Nunzio'];
         var text = ['Email di Orfei', 'Email di Lucchi', 'Email di Fantinato', 'Email di Greggio', 'Email di Zancanaro', 'Email di Quinto', 'Email di Chiarin', 'Email di Nunzio'];
@@ -887,8 +970,10 @@ bot.dialog('/AllMail', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function(session, results) {
-        switch (results.response) {
+    function (session, results)
+    {
+        switch (results.response)
+        {
             case "email di orfei":
                 var OrfeiMail = getPeopleMail(session, persone, 'mail', 'orfei');
                 session.send(OrfeiMail);
@@ -919,7 +1004,8 @@ bot.dialog('/AllMail', [
 ])
 
 bot.dialog('/FindAll', [
-    function(session) {
+    function (session)
+    {
         session.send("Scegli il progetto che vuoi trovare");
         var title = ['Project Ziz', 'Project Parse', 'Utilities', 'Website', 'Fast Ink', 'RELU', 'Research'];
         var text = ['Link project Ziz', 'Link Project Parse', 'Link Utilities', 'Link Utilities', 'Link Fast Ink', 'Link RELU', 'Link Research'];
@@ -932,8 +1018,10 @@ bot.dialog('/FindAll', [
 
         botbuilder.Prompts.text(session, reply);
     },
-    function(session, results) {
-        switch (results.response) {
+    function (session, results)
+    {
+        switch (results.response)
+        {
             case "link progetto ziz":
                 var ZizTemp = getProjectFind(session, works, 'link_repo', 'project_ziz');
                 session.send(ZizTemp);
@@ -975,7 +1063,8 @@ bot.dialog('/FindAll', [
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleInformation(session, json, mantain, gitusername, assigned, role, speciality, mail, nickname, name) {
+function getPeopleInformation(session, json, mantain, gitusername, assigned, role, speciality, mail, nickname, name)
+{
     var project_mantain = relucore.ReluConfig.JsonReader(session, json, mantain, name);
     var gitUser = relucore.ReluConfig.JsonReader(session, json, gitusername, name);
     var project_assigned = relucore.ReluConfig.JsonReader(session, json, assigned, name);
@@ -989,43 +1078,43 @@ function getPeopleInformation(session, json, mantain, gitusername, assigned, rol
         "contentType": "application/vnd.microsoft.card.adaptive",
         "content": {
             "body": [{
-                    "type": "TextBlock",
-                    "text": name,
-                    "weight": "bolder"
+                "type": "TextBlock",
+                "text": name,
+                "weight": "bolder"
+            },
+            {
+                "separation": "strong",
+                "type": "FactSet",
+                "facts": [{
+                    "title": "Progetti da mantenere",
+                    "value": project_mantain
                 },
                 {
-                    "separation": "strong",
-                    "type": "FactSet",
-                    "facts": [{
-                            "title": "Progetti da mantenere",
-                            "value": project_mantain
-                        },
-                        {
-                            "title": "Username github",
-                            "value": gitUser
-                        },
-                        {
-                            "title": "Progetti assegnati",
-                            "value": project_assigned
-                        },
-                        {
-                            "title": "Ruolo",
-                            "value": person_role
-                        },
-                        {
-                            "title": "Specialita",
-                            "value": spec
-                        },
-                        {
-                            "title": "Email",
-                            "value": email
-                        },
-                        {
-                            "title": "Nickname",
-                            "value": person_nickname
-                        }
-                    ]
+                    "title": "Username github",
+                    "value": gitUser
+                },
+                {
+                    "title": "Progetti assegnati",
+                    "value": project_assigned
+                },
+                {
+                    "title": "Ruolo",
+                    "value": person_role
+                },
+                {
+                    "title": "Specialita",
+                    "value": spec
+                },
+                {
+                    "title": "Email",
+                    "value": email
+                },
+                {
+                    "title": "Nickname",
+                    "value": person_nickname
                 }
+                ]
+            }
             ]
         }
     })
@@ -1034,7 +1123,8 @@ function getPeopleInformation(session, json, mantain, gitusername, assigned, rol
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleRole(session, json, role, name) {
+function getPeopleRole(session, json, role, name)
+{
     var person_role = relucore.ReluConfig.JsonReader(session, json, role, name)
     var msg = new botbuilder.Message(session).addAttachment({
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
@@ -1042,18 +1132,18 @@ function getPeopleRole(session, json, role, name) {
         "contentType": "application/vnd.microsoft.card.adaptive",
         "content": {
             "body": [{
-                    "type": "TextBlock",
-                    "text": name,
-                    "weight": "bolder"
-                },
-                {
-                    "separation": "strong",
-                    "type": "FactSet",
-                    "facts": [{
-                        "title": "Ruolo",
-                        "value": person_role
-                    }]
-                }
+                "type": "TextBlock",
+                "text": name,
+                "weight": "bolder"
+            },
+            {
+                "separation": "strong",
+                "type": "FactSet",
+                "facts": [{
+                    "title": "Ruolo",
+                    "value": person_role
+                }]
+            }
             ]
         }
     })
@@ -1062,7 +1152,8 @@ function getPeopleRole(session, json, role, name) {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getProjectInformation(session, json, type, description, chief, link_repo, begin_develop, end_develop, version, support, how_going, member, note, project) {
+function getProjectInformation(session, json, type, description, chief, link_repo, begin_develop, end_develop, version, support, how_going, member, note, project)
+{
     var project_type = relucore.ReluConfig.JsonReader(session, json, type, project);
     var project_description = relucore.ReluConfig.JsonReader(session, json, description, project);
     var project_chief = relucore.ReluConfig.JsonReader(session, json, chief, project);
@@ -1080,59 +1171,59 @@ function getProjectInformation(session, json, type, description, chief, link_rep
         "contentType": "application/vnd.microsoft.card.adaptive",
         "content": {
             "body": [{
-                    "type": "TextBlock",
-                    "text": project,
-                    "weight": "bolder"
+                "type": "TextBlock",
+                "text": project,
+                "weight": "bolder"
+            },
+            {
+                "separation": "strong",
+                "type": "FactSet",
+                "facts": [{
+                    "title": "Tipo",
+                    "value": project_type
                 },
                 {
-                    "separation": "strong",
-                    "type": "FactSet",
-                    "facts": [{
-                            "title": "Tipo",
-                            "value": project_type
-                        },
-                        {
-                            "title": "Descrizione",
-                            "value": project_description
-                        },
-                        {
-                            "title": "Capo",
-                            "value": chief
-                        },
-                        {
-                            "title": "Link",
-                            "value": project_link_repo
-                        },
-                        {
-                            "title": "Inizio sviluppo",
-                            "value": project_begin_develop
-                        },
-                        {
-                            "title": "Fine sviluppo",
-                            "value": project_end_develop
-                        },
-                        {
-                            "title": "Versione",
-                            "value": project_version
-                        },
-                        {
-                            "title": "Supporto",
-                            "value": project_support
-                        },
-                        {
-                            "title": "Come procede",
-                            "value": project_how_going
-                        },
-                        {
-                            "title": "Membri",
-                            "value": project_member
-                        },
-                        {
-                            "title": "Note",
-                            "value": project_note
-                        }
-                    ]
+                    "title": "Descrizione",
+                    "value": project_description
+                },
+                {
+                    "title": "Capo",
+                    "value": chief
+                },
+                {
+                    "title": "Link",
+                    "value": project_link_repo
+                },
+                {
+                    "title": "Inizio sviluppo",
+                    "value": project_begin_develop
+                },
+                {
+                    "title": "Fine sviluppo",
+                    "value": project_end_develop
+                },
+                {
+                    "title": "Versione",
+                    "value": project_version
+                },
+                {
+                    "title": "Supporto",
+                    "value": project_support
+                },
+                {
+                    "title": "Come procede",
+                    "value": project_how_going
+                },
+                {
+                    "title": "Membri",
+                    "value": project_member
+                },
+                {
+                    "title": "Note",
+                    "value": project_note
                 }
+                ]
+            }
             ]
         }
     })
@@ -1141,7 +1232,8 @@ function getProjectInformation(session, json, type, description, chief, link_rep
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleProject(session, json, assigned, name) {
+function getPeopleProject(session, json, assigned, name)
+{
     var project = relucore.ReluConfig.JsonReader(session, json, assigned, name);
     var msg = new botbuilder.Message(session).addAttachment({
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
@@ -1149,18 +1241,18 @@ function getPeopleProject(session, json, assigned, name) {
         "contentType": "application/vnd.microsoft.card.adaptive",
         "content": {
             "body": [{
-                    "type": "TextBlock",
-                    "text": name,
-                    "weight": "bolder"
-                },
-                {
-                    "separation": "strong",
-                    "type": "FactSet",
-                    "facts": [{
-                        "title": "Progetti",
-                        "value": project
-                    }]
-                }
+                "type": "TextBlock",
+                "text": name,
+                "weight": "bolder"
+            },
+            {
+                "separation": "strong",
+                "type": "FactSet",
+                "facts": [{
+                    "title": "Progetti",
+                    "value": project
+                }]
+            }
             ]
         }
     })
@@ -1169,7 +1261,8 @@ function getPeopleProject(session, json, assigned, name) {
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getTeamInformation(session, json, nProject, nMembers, MemberList, ProjectList, link) {
+function getTeamInformation(session, json, nProject, nMembers, MemberList, ProjectList, link)
+{
     var Projects = relucore.ReluConfig.JsonReader(session, json, nProject);
     var ListProject = relucore.ReluConfig.JsonReader(session, json, ProjectList);
     var site_link = relucore.ReluConfig.JsonReader(session, json, link);
@@ -1181,27 +1274,27 @@ function getTeamInformation(session, json, nProject, nMembers, MemberList, Proje
         "contentType": "application/vnd.microsoft.card.adaptive",
         "content": {
             "body": [{
-                    "type": "TextBlock",
-                    "text": "Team Perso",
-                    "weight": "bolder"
+                "type": "TextBlock",
+                "text": "Team Perso",
+                "weight": "bolder"
+            },
+            {
+                "separation": "strong",
+                "type": "FactSet",
+                "facts": [{
+                    "title": "Progetti",
+                    "value": Projects
                 },
                 {
-                    "separation": "strong",
-                    "type": "FactSet",
-                    "facts": [{
-                            "title": "Progetti",
-                            "value": Projects
-                        },
-                        {
-                            "title": "Link",
-                            "value": site_link
-                        },
-                        {
-                            "title": "Membri",
-                            "value": ListMember
-                        }
-                    ]
+                    "title": "Link",
+                    "value": site_link
+                },
+                {
+                    "title": "Membri",
+                    "value": ListMember
                 }
+                ]
+            }
             ]
         }
     })
@@ -1210,13 +1303,15 @@ function getTeamInformation(session, json, nProject, nMembers, MemberList, Proje
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getBullshit(session) {
+function getBullshit(session)
+{
     return bullshit[(parseInt(Math.random() * bullshit.length) | 0)];
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleMail(session, json, mail, name) {
+function getPeopleMail(session, json, mail, name)
+{
     var email = relucore.ReluConfig.JsonReader(session, json, mail, name);
     var msg = new botbuilder.Message(session).addAttachment({
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
@@ -1224,18 +1319,18 @@ function getPeopleMail(session, json, mail, name) {
         "contentType": "application/vnd.microsoft.card.adaptive",
         "content": {
             "body": [{
-                    "type": "TextBlock",
-                    "text": name,
-                    "weight": "bolder"
-                },
-                {
-                    "separation": "strong",
-                    "type": "FactSet",
-                    "facts": [{
-                        "title": "Email",
-                        "value": email
-                    }]
-                }
+                "type": "TextBlock",
+                "text": name,
+                "weight": "bolder"
+            },
+            {
+                "separation": "strong",
+                "type": "FactSet",
+                "facts": [{
+                    "title": "Email",
+                    "value": email
+                }]
+            }
             ]
         }
     })
@@ -1244,7 +1339,8 @@ function getPeopleMail(session, json, mail, name) {
 
 //-----------------------------------------------------------------------------------------------------------
 
-function getProjectFind(session, json, link, project) {
+function getProjectFind(session, json, link, project)
+{
     var link_project = relucore.ReluConfig.JsonReader(session, json, link, project);
     var msg = new botbuilder.Message(session).addAttachment({
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
@@ -1252,18 +1348,18 @@ function getProjectFind(session, json, link, project) {
         "contentType": "application/vnd.microsoft.card.adaptive",
         "content": {
             "body": [{
-                    "type": "TextBlock",
-                    "text": project,
-                    "weight": "bolder"
-                },
-                {
-                    "separation": "strong",
-                    "type": "FactSet",
-                    "facts": [{
-                        "title": "Link",
-                        "value": link_project
-                    }]
-                }
+                "type": "TextBlock",
+                "text": project,
+                "weight": "bolder"
+            },
+            {
+                "separation": "strong",
+                "type": "FactSet",
+                "facts": [{
+                    "title": "Link",
+                    "value": link_project
+                }]
+            }
             ]
         }
     })
@@ -1272,7 +1368,8 @@ function getProjectFind(session, json, link, project) {
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 
-function getProjectGestione(session, json, chief, project) {
+function getProjectGestione(session, json, chief, project)
+{
     var boss = relucore.ReluConfig.JsonReader(session, json, chief, project);
     var msg = new botbuilder.Message(session).addAttachment({
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
@@ -1280,18 +1377,18 @@ function getProjectGestione(session, json, chief, project) {
         "contentType": "application/vnd.microsoft.card.adaptive",
         "content": {
             "body": [{
-                    "type": "TextBlock",
-                    "text": chief,
-                    "weight": "bolder"
-                },
-                {
-                    "separation": "strong",
-                    "type": "FactSet",
-                    "facts": [{
-                        "title": "Gestione",
-                        "value": boss + "ha fatto " + project
-                    }]
-                }
+                "type": "TextBlock",
+                "text": chief,
+                "weight": "bolder"
+            },
+            {
+                "separation": "strong",
+                "type": "FactSet",
+                "facts": [{
+                    "title": "Gestione",
+                    "value": boss + "ha fatto " + project
+                }]
+            }
             ]
         }
     })
@@ -1300,7 +1397,8 @@ function getProjectGestione(session, json, chief, project) {
 
 //------------------------------------------------------------------------------------------------------------------------------------------
 
-function getPeopleResponsability(session, json, assegnati, name) {
+function getPeopleResponsability(session, json, assegnati, name)
+{
     var assigned = relucore.ReluConfig.JsonReader(session, json, assegnati, name);
     var msg = new botbuilder.Message(session).addAttachment({
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
@@ -1308,18 +1406,18 @@ function getPeopleResponsability(session, json, assegnati, name) {
         "contentType": "application/vnd.microsoft.card.adaptive",
         "content": {
             "body": [{
-                    "type": "TextBlock",
-                    "text": name,
-                    "weight": "bolder"
-                },
-                {
-                    "separation": "strong",
-                    "type": "FactSet",
-                    "facts": [{
-                        "title": "Assegnati",
-                        "value": assigned
-                    }]
-                }
+                "type": "TextBlock",
+                "text": name,
+                "weight": "bolder"
+            },
+            {
+                "separation": "strong",
+                "type": "FactSet",
+                "facts": [{
+                    "title": "Assegnati",
+                    "value": assigned
+                }]
+            }
             ]
         }
     })
@@ -1364,7 +1462,8 @@ bot.beginDialogAction('WebInfo', '/ProtoWebInfo');
 bot.beginDialogAction('RELUInfo', '/ProtoReluInfo');
 
 bot.dialog('/ProtoTeamInfo', [
-    function(session) {
+    function (session)
+    {
         var TeamTemp = getTeamInformation(session, general, 'numero_progetti', 'numero_membri', 'lista_membri', 'lista_progetti', 'link_sito');
         session.send(TeamTemp);
         session.beginDialog('Root');
@@ -1372,7 +1471,8 @@ bot.dialog('/ProtoTeamInfo', [
 ])
 
 bot.dialog('/ProtoParseInfo', [
-    function(session) {
+    function (session)
+    {
         var ParseTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_parse');
         session.send(ParseTemp);
         session.beginDialog('Root');
@@ -1380,7 +1480,8 @@ bot.dialog('/ProtoParseInfo', [
 ])
 
 bot.dialog('/ProtoZizInfo', [
-    function(session) {
+    function (session)
+    {
         var ZizTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_ziz');
         session.send(ZizTemp);
         session.beginDialog('Root');
@@ -1388,7 +1489,8 @@ bot.dialog('/ProtoZizInfo', [
 ])
 
 bot.dialog('/ProtoUtilitiesInfo', [
-    function(session) {
+    function (session)
+    {
         var UtilitiesTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'utilities');
         session.send(UtilitiesTemp);
         session.beginDialog('Root');
@@ -1396,7 +1498,8 @@ bot.dialog('/ProtoUtilitiesInfo', [
 ])
 
 bot.dialog('/ProtoResearchInfo', [
-    function(session) {
+    function (session)
+    {
         var ResearchTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'research');
         session.send(ResearchTemp);
         session.beginDialog('Root');
@@ -1404,7 +1507,8 @@ bot.dialog('/ProtoResearchInfo', [
 ])
 
 bot.dialog('/ProtoWebInfo', [
-    function(session) {
+    function (session)
+    {
         var WebTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'project_website');
         session.send(WebTemp);
         session.beginDialog('Root');
@@ -1412,7 +1516,8 @@ bot.dialog('/ProtoWebInfo', [
 ])
 
 bot.dialog('/ProtoReluInfo', [
-    function(session) {
+    function (session)
+    {
         var RELUemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
         session.send(RELUTemp);
         session.beginDialog('Root');
@@ -1420,7 +1525,8 @@ bot.dialog('/ProtoReluInfo', [
 ])
 
 bot.dialog('/ProtoFastInfo', [
-    function(session) {
+    function (session)
+    {
         var FastInkTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'fast_ink');
         session.send(FastInkTemp);
         session.beginDialog('Root');
@@ -1428,12 +1534,15 @@ bot.dialog('/ProtoFastInfo', [
 ])
 
 bot.dialog('/ProtoTeam', [
-    function(session) {
+    function (session)
+    {
         async.parallel([
-            function(callback) {
+            function (callback)
+            {
                 session.beginDialog('/Team')
             },
-            function(callback) {
+            function (callback)
+            {
                 session.beginDialog('Root');
             }
         ])
@@ -1441,12 +1550,15 @@ bot.dialog('/ProtoTeam', [
 ])
 
 bot.dialog('/ProtoTotalProject', [
-    function(session) {
+    function (session)
+    {
         async.parallel([
-            function(callback) {
+            function (callback)
+            {
                 session.beginDialog('/TotalProject')
             },
-            function(callback) {
+            function (callback)
+            {
                 session.beginDialog('Root');
             }
         ])
