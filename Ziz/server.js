@@ -1333,6 +1333,8 @@ function getPeopleResponsability(session, json, assegnati, name) {
 
 bot.beginDialogAction('Team', '/ProtoTeam');
 
+bot.beginDialogAction('TeamInfo', '/ProtoTeamInfo');
+
 bot.beginDialogAction('TotalProject', '/ProtoTotalProject');
 
 bot.beginDialogAction('CurrentProject', '/ProtoCurrentProject');
@@ -1359,9 +1361,25 @@ bot.beginDialogAction('UtilitiesInfo', '/ProtoUtilitiesInfo');
 
 bot.beginDialogAction('ResearchInfo', '/ProtoResearchInfo');
 
-bot.beginDialogAction('WebInfo', '/ProtoWebInfo');
+bot.beginDialogAction('OrfeiInfo', '/ProtoOrfeiInfo');
 
-bot.beginDialogAction('RELUInfo', '/ProtoReluInfo');
+bot.beginDialogAction('LucchiInfo', '/ProtoLucchiInfo');
+
+bot.beginDialogAction('FantinatoInfo', '/ProtoFantinatoInfo');
+
+bot.beginDialogAction('GreggioInfo', '/ProtoGreggioInfo');
+
+bot.beginDialogAction('ZancanaroInfo', '/ProtoZancanaroInfo');
+
+bot.beginDialogAction('LucchiMail', '/ProtoLucchiMail');
+
+bot.beginDialogAction('GreggioMail', '/ProtoGreggioMail');
+
+bot.beginDialogAction('FantinatoMail', '/ProtoFantinatoMail');
+
+bot.beginDialogAction('ZancanaroMail', '/ProtoZancanaroMail');
+
+bot.beginDialogAction('OrfeiMail', '/ProtoOrfeiMail');
 
 bot.dialog('/ProtoTeamInfo', [
     function(session) {
@@ -1427,6 +1445,86 @@ bot.dialog('/ProtoFastInfo', [
     }
 ])
 
+bot.dialog('/ProtoOrfeiInfo', [
+    function(session) {
+        var OrfeiInformazioni = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'orfei');
+        session.send(OrfeiInformazioni);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoLucchiInfo', [
+    function(session) {
+        var LucchiInformazioni = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'lucchi');
+        session.send(LucchiInformazioni);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoZancanaroInfo', [
+    function(session) {
+        var ZancanaroInformazioni = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'zancanaro');
+        session.send(ZancanaroInformazioni);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoFantinatoInfo', [
+    function(session) {
+        var FantinatoInformazioni = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'fantinato');
+        session.send(FantinatoInformazioni);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoGreggioInfo', [
+    function(session) {
+        var GreggioInformazioni = getPeopleInformation(session, persone, 'progetti_mantenere', 'username_github', 'progetti_assegnati', 'ruolo', 'specialita', 'mail', 'nickname', 'greggio');
+        session.send(GreggioInformazioni);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoFantinatoMail', [
+    function(session) {
+        var FantinatoMail = getPeopleMail(session, persone, 'mail', 'fantinato');
+        session.send(FantinatoMail);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoZancanaroMail', [
+    function(session) {
+        var ZancanaroMail = getPeopleMail(session, persone, 'mail', 'zancanaro');
+        session.send(ZancanaroMail);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoOrfeiMail', [
+    function(session) {
+        var OrfeiMail = getPeopleMail(session, persone, 'mail', 'orfei');
+        session.send(OrfeiMail);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoLucchiMail', [
+    function(session) {
+        var LucchiMail = getPeopleMail(session, persone, 'mail', 'lucchi');
+        session.send(LucchiMail);
+        session.beginDialog('Root');
+    }
+])
+
+bot.dialog('/ProtoGreggioMail', [
+    function(session) {
+        var GreggioMail = getPeopleMail(session, persone, 'mail', 'greggio');
+        session.send(GreggioMail);
+        session.beginDialog('Root');
+    }
+])
+
 bot.dialog('/ProtoTeam', [
     function(session) {
         async.parallel([
@@ -1445,6 +1543,58 @@ bot.dialog('/ProtoTotalProject', [
         async.parallel([
             function(callback) {
                 session.beginDialog('/TotalProject')
+            },
+            function(callback) {
+                session.beginDialog('Root');
+            }
+        ])
+    }
+])
+
+bot.dialog('/ProtoCurrentProject', [
+    function(session) {
+        async.parallel([
+            function(callback) {
+                session.beginDialog('/CurrentTotalProject')
+            },
+            function(callback) {
+                session.beginDialog('Root');
+            }
+        ])
+    }
+])
+
+bot.dialog('/ProtoAllPeople', [
+    function(session) {
+        async.parallel([
+            function(callback) {
+                session.beginDialog('/ProtoAllPeople')
+            },
+            function(callback) {
+                session.beginDialog('Root');
+            }
+        ])
+    }
+])
+
+bot.dialog('/ProtoAllMail', [
+    function(session) {
+        async.parallel([
+            function(callback) {
+                session.beginDialog('/ProtoAllMail')
+            },
+            function(callback) {
+                session.beginDialog('Root');
+            }
+        ])
+    }
+])
+
+bot.dialog('/ProtoAllRole', [
+    function(session) {
+        async.parallel([
+            function(callback) {
+                session.beginDialog('/ProtoAllRole')
             },
             function(callback) {
                 session.beginDialog('Root');
