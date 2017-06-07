@@ -1,0 +1,9 @@
+{
+  "name": "utest.console",
+  "version": "0.0.0",
+  "description": "UTEST.Console",
+  "main": "app.js",
+  "author": {
+    "name": "manue"
+  }
+}

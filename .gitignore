@@ -1,2 +1,4 @@
-Ziz/node_modules
-Ziz/obj
+node_modules/
+obj/
+bin/
+_Build/

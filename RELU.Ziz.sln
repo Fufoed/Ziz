@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "RELU.Ziz", "RELU.Ziz\RELU.Ziz.njsproj", "{7369489C-5339-438B-A6F3-A1A50AE60BE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UNIT_TEST", "UNIT_TEST", "{9344E14B-A41D-4B0F-9964-E893413CACC6}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "UTEST.Console", "UTEST.Console\UTEST.Console.njsproj", "{054B1C41-F7B8-4790-80DB-67AED83CFF97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7369489C-5339-438B-A6F3-A1A50AE60BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7369489C-5339-438B-A6F3-A1A50AE60BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7369489C-5339-438B-A6F3-A1A50AE60BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7369489C-5339-438B-A6F3-A1A50AE60BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{054B1C41-F7B8-4790-80DB-67AED83CFF97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{054B1C41-F7B8-4790-80DB-67AED83CFF97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{054B1C41-F7B8-4790-80DB-67AED83CFF97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{054B1C41-F7B8-4790-80DB-67AED83CFF97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{054B1C41-F7B8-4790-80DB-67AED83CFF97} = {9344E14B-A41D-4B0F-9964-E893413CACC6}
+	EndGlobalSection
+EndGlobal
