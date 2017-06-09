@@ -1,57 +1,49 @@
 ﻿'use strict';
-var http = require('http');
+import * as http from 'http';
 
-var port = process.env.PORT || 1337;
+import * as botbuilder from 'botbuilder';
 
-var botbuilder = require('botbuilder');
+import * as relucore from 'relu-core';
 
-var relucore = require('relu-core');
+import * as promise from 'promise';
 
-var promise = require('promise');
+import * as restify from 'restify';
 
-var rp = require('rp');
+import async = require('async');
 
-var restify = require('restify');
+import easterEgg = require('./Database/EasterEgg.json');
 
-var async = require('async');
+import works = require('./Database/Projects');
 
-var easterEgg = require('./Database/EasterEgg.json');
+import persone = require('./Database/Members');
 
-var works = require('./Database/Projects');
+import roadMap = require('./Database/RoadMap');
 
-var persone = require('./Database/Members');
+import books = require('./Database/Books');
 
-var roadMap = require('./Database/RoadMap');
+import contacts = require('./Database/Contacts');
 
-var books = require('./Database/Books');
+import general = require('./Database/General');
 
-var schema = require('./Database/schema.json');
+import ideas = require('./Database/Ideas');
 
-var contacts = require('./Database/Contacts');
-
-var general = require('./Database/General');
-
-var ideas = require('./Database/Ideas');
-
-var rules = require('./Database/Rules');
+import rules = require('./Database/Rules');
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
-var connector = new botbuilder.ChatConnector({
+var connector: any = new botbuilder.ChatConnector({
     appId: 'e2232fc4-92d3-4895-84a8-a8d2632a6ff4',
     appPassword: 'G6JS97UjmzAicaMvJuviG3Z'
 });
 
-var intent = new botbuilder.IntentDialog();
+var bot: any = new botbuilder.UniversalBot(connector);
 
-var bot = new botbuilder.UniversalBot(connector);
-
-var server = restify.createServer(function (req, res)
+var server: any = restify.createServer(function (req, res)
 {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
 });
 
-server.listen(process.env.port || process.env.PORT || 3978,
+server.listen(3978,
     function ()
     {
         console.log(server.name + " Listening to " + server.url);
@@ -71,15 +63,15 @@ for (var i = 0; i < easterEgg.easter_egg.length; i++)
 
 //------------------------------------------------------------------------------------------------------------------------------------------------
 
-var bing_apiKey = 'b0c56d5c2b1044ddb217b3700b3c4587';
+var bing_apiKey: string = 'b0c56d5c2b1044ddb217b3700b3c4587';
 
-var luis_apiKey = 'a0df3941073f41ea9b5caae95c9c138b';
+var luis_apiKey: string = 'a0df3941073f41ea9b5caae95c9c138b';
 
-var model = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/ccc72be9-e3f9-4935-8b69-8c67ac9dc956?subscription-key=a0df3941073f41ea9b5caae95c9c138b&verbose=true';
+var model: string = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/ccc72be9-e3f9-4935-8b69-8c67ac9dc956?subscription-key=a0df3941073f41ea9b5caae95c9c138b&verbose=true';
 
-var clientId = 'test-app';
+var clientId: string = 'test-app';
 
-var recognize = new botbuilder.LuisRecognizer(model);
+var recognize: any = new botbuilder.LuisRecognizer(model);
 
 //----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -128,7 +120,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
 }).matches('GetInformation', [
     function (session, args, results)
     {
-        var team_perso, responsability, role, find, easter_egg, orfei, lucchi, zancanaro, greggio, fantinato, ziz, fast_ink, website, RELU, utilities, parse, current_project, total_project, total_people, email, research;
+        var team_perso: any, responsability: any, role: any, find: any, easter_egg: any, orfei: any, lucchi: any, zancanaro: any, greggio: any, fantinato: any, ziz: any, fast_ink: any, website: any, RELU: any, utilities: any, parse: any, current_project: any, total_project: any, total_people: any, email: any, research: any;
         team_perso = botbuilder.EntityRecognizer.findEntity(args.entities, 'Team_Perso');
         responsability = botbuilder.EntityRecognizer.findEntity(args.entities, 'responsability');
         role = botbuilder.EntityRecognizer.findEntity(args.entities, 'role');
@@ -394,7 +386,7 @@ bot.dialog('Root', new botbuilder.IntentDialog({
         if (RELU && find)
         {
             var RELUTemp = getProjectFind(session, works, 'link_repo', 'relu-core');
-            session.send(TPBMCTemp);
+            session.send(RELUTemp);
         }
         if (website && find)
         {
@@ -476,13 +468,13 @@ server.post('/api/messages', connector.listen());
 bot.dialog('/Nothing', [
     function (session)
     {
-        var title = ['Persone', 'Progetti Totali', 'Progetti Correnti', 'Team Perso'];
-        var text = ['Informazioni sulle persone', 'Informazioni sui progetti totali', 'Informazioni sui progetti correnti', 'Informazioni sul team'];
-        var linkImages = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://www.elia-group.com/images/team1.jpg'];
-        var buttonDialog = ['Team', 'TotalProject', 'CurrentProject', 'AllPeople'];
-        var buttonText = ['Persone', 'Progetti totali', 'Progetti correnti', 'Team'];
-        var nothingCards = relucore.ReluCard(session, 4, title, text, 1, linkImages, buttonDialog, buttonText);
-        var reply = new botbuilder.Message(session)
+        var title: Array<string> = ['Persone', 'Progetti Totali', 'Progetti Correnti', 'Team Perso'];
+        var text: Array<string> = ['Informazioni sulle persone', 'Informazioni sui progetti totali', 'Informazioni sui progetti correnti', 'Informazioni sul team'];
+        var linkImages: Array<string> = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://www.elia-group.com/images/team1.jpg'];
+        var buttonDialog: Array<string> = ['Team', 'TotalProject', 'CurrentProject', 'AllPeople'];
+        var buttonText: Array<string> = ['Persone', 'Progetti totali', 'Progetti correnti', 'Team'];
+        var nothingCards: any = relucore.ReluCard(session, 4, title, text, 1, linkImages, buttonDialog, buttonText);
+        var reply: botbuilder.Message = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(nothingCards);
         session.send("Scegli una delle opzioni");
@@ -498,7 +490,7 @@ bot.dialog('/Team', [
         var title = ['Membri', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilita', 'Info'];
         var text = ['Informazioni sui membri', 'Informazioni sui ruoli', 'Informazioni su tutti i progetti', 'Informazioni sui progetti correnti', 'Responsabilita dei membri', 'Informazioni sul team perso'];
         var linkImages = ['http://www.unienergygroup.com/public/componenti/284/f1/Icona%20contatti.png', 'https://thumbs.dreamstime.com/z/insieme-dell-icona-ruoli-sociali-38476263.jpg', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'https://handinasteppy.it/wp-content/uploads/2016/05/Icona-Progetti-Home.png', 'http://previews.123rf.com/images/sentavio/sentavio1511/sentavio151100481/48577270-stile-piatto-web-moderno-uomo-d-affari-icona-infografica-collage-Illustrazione-vettoriale-di-uomo-d--Archivio-Fotografico.jpg', ''];
-        var buttonDialog = ['AllPeople', 'AllRole', 'TotalProject', 'CurrentProject', 'AllResponsability', 'informazioni'];
+        var buttonReturn = ['AllPeople', 'AllRole', 'TotalProject', 'CurrentProject', 'AllResponsability', 'informazioni'];
         var buttonText = ['Persone', 'Ruoli', 'Progetti totali', 'Progetti correnti', 'Responsabilita', 'TeamInformazioni'];
         var teamCards = relucore.ReluCard(session, 6, title, text, 1, linkImages, buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
@@ -549,7 +541,7 @@ bot.dialog('/TotalProject', [
                 session.beginDialog('Root');
                 break;
             case "informazioni su RELU":
-                var RELUemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
+                var RELUTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
                 session.send(RELUTemp);
                 session.beginDialog('Root');
                 break;
@@ -886,11 +878,11 @@ bot.dialog('/CurrentProject', [
     function (session)
     {
         session.send("Questi sono i progetti correnti");
-        var title = ['RELU', 'Utilities', 'Project Ziz', 'Website'];
-        var text = ['Informazioni su RELU', 'Informazioni su Utilities', 'Informazioni su Ziz', 'Informazioni su Website', 'Informazioni su Research'];
-        var buttonReturn = ['informazioni su RELU', 'gestione di RELU', 'informazioni su utilities', 'gestione di utilities', 'informazioni sul progetto ziz', 'gestione del progetto ziz', 'informazioni sul progetto website', 'gestione del progetto website', 'informazioni su research', 'gestione di research'];
-        var buttonText = ['Info', 'Gestione'];
-        var CurrentProjectCards = relucore.ReluCard(session, 5, title, text, 2, '', buttonReturn, buttonText);
+        var title: Array<string> = ['RELU', 'Utilities', 'Project Ziz', 'Website'];
+        var text: Array<string> = ['Informazioni su RELU', 'Informazioni su Utilities', 'Informazioni su Ziz', 'Informazioni su Website', 'Informazioni su Research'];
+        var buttonReturn: Array<string> = ['informazioni su RELU', 'gestione di RELU', 'informazioni su utilities', 'gestione di utilities', 'informazioni sul progetto ziz', 'gestione del progetto ziz', 'informazioni sul progetto website', 'gestione del progetto website', 'informazioni su research', 'gestione di research'];
+        var buttonText: Array<string> = ['Info', 'Gestione'];
+        var CurrentProjectCards: any = relucore.ReluCard(session, 5, title, text, 2, '', buttonReturn, buttonText);
         var reply = new botbuilder.Message(session)
             .attachmentLayout(botbuilder.AttachmentLayout.carousel)
             .attachments(CurrentProjectCards);
@@ -918,7 +910,7 @@ bot.dialog('/CurrentProject', [
                 break;
             case "gestione del progetto ziz":
                 var ZizGestioneTemp = getProjectGestione(session, works, 'capo_progetto', 'project_ziz');
-                session.send(getZizGestione);
+                session.send(ZizGestioneTemp);
                 session.beginDialog('Root');
                 break;
             case "informazioni sul progetto website":
@@ -1536,7 +1528,7 @@ bot.dialog('/ProtoWebInfo', [
 bot.dialog('/ProtoReluInfo', [
     function (session)
     {
-        var RELUemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
+        var RELUTemp = getProjectInformation(session, works, 'tipo_progetto', 'descrizione_progetto', 'capo_progetto', 'link_repo', 'inizio_sviluppo', 'fine_sviluppo', 'versione', 'supporto', 'come_procede', 'membri', 'note', 'relu-core');
         session.send(RELUTemp);
         session.beginDialog('Root');
     }
